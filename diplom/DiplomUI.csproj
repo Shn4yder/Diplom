@@ -46,14 +46,68 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AddGood.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AddGood.Designer.cs">
+      <DependentUpon>AddGood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNote.Designer.cs">
+      <DependentUpon>AddNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddOrder.Designer.cs">
+      <DependentUpon>AddOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddUser.Designer.cs">
+      <DependentUpon>AddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authorization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authorization.Designer.cs">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Goods_adm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Goods_adm.Designer.cs">
+      <DependentUpon>Goods_adm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Goods_emp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Goods_emp.Designer.cs">
+      <DependentUpon>Goods_emp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Notes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Notes.Designer.cs">
+      <DependentUpon>Notes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Orders.Designer.cs">
+      <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
