@@ -1,4 +1,5 @@
-﻿using System;
+﻿using diplom.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,11 @@ namespace diplom
         public AddOrder()
         {
             InitializeComponent();
+        }
+
+        private void Add_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -8,22 +8,23 @@ namespace diplom.Models
 {
     internal class Order
     {
-        public int IdOrd { get; set; }
-        public double Amount { get; set; }  
-        public string Payment { get; set; }
-        public DateTime Date { get; set; }
-        public int IdUsr { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Number { get; set; }
+        public int Counter { get; set; }    
+        public DateTime TimeStart { get; set; }
+        public string Comment { get; set; } 
 
         public Order() { }
 
-
-        public Order(int idOrd, double amount, string payment, DateTime date, int idUsr)
+        public Order(int id, string name, string number, int counter, DateTime timeStart, string comment)
         {
-            IdOrd = idOrd;
-            Amount = amount;
-            Payment = payment;
-            Date = date;
-            IdUsr = idUsr;
-        }
+            Id = id;
+            Name = name;
+            Number = number;
+            Counter = counter;
+            TimeStart = timeStart;
+            Comment = comment;
+        }   
     }
 }

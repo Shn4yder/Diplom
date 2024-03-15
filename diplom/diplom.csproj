@@ -104,6 +104,7 @@
     <Compile Include="Models\Good.cs" />
     <Compile Include="Models\Note.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderPay.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,6 +114,15 @@
     <Compile Include="DiplomUI\Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DiplomUI\AddOrder.resx">
+      <DependentUpon>AddOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiplomUI\Goods_adm.resx">
+      <DependentUpon>Goods_adm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiplomUI\Orders.resx">
+      <DependentUpon>Orders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
