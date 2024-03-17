@@ -14,10 +14,11 @@ namespace diplom.Models
         public int Counter { get; set; }    
         public DateTime TimeStart { get; set; }
         public string Comment { get; set; } 
+        public int IdUsr { get; set; }
 
         public Order() { }
 
-        public Order(int id, string name, string number, int counter, DateTime timeStart, string comment)
+        public Order(int id, string name, string number, int counter, DateTime timeStart, string comment, int idUsr)
         {
             Id = id;
             Name = name;
@@ -25,6 +26,7 @@ namespace diplom.Models
             Counter = counter;
             TimeStart = timeStart;
             Comment = comment;
+            IdUsr = idUsr;
         }   
     }
 }

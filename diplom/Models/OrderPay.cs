@@ -8,22 +8,22 @@ namespace diplom.Models
 {
     internal class OrderPay
     {
-        public int IdOrd { get; set; }
+        public int IdPay { get; set; }
         public double Amount { get; set; }  
         public string Payment { get; set; }
         public DateTime Date { get; set; }
-        public int IdUsr { get; set; }
+        public int IdOrd { get; set; }
 
         public OrderPay() { }
 
 
-        public OrderPay(int idOrd, double amount, string payment, DateTime date, int idUsr)
+        public OrderPay(int idPay, double amount, string payment, DateTime date, int idOrd)
         {
-            IdOrd = idOrd;
+            IdPay = idPay;
             Amount = amount;
             Payment = payment;
             Date = date;
-            IdUsr = idUsr;
+            IdOrd = idOrd;
         }
     }
 }
