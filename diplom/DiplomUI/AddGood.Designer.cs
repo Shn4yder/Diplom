@@ -32,8 +32,8 @@
             this.add_image_btn = new System.Windows.Forms.Button();
             this.add_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.name_tB = new System.Windows.Forms.TextBox();
+            this.price_tB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,6 +53,7 @@
             this.add_image_btn.TabIndex = 1;
             this.add_image_btn.Text = "Выбрать фото";
             this.add_image_btn.UseVisualStyleBackColor = true;
+            this.add_image_btn.Click += new System.EventHandler(this.add_image_btn_Click);
             // 
             // add_btn
             // 
@@ -73,27 +74,27 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Новый товар";
             // 
-            // textBox1
+            // name_tB
             // 
-            this.textBox1.Location = new System.Drawing.Point(29, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(362, 20);
-            this.textBox1.TabIndex = 4;
+            this.name_tB.Location = new System.Drawing.Point(29, 54);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(362, 20);
+            this.name_tB.TabIndex = 4;
             // 
-            // textBox2
+            // price_tB
             // 
-            this.textBox2.Location = new System.Drawing.Point(29, 96);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(89, 20);
-            this.textBox2.TabIndex = 5;
+            this.price_tB.Location = new System.Drawing.Point(29, 96);
+            this.price_tB.Name = "price_tB";
+            this.price_tB.Size = new System.Drawing.Size(89, 20);
+            this.price_tB.TabIndex = 5;
             // 
             // AddGood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 256);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.price_tB);
+            this.Controls.Add(this.name_tB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.add_btn);
             this.Controls.Add(this.add_image_btn);
@@ -112,8 +113,8 @@
         private System.Windows.Forms.Button add_image_btn;
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox name_tB;
+        private System.Windows.Forms.TextBox price_tB;
     }
 }
 
