@@ -21,6 +21,6 @@ namespace diplom.Models
             Name = name;
             Cost = cost;
             Img = img;
-        }   
+        }    
     }
 }

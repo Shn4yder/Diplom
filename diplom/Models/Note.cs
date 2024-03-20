@@ -13,7 +13,7 @@ namespace diplom.Models
         public string Phone {  get; set; }
         public string Place { get; set; }
         public string Comment { get; set; }
-        public DateTime Date { get; set; }
+        public DateTime Date_add { get; set; }
         public string UserName { get; set; }
 
 
@@ -27,7 +27,7 @@ namespace diplom.Models
             Phone = phone;
             Place = place;
             Comment = comment;
-            Date = date;
+            Date_add = date;
             UserName = username;
         }
     }
