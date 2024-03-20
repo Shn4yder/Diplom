@@ -14,13 +14,13 @@ namespace diplom.Models
         public string Place { get; set; }
         public string Comment { get; set; }
         public DateTime Date { get; set; }
-        public int IdUsr { get; set; }
+        public string UserName { get; set; }
 
 
         public Note() { }
 
 
-        public Note(int idNote, string name, string phone, string place, string comment, DateTime date,  int idUsr)
+        public Note(int idNote, string name, string phone, string place, string comment, DateTime date,  string username)
         {
             IdNote = idNote;
             Name = name;
@@ -28,7 +28,7 @@ namespace diplom.Models
             Place = place;
             Comment = comment;
             Date = date;
-            IdUsr = idUsr;
+            UserName = username;
         }
     }
 }

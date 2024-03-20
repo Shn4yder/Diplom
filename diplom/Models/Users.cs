@@ -9,20 +9,20 @@ namespace diplom.Models
 {
     internal class Users
     {
-        public int IdUsr { get; set; } 
+        public int IdUsr { get; set; }
+        public string FIO { get; set; }
         public string Status { get; set; }
         public string Phone { get; set; }
-        public string  FIO { get; set; }
+        public string Email { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public string Email { get; set; }
         public bool Theme { get; set; }
 
 
         public Users() { }
 
 
-        public Users(int id_usr, string status, string phone, string fIO, string login, string password, string email, bool theme)
+        public Users(int id_usr, string fIO, string status, string phone, string email, string login, string password, bool theme)
         {
             IdUsr = id_usr;
             Status = status;
