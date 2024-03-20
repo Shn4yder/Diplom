@@ -33,7 +33,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.good_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.note_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,19 +98,9 @@
             this.note_MenuItem.Text = "Заметки";
             this.note_MenuItem.Click += new System.EventHandler(this.note_MenuItem_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(137, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // id
             // 
-            this.id.DataPropertyName = "IdUsr";
+            this.id.DataPropertyName = "Id_user";
             this.id.HeaderText = "id_usr";
             this.id.Name = "id";
             this.id.ReadOnly = true;
@@ -170,7 +159,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Add_btn);
             this.Controls.Add(this.usr_GV);
             this.Controls.Add(this.menuStrip1);
@@ -192,7 +180,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem good_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem note_MenuItem;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn fio;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;

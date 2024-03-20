@@ -9,7 +9,7 @@ namespace diplom.Models
 {
     internal class UsersModel
     {
-        public int IdUsr { get; set; }
+        public int Id_user { get; set; }
         public string FIO { get; set; }
         public string Status { get; set; }
         public string Phone { get; set; }
@@ -24,7 +24,7 @@ namespace diplom.Models
 
         public UsersModel(int id_usr, string fIO, string status, string phone, string email, string login, string password, bool theme)
         {
-            IdUsr = id_usr;
+            Id_user = id_usr;
             Status = status;
             Phone = phone;
             FIO = fIO;
