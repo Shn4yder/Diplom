@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataManager.cs" />
     <Compile Include="DiplomUI\AddGood.cs">
       <SubType>Form</SubType>
     </Compile>
