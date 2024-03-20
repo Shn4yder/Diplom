@@ -39,6 +39,7 @@
       <HintPath>..\packages\Dapper.2.1.35\lib\net461\Dapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SQLite, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\lib\net46\System.Data.SQLite.dll</HintPath>
@@ -110,12 +111,12 @@
       <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageFolder.cs" />
-    <Compile Include="Models\Cart.cs" />
-    <Compile Include="Models\Good.cs" />
-    <Compile Include="Models\Note.cs" />
-    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\CartModel.cs" />
+    <Compile Include="Models\GoodModel.cs" />
+    <Compile Include="Models\NoteModel.cs" />
+    <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\OrderPay.cs" />
-    <Compile Include="Models\Users.cs" />
+    <Compile Include="Models\UsersModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DiplomUI\Users.cs">
@@ -135,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DiplomUI\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiplomUI\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

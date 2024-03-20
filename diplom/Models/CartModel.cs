@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace diplom.Models
 {
-    internal class Cart
+    internal class CartModel
     {
         public int IdCrt { get; set; }
         public int IdOrd {  get; set; }
         public int IdGd { get; set; }
         public int Quantity { get; set; }
 
-        public Cart() { }
+        public CartModel() { }
 
-        public Cart(int idCrt, int idOrd, int idGd, int quantity)
+        public CartModel(int idCrt, int idOrd, int idGd, int quantity)
         {
             IdCrt = idCrt;
             IdOrd = idOrd;

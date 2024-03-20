@@ -7,15 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using diplom.Models;
 
 namespace diplom
 {
     public partial class Users : Form
     {
+        List<UsersModel> users = new List<UsersModel>(); 
+        
         public Users()
         {
             InitializeComponent();
+            users = DataManager.LoadUsers();
+            usr_GV.DataSource = users;
         }
+
 
         private void good_MenuItem_Click(object sender, EventArgs e)
         {
@@ -35,6 +41,12 @@ namespace diplom
         {
             AddUser add_frm = new AddUser();
             add_frm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+
         }
     }
 }

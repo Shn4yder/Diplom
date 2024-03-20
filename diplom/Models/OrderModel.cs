@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace diplom.Models
 {
-    internal class Order
+    internal class OrderModel
     {
         public int Id { get; set; }
         public string Number { get; set; }
@@ -16,9 +16,9 @@ namespace diplom.Models
         public string Comment { get; set; } 
         public int IdUsr { get; set; }
 
-        public Order() { }
+        public OrderModel() { }
 
-        public Order(int id, string number, string name, int counter, DateTime timeStart, string comment, int idUsr)
+        public OrderModel(int id, string number, string name, int counter, DateTime timeStart, string comment, int idUsr)
         {
             Id = id;
             Name = name;

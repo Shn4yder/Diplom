@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace diplom.Models
 {
-    internal class Users
+    internal class UsersModel
     {
         public int IdUsr { get; set; }
         public string FIO { get; set; }
@@ -19,10 +19,10 @@ namespace diplom.Models
         public bool Theme { get; set; }
 
 
-        public Users() { }
+        public UsersModel() { }
 
 
-        public Users(int id_usr, string fIO, string status, string phone, string email, string login, string password, bool theme)
+        public UsersModel(int id_usr, string fIO, string status, string phone, string email, string login, string password, bool theme)
         {
             IdUsr = id_usr;
             Status = status;

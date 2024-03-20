@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace diplom.Models
 {
-    internal class Note
+    internal class NoteModel
     {
         public int IdNote { get; set; } 
         public string Name { get; set; }    
@@ -17,10 +17,10 @@ namespace diplom.Models
         public string UserName { get; set; }
 
 
-        public Note() { }
+        public NoteModel() { }
 
 
-        public Note(int idNote, string name, string phone, string place, string comment, DateTime date,  string username)
+        public NoteModel(int idNote, string name, string phone, string place, string comment, DateTime date,  string username)
         {
             IdNote = idNote;
             Name = name;

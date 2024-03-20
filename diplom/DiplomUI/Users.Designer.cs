@@ -33,6 +33,15 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.good_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.note_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1 = new System.Windows.Forms.Button();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.theme = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.usr_GV)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -41,7 +50,16 @@
             // 
             this.usr_GV.BackgroundColor = System.Drawing.SystemColors.Control;
             this.usr_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usr_GV.Location = new System.Drawing.Point(27, 47);
+            this.usr_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.fio,
+            this.status,
+            this.phone,
+            this.email,
+            this.login,
+            this.password,
+            this.theme});
+            this.usr_GV.Location = new System.Drawing.Point(23, 27);
             this.usr_GV.Name = "usr_GV";
             this.usr_GV.Size = new System.Drawing.Size(745, 362);
             this.usr_GV.TabIndex = 0;
@@ -81,11 +99,78 @@
             this.note_MenuItem.Text = "Заметки";
             this.note_MenuItem.Click += new System.EventHandler(this.note_MenuItem_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(137, 415);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "IdUsr";
+            this.id.HeaderText = "id_usr";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // fio
+            // 
+            this.fio.DataPropertyName = "FIO";
+            this.fio.HeaderText = "ФИО ";
+            this.fio.Name = "fio";
+            this.fio.ReadOnly = true;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "Status";
+            this.status.HeaderText = "Должность";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.DataPropertyName = "Phone";
+            this.phone.HeaderText = "Телефон";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "E-mail";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            // 
+            // login
+            // 
+            this.login.DataPropertyName = "Login";
+            this.login.HeaderText = "Логин";
+            this.login.Name = "login";
+            this.login.ReadOnly = true;
+            // 
+            // password
+            // 
+            this.password.DataPropertyName = "Password";
+            this.password.HeaderText = "Пароль";
+            this.password.Name = "password";
+            this.password.ReadOnly = true;
+            // 
+            // theme
+            // 
+            this.theme.DataPropertyName = "Theme";
+            this.theme.HeaderText = "Тема";
+            this.theme.Name = "theme";
+            this.theme.ReadOnly = true;
+            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Add_btn);
             this.Controls.Add(this.usr_GV);
             this.Controls.Add(this.menuStrip1);
@@ -107,5 +192,14 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem good_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem note_MenuItem;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn login;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn theme;
     }
 }
