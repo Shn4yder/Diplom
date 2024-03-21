@@ -58,8 +58,11 @@
             this.password});
             this.usr_GV.Location = new System.Drawing.Point(23, 27);
             this.usr_GV.Name = "usr_GV";
+            this.usr_GV.RowHeadersVisible = false;
+            this.usr_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.usr_GV.Size = new System.Drawing.Size(745, 362);
             this.usr_GV.TabIndex = 0;
+            this.usr_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usr_GV_CellDoubleClick);
             // 
             // Add_btn
             // 

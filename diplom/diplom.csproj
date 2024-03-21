@@ -98,6 +98,12 @@
     <Compile Include="DiplomUI\Orders.Designer.cs">
       <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
+    <Compile Include="DiplomUI\EditUsrForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiplomUI\EditUsrForm.Designer.cs">
+      <DependentUpon>EditUsrForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImageFolder.cs" />
     <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\GoodModel.cs" />
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DiplomUI\Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiplomUI\EditUsrForm.resx">
+      <DependentUpon>EditUsrForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

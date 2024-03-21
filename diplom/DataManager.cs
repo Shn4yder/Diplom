@@ -27,7 +27,7 @@ namespace diplom
         {
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                con.Execute("insert into Users(fio, status, phone, email, login, password, theme) values(@FIO, @Status, @Phone, @Email, @Login, @Password, @Theme)", user);
+                con.Execute("insert into Users(fio, status, phone, email, login, password) values(@FIO, @Status, @Phone, @Email, @Login, @Password)", user);
             }
         }
 
@@ -36,6 +36,23 @@ namespace diplom
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
                 con.Execute("delete from Users where id_user=" + id);
+            }
+        }
+
+        public static List<UsersModel> LoadUser(string id)    // получение данных о конкретном пользователе
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                var res = con.Query<UsersModel>("select * from Users where id_user=" + id, new DynamicParameters());
+                return res.ToList();
+            }
+        }
+
+        public static void UpdateUser(UsersModel user, string id)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Execute("UPDATE Users SET fio= @FIO,status=@Status, phone=@Phone, email=@Email, login=@Login, password=@Password WHERE id_user = " + id, user);
             }
         }
 
