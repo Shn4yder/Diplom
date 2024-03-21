@@ -45,6 +45,10 @@ namespace diplom
         private void note_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string id = note_GV.CurrentRow.Cells[0].Value.ToString();
+
+            EditNoteForm form = new EditNoteForm(id);
+            this.Hide();
+            form.Show();
         }
     }
 }

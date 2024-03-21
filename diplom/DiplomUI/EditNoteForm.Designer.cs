@@ -34,7 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.comment_tB = new System.Windows.Forms.RichTextBox();
             this.edit_btn = new System.Windows.Forms.Button();
             this.delete_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -87,13 +87,13 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "Телефон";
             // 
-            // richTextBox1
+            // comment_tB
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(21, 150);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(312, 96);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.comment_tB.Location = new System.Drawing.Point(21, 150);
+            this.comment_tB.Name = "comment_tB";
+            this.comment_tB.Size = new System.Drawing.Size(312, 96);
+            this.comment_tB.TabIndex = 6;
+            this.comment_tB.Text = "";
             // 
             // edit_btn
             // 
@@ -103,6 +103,7 @@
             this.edit_btn.TabIndex = 7;
             this.edit_btn.Text = "Сохранить изменения";
             this.edit_btn.UseVisualStyleBackColor = true;
+            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // delete_btn
             // 
@@ -112,6 +113,7 @@
             this.delete_btn.TabIndex = 8;
             this.delete_btn.Text = "Удалить";
             this.delete_btn.UseVisualStyleBackColor = true;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
             // EditNoteForm
             // 
@@ -120,7 +122,7 @@
             this.ClientSize = new System.Drawing.Size(355, 282);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.edit_btn);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.comment_tB);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -142,7 +144,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox comment_tB;
         private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.Button delete_btn;
     }

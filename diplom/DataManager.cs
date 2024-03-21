@@ -29,7 +29,7 @@ namespace diplom
             {
                 con.Execute("insert into Users(fio, status, phone, email, login, password) values(@FIO, @Status, @Phone, @Email, @Login, @Password)", user);
             }
-        }
+        } 
 
         public static void DeleteUser(string id)
         {
@@ -90,6 +90,14 @@ namespace diplom
             {
                 var res = con.Query<NoteModel>("select * from Notes where id_note=" + id, new DynamicParameters());
                 return res.ToList();
+            }
+        }
+
+        public static void UpdateNote(NoteModel note, string id)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Execute("UPDATE Notes SET name=@Name, phone=@Phone, place=@Place, comment=@Comment, date_add=@Date_add WHERE id_note = " + id, note);
             }
         }
 
