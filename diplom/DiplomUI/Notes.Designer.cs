@@ -34,7 +34,6 @@
             this.order_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.good_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.note_GV = new System.Windows.Forms.DataGridView();
-            this.Add_btn = new System.Windows.Forms.Button();
             this.id_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +42,7 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Add_btn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.note_GV)).BeginInit();
             this.SuspendLayout();
@@ -91,19 +91,13 @@
             this.fio,
             this.id_user});
             this.note_GV.Location = new System.Drawing.Point(24, 38);
+            this.note_GV.MultiSelect = false;
             this.note_GV.Name = "note_GV";
+            this.note_GV.RowHeadersVisible = false;
+            this.note_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.note_GV.Size = new System.Drawing.Size(744, 371);
             this.note_GV.TabIndex = 2;
-            // 
-            // Add_btn
-            // 
-            this.Add_btn.Location = new System.Drawing.Point(361, 415);
-            this.Add_btn.Name = "Add_btn";
-            this.Add_btn.Size = new System.Drawing.Size(75, 23);
-            this.Add_btn.TabIndex = 3;
-            this.Add_btn.Text = "+  Cоздать";
-            this.Add_btn.UseVisualStyleBackColor = true;
-            this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
+            this.note_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.note_GV_CellDoubleClick);
             // 
             // id_note
             // 
@@ -160,6 +154,16 @@
             this.id_user.HeaderText = "id_user";
             this.id_user.Name = "id_user";
             this.id_user.ReadOnly = true;
+            // 
+            // Add_btn
+            // 
+            this.Add_btn.Location = new System.Drawing.Point(361, 415);
+            this.Add_btn.Name = "Add_btn";
+            this.Add_btn.Size = new System.Drawing.Size(75, 23);
+            this.Add_btn.TabIndex = 3;
+            this.Add_btn.Text = "+  Cоздать";
+            this.Add_btn.UseVisualStyleBackColor = true;
+            this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
             // 
             // Notes
             // 

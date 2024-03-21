@@ -84,6 +84,15 @@ namespace diplom
             }
         }
 
+        public static List<NoteModel> LoadNote(string id)    // получение данных о конкретной заметке
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                var res = con.Query<NoteModel>("select * from Notes where id_note=" + id, new DynamicParameters());
+                return res.ToList();
+            }
+        }
+
 
         // Загрузка, вставка, удаление, изменение данных товаров
         public static List<GoodModel> LoadGoods()
