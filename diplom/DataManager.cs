@@ -170,6 +170,23 @@ namespace diplom
             }
         }
 
+        public static List<OrderModel> LoadOrder(string id)    // получение данных о конкретном заказе
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                var res = con.Query<OrderModel>("select * from Orders where id_order=" + id, new DynamicParameters());
+                return res.ToList();
+            }
+        }
+
+        public static void UpdateOrder(OrderModel order, string id)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Execute("UPDATE Orders SET name=@Name, counter=@Counter, comment=@Comment WHERE id_order = " + id, order);
+            }
+        }
+
 
 
         private static string LoadConnectionString(string id = "database")    // строка подключения

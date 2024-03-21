@@ -116,6 +116,12 @@
     <Compile Include="DiplomUI\EditGoodForm.Designer.cs">
       <DependentUpon>EditGoodForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DiplomUI\EditOrdForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiplomUI\EditOrdForm.Designer.cs">
+      <DependentUpon>EditOrdForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImageFolder.cs" />
     <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\GoodModel.cs" />
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DiplomUI\EditNoteForm.resx">
       <DependentUpon>EditNoteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiplomUI\EditOrdForm.resx">
+      <DependentUpon>EditOrdForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DiplomUI\Goods_adm.resx">
       <DependentUpon>Goods_adm.cs</DependentUpon>
