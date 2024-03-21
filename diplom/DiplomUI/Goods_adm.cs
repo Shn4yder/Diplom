@@ -41,5 +41,14 @@ namespace diplom
             this.Hide();
             add_frm.Show();
         }
+
+        private void goods_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string id = goods_GV.CurrentRow.Cells[0].Value.ToString();
+
+            EditGoodForm form = new EditGoodForm(id);
+            this.Hide();
+            form.Show();
+        }
     }
 }

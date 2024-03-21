@@ -57,7 +57,6 @@ namespace diplom
         }
 
 
-
         // Загрузка, вставка, удаление, изменение данных заметок
         public static List<NoteModel> LoadNotes() 
         {
@@ -125,6 +124,23 @@ namespace diplom
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
                 con.Execute("delete from Goods where id_good=" + id);
+            }
+        }
+
+        public static List<GoodModel> LoadGood(string id)    // получение данных о конкретном товаре
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                var res = con.Query<GoodModel>("select * from Goods where id_good=" + id, new DynamicParameters());
+                return res.ToList();
+            }
+        }
+
+        public static void UpdateGood(GoodModel good, string id)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Execute("UPDATE Goods SET img=@Img, name=@Name, cost=@Cost WHERE id_good = " + id, good);
             }
         }
 
