@@ -42,10 +42,5 @@ namespace diplom
             add_form.Show();
             this.Hide();
         }
-
-        private void orders_GV_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
