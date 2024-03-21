@@ -88,7 +88,10 @@ namespace diplom
             this.name,
             this.cost});
             this.goods_GV.Location = new System.Drawing.Point(25, 60);
+            this.goods_GV.MultiSelect = false;
             this.goods_GV.Name = "goods_GV";
+            this.goods_GV.RowHeadersVisible = false;
+            this.goods_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.goods_GV.Size = new System.Drawing.Size(636, 352);
             this.goods_GV.TabIndex = 3;
             // 

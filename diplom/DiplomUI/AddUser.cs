@@ -28,7 +28,6 @@ namespace diplom
             new_user.Email = email_tB.Text;
             new_user.Login = login_tB.Text;
             new_user.Password = pwd_tB.Text;
-            new_user.Theme = false;
 
             AddNewUser(new_user);
 

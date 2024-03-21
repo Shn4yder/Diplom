@@ -92,9 +92,13 @@
             this.comm,
             this.id_usr});
             this.orders_GV.Location = new System.Drawing.Point(24, 47);
+            this.orders_GV.MultiSelect = false;
             this.orders_GV.Name = "orders_GV";
+            this.orders_GV.RowHeadersVisible = false;
+            this.orders_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.orders_GV.Size = new System.Drawing.Size(723, 334);
             this.orders_GV.TabIndex = 3;
+            this.orders_GV.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orders_GV_CellContentDoubleClick);
             // 
             // id
             // 
