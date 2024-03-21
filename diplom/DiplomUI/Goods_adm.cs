@@ -38,6 +38,7 @@ namespace diplom
         private void Add_btn_Click(object sender, EventArgs e)
         {
             AddGood add_frm = new AddGood();
+            this.Hide();
             add_frm.Show();
         }
     }

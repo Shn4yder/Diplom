@@ -41,6 +41,7 @@ namespace diplom
         {
             AddUser add_frm = new AddUser();
             add_frm.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -40,6 +40,7 @@ namespace diplom
         {
             AddOrder add_form = new AddOrder();
             add_form.Show();
+            this.Hide();
         }
     }
 }

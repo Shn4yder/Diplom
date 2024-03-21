@@ -42,6 +42,7 @@
             this.comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.note_GV)).BeginInit();
             this.SuspendLayout();
@@ -87,7 +88,8 @@
             this.place,
             this.comment,
             this.date,
-            this.fio});
+            this.fio,
+            this.id_user});
             this.note_GV.Location = new System.Drawing.Point(24, 38);
             this.note_GV.Name = "note_GV";
             this.note_GV.Size = new System.Drawing.Size(744, 371);
@@ -152,6 +154,13 @@
             this.fio.Name = "fio";
             this.fio.ReadOnly = true;
             // 
+            // id_user
+            // 
+            this.id_user.DataPropertyName = "Id_user";
+            this.id_user.HeaderText = "id_user";
+            this.id_user.Name = "id_user";
+            this.id_user.ReadOnly = true;
+            // 
             // Notes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,5 +195,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn comment;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn fio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_user;
     }
 }

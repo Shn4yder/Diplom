@@ -39,6 +39,7 @@ namespace diplom
         {
             AddNote add_frm = new AddNote();
             add_frm.Show();
+            this.Hide();
         }
     }
 }

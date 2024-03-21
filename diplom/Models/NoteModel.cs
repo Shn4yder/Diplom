@@ -15,6 +15,7 @@ namespace diplom.Models
         public string Comment { get; set; }
         public string Date_add { get; set; }
         public string Fio { get; set; }
+        public int Id_user { get; set; }    
 
         public NoteModel() { }
     }

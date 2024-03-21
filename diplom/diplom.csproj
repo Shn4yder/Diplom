@@ -116,8 +116,14 @@
     <EmbeddedResource Include="DiplomUI\AddGood.resx">
       <DependentUpon>AddGood.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DiplomUI\AddNote.resx">
+      <DependentUpon>AddNote.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DiplomUI\AddOrder.resx">
       <DependentUpon>AddOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiplomUI\AddUser.resx">
+      <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DiplomUI\Goods_adm.resx">
       <DependentUpon>Goods_adm.cs</DependentUpon>

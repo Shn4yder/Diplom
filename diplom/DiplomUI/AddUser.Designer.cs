@@ -30,14 +30,14 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.name_tB = new System.Windows.Forms.TextBox();
+            this.email_tB = new System.Windows.Forms.TextBox();
             this.phone_tB = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.name_tB = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.status_cB = new System.Windows.Forms.ComboBox();
-            this.login_tB = new System.Windows.Forms.TextBox();
-            this.pwd_tB = new System.Windows.Forms.TextBox();
             this.confirm_tB = new System.Windows.Forms.TextBox();
+            this.pwd_tB = new System.Windows.Forms.TextBox();
+            this.login_tB = new System.Windows.Forms.TextBox();
+            this.status_cB = new System.Windows.Forms.ComboBox();
             this.add_btn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -55,7 +55,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.email_tB);
             this.groupBox1.Controls.Add(this.phone_tB);
             this.groupBox1.Controls.Add(this.name_tB);
             this.groupBox1.Location = new System.Drawing.Point(12, 67);
@@ -65,12 +65,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Личные данные";
             // 
-            // name_tB
+            // email_tB
             // 
-            this.name_tB.Location = new System.Drawing.Point(16, 19);
-            this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(387, 20);
-            this.name_tB.TabIndex = 0;
+            this.email_tB.Location = new System.Drawing.Point(209, 68);
+            this.email_tB.Name = "email_tB";
+            this.email_tB.Size = new System.Drawing.Size(194, 20);
+            this.email_tB.TabIndex = 2;
             // 
             // phone_tB
             // 
@@ -79,12 +79,12 @@
             this.phone_tB.Size = new System.Drawing.Size(160, 20);
             this.phone_tB.TabIndex = 1;
             // 
-            // textBox1
+            // name_tB
             // 
-            this.textBox1.Location = new System.Drawing.Point(209, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 20);
-            this.textBox1.TabIndex = 2;
+            this.name_tB.Location = new System.Drawing.Point(16, 19);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(387, 20);
+            this.name_tB.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -99,20 +99,12 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Приложение";
             // 
-            // status_cB
+            // confirm_tB
             // 
-            this.status_cB.FormattingEnabled = true;
-            this.status_cB.Location = new System.Drawing.Point(16, 42);
-            this.status_cB.Name = "status_cB";
-            this.status_cB.Size = new System.Drawing.Size(177, 21);
-            this.status_cB.TabIndex = 0;
-            // 
-            // login_tB
-            // 
-            this.login_tB.Location = new System.Drawing.Point(16, 91);
-            this.login_tB.Name = "login_tB";
-            this.login_tB.Size = new System.Drawing.Size(177, 20);
-            this.login_tB.TabIndex = 1;
+            this.confirm_tB.Location = new System.Drawing.Point(209, 91);
+            this.confirm_tB.Name = "confirm_tB";
+            this.confirm_tB.Size = new System.Drawing.Size(194, 20);
+            this.confirm_tB.TabIndex = 3;
             // 
             // pwd_tB
             // 
@@ -121,12 +113,25 @@
             this.pwd_tB.Size = new System.Drawing.Size(194, 20);
             this.pwd_tB.TabIndex = 2;
             // 
-            // confirm_tB
+            // login_tB
             // 
-            this.confirm_tB.Location = new System.Drawing.Point(209, 91);
-            this.confirm_tB.Name = "confirm_tB";
-            this.confirm_tB.Size = new System.Drawing.Size(194, 20);
-            this.confirm_tB.TabIndex = 3;
+            this.login_tB.Location = new System.Drawing.Point(16, 91);
+            this.login_tB.Name = "login_tB";
+            this.login_tB.Size = new System.Drawing.Size(177, 20);
+            this.login_tB.TabIndex = 1;
+            // 
+            // status_cB
+            // 
+            this.status_cB.FormattingEnabled = true;
+            this.status_cB.Items.AddRange(new object[] {
+            "Сотрудник",
+            "Менеджер",
+            "Стажер",
+            "Администратор"});
+            this.status_cB.Location = new System.Drawing.Point(16, 42);
+            this.status_cB.Name = "status_cB";
+            this.status_cB.Size = new System.Drawing.Size(177, 21);
+            this.status_cB.TabIndex = 0;
             // 
             // add_btn
             // 
@@ -136,6 +141,7 @@
             this.add_btn.TabIndex = 6;
             this.add_btn.Text = "Создать";
             this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // AddUser
             // 
@@ -163,7 +169,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox name_tB;
         private System.Windows.Forms.TextBox phone_tB;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox email_tB;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox pwd_tB;
         private System.Windows.Forms.TextBox login_tB;

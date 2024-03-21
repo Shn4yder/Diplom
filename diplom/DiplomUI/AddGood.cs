@@ -1,4 +1,5 @@
-﻿using System;
+﻿using diplom.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,6 +46,27 @@ namespace diplom
                 MessageBox.Show("Ошибка чтения изображения");
                 return;
             }
+        }
+
+        private void add_btn_Click(object sender, EventArgs e)
+        {
+
+            GoodModel new_good = new GoodModel();
+
+            new_good.Img = "image2";
+            new_good.Name = name_tB.Text;
+            new_good.Cost = Convert.ToDouble(price_tB.Text);
+
+            AddNewGood(new_good);
+
+            this.Close();
+            Goods_adm gds_frm = new Goods_adm();
+            gds_frm.Show();
+        }
+
+        private void AddNewGood(GoodModel good)
+        {
+            DataManager.AddGood(good);
         }
 
         // pictureBox1.Image == null нет картинки 

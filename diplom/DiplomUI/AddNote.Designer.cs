@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.name_tB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.name_lbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.phone_tB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.place_tB = new System.Windows.Forms.TextBox();
             this.comment_tB = new System.Windows.Forms.RichTextBox();
             this.Add_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // name_tB
             // 
-            this.textBox1.Location = new System.Drawing.Point(101, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(222, 20);
-            this.textBox1.TabIndex = 0;
+            this.name_tB.Location = new System.Drawing.Point(101, 55);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(222, 20);
+            this.name_tB.TabIndex = 0;
             // 
             // label1
             // 
@@ -76,12 +76,12 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Телефон:";
             // 
-            // textBox2
+            // phone_tB
             // 
-            this.textBox2.Location = new System.Drawing.Point(101, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(222, 20);
-            this.textBox2.TabIndex = 4;
+            this.phone_tB.Location = new System.Drawing.Point(101, 100);
+            this.phone_tB.Name = "phone_tB";
+            this.phone_tB.Size = new System.Drawing.Size(222, 20);
+            this.phone_tB.TabIndex = 4;
             // 
             // label3
             // 
@@ -93,12 +93,12 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "№ Стола/Место:";
             // 
-            // textBox3
+            // place_tB
             // 
-            this.textBox3.Location = new System.Drawing.Point(141, 145);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(182, 20);
-            this.textBox3.TabIndex = 6;
+            this.place_tB.Location = new System.Drawing.Point(141, 145);
+            this.place_tB.Name = "place_tB";
+            this.place_tB.Size = new System.Drawing.Size(182, 20);
+            this.place_tB.TabIndex = 6;
             // 
             // comment_tB
             // 
@@ -116,6 +116,7 @@
             this.Add_btn.TabIndex = 11;
             this.Add_btn.Text = "Создать";
             this.Add_btn.UseVisualStyleBackColor = true;
+            this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
             // 
             // AddNote
             // 
@@ -125,12 +126,12 @@
             this.Controls.Add(this.Add_btn);
             this.Controls.Add(this.comment_tB);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.place_tB);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.phone_tB);
             this.Controls.Add(this.name_lbl);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.name_tB);
             this.Name = "AddNote";
             this.Text = "Создать заметку";
             this.ResumeLayout(false);
@@ -140,13 +141,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox name_tB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label name_lbl;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox phone_tB;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox place_tB;
         private System.Windows.Forms.RichTextBox comment_tB;
         private System.Windows.Forms.Button Add_btn;
     }
