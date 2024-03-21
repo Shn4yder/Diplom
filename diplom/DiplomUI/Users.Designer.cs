@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.usr_GV = new System.Windows.Forms.DataGridView();
+            this.Add_btn = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.good_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.note_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,11 +40,6 @@
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.theme = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Add_btn = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.good_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.note_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.usr_GV)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -56,12 +55,46 @@
             this.phone,
             this.email,
             this.login,
-            this.password,
-            this.theme});
+            this.password});
             this.usr_GV.Location = new System.Drawing.Point(23, 27);
             this.usr_GV.Name = "usr_GV";
             this.usr_GV.Size = new System.Drawing.Size(745, 362);
             this.usr_GV.TabIndex = 0;
+            // 
+            // Add_btn
+            // 
+            this.Add_btn.Location = new System.Drawing.Point(345, 415);
+            this.Add_btn.Name = "Add_btn";
+            this.Add_btn.Size = new System.Drawing.Size(75, 23);
+            this.Add_btn.TabIndex = 1;
+            this.Add_btn.Text = "+  Создать    ";
+            this.Add_btn.UseVisualStyleBackColor = true;
+            this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.good_MenuItem,
+            this.note_MenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // good_MenuItem
+            // 
+            this.good_MenuItem.Name = "good_MenuItem";
+            this.good_MenuItem.Size = new System.Drawing.Size(60, 20);
+            this.good_MenuItem.Text = "Товары";
+            this.good_MenuItem.Click += new System.EventHandler(this.good_MenuItem_Click);
+            // 
+            // note_MenuItem
+            // 
+            this.note_MenuItem.Name = "note_MenuItem";
+            this.note_MenuItem.Size = new System.Drawing.Size(65, 20);
+            this.note_MenuItem.Text = "Заметки";
+            this.note_MenuItem.Click += new System.EventHandler(this.note_MenuItem_Click);
             // 
             // id
             // 
@@ -112,48 +145,6 @@
             this.password.Name = "password";
             this.password.ReadOnly = true;
             // 
-            // theme
-            // 
-            this.theme.DataPropertyName = "Theme";
-            this.theme.HeaderText = "Тема";
-            this.theme.Name = "theme";
-            this.theme.ReadOnly = true;
-            // 
-            // Add_btn
-            // 
-            this.Add_btn.Location = new System.Drawing.Point(345, 415);
-            this.Add_btn.Name = "Add_btn";
-            this.Add_btn.Size = new System.Drawing.Size(75, 23);
-            this.Add_btn.TabIndex = 1;
-            this.Add_btn.Text = "+  Создать    ";
-            this.Add_btn.UseVisualStyleBackColor = true;
-            this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.good_MenuItem,
-            this.note_MenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // good_MenuItem
-            // 
-            this.good_MenuItem.Name = "good_MenuItem";
-            this.good_MenuItem.Size = new System.Drawing.Size(60, 20);
-            this.good_MenuItem.Text = "Товары";
-            this.good_MenuItem.Click += new System.EventHandler(this.good_MenuItem_Click);
-            // 
-            // note_MenuItem
-            // 
-            this.note_MenuItem.Name = "note_MenuItem";
-            this.note_MenuItem.Size = new System.Drawing.Size(65, 20);
-            this.note_MenuItem.Text = "Заметки";
-            this.note_MenuItem.Click += new System.EventHandler(this.note_MenuItem_Click);
-            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,6 +178,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn login;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
-        private System.Windows.Forms.DataGridViewTextBoxColumn theme;
     }
 }
