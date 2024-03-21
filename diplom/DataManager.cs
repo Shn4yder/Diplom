@@ -31,6 +31,16 @@ namespace diplom
             }
         }
 
+        public static void DeleteUser(string id)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Execute("delete from Users where id_user=" + id);
+            }
+        }
+
+
+
         // Загрузка, вставка, удаление, изменение данных заметок
         public static List<NoteModel> LoadNotes() 
         {
@@ -48,6 +58,15 @@ namespace diplom
                 con.Execute("insert into Notes(name, phone, place, comment, date_add, id_user) values(@Name, @Phone, @Place, @Comment, @Date_add, @Id_user)", note);
             }
         }
+
+        public static void DeleteNote(string id)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Execute("delete from Notes where id_note=" + id);
+            }
+        }
+
 
         // Загрузка, вставка, удаление, изменение данных товаров
         public static List<GoodModel> LoadGoods()
@@ -67,6 +86,15 @@ namespace diplom
             }
         }
 
+        public static void DeleteGood(string id)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Execute("delete from Goods where id_good=" + id);
+            }
+        }
+
+
         // Загрузка, вставка, удаление, изменение данных заказов
         public static List<OrderModel> LoadOrders()
         {
@@ -82,6 +110,13 @@ namespace diplom
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
                 con.Execute("insert into Orders(number, name, counter, time_start, comment, id_user) values(@Number, @Name, @Counter, @Time_start, @Comment, @Id_user)", order);
+            }
+        }
+        public static void DeleteOrder(string id)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Execute("delete from Orders where id_order=" + id);
             }
         }
 
