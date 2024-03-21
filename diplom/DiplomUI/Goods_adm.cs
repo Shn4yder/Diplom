@@ -1,4 +1,5 @@
-﻿using System;
+﻿using diplom.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace diplom
 {
     public partial class Goods_adm : Form
     {
+        List<GoodModel> goods = new List<GoodModel>();
         public Goods_adm()
         {
             InitializeComponent();
+            goods = DataManager.LoadGoods();
+            goods_GV.DataSource = goods;
         }
 
         private void user_MenuItem_Click(object sender, EventArgs e)

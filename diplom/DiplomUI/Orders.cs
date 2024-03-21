@@ -7,22 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using diplom.Models;
 
 namespace diplom
 {
     public partial class Orders : Form
     {
+        List<OrderModel> orders = new List<OrderModel>();   
         public Orders()
         {
             InitializeComponent();
-            orders_GV.Rows.Add(4);
-            string[] newrow = { "1", "2", "3", "4", "5", "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", };
-            orders_GV.Rows.Add(newrow);
+            orders = DataManager.LoadOrders();
+            orders_GV.DataSource = orders;
+
         }
 
         private void good_MenuItem_Click(object sender, EventArgs e)
         {
-            Goods_emp good_frm = new Goods_emp();
+            Goods_adm good_frm = new Goods_adm();
             this.Hide();
             good_frm.Show();
         }

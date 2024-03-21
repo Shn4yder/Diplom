@@ -18,20 +18,7 @@ namespace diplom.Models
         public string Password { get; set; }
         public bool Theme { get; set; }
 
-
         public UsersModel() { }
 
-
-        public UsersModel(int id_usr, string fIO, string status, string phone, string email, string login, string password, bool theme)
-        {
-            Id_user = id_usr;
-            Status = status;
-            Phone = phone;
-            FIO = fIO;
-            Login = login;
-            Password = password;
-            Email = email;
-            Theme = theme;
-        }
     }
 }

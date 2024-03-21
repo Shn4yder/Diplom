@@ -28,19 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.good_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.note_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orders_GV = new System.Windows.Forms.DataGridView();
             this.Add_btn = new System.Windows.Forms.Button();
-            this.IdOrd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Num_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.N_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateTime_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comment_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orders_GV = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.counter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_usr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orders_GV)).BeginInit();
             this.SuspendLayout();
@@ -70,44 +69,6 @@
             this.note_MenuItem.Text = "Заметки";
             this.note_MenuItem.Click += new System.EventHandler(this.note_MenuItem_Click);
             // 
-            // orders_GV
-            // 
-            this.orders_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-
-
-            this.orders_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.orders_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdOrd,
-            this.Num_col,
-            this.Name_col,
-            this.N_col,
-            this.DateTime_col,
-            this.Comment_col});
-
-
-            this.orders_GV.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-
-            this.orders_GV.Location = new System.Drawing.Point(24, 42);
-            this.orders_GV.Name = "orders_GV";
-            this.orders_GV.RowHeadersVisible = false;    // отключение поля со звездочкой
-            this.orders_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;    // выбор всей строки
-            this.orders_GV.Size = new System.Drawing.Size(719, 359);
-            this.orders_GV.TabIndex = 1;
-            this.orders_GV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;   // адаптивная ширина ячеек
-            this.orders_GV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            // 
             // Add_btn
             // 
             this.Add_btn.Location = new System.Drawing.Point(336, 415);
@@ -118,55 +79,78 @@
             this.Add_btn.UseVisualStyleBackColor = true;
             this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
             // 
-            // IdOrd
+            // orders_GV
             // 
-            this.IdOrd.HeaderText = "ID";
-            this.IdOrd.Name = "IdOrd";
-            this.IdOrd.ReadOnly = true;
-            this.IdOrd.Visible = false;
+            this.orders_GV.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.orders_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.orders_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.number,
+            this.name,
+            this.counter,
+            this.start,
+            this.comm,
+            this.id_usr});
+            this.orders_GV.Location = new System.Drawing.Point(24, 47);
+            this.orders_GV.Name = "orders_GV";
+            this.orders_GV.Size = new System.Drawing.Size(723, 334);
+            this.orders_GV.TabIndex = 3;
             // 
-            // Num_col
+            // id
             // 
-            this.Num_col.HeaderText = "Номер";
-            this.Num_col.Name = "Num_col";
-            this.Num_col.ReadOnly = true;
-            this.Num_col.Width = 120;
+            this.id.DataPropertyName = "Id_order";
+            this.id.HeaderText = "id_order";
+            this.id.Name = "id";
             // 
-            // Name_col
+            // number
             // 
-            this.Name_col.HeaderText = "Имя";
-            this.Name_col.Name = "Name_col";
-            this.Name_col.ReadOnly = true;
-            this.Name_col.Width = 150;
+            this.number.DataPropertyName = "Number";
+            this.number.HeaderText = "Номер";
+            this.number.Name = "number";
+            this.number.ReadOnly = true;
             // 
-            // N_col
+            // name
             // 
-            this.N_col.HeaderText = "Кол-во";
-            this.N_col.Name = "N_col";
-            this.N_col.ReadOnly = true;
-            this.N_col.Width = 40;
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Имя";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
-            // DateTime_col
+            // counter
             // 
-            this.DateTime_col.FillWeight = 200F;
-            this.DateTime_col.HeaderText = "Начат в";
-            this.DateTime_col.Name = "DateTime_col";
-            this.DateTime_col.ReadOnly = true;
+            this.counter.DataPropertyName = "Counter";
+            this.counter.HeaderText = "Кол-во";
+            this.counter.Name = "counter";
+            this.counter.ReadOnly = true;
             // 
-            // Comment_col
+            // start
             // 
-            this.Comment_col.HeaderText = "Комментарий";
-            this.Comment_col.Name = "Comment_col";
-            this.Comment_col.ReadOnly = true;
-            this.Comment_col.Width = 306;
+            this.start.DataPropertyName = "Time_start";
+            this.start.HeaderText = "Начат в ";
+            this.start.Name = "start";
+            this.start.ReadOnly = true;
+            // 
+            // comm
+            // 
+            this.comm.DataPropertyName = "Comment";
+            this.comm.HeaderText = "Коментарий";
+            this.comm.Name = "comm";
+            this.comm.ReadOnly = true;
+            // 
+            // id_usr
+            // 
+            this.id_usr.DataPropertyName = "Id_user";
+            this.id_usr.HeaderText = "id_user";
+            this.id_usr.Name = "id_usr";
+            this.id_usr.ReadOnly = true;
             // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(773, 450);
-            this.Controls.Add(this.Add_btn);
             this.Controls.Add(this.orders_GV);
+            this.Controls.Add(this.Add_btn);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Orders";
@@ -184,13 +168,14 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem good_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem note_MenuItem;
-        private System.Windows.Forms.DataGridView orders_GV;
         private System.Windows.Forms.Button Add_btn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdOrd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Num_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn N_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateTime_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Comment_col;
+        private System.Windows.Forms.DataGridView orders_GV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn counter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn start;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_usr;
     }
 }

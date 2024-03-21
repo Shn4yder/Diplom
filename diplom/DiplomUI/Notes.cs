@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using diplom.Models;
 
 namespace diplom
 {
     public partial class Notes : Form
     {
+        List<NoteModel> notes = new List<NoteModel>();  
         public Notes()
         {
             InitializeComponent();
+            notes = DataManager.LoadNotes();
+            note_GV.DataSource = notes; 
         }
 
         private void order_MenuItem_Click(object sender, EventArgs e)
@@ -26,9 +30,9 @@ namespace diplom
 
         private void good_MenuItem_Click(object sender, EventArgs e)
         {
-            Goods_emp gds_ord = new Goods_emp();
+            Goods_adm gds_frm = new Goods_adm();
             this.Hide();
-            gds_ord.Show();
+            gds_frm.Show();
         }
 
         private void Add_btn_Click(object sender, EventArgs e)

@@ -30,16 +30,15 @@ namespace diplom
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.user_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.note_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.goods_GV = new System.Windows.Forms.DataGridView();
             this.Add_btn = new System.Windows.Forms.Button();
-            this.Img_col = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Name_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cost_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.goods_GV = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.image = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             this.SuspendLayout();
@@ -69,41 +68,6 @@ namespace diplom
             this.note_MenuItem.Text = "Заметки";
             this.note_MenuItem.Click += new System.EventHandler(this.note_MenuItem_Click);
             // 
-            // goods_GV
-            // 
-
-            this.goods_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-
-            this.goods_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Img_col,
-            this.Name_col,
-            this.Cost_col});
-
-
-            this.goods_GV.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Desktop;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-
-            this.goods_GV.Location = new System.Drawing.Point(23, 27);
-            this.goods_GV.Name = "goods_GV";
-            this.goods_GV.Size = new System.Drawing.Size(626, 385);
-            this.goods_GV.TabIndex = 1;
-            this.goods_GV.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.goods_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.goods_GV.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;   // адаптивная ширина ячеек
-            this.goods_GV.RowHeadersVisible = false;    // отключение поля со звездочкой
-            this.goods_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;    // выбор всей строки
-            // 
             // Add_btn
             // 
             this.Add_btn.Location = new System.Drawing.Point(293, 418);
@@ -114,35 +78,55 @@ namespace diplom
             this.Add_btn.UseVisualStyleBackColor = true;
             this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
             // 
-            // Img_col
+            // goods_GV
             // 
-            this.Img_col.HeaderText = "Фото";
-            this.Img_col.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
-            this.Img_col.Name = "Img_col";
-            this.Img_col.ReadOnly = true;
-            this.Img_col.Width = 200;
+            this.goods_GV.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.goods_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.goods_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.image,
+            this.name,
+            this.cost});
+            this.goods_GV.Location = new System.Drawing.Point(25, 60);
+            this.goods_GV.Name = "goods_GV";
+            this.goods_GV.Size = new System.Drawing.Size(636, 352);
+            this.goods_GV.TabIndex = 3;
             // 
-            // Name_col
+            // id
             // 
-            this.Name_col.HeaderText = "Название";
-            this.Name_col.Name = "Name_col";
-            this.Name_col.ReadOnly = true;
-            this.Name_col.Width = 300;
+            this.id.DataPropertyName = "Id_good";
+            this.id.HeaderText = "id_good";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
             // 
-            // Cost_col
+            // image
             // 
-            this.Cost_col.HeaderText = "Цена";
-            this.Cost_col.Name = "Cost_col";
-            this.Cost_col.ReadOnly = true;
-            this.Cost_col.Width = 123;
+            this.image.DataPropertyName = "Img";
+            this.image.HeaderText = "Фото";
+            this.image.Name = "image";
+            this.image.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Наименование";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // cost
+            // 
+            this.cost.DataPropertyName = "Cost";
+            this.cost.HeaderText = "Цена";
+            this.cost.Name = "cost";
+            this.cost.ReadOnly = true;
             // 
             // Goods_adm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 450);
-            this.Controls.Add(this.Add_btn);
             this.Controls.Add(this.goods_GV);
+            this.Controls.Add(this.Add_btn);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Goods_adm";
@@ -160,10 +144,11 @@ namespace diplom
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem user_MenuItem;
         private System.Windows.Forms.ToolStripMenuItem note_MenuItem;
-        private System.Windows.Forms.DataGridView goods_GV;
         private System.Windows.Forms.Button Add_btn;
-        private System.Windows.Forms.DataGridViewImageColumn Img_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cost_col;
+        private DataGridView goods_GV;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn image;
+        private DataGridViewTextBoxColumn name;
+        private DataGridViewTextBoxColumn cost;
     }
 }

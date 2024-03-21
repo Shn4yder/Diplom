@@ -86,12 +86,6 @@
     <Compile Include="DiplomUI\Goods_adm.Designer.cs">
       <DependentUpon>Goods_adm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DiplomUI\Goods_emp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DiplomUI\Goods_emp.Designer.cs">
-      <DependentUpon>Goods_emp.cs</DependentUpon>
-    </Compile>
     <Compile Include="DiplomUI\Notes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DiplomUI\Goods_adm.resx">
       <DependentUpon>Goods_adm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiplomUI\Notes.resx">
+      <DependentUpon>Notes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DiplomUI\Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>

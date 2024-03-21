@@ -35,6 +35,13 @@
             this.good_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.note_GV = new System.Windows.Forms.DataGridView();
             this.Add_btn = new System.Windows.Forms.Button();
+            this.id_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.place = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.note_GV)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +80,14 @@
             // 
             this.note_GV.BackgroundColor = System.Drawing.SystemColors.Control;
             this.note_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.note_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_note,
+            this.name,
+            this.phone,
+            this.place,
+            this.comment,
+            this.date,
+            this.fio});
             this.note_GV.Location = new System.Drawing.Point(24, 38);
             this.note_GV.Name = "note_GV";
             this.note_GV.Size = new System.Drawing.Size(744, 371);
@@ -87,6 +102,55 @@
             this.Add_btn.Text = "+  Cоздать";
             this.Add_btn.UseVisualStyleBackColor = true;
             this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
+            // 
+            // id_note
+            // 
+            this.id_note.DataPropertyName = "Id_note";
+            this.id_note.HeaderText = "id";
+            this.id_note.Name = "id_note";
+            this.id_note.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Имя";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.DataPropertyName = "Phone";
+            this.phone.HeaderText = "Телефон";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            // 
+            // place
+            // 
+            this.place.DataPropertyName = "Place";
+            this.place.HeaderText = "Место/стол";
+            this.place.Name = "place";
+            this.place.ReadOnly = true;
+            // 
+            // comment
+            // 
+            this.comment.DataPropertyName = "Comment";
+            this.comment.HeaderText = "Комментарий";
+            this.comment.Name = "comment";
+            this.comment.ReadOnly = true;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "Date_add";
+            this.date.HeaderText = "Добавлено в ";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            // 
+            // fio
+            // 
+            this.fio.DataPropertyName = "Fio";
+            this.fio.HeaderText = "Пользователь";
+            this.fio.Name = "fio";
+            this.fio.ReadOnly = true;
             // 
             // Notes
             // 
@@ -115,5 +179,12 @@
         private System.Windows.Forms.ToolStripMenuItem good_MenuItem;
         private System.Windows.Forms.DataGridView note_GV;
         private System.Windows.Forms.Button Add_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_note;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn place;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fio;
     }
 }
