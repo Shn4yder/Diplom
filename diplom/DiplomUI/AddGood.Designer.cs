@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.name_tB = new System.Windows.Forms.TextBox();
             this.price_tB = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,11 +90,19 @@
             this.price_tB.Size = new System.Drawing.Size(89, 20);
             this.price_tB.TabIndex = 5;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(262, 210);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(129, 20);
+            this.textBox1.TabIndex = 6;
+            // 
             // AddGood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 256);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.price_tB);
             this.Controls.Add(this.name_tB);
             this.Controls.Add(this.label1);
@@ -116,6 +125,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox name_tB;
         private System.Windows.Forms.TextBox price_tB;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

@@ -39,6 +39,7 @@ namespace diplom
             this.image = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.img = new System.Windows.Forms.DataGridViewImageColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             this.SuspendLayout();
@@ -86,11 +87,13 @@ namespace diplom
             this.id,
             this.image,
             this.name,
-            this.cost});
+            this.cost,
+            this.img});
             this.goods_GV.Location = new System.Drawing.Point(25, 60);
             this.goods_GV.MultiSelect = false;
             this.goods_GV.Name = "goods_GV";
             this.goods_GV.RowHeadersVisible = false;
+            this.goods_GV.RowTemplate.Height = 110;
             this.goods_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.goods_GV.Size = new System.Drawing.Size(636, 352);
             this.goods_GV.TabIndex = 3;
@@ -109,6 +112,7 @@ namespace diplom
             this.image.HeaderText = "Фото";
             this.image.Name = "image";
             this.image.ReadOnly = true;
+            this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // name
             // 
@@ -123,6 +127,14 @@ namespace diplom
             this.cost.HeaderText = "Цена";
             this.cost.Name = "cost";
             this.cost.ReadOnly = true;
+            // 
+            // img
+            // 
+            this.img.DataPropertyName = "image";
+            this.img.HeaderText = "image";
+            this.img.Name = "img";
+            this.img.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Goods_adm
             // 
@@ -154,5 +166,6 @@ namespace diplom
         private DataGridViewTextBoxColumn image;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn cost;
+        private DataGridViewImageColumn img;
     }
 }

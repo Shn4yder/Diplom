@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace diplom.Models
 {
@@ -12,7 +13,8 @@ namespace diplom.Models
         public string Img { get; set; }
         public string Name {  get; set; }
         public double Cost { get; set; }
-        
+        public Image image { get; set; }
+
         public GoodModel() { }
  
     }

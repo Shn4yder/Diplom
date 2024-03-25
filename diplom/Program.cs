@@ -20,8 +20,8 @@ namespace diplom
 
             // создание папки для изображений товаров
 
-            ImageFolder folder = new ImageFolder();
-            folder.CreateFolder();
+            
+            ImageFolder.CreateFolder();
             Application.Run(new Authorization());
         }
     }

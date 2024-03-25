@@ -8,7 +8,7 @@ using System.Data.SQLite;
 using Dapper;
 using System.Configuration;
 using diplom.Models;
-
+using System.Drawing;
 namespace diplom
 {
     internal class DataManager
@@ -104,9 +104,16 @@ namespace diplom
         // Загрузка, вставка, удаление, изменение данных товаров
         public static List<GoodModel> LoadGoods()
         {
+            
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
                 var res = con.Query<GoodModel>("select * from Goods", new DynamicParameters());
+                foreach (GoodModel good in res.ToList())
+                {
+                    Image img = Image.FromFile(good.Img);   // получение изображения по пути из БД
+                    Bitmap resized_image = new Bitmap(img, new Size(180, 100));    // изменение размеров полученного изображения
+                    good.image = resized_image;
+                }
                 return res.ToList();
             }
         }

@@ -137,6 +137,7 @@
     <Compile Include="DiplomUI\Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\nophoto.png" />
     <EmbeddedResource Include="DiplomUI\AddGood.resx">
       <DependentUpon>AddGood.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,6 +182,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Content Include="DataBase.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

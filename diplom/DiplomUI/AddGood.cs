@@ -37,9 +37,6 @@ namespace diplom
                 Bitmap img = new Bitmap(image, new Size(150, 100));
                 pictureBox1.Image = img;
 
-                // перенести в save-button
-                /*ImageFolder folder = new ImageFolder();
-                folder.Saveimage(img);*/
             }
             catch (OutOfMemoryException ex)
             {
@@ -50,10 +47,10 @@ namespace diplom
 
         private void add_btn_Click(object sender, EventArgs e)
         {
-
+            string save_path = ImageFolder.Saveimage(pictureBox1.Image);
             GoodModel new_good = new GoodModel();
 
-            new_good.Img = "image2";
+            new_good.Img = save_path;
             new_good.Name = name_tB.Text;
             new_good.Cost = Convert.ToDouble(price_tB.Text);
 

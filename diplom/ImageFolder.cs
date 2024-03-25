@@ -12,12 +12,14 @@ namespace diplom
 {
     internal class ImageFolder
     {
-        string folderName = @"C:\Art_coworking\";
+        
 
         public ImageFolder() { }    
 
-        public void CreateFolder()    // метод, создающий папку для хранения изображений
+        public static void CreateFolder()    // метод, создающий папку для хранения изображений
         {
+            string folderName = @"C:\Art_coworking\"; 
+
             DirectoryInfo folder = new DirectoryInfo(folderName);
             if (!folder.Exists)
             {
@@ -26,21 +28,37 @@ namespace diplom
             }
         }
 
-        public void Saveimage(System.Drawing.Image image) 
+        public static string Saveimage(System.Drawing.Image image) 
         {
-            image.Save(GiveImgName());
+            CreateFolder();
+            string save_path = GiveImgName();
+            image.Save(save_path);
+            return save_path;
         }
 
-        public string GiveImgName()    // создание уникального имени для изображения
+        public static string GiveImgName()    // создание уникального имени для изображения
         {
-            string number = new DirectoryInfo(folderName).GetFiles().Length.ToString();
-            string path = folderName + "image" + (Convert.ToInt16(number) + 1).ToString() + ".jpg";
-            return path;
+            string folderName = @"C:\Art_coworking\";
+            try
+            {
+                string number = new DirectoryInfo(folderName).GetFiles().Length.ToString();
+                string path = folderName + "image" + (Convert.ToInt16(number) + 1).ToString() + ".jpg";
+                return path;
+            }
+            catch (Exception ex) 
+            { 
+                MessageBox.Show(ex.Message);
+                return "";
+            }
         }
 
-        public void DeleteImage(string img_name)
+        public static void DeleteImage(string img_name)
         {
+            string folderName = @"C:\Art_coworking\";
             string path = folderName + img_name;
+
+            try { File.Delete(path); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
             File.Delete(path);
         }
     }
