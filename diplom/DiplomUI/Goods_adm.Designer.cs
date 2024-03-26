@@ -37,9 +37,9 @@ namespace diplom
             this.goods_GV = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.image = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.img = new System.Windows.Forms.DataGridViewImageColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.img = new System.Windows.Forms.DataGridViewImageColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             this.SuspendLayout();
@@ -86,9 +86,9 @@ namespace diplom
             this.goods_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.image,
+            this.img,
             this.name,
-            this.cost,
-            this.img});
+            this.cost});
             this.goods_GV.Location = new System.Drawing.Point(25, 60);
             this.goods_GV.MultiSelect = false;
             this.goods_GV.Name = "goods_GV";
@@ -114,6 +114,15 @@ namespace diplom
             this.image.ReadOnly = true;
             this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // img
+            // 
+            this.img.DataPropertyName = "image";
+            this.img.HeaderText = "image";
+            this.img.Name = "img";
+            this.img.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.img.Width = 140;
+            // 
             // name
             // 
             this.name.DataPropertyName = "Name";
@@ -127,14 +136,6 @@ namespace diplom
             this.cost.HeaderText = "Цена";
             this.cost.Name = "cost";
             this.cost.ReadOnly = true;
-            // 
-            // img
-            // 
-            this.img.DataPropertyName = "image";
-            this.img.HeaderText = "image";
-            this.img.Name = "img";
-            this.img.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // Goods_adm
             // 
@@ -164,8 +165,8 @@ namespace diplom
         private DataGridView goods_GV;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn image;
+        private DataGridViewImageColumn img;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn cost;
-        private DataGridViewImageColumn img;
     }
 }

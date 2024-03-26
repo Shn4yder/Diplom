@@ -9,6 +9,7 @@ using Dapper;
 using System.Configuration;
 using diplom.Models;
 using System.Drawing;
+using diplom.Properties;
 namespace diplom
 {
     internal class DataManager
@@ -110,9 +111,17 @@ namespace diplom
                 var res = con.Query<GoodModel>("select * from Goods", new DynamicParameters());
                 foreach (GoodModel good in res.ToList())
                 {
-                    Image img = Image.FromFile(good.Img);   // получение изображения по пути из БД
-                    Bitmap resized_image = new Bitmap(img, new Size(180, 100));    // изменение размеров полученного изображения
-                    good.image = resized_image;
+                    try
+                    {
+                        Image img = Image.FromFile(good.Img);   // получение изображения по пути из БД
+                        Bitmap resized_image = new Bitmap(img, new Size(130, 100));    // изменение размеров полученного изображения
+                        good.image = resized_image;
+                    }
+                    catch
+                    {
+                        good.image = Resources.default_photo;
+                    }
+                    
                 }
                 return res.ToList();
             }

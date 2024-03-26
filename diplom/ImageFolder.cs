@@ -32,7 +32,16 @@ namespace diplom
         {
             CreateFolder();
             string save_path = GiveImgName();
-            image.Save(save_path);
+
+            if (image != null)
+            {
+                image.Save(save_path);
+            }
+            else
+            {
+                save_path = "no save path or nothing to save";
+            }
+            
             return save_path;
         }
 

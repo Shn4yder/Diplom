@@ -63,9 +63,9 @@ namespace diplom.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nophoto {
+        internal static System.Drawing.Bitmap default_photo {
             get {
-                object obj = ResourceManager.GetObject("nophoto", resourceCulture);
+                object obj = ResourceManager.GetObject("default_photo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
