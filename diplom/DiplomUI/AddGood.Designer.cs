@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.image_pB = new System.Windows.Forms.PictureBox();
             this.add_image_btn = new System.Windows.Forms.Button();
             this.add_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.name_tB = new System.Windows.Forms.TextBox();
             this.price_tB = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.image_pB)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // image_pB
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(225, 80);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 100);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.image_pB.Location = new System.Drawing.Point(224, 96);
+            this.image_pB.Name = "image_pB";
+            this.image_pB.Size = new System.Drawing.Size(150, 100);
+            this.image_pB.TabIndex = 0;
+            this.image_pB.TabStop = false;
             // 
             // add_image_btn
             // 
@@ -78,40 +79,52 @@
             // 
             // name_tB
             // 
-            this.name_tB.Location = new System.Drawing.Point(29, 54);
+            this.name_tB.Location = new System.Drawing.Point(29, 70);
             this.name_tB.Name = "name_tB";
             this.name_tB.Size = new System.Drawing.Size(362, 20);
             this.name_tB.TabIndex = 4;
             // 
             // price_tB
             // 
-            this.price_tB.Location = new System.Drawing.Point(29, 96);
+            this.price_tB.Location = new System.Drawing.Point(76, 96);
             this.price_tB.Name = "price_tB";
             this.price_tB.Size = new System.Drawing.Size(89, 20);
             this.price_tB.TabIndex = 5;
             // 
-            // textBox1
+            // label2
             // 
-            this.textBox1.Location = new System.Drawing.Point(262, 210);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 20);
-            this.textBox1.TabIndex = 6;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(26, 99);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Цена";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(29, 51);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Наименование";
             // 
             // AddGood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(403, 256);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.price_tB);
             this.Controls.Add(this.name_tB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.add_btn);
             this.Controls.Add(this.add_image_btn);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.image_pB);
             this.Name = "AddGood";
             this.Text = "Создать товар";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.image_pB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -119,13 +132,14 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox image_pB;
         private System.Windows.Forms.Button add_image_btn;
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox name_tB;
         private System.Windows.Forms.TextBox price_tB;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

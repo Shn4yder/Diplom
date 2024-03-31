@@ -51,7 +51,7 @@ namespace diplom
             this.note_MenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(683, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(393, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -71,7 +71,7 @@ namespace diplom
             // 
             // Add_btn
             // 
-            this.Add_btn.Location = new System.Drawing.Point(293, 418);
+            this.Add_btn.Location = new System.Drawing.Point(157, 418);
             this.Add_btn.Name = "Add_btn";
             this.Add_btn.Size = new System.Drawing.Size(75, 23);
             this.Add_btn.TabIndex = 2;
@@ -95,7 +95,7 @@ namespace diplom
             this.goods_GV.RowHeadersVisible = false;
             this.goods_GV.RowTemplate.Height = 110;
             this.goods_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.goods_GV.Size = new System.Drawing.Size(636, 352);
+            this.goods_GV.Size = new System.Drawing.Size(344, 352);
             this.goods_GV.TabIndex = 3;
             this.goods_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.goods_GV_CellDoubleClick);
             // 
@@ -105,6 +105,7 @@ namespace diplom
             this.id.HeaderText = "id_good";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // image
             // 
@@ -113,11 +114,13 @@ namespace diplom
             this.image.Name = "image";
             this.image.ReadOnly = true;
             this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.image.Visible = false;
             // 
             // img
             // 
             this.img.DataPropertyName = "image";
             this.img.HeaderText = "image";
+            this.img.Image = global::diplom.Properties.Resources.default_photo;
             this.img.Name = "img";
             this.img.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -141,7 +144,7 @@ namespace diplom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 450);
+            this.ClientSize = new System.Drawing.Size(393, 450);
             this.Controls.Add(this.goods_GV);
             this.Controls.Add(this.Add_btn);
             this.Controls.Add(this.menuStrip1);

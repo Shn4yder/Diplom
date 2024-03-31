@@ -103,6 +103,7 @@ namespace diplom
 
 
         // Загрузка, вставка, удаление, изменение данных товаров
+
         public static List<GoodModel> LoadGoods()
         {
             
@@ -148,6 +149,20 @@ namespace diplom
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
                 var res = con.Query<GoodModel>("select * from Goods where id_good=" + id, new DynamicParameters());
+                foreach (GoodModel good in res.ToList())
+                {
+                    try
+                    {
+                        Image img = Image.FromFile(good.Img);   // получение изображения по пути из БД
+                        //Bitmap resized_image = new Bitmap(img, new Size(130, 100));    // изменение размеров полученного изображения
+                        good.image = img;
+                    }
+                    catch 
+                    {
+                        good.image = Resources.default_photo;
+                    }
+
+                }
                 return res.ToList();
             }
         }

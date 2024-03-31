@@ -20,6 +20,7 @@ namespace diplom
             InitializeComponent();
             this.id_order = id_order;
             GetOrder();
+            order_timer.Start();
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
@@ -38,6 +39,9 @@ namespace diplom
             name_tB.Text = order[0].Name.ToString();
             ppl_UpDown.Value = order[0].Counter;
             comment_tB.Text = order[0].Comment.ToString();
+            numb_lbl.Text = numb_lbl.Text + order[0].Number.ToString(); 
+            var time_duration = (DateTime.Now - Convert.ToDateTime(order[0].Time_start)).Duration();
+            time_lbl.Text = ($"{time_duration.Days} дн. {time_duration.Minutes} мин. {time_duration.Seconds} с.");
 
         }
 
@@ -60,6 +64,14 @@ namespace diplom
             Orders form = new Orders();
             form.Show();
             this.Close();
+        }
+
+        private void order_timer_Tick(object sender, EventArgs e)
+        {
+            TimeSpan second = new TimeSpan(10000000);
+            var time_duration = (DateTime.Now - Convert.ToDateTime(order[0].Time_start)).Duration();
+            time_duration.Add(second);
+            time_lbl.Text = ($"{time_duration.Days} дн. {time_duration.Minutes} мин. {time_duration.Seconds} с.");
         }
     }
 }

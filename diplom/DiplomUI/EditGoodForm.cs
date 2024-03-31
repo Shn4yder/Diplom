@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
+using Image = System.Drawing.Image;
 
 namespace diplom
 {
@@ -29,6 +31,8 @@ namespace diplom
             name_tB.Text = good[0].Name.ToString();
             img_tB.Text = good[0].Img.ToString();
             cost_tB.Text = good[0].Cost.ToString();
+            image_pB.Image = good[0].image;
+
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
@@ -46,10 +50,12 @@ namespace diplom
             GoodModel edit_good = new GoodModel();
 
             edit_good.Name = name_tB.Text;
-            edit_good.Img = img_tB.Text;
+            edit_good.Img = ImageFolder.Saveimage(image_pB.Image);
             edit_good.Cost = Convert.ToDouble(cost_tB.Text);
 
+
             DataManager.UpdateGood(edit_good, id_good);
+
         }
 
         private void edit_btn_Click(object sender, EventArgs e)
@@ -59,6 +65,29 @@ namespace diplom
             Goods_adm form = new Goods_adm();
             form.Show();
             this.Close();
+        }
+
+        private void img_btn_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openDialog = new OpenFileDialog();
+            openDialog.Filter = "Файлы изображений|*.bmp;*.png;*.jpg";
+
+            if (openDialog.ShowDialog() != DialogResult.OK)
+                return;
+
+            try
+            {
+                // вывод картинки
+
+                Image image = Image.FromFile(openDialog.FileName);
+                Bitmap img = new Bitmap(image, new Size(150, 100));
+                image_pB.Image = img;
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка чтения изображения");
+                return;
+            }
         }
     }
 }

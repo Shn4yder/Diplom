@@ -36,6 +36,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.delete_btn = new System.Windows.Forms.Button();
             this.edit_btn = new System.Windows.Forms.Button();
+            this.image_pB = new System.Windows.Forms.PictureBox();
+            this.img_btn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.image_pB)).BeginInit();
             this.SuspendLayout();
             // 
             // name_tB
@@ -88,7 +91,7 @@
             // 
             // delete_btn
             // 
-            this.delete_btn.Location = new System.Drawing.Point(20, 135);
+            this.delete_btn.Location = new System.Drawing.Point(20, 258);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(75, 23);
             this.delete_btn.TabIndex = 6;
@@ -98,7 +101,7 @@
             // 
             // edit_btn
             // 
-            this.edit_btn.Location = new System.Drawing.Point(204, 135);
+            this.edit_btn.Location = new System.Drawing.Point(204, 258);
             this.edit_btn.Name = "edit_btn";
             this.edit_btn.Size = new System.Drawing.Size(138, 23);
             this.edit_btn.TabIndex = 7;
@@ -106,11 +109,32 @@
             this.edit_btn.UseVisualStyleBackColor = true;
             this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
+            // image_pB
+            // 
+            this.image_pB.Image = global::diplom.Properties.Resources.default_photo;
+            this.image_pB.Location = new System.Drawing.Point(197, 130);
+            this.image_pB.Name = "image_pB";
+            this.image_pB.Size = new System.Drawing.Size(131, 101);
+            this.image_pB.TabIndex = 8;
+            this.image_pB.TabStop = false;
+            // 
+            // img_btn
+            // 
+            this.img_btn.Location = new System.Drawing.Point(20, 198);
+            this.img_btn.Name = "img_btn";
+            this.img_btn.Size = new System.Drawing.Size(100, 23);
+            this.img_btn.TabIndex = 9;
+            this.img_btn.Text = "Выбрать фото";
+            this.img_btn.UseVisualStyleBackColor = true;
+            this.img_btn.Click += new System.EventHandler(this.img_btn_Click);
+            // 
             // EditGoodForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(354, 179);
+            this.ClientSize = new System.Drawing.Size(354, 306);
+            this.Controls.Add(this.img_btn);
+            this.Controls.Add(this.image_pB);
             this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.label3);
@@ -120,7 +144,8 @@
             this.Controls.Add(this.img_tB);
             this.Controls.Add(this.name_tB);
             this.Name = "EditGoodForm";
-            this.Text = "EditGoodForm";
+            this.Text = "Редактирование";
+            ((System.ComponentModel.ISupportInitialize)(this.image_pB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,5 +161,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.Button edit_btn;
+        private System.Windows.Forms.PictureBox image_pB;
+        private System.Windows.Forms.Button img_btn;
     }
 }
