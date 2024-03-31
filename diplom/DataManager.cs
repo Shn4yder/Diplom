@@ -219,6 +219,25 @@ namespace diplom
         }
 
 
+        // Вставка, удаление данных корзины заказа
+        public static void AddGoodInOrder(CartModel cart)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Execute("insert into Cart(id_order, id_good, quantity) values(@Id_order, @Id_good, @Quantity)", cart);
+            }
+        }
+
+        public static List<string> LoadCart()    // получение данных о конкретном заказе
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                var res = con.Query<string>("select id_cart, Goods.name, Goods.cost from Cart, Goods where Cart.id_good = Goods.id_good", new DynamicParameters());
+                return res.ToList();
+            }
+        }
+
+
 
         private static string LoadConnectionString(string id = "database")    // строка подключения
         {

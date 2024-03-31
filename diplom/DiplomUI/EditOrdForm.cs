@@ -14,6 +14,7 @@ namespace diplom
     public partial class EditOrdForm : Form
     {
         List<OrderModel> order = new List<OrderModel>();
+        List<GoodModel> goods = new List<GoodModel>();
         string id_order;
         public EditOrdForm(string id_order)
         {
@@ -21,6 +22,8 @@ namespace diplom
             this.id_order = id_order;
             GetOrder();
             order_timer.Start();
+            goods = DataManager.LoadGoods();
+            goods_GV.DataSource = goods;
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
@@ -72,6 +75,17 @@ namespace diplom
             var time_duration = (DateTime.Now - Convert.ToDateTime(order[0].Time_start)).Duration();
             time_duration.Add(second);
             time_lbl.Text = ($"{time_duration.Days} дн. {time_duration.Minutes} мин. {time_duration.Seconds} с.");
+        }
+
+        private void goods_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            CartModel cart = new CartModel();
+            cart.Id_order = Convert.ToInt16(id_order);
+            cart.Id_good = Convert.ToInt16(goods_GV.CurrentRow.Cells[0].Value.ToString());
+            cart.Quantity = 1;
+
+            DataManager.AddGoodInOrder(cart);
+            cart_GV.DataSource = DataManager.LoadCart();
         }
     }
 }
