@@ -41,15 +41,20 @@
             this.order_timer = new System.Windows.Forms.Timer(this.components);
             this.time_lbl = new System.Windows.Forms.Label();
             this.goods_GV = new System.Windows.Forms.DataGridView();
+            this.cart_GV = new System.Windows.Forms.DataGridView();
             this.id_good = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.image_path = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.photo = new System.Windows.Forms.DataGridViewImageColumn();
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cart_GV = new System.Windows.Forms.DataGridView();
             this.id_cart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.good_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_good = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idgood = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cart_amount_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ppl_UpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cart_GV)).BeginInit();
@@ -89,7 +94,7 @@
             // 
             // delete_btn
             // 
-            this.delete_btn.Location = new System.Drawing.Point(12, 328);
+            this.delete_btn.Location = new System.Drawing.Point(12, 337);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(75, 23);
             this.delete_btn.TabIndex = 3;
@@ -99,7 +104,7 @@
             // 
             // edit_btn
             // 
-            this.edit_btn.Location = new System.Drawing.Point(336, 328);
+            this.edit_btn.Location = new System.Drawing.Point(356, 338);
             this.edit_btn.Name = "edit_btn";
             this.edit_btn.Size = new System.Drawing.Size(133, 23);
             this.edit_btn.TabIndex = 4;
@@ -176,12 +181,34 @@
             this.goods_GV.TabIndex = 10;
             this.goods_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.goods_GV_CellDoubleClick);
             // 
+            // cart_GV
+            // 
+            this.cart_GV.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cart_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cart_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_cart,
+            this.name_good,
+            this.price,
+            this.quantity,
+            this.id,
+            this.idgood});
+            this.cart_GV.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cart_GV.Location = new System.Drawing.Point(256, 154);
+            this.cart_GV.Name = "cart_GV";
+            this.cart_GV.RowHeadersVisible = false;
+            this.cart_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cart_GV.Size = new System.Drawing.Size(240, 144);
+            this.cart_GV.TabIndex = 11;
+            this.cart_GV.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.cart_GV_CellMouseDoubleClick);
+            // 
             // id_good
             // 
             this.id_good.DataPropertyName = "Id_good";
             this.id_good.HeaderText = "id";
             this.id_good.Name = "id_good";
             this.id_good.ReadOnly = true;
+            this.id_good.Visible = false;
+            this.id_good.Width = 50;
             // 
             // name
             // 
@@ -215,43 +242,79 @@
             this.Cost.ReadOnly = true;
             this.Cost.Width = 50;
             // 
-            // cart_GV
-            // 
-            this.cart_GV.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cart_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cart_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_cart,
-            this.good_name,
-            this.price});
-            this.cart_GV.GridColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cart_GV.Location = new System.Drawing.Point(256, 154);
-            this.cart_GV.Name = "cart_GV";
-            this.cart_GV.Size = new System.Drawing.Size(240, 144);
-            this.cart_GV.TabIndex = 11;
-            // 
             // id_cart
             // 
+            this.id_cart.DataPropertyName = "Id_cart";
             this.id_cart.HeaderText = "cart";
             this.id_cart.Name = "id_cart";
             this.id_cart.ReadOnly = true;
+            this.id_cart.Visible = false;
+            this.id_cart.Width = 150;
             // 
-            // good_name
+            // name_good
             // 
-            this.good_name.HeaderText = "Наименование";
-            this.good_name.Name = "good_name";
-            this.good_name.ReadOnly = true;
+            this.name_good.DataPropertyName = "Name";
+            this.name_good.HeaderText = "Наименование";
+            this.name_good.Name = "name_good";
+            this.name_good.ReadOnly = true;
+            this.name_good.Width = 150;
             // 
             // price
             // 
+            this.price.DataPropertyName = "Cost";
             this.price.HeaderText = "Цена";
             this.price.Name = "price";
             this.price.ReadOnly = true;
+            this.price.Width = 40;
+            // 
+            // quantity
+            // 
+            this.quantity.DataPropertyName = "Quantity";
+            this.quantity.HeaderText = "Кол-во";
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            this.quantity.Width = 45;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id_order";
+            this.id.HeaderText = "order";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // idgood
+            // 
+            this.idgood.DataPropertyName = "Id_good";
+            this.idgood.HeaderText = "good";
+            this.idgood.Name = "idgood";
+            this.idgood.ReadOnly = true;
+            this.idgood.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(253, 311);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "ИТОГО:";
+            // 
+            // cart_amount_lbl
+            // 
+            this.cart_amount_lbl.AutoSize = true;
+            this.cart_amount_lbl.Location = new System.Drawing.Point(322, 311);
+            this.cart_amount_lbl.Name = "cart_amount_lbl";
+            this.cart_amount_lbl.Size = new System.Drawing.Size(0, 13);
+            this.cart_amount_lbl.TabIndex = 13;
             // 
             // EditOrdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 374);
+            this.ClientSize = new System.Drawing.Size(508, 372);
+            this.Controls.Add(this.cart_amount_lbl);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.cart_GV);
             this.Controls.Add(this.goods_GV);
             this.Controls.Add(this.time_lbl);
@@ -288,14 +351,19 @@
         private System.Windows.Forms.Timer order_timer;
         private System.Windows.Forms.Label time_lbl;
         private System.Windows.Forms.DataGridView goods_GV;
+        private System.Windows.Forms.DataGridView cart_GV;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_good;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn image_path;
         private System.Windows.Forms.DataGridViewImageColumn photo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
-        private System.Windows.Forms.DataGridView cart_GV;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_cart;
-        private System.Windows.Forms.DataGridViewTextBoxColumn good_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_good;
         private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idgood;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label cart_amount_lbl;
     }
 }

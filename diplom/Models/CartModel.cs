@@ -12,6 +12,8 @@ namespace diplom.Models
         public int Id_order {  get; set; }
         public int Id_good { get; set; }
         public int Quantity { get; set; }
+        public string Name { get; set; }    
+        public double Cost { get; set; }    
 
         public CartModel() { }
     }

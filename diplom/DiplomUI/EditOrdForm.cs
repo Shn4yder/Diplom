@@ -24,6 +24,9 @@ namespace diplom
             order_timer.Start();
             goods = DataManager.LoadGoods();
             goods_GV.DataSource = goods;
+            cart_GV.DataSource = DataManager.LoadCart(id_order);
+            cart_amount_lbl.Text = AmountCart().ToString();
+
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
@@ -85,7 +88,25 @@ namespace diplom
             cart.Quantity = 1;
 
             DataManager.AddGoodInOrder(cart);
-            cart_GV.DataSource = DataManager.LoadCart();
+            cart_GV.DataSource = DataManager.LoadCart(id_order);
+        }
+
+        private void cart_GV_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string id = cart_GV.CurrentRow.Cells[0].Value.ToString();
+            DataManager.DeleteGoodCart(id);
+            cart_GV.DataSource = DataManager.LoadCart(id_order);
+            cart_amount_lbl.Text = AmountCart().ToString();
+        }
+
+        private double AmountCart() 
+        {
+            double total = 0;
+            foreach (DataGridViewRow row in cart_GV.Rows)
+            {
+                total += Convert.ToDouble(row.Cells[1].Value) * Convert.ToDouble(row.Cells[2].Value);
+            }
+            return total;
         }
     }
 }

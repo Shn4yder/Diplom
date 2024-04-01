@@ -193,6 +193,7 @@ namespace diplom
                 con.Execute("insert into Orders(number, name, counter, time_start, comment, id_user) values(@Number, @Name, @Counter, @Time_start, @Comment, @Id_user)", order);
             }
         }
+
         public static void DeleteOrder(string id)
         {
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
@@ -228,15 +229,31 @@ namespace diplom
             }
         }
 
-        public static List<string> LoadCart()    // получение данных о конкретном заказе
+        public static List<CartModel> LoadCart(string id)   
         {
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                var res = con.Query<string>("select id_cart, Goods.name, Goods.cost from Cart, Goods where Cart.id_good = Goods.id_good", new DynamicParameters());
+                var res = con.Query<CartModel>("select id_cart, id_order, Cart.id_good AS id_good, quantity, Goods.name AS name, Goods.cost AS cost from Cart, Goods where Cart.id_good = Goods.id_good AND id_order=" + id, new DynamicParameters());
                 return res.ToList();
             }
         }
 
+        public static void DeleteGoodCart(string id)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Execute("delete from Cart where id_cart=" + id);
+            }
+        }
+
+        public static string CartAmount(string id)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                var res = con.Query("select sum(cost * quantity) from Goods, Cart where Goods.id_good = Cart.id_good and id_order = " + id, new DynamicParameters());
+                return res.ToString();
+            }
+        }
 
 
         private static string LoadConnectionString(string id = "database")    // строка подключения

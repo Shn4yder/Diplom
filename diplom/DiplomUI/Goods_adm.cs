@@ -1,4 +1,5 @@
 ﻿using diplom.Models;
+using diplom.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
