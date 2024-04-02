@@ -26,16 +26,6 @@ namespace diplom
             goods_GV.DataSource = goods;
             cart_GV.DataSource = DataManager.LoadCart(id_order);
             cart_amount_lbl.Text = AmountCart().ToString();
-
-        }
-
-        private void delete_btn_Click(object sender, EventArgs e)
-        {
-            DataManager.DeleteOrder(id_order);
-
-            Orders form = new Orders();
-            form.Show();
-            this.Close();
         }
 
         private void GetOrder()
@@ -47,8 +37,7 @@ namespace diplom
             comment_tB.Text = order[0].Comment.ToString();
             numb_lbl.Text = numb_lbl.Text + order[0].Number.ToString(); 
             var time_duration = (DateTime.Now - Convert.ToDateTime(order[0].Time_start)).Duration();
-            time_lbl.Text = ($"{time_duration.Days} дн. {time_duration.Minutes} мин. {time_duration.Seconds} с.");
-
+            time_lbl.Text = ($"{time_duration.Hours} ч. {time_duration.Minutes} мин. {time_duration.Seconds} с.");
         }
 
         private void UpdateData()
@@ -77,7 +66,10 @@ namespace diplom
             TimeSpan second = new TimeSpan(10000000);
             var time_duration = (DateTime.Now - Convert.ToDateTime(order[0].Time_start)).Duration();
             time_duration.Add(second);
-            time_lbl.Text = ($"{time_duration.Days} дн. {time_duration.Minutes} мин. {time_duration.Seconds} с.");
+            time_lbl.Text = ($"{time_duration.Hours} ч. {time_duration.Minutes} мин. {time_duration.Seconds} с.");
+            double total_time = DataManager.LoadTarif() * (time_duration.Minutes + time_duration.Hours * 60) * Convert.ToDouble(ppl_UpDown.Value);
+            if (time_checkB.Checked) { total_time = 0; }
+            time_amount.Text = (total_time + AmountCart()).ToString();
         }
 
         private void goods_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -89,6 +81,7 @@ namespace diplom
 
             DataManager.AddGoodInOrder(cart);
             cart_GV.DataSource = DataManager.LoadCart(id_order);
+            cart_amount_lbl.Text = AmountCart().ToString();
         }
 
         private void cart_GV_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -104,9 +97,55 @@ namespace diplom
             double total = 0;
             foreach (DataGridViewRow row in cart_GV.Rows)
             {
-                total += Convert.ToDouble(row.Cells[1].Value) * Convert.ToDouble(row.Cells[2].Value);
+                total += Convert.ToDouble(row.Cells[5].Value) * Convert.ToDouble(row.Cells[3].Value);
             }
             return total;
+        }
+
+        private void pay_btn_Click(object sender, EventArgs e)
+        {
+            OrderPay pay = new OrderPay();
+
+            pay.Date_pay = DateTime.Now;
+            pay.Id_order = Convert.ToInt32(id_order);
+            pay.Payment = pay_cB.Text;
+
+            if (pay_cB.SelectedIndex != 2)
+            {
+                pay.Amount = Convert.ToDouble(time_amount.Text);
+                DataManager.AddPay(pay);
+            }
+            else
+            {
+                pay.Payment = "безналичные";
+                pay.Amount = Convert.ToDouble(nenal_tB.Text);
+                DataManager.AddPay(pay);
+
+                pay.Payment = "наличные";
+                pay.Amount = Convert.ToDouble(nal_tB.Text);
+                DataManager.AddPay(pay);
+            }
+
+            DataManager.DeleteOrder(id_order);
+
+            this.Close();
+            Orders form = new Orders();
+            form.Show(); 
+        }
+
+        private void pay_cB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (pay_cB.SelectedIndex == 2)
+            {
+                nal_tB.Visible = true;
+                nenal_tB.Visible = true;
+            }
+            else
+            {
+                nal_tB.Visible = false;
+                nenal_tB.Visible = false;
+            }
+            
         }
     }
 }

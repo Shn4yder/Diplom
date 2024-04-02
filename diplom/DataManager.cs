@@ -246,14 +246,28 @@ namespace diplom
             }
         }
 
-        public static string CartAmount(string id)
+        public static double LoadTarif()    // получение стоимости тарифа
         {
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                var res = con.Query("select sum(cost * quantity) from Goods, Cart where Goods.id_good = Cart.id_good and id_order = " + id, new DynamicParameters());
-                return res.ToString();
+                var res = con.Query<GoodModel>("select * from Goods where name = 'тариф руб/мин'", new DynamicParameters());
+                List<GoodModel> good = res.ToList();
+
+                double tarif = good[0].Cost;
+                return tarif;   
             }
         }
+
+
+        public static void AddPay(OrderPay pay)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Execute("insert into OrderPay(amount, payment, date_pay, id_order) values(@Amount, @Payment, @Date_pay, @Id_order)", pay);
+            }
+        }
+
+
 
 
         private static string LoadConnectionString(string id = "database")    // строка подключения

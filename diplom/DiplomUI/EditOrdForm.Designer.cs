@@ -32,7 +32,6 @@
             this.name_tB = new System.Windows.Forms.TextBox();
             this.ppl_UpDown = new System.Windows.Forms.NumericUpDown();
             this.comment_tB = new System.Windows.Forms.RichTextBox();
-            this.delete_btn = new System.Windows.Forms.Button();
             this.edit_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,12 +40,12 @@
             this.order_timer = new System.Windows.Forms.Timer(this.components);
             this.time_lbl = new System.Windows.Forms.Label();
             this.goods_GV = new System.Windows.Forms.DataGridView();
-            this.cart_GV = new System.Windows.Forms.DataGridView();
             this.id_good = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.image_path = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.photo = new System.Windows.Forms.DataGridViewImageColumn();
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cart_GV = new System.Windows.Forms.DataGridView();
             this.id_cart = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name_good = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +54,13 @@
             this.idgood = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.cart_amount_lbl = new System.Windows.Forms.Label();
+            this.pay_cB = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.time_amount = new System.Windows.Forms.Label();
+            this.time_checkB = new System.Windows.Forms.CheckBox();
+            this.pay_btn = new System.Windows.Forms.Button();
+            this.nal_tB = new System.Windows.Forms.TextBox();
+            this.nenal_tB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.ppl_UpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cart_GV)).BeginInit();
@@ -92,19 +98,9 @@
             this.comment_tB.TabIndex = 2;
             this.comment_tB.Text = "";
             // 
-            // delete_btn
-            // 
-            this.delete_btn.Location = new System.Drawing.Point(12, 337);
-            this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(75, 23);
-            this.delete_btn.TabIndex = 3;
-            this.delete_btn.Text = "Удалить";
-            this.delete_btn.UseVisualStyleBackColor = true;
-            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
-            // 
             // edit_btn
             // 
-            this.edit_btn.Location = new System.Drawing.Point(356, 338);
+            this.edit_btn.Location = new System.Drawing.Point(363, 385);
             this.edit_btn.Name = "edit_btn";
             this.edit_btn.Size = new System.Drawing.Size(133, 23);
             this.edit_btn.TabIndex = 4;
@@ -181,26 +177,6 @@
             this.goods_GV.TabIndex = 10;
             this.goods_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.goods_GV_CellDoubleClick);
             // 
-            // cart_GV
-            // 
-            this.cart_GV.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cart_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.cart_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_cart,
-            this.name_good,
-            this.price,
-            this.quantity,
-            this.id,
-            this.idgood});
-            this.cart_GV.GridColor = System.Drawing.SystemColors.ControlLightLight;
-            this.cart_GV.Location = new System.Drawing.Point(256, 154);
-            this.cart_GV.Name = "cart_GV";
-            this.cart_GV.RowHeadersVisible = false;
-            this.cart_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.cart_GV.Size = new System.Drawing.Size(240, 144);
-            this.cart_GV.TabIndex = 11;
-            this.cart_GV.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.cart_GV_CellMouseDoubleClick);
-            // 
             // id_good
             // 
             this.id_good.DataPropertyName = "Id_good";
@@ -241,6 +217,26 @@
             this.Cost.Name = "Cost";
             this.Cost.ReadOnly = true;
             this.Cost.Width = 50;
+            // 
+            // cart_GV
+            // 
+            this.cart_GV.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cart_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cart_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_cart,
+            this.name_good,
+            this.price,
+            this.quantity,
+            this.id,
+            this.idgood});
+            this.cart_GV.GridColor = System.Drawing.SystemColors.ControlLightLight;
+            this.cart_GV.Location = new System.Drawing.Point(256, 154);
+            this.cart_GV.Name = "cart_GV";
+            this.cart_GV.RowHeadersVisible = false;
+            this.cart_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cart_GV.Size = new System.Drawing.Size(240, 144);
+            this.cart_GV.TabIndex = 11;
+            this.cart_GV.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.cart_GV_CellMouseDoubleClick);
             // 
             // id_cart
             // 
@@ -294,25 +290,98 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(253, 311);
+            this.label4.Location = new System.Drawing.Point(253, 313);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.Size = new System.Drawing.Size(107, 13);
             this.label4.TabIndex = 12;
-            this.label4.Text = "ИТОГО:";
+            this.label4.Text = "ИТОГО по корзине:";
             // 
             // cart_amount_lbl
             // 
             this.cart_amount_lbl.AutoSize = true;
-            this.cart_amount_lbl.Location = new System.Drawing.Point(322, 311);
+            this.cart_amount_lbl.Location = new System.Drawing.Point(375, 313);
             this.cart_amount_lbl.Name = "cart_amount_lbl";
             this.cart_amount_lbl.Size = new System.Drawing.Size(0, 13);
             this.cart_amount_lbl.TabIndex = 13;
+            // 
+            // pay_cB
+            // 
+            this.pay_cB.FormattingEnabled = true;
+            this.pay_cB.Items.AddRange(new object[] {
+            "безналичные",
+            "наличные",
+            "смешанная"});
+            this.pay_cB.Location = new System.Drawing.Point(13, 305);
+            this.pay_cB.Name = "pay_cB";
+            this.pay_cB.Size = new System.Drawing.Size(163, 21);
+            this.pay_cB.TabIndex = 14;
+            this.pay_cB.SelectedIndexChanged += new System.EventHandler(this.pay_cB_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(253, 336);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "К оплате:";
+            // 
+            // time_amount
+            // 
+            this.time_amount.AutoSize = true;
+            this.time_amount.Location = new System.Drawing.Point(331, 336);
+            this.time_amount.Name = "time_amount";
+            this.time_amount.Size = new System.Drawing.Size(0, 13);
+            this.time_amount.TabIndex = 16;
+            // 
+            // time_checkB
+            // 
+            this.time_checkB.AutoSize = true;
+            this.time_checkB.Location = new System.Drawing.Point(12, 332);
+            this.time_checkB.Name = "time_checkB";
+            this.time_checkB.Size = new System.Drawing.Size(130, 17);
+            this.time_checkB.TabIndex = 17;
+            this.time_checkB.Text = "Не учитывать время";
+            this.time_checkB.UseVisualStyleBackColor = true;
+            // 
+            // pay_btn
+            // 
+            this.pay_btn.Location = new System.Drawing.Point(12, 385);
+            this.pay_btn.Name = "pay_btn";
+            this.pay_btn.Size = new System.Drawing.Size(75, 23);
+            this.pay_btn.TabIndex = 18;
+            this.pay_btn.Text = "Завершить";
+            this.pay_btn.UseVisualStyleBackColor = true;
+            this.pay_btn.Click += new System.EventHandler(this.pay_btn_Click);
+            // 
+            // nal_tB
+            // 
+            this.nal_tB.Location = new System.Drawing.Point(12, 356);
+            this.nal_tB.Name = "nal_tB";
+            this.nal_tB.Size = new System.Drawing.Size(100, 20);
+            this.nal_tB.TabIndex = 19;
+            this.nal_tB.Visible = false;
+            // 
+            // nenal_tB
+            // 
+            this.nenal_tB.Location = new System.Drawing.Point(136, 355);
+            this.nenal_tB.Name = "nenal_tB";
+            this.nenal_tB.Size = new System.Drawing.Size(100, 20);
+            this.nenal_tB.TabIndex = 20;
+            this.nenal_tB.Visible = false;
             // 
             // EditOrdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 372);
+            this.ClientSize = new System.Drawing.Size(508, 420);
+            this.Controls.Add(this.nenal_tB);
+            this.Controls.Add(this.nal_tB);
+            this.Controls.Add(this.pay_btn);
+            this.Controls.Add(this.time_checkB);
+            this.Controls.Add(this.time_amount);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.pay_cB);
             this.Controls.Add(this.cart_amount_lbl);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cart_GV);
@@ -323,7 +392,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.edit_btn);
-            this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.comment_tB);
             this.Controls.Add(this.ppl_UpDown);
             this.Controls.Add(this.name_tB);
@@ -342,7 +410,6 @@
         private System.Windows.Forms.TextBox name_tB;
         private System.Windows.Forms.NumericUpDown ppl_UpDown;
         private System.Windows.Forms.RichTextBox comment_tB;
-        private System.Windows.Forms.Button delete_btn;
         private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -365,5 +432,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idgood;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label cart_amount_lbl;
+        private System.Windows.Forms.ComboBox pay_cB;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label time_amount;
+        private System.Windows.Forms.CheckBox time_checkB;
+        private System.Windows.Forms.Button pay_btn;
+        private System.Windows.Forms.TextBox nal_tB;
+        private System.Windows.Forms.TextBox nenal_tB;
     }
 }
