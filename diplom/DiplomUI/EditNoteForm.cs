@@ -10,17 +10,22 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace diplom
 {
     public partial class EditNoteForm : Form
     {
-        string id_note;
+        string id_note, id_user, status, name_usr;
         List<NoteModel> note = new List<NoteModel>();
-        public EditNoteForm(string id_note)
+        public EditNoteForm(string id_note, string id_user, string status, string name_usr)
         {
             InitializeComponent();
             this.id_note = id_note;
+            this.id_user = id_user;
+            this.status = status;
+            this.name_usr = name_usr;
+              
             GetNote();
         }
 
@@ -28,7 +33,7 @@ namespace diplom
         {
             DataManager.DeleteNote(id_note);
 
-            Notes form = new Notes();
+            Notes form = new Notes(id_user, status, name_usr);
             form.Show();
             this.Close();
         }
@@ -48,7 +53,7 @@ namespace diplom
         {
             UpdateData();
 
-            Notes form = new Notes();
+            Notes form = new Notes(id_user, status, name_usr);
             form.Show();
             this.Close();
         }

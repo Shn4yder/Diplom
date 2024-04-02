@@ -40,7 +40,6 @@ namespace diplom
             this.img = new System.Windows.Forms.DataGridViewImageColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             this.SuspendLayout();
@@ -141,19 +140,11 @@ namespace diplom
             this.cost.Name = "cost";
             this.cost.ReadOnly = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(25, 421);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 4;
-            // 
             // Goods_adm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(393, 450);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.goods_GV);
             this.Controls.Add(this.Add_btn);
             this.Controls.Add(this.menuStrip1);
@@ -180,6 +171,5 @@ namespace diplom
         private DataGridViewImageColumn img;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn cost;
-        private TextBox textBox1;
     }
 }

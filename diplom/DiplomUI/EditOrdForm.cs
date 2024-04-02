@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace diplom
 {
@@ -15,11 +16,16 @@ namespace diplom
     {
         List<OrderModel> order = new List<OrderModel>();
         List<GoodModel> goods = new List<GoodModel>();
-        string id_order;
-        public EditOrdForm(string id_order)
+        string id_order, id_user, status, name_usr;
+
+
+        public EditOrdForm(string id_order, string id_user, string status, string name_usr)
         {
             InitializeComponent();
             this.id_order = id_order;
+            this.id_user = id_user;
+            this.status = status;
+            this.name_usr = name_usr;
             GetOrder();
             order_timer.Start();
             goods = DataManager.LoadGoods();
@@ -56,7 +62,7 @@ namespace diplom
         {
             UpdateData();
 
-            Orders form = new Orders();
+            Orders form = new Orders(id_user, status, name_usr);
             form.Show();
             this.Close();
         }
@@ -129,7 +135,7 @@ namespace diplom
             DataManager.DeleteOrder(id_order);
 
             this.Close();
-            Orders form = new Orders();
+            Orders form = new Orders(id_user, status, name_usr);
             form.Show(); 
         }
 

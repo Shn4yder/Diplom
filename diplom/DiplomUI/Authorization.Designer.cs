@@ -31,11 +31,10 @@
             this.login_lbl = new System.Windows.Forms.Label();
             this.pwd_lbl = new System.Windows.Forms.Label();
             this.main_lbl = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.login_tB = new System.Windows.Forms.TextBox();
+            this.pass_tB = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Enter_btn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,19 +68,19 @@
             this.main_lbl.TabIndex = 2;
             this.main_lbl.Text = "Art & Coworking";
             // 
-            // textBox1
+            // login_tB
             // 
-            this.textBox1.Location = new System.Drawing.Point(105, 222);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(168, 20);
-            this.textBox1.TabIndex = 3;
+            this.login_tB.Location = new System.Drawing.Point(105, 222);
+            this.login_tB.Name = "login_tB";
+            this.login_tB.Size = new System.Drawing.Size(168, 20);
+            this.login_tB.TabIndex = 3;
             // 
-            // textBox2
+            // pass_tB
             // 
-            this.textBox2.Location = new System.Drawing.Point(105, 269);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(168, 20);
-            this.textBox2.TabIndex = 4;
+            this.pass_tB.Location = new System.Drawing.Point(105, 269);
+            this.pass_tB.Name = "pass_tB";
+            this.pass_tB.Size = new System.Drawing.Size(168, 20);
+            this.pass_tB.TabIndex = 4;
             // 
             // pictureBox1
             // 
@@ -93,7 +92,7 @@
             // 
             // Enter_btn
             // 
-            this.Enter_btn.Location = new System.Drawing.Point(132, 332);
+            this.Enter_btn.Location = new System.Drawing.Point(118, 317);
             this.Enter_btn.Name = "Enter_btn";
             this.Enter_btn.Size = new System.Drawing.Size(75, 23);
             this.Enter_btn.TabIndex = 6;
@@ -101,26 +100,15 @@
             this.Enter_btn.UseVisualStyleBackColor = true;
             this.Enter_btn.Click += new System.EventHandler(this.Enter_btn_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(217, 332);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(335, 386);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.Enter_btn);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.pass_tB);
+            this.Controls.Add(this.login_tB);
             this.Controls.Add(this.main_lbl);
             this.Controls.Add(this.pwd_lbl);
             this.Controls.Add(this.login_lbl);
@@ -137,10 +125,9 @@
         private System.Windows.Forms.Label login_lbl;
         private System.Windows.Forms.Label pwd_lbl;
         private System.Windows.Forms.Label main_lbl;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox login_tB;
+        private System.Windows.Forms.TextBox pass_tB;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Enter_btn;
-        private System.Windows.Forms.Button button1;
     }
 }

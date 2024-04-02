@@ -9,18 +9,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Image = System.Drawing.Image;
 
 namespace diplom
 {
     public partial class EditGoodForm : Form
     {
-        string id_good;
+        string id_good, id_user, status, name_usr;
         List<GoodModel> good = new List<GoodModel>();
-        public EditGoodForm(string id_good)
+        public EditGoodForm(string id_good, string id_user, string status, string name_usr)
         {
             InitializeComponent();
             this.id_good = id_good;
+            this.id_user = id_user;
+            this.status = status;
+            this.name_usr = name_usr;
+
             GetGood();
         }
 
@@ -39,7 +44,7 @@ namespace diplom
         {
             DataManager.DeleteGood(id_good);
 
-            Goods_adm form = new Goods_adm();
+            Goods_adm form = new Goods_adm(id_user, status, name_usr);
             form.Show();
             this.Close();
         }
@@ -62,7 +67,7 @@ namespace diplom
         {
             UpdateData();
 
-            Goods_adm form = new Goods_adm();
+            Goods_adm form = new Goods_adm(id_user, status, name_usr);
             form.Show();
             this.Close();
         }

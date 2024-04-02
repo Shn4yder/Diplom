@@ -9,16 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace diplom
 {
     public partial class AddGood : Form
     {
         System.Drawing.Image image;
+        string id_user, status, name_usr;
 
-        public AddGood()
+        public AddGood(string id_user, string status, string name_usr)
         {
             InitializeComponent();
+            this.id_user = id_user;
+            this.status = status;
+            this.name_usr = name_usr;
         }
 
         private void add_image_btn_Click(object sender, EventArgs e)
@@ -55,7 +60,7 @@ namespace diplom
             AddNewGood(new_good);
 
             this.Close();
-            Goods_adm gds_frm = new Goods_adm();
+            Goods_adm gds_frm = new Goods_adm(id_user, status, name_usr);
             gds_frm.Show();
         }
 

@@ -151,6 +151,9 @@
     <EmbeddedResource Include="DiplomUI\AddUser.resx">
       <DependentUpon>AddUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DiplomUI\Authorization.resx">
+      <DependentUpon>Authorization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DiplomUI\EditGoodForm.resx">
       <DependentUpon>EditGoodForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -10,13 +10,12 @@ namespace diplom.Models
     internal class UsersModel
     {
         public int Id_user { get; set; }
-        public string FIO { get; set; }
+        public string Fio { get; set; }
         public string Status { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        //public bool Theme { get; set; }
 
         public UsersModel() { }
 

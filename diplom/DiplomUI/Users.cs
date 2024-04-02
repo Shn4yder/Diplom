@@ -8,38 +8,44 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using diplom.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace diplom
 {
     public partial class Users : Form
     {
-        List<UsersModel> users = new List<UsersModel>(); 
-        
-        public Users()
+        List<UsersModel> users = new List<UsersModel>();
+        string id_user, sts, name_usr;
+
+
+        public Users(string id_user, string status, string name_usr)
         {
             InitializeComponent();
             users = DataManager.LoadUsers();
             usr_GV.DataSource = users;
+            this.id_user = id_user;
+            this.sts = status;
+            this.name_usr = name_usr;
         }
 
 
         private void good_MenuItem_Click(object sender, EventArgs e)
         {
-            Goods_adm gds_frm = new Goods_adm();
+            Goods_adm gds_frm = new Goods_adm(id_user, sts, name_usr);
             this.Hide();
             gds_frm.Show();
         }
 
         private void note_MenuItem_Click(object sender, EventArgs e)
         {
-            Notes notes = new Notes();
+            Notes notes = new Notes(id_user, sts, name_usr);
             this.Hide();
             notes.Show();
         }
 
         private void Add_btn_Click(object sender, EventArgs e)
         {
-            AddUser add_frm = new AddUser();
+            AddUser add_frm = new AddUser(id_user, sts, name_usr);
             add_frm.Show();
             this.Hide();
         }
@@ -48,7 +54,7 @@ namespace diplom
         {
             string id = usr_GV.CurrentRow.Cells[0].Value.ToString();
 
-            EditUsrForm edit_frm = new EditUsrForm(id);
+            EditUsrForm edit_frm = new EditUsrForm(id, id_user, sts, name_usr);
             edit_frm.Show();
             this.Hide();
         }
