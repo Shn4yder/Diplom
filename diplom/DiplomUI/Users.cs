@@ -16,6 +16,7 @@ namespace diplom
     {
         List<UsersModel> users = new List<UsersModel>();
         string id_user, sts, name_usr;
+        bool sidebarExpand;
 
 
         public Users(string id_user, string status, string name_usr)
@@ -28,19 +29,51 @@ namespace diplom
             this.name_usr = name_usr;
         }
 
+        private void menu_timer_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    menu_timer.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 5;
+                if (sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    menu_timer.Stop();
 
-        private void good_MenuItem_Click(object sender, EventArgs e)
+                }
+            }
+        }
+
+        private void sidebar_btn_Click(object sender, EventArgs e)
+        {
+            menu_timer.Start();
+        }
+
+        private void items_btn_Click(object sender, EventArgs e)
         {
             Goods_adm gds_frm = new Goods_adm(id_user, sts, name_usr);
             this.Hide();
             gds_frm.Show();
         }
 
-        private void note_MenuItem_Click(object sender, EventArgs e)
+        private void note_btn_Click(object sender, EventArgs e)
         {
             Notes notes = new Notes(id_user, sts, name_usr);
             this.Hide();
             notes.Show();
+        }
+
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void Add_btn_Click(object sender, EventArgs e)

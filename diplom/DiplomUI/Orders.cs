@@ -15,6 +15,7 @@ namespace diplom
     {
         List<OrderModel> orders = new List<OrderModel>();
         string id_user, status, name_usr;
+        bool sidebarExpand;
         public Orders(string id_user, string status, string name_usr)
         {
             InitializeComponent();
@@ -22,21 +23,55 @@ namespace diplom
             orders_GV.DataSource = orders;
             this.id_user = id_user;
             this.status = status;
-            this.name_usr = name_usr;  
+            this.name_usr = name_usr;
+            order_btn.Enabled = true;
+            
         }
 
-        private void good_MenuItem_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
+        {
+           menu_timer.Start();
+        }
+
+        private void menu_timer_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    menu_timer.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 5;
+                if (sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    menu_timer.Stop();
+                }
+            }
+        }
+
+        private void items_btn_Click(object sender, EventArgs e)
         {
             Goods_adm good_frm = new Goods_adm(id_user, status, name_usr);
             this.Hide();
             good_frm.Show();
         }
 
-        private void note_MenuItem_Click(object sender, EventArgs e)
+        private void note_btn_Click(object sender, EventArgs e)
         {
             Notes note_frm = new Notes(id_user, status, name_usr);
             this.Hide();
             note_frm.Show();
+        }
+
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void Add_btn_Click(object sender, EventArgs e)

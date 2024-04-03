@@ -16,6 +16,7 @@ namespace diplom
     {
         List<NoteModel> notes = new List<NoteModel>();
         string id_usr, status, name_usr;
+        bool sidebarExpand;
         public Notes(string id_usr, string status, string name_usr)
         {
             InitializeComponent();
@@ -24,20 +25,36 @@ namespace diplom
             this.id_usr = id_usr;
             this.status = status;
             this.name_usr = name_usr;
+            CheckRole(status);
         }
 
-        private void order_MenuItem_Click(object sender, EventArgs e)
+
+        private void menu_timer_Tick(object sender, EventArgs e)
         {
-            Orders ord_frm = new Orders(id_usr, status, name_usr);
-            this.Hide();
-            ord_frm.ShowDialog();
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    menu_timer.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 5;
+                if (sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    menu_timer.Stop();
+
+                }
+            }
         }
 
-        private void good_MenuItem_Click(object sender, EventArgs e)
+        private void sidebar_btn_Click(object sender, EventArgs e)
         {
-            Goods_adm gds_frm = new Goods_adm(id_usr, status, name_usr);
-            this.Hide();
-            gds_frm.Show();
+            menu_timer.Start();
         }
 
         private void Add_btn_Click(object sender, EventArgs e)
@@ -47,13 +64,69 @@ namespace diplom
             this.Hide();
         }
 
+        private void items_btn_Click(object sender, EventArgs e)
+        {
+            Goods_adm gds_frm = new Goods_adm(id_usr, status, name_usr);
+            this.Hide();
+            gds_frm.Show();
+        }
+
+        private void order_btn_Click(object sender, EventArgs e)
+        {
+            Orders ord_frm = new Orders(id_usr, status, name_usr);
+            this.Hide();
+            ord_frm.Show();
+        }
+
+        private void usr_btn_Click(object sender, EventArgs e)
+        {
+            Users frm = new Users(id_usr, status, name_usr);
+            this.Hide();
+            frm.Show();
+        }
+
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();   
+        }
+
         private void note_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string id = note_GV.CurrentRow.Cells[0].Value.ToString();
+            if (status == "Администратор")
+            {
+                string id = note_GV.CurrentRow.Cells[0].Value.ToString();
 
-            EditNoteForm form = new EditNoteForm(id, id_usr, status, name_usr);
-            this.Hide();
-            form.Show();
+                EditNoteForm form = new EditNoteForm(id, id_usr, status, name_usr);
+                this.Hide();
+                form.Show();
+            }
+            else
+            {
+                if (note_GV.CurrentRow.Cells[7].Value.ToString() == id_usr)    // пренадлежит заметка пользователю?
+                {
+                    string id = note_GV.CurrentRow.Cells[0].Value.ToString();
+
+                    EditNoteForm form = new EditNoteForm(id, id_usr, status, name_usr);
+                    this.Hide();
+                    form.Show();
+                }
+            }
+            
+        }
+
+        private void CheckRole(string role)
+        {
+            if (role != "Администратор")
+            {
+                usr_btn.Visible = false;
+                usr_btn.Enabled = false;
+            }
+            else
+            {
+                order_btn.Visible = false;
+                order_btn.Enabled = false;
+                exit_btn.Text = "Выйти";
+            }
         }
     }
 }

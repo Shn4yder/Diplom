@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.order_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.good_MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.note_GV = new System.Windows.Forms.DataGridView();
             this.id_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,39 +39,19 @@
             this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Add_btn = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
+            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.exit_btn = new System.Windows.Forms.Button();
+            this.usr_btn = new System.Windows.Forms.Button();
+            this.order_btn = new System.Windows.Forms.Button();
+            this.note_btn = new System.Windows.Forms.Button();
+            this.items_btn = new System.Windows.Forms.Button();
+            this.sidebar_btn = new System.Windows.Forms.Button();
+            this.menu_timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.note_GV)).BeginInit();
+            this.sidebar.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.order_MenuItem,
-            this.good_MenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // order_MenuItem
-            // 
-            this.order_MenuItem.Name = "order_MenuItem";
-            this.order_MenuItem.Size = new System.Drawing.Size(58, 20);
-            this.order_MenuItem.Text = "Заказы";
-            this.order_MenuItem.Click += new System.EventHandler(this.order_MenuItem_Click);
-            // 
-            // good_MenuItem
-            // 
-            this.good_MenuItem.Name = "good_MenuItem";
-            this.good_MenuItem.Size = new System.Drawing.Size(60, 20);
-            this.good_MenuItem.Text = "Товары";
-            this.good_MenuItem.Click += new System.EventHandler(this.good_MenuItem_Click);
             // 
             // note_GV
             // 
@@ -90,12 +66,12 @@
             this.date,
             this.fio,
             this.id_user});
-            this.note_GV.Location = new System.Drawing.Point(24, 38);
+            this.note_GV.Location = new System.Drawing.Point(117, 38);
             this.note_GV.MultiSelect = false;
             this.note_GV.Name = "note_GV";
             this.note_GV.RowHeadersVisible = false;
             this.note_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.note_GV.Size = new System.Drawing.Size(744, 371);
+            this.note_GV.Size = new System.Drawing.Size(651, 371);
             this.note_GV.TabIndex = 2;
             this.note_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.note_GV_CellDoubleClick);
             // 
@@ -165,31 +141,154 @@
             this.Add_btn.UseVisualStyleBackColor = true;
             this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
             // 
+            // sidebar
+            // 
+            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.sidebar.Controls.Add(this.panel1);
+            this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidebar.Location = new System.Drawing.Point(0, 0);
+            this.sidebar.MaximumSize = new System.Drawing.Size(180, 450);
+            this.sidebar.MinimumSize = new System.Drawing.Size(50, 450);
+            this.sidebar.Name = "sidebar";
+            this.sidebar.Size = new System.Drawing.Size(50, 450);
+            this.sidebar.TabIndex = 6;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.exit_btn);
+            this.panel1.Controls.Add(this.usr_btn);
+            this.panel1.Controls.Add(this.order_btn);
+            this.panel1.Controls.Add(this.note_btn);
+            this.panel1.Controls.Add(this.items_btn);
+            this.panel1.Controls.Add(this.sidebar_btn);
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(181, 447);
+            this.panel1.TabIndex = 1;
+            // 
+            // exit_btn
+            // 
+            this.exit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.exit_btn.FlatAppearance.BorderSize = 0;
+            this.exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exit_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exit_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.exit_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exit_btn.Location = new System.Drawing.Point(1, 403);
+            this.exit_btn.Name = "exit_btn";
+            this.exit_btn.Size = new System.Drawing.Size(177, 44);
+            this.exit_btn.TabIndex = 6;
+            this.exit_btn.Text = "Завершить смену";
+            this.exit_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.exit_btn.UseVisualStyleBackColor = false;
+            this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
+            // 
+            // usr_btn
+            // 
+            this.usr_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.usr_btn.FlatAppearance.BorderSize = 0;
+            this.usr_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.usr_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.usr_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.usr_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.usr_btn.Location = new System.Drawing.Point(1, 126);
+            this.usr_btn.Name = "usr_btn";
+            this.usr_btn.Size = new System.Drawing.Size(177, 44);
+            this.usr_btn.TabIndex = 5;
+            this.usr_btn.Text = "Пользователи";
+            this.usr_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.usr_btn.UseVisualStyleBackColor = false;
+            this.usr_btn.Click += new System.EventHandler(this.usr_btn_Click);
+            // 
+            // order_btn
+            // 
+            this.order_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.order_btn.FlatAppearance.BorderSize = 0;
+            this.order_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.order_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.order_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.order_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.order_btn.Location = new System.Drawing.Point(1, 126);
+            this.order_btn.Name = "order_btn";
+            this.order_btn.Size = new System.Drawing.Size(177, 44);
+            this.order_btn.TabIndex = 4;
+            this.order_btn.Text = "Заказы";
+            this.order_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.order_btn.UseVisualStyleBackColor = false;
+            this.order_btn.Click += new System.EventHandler(this.order_btn_Click);
+            // 
+            // note_btn
+            // 
+            this.note_btn.FlatAppearance.BorderSize = 0;
+            this.note_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.note_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.note_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.note_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.note_btn.Location = new System.Drawing.Point(3, 85);
+            this.note_btn.Name = "note_btn";
+            this.note_btn.Size = new System.Drawing.Size(177, 35);
+            this.note_btn.TabIndex = 3;
+            this.note_btn.Text = "Заметки";
+            this.note_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.note_btn.UseVisualStyleBackColor = true;
+            // 
+            // items_btn
+            // 
+            this.items_btn.FlatAppearance.BorderSize = 0;
+            this.items_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.items_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.items_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.items_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.items_btn.Location = new System.Drawing.Point(1, 44);
+            this.items_btn.Name = "items_btn";
+            this.items_btn.Size = new System.Drawing.Size(177, 35);
+            this.items_btn.TabIndex = 1;
+            this.items_btn.Text = "Товары";
+            this.items_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.items_btn.UseVisualStyleBackColor = true;
+            this.items_btn.Click += new System.EventHandler(this.items_btn_Click);
+            // 
+            // sidebar_btn
+            // 
+            this.sidebar_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.sidebar_btn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.sidebar_btn.FlatAppearance.BorderSize = 0;
+            this.sidebar_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sidebar_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.sidebar_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.sidebar_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sidebar_btn.Location = new System.Drawing.Point(4, 3);
+            this.sidebar_btn.Name = "sidebar_btn";
+            this.sidebar_btn.Size = new System.Drawing.Size(177, 35);
+            this.sidebar_btn.TabIndex = 2;
+            this.sidebar_btn.Text = "Art Coworking";
+            this.sidebar_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.sidebar_btn.UseVisualStyleBackColor = false;
+            this.sidebar_btn.Click += new System.EventHandler(this.sidebar_btn_Click);
+            // 
+            // menu_timer
+            // 
+            this.menu_timer.Interval = 10;
+            this.menu_timer.Tick += new System.EventHandler(this.menu_timer_Tick);
+            // 
             // Notes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.sidebar);
             this.Controls.Add(this.Add_btn);
             this.Controls.Add(this.note_GV);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Notes";
             this.Text = "Заметки";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.note_GV)).EndInit();
+            this.sidebar.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem order_MenuItem;
-        private System.Windows.Forms.ToolStripMenuItem good_MenuItem;
         private System.Windows.Forms.DataGridView note_GV;
         private System.Windows.Forms.Button Add_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_note;
@@ -200,5 +299,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn fio;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_user;
+        private System.Windows.Forms.FlowLayoutPanel sidebar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button exit_btn;
+        private System.Windows.Forms.Button usr_btn;
+        private System.Windows.Forms.Button order_btn;
+        private System.Windows.Forms.Button note_btn;
+        private System.Windows.Forms.Button items_btn;
+        private System.Windows.Forms.Button sidebar_btn;
+        private System.Windows.Forms.Timer menu_timer;
     }
 }

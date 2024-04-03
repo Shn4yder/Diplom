@@ -17,6 +17,8 @@ namespace diplom
     {
         List<GoodModel> goods = new List<GoodModel>();
         string id_user, status, name_usr;
+        bool sidebarExpand;
+
         public Goods_adm(string id_user, string status, string name_usr)
         {
             InitializeComponent();
@@ -25,20 +27,51 @@ namespace diplom
             this.id_user = id_user;
             this.status = status;
             this.name_usr = name_usr;
+            items_btn.Enabled = true;
+
+            CheckRole(status);
         }
 
-        private void user_MenuItem_Click(object sender, EventArgs e)
+
+        private void menu_timer_Tick(object sender, EventArgs e)
         {
-            Users usr_frm = new Users(id_user, status, name_usr);
-            this.Hide();
-            usr_frm.Show();
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    menu_timer.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 5;
+                if (sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    menu_timer.Stop();
+
+                }
+            }
+        }
+        private void sidebar_btn_Click(object sender, EventArgs e)
+        {
+            menu_timer.Start();
         }
 
-        private void note_MenuItem_Click(object sender, EventArgs e)
+        private void note_btn_Click(object sender, EventArgs e)
         {
             Notes note_frm = new Notes(id_user, status, name_usr);
             this.Hide();
             note_frm.Show();
+        }
+
+        private void order_btn_Click(object sender, EventArgs e)
+        {
+            Orders form = new Orders(id_user, status, name_usr);
+            this.Hide();
+            form.Show();
         }
 
         private void Add_btn_Click(object sender, EventArgs e)
@@ -48,13 +81,47 @@ namespace diplom
             add_frm.Show();
         }
 
+        private void usr_btn_Click(object sender, EventArgs e)
+        {
+            Users usr_frm = new Users(id_user, status, name_usr);
+            this.Hide();
+            usr_frm.Show();
+        }
+
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void goods_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string id = goods_GV.CurrentRow.Cells[0].Value.ToString();
+            
+            if (status == "Администратор")
+            {
+                string id = goods_GV.CurrentRow.Cells[0].Value.ToString();
 
-            EditGoodForm form = new EditGoodForm(id, id_user, status, name_usr);
-            this.Hide();
-            form.Show();
+                EditGoodForm form = new EditGoodForm(id, id_user, status, name_usr);
+                this.Hide();
+                form.Show();
+            }
+            
+        }
+
+        private void CheckRole(string role)
+        {
+            if (role != "Администратор")
+            {
+                Add_btn.Visible = false;
+                Add_btn.Enabled = false;
+                usr_btn.Visible = false;
+                usr_btn.Enabled = false;
+            }
+            else 
+            {
+                order_btn.Visible = false;
+                order_btn.Enabled = false;
+                exit_btn.Text = "Выйти";
+            }
         }
     }
 }

@@ -137,6 +137,8 @@
     <Compile Include="DiplomUI\Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\menu.png" />
+    <None Include="Resources\menu.bmp" />
     <None Include="Resources\default_photo.jpeg" />
     <None Include="Resources\default_photo.bmp" />
     <EmbeddedResource Include="DiplomUI\AddGood.resx">
