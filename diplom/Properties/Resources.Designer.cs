@@ -69,5 +69,23 @@ namespace diplom.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на artcoworking12@gmail.com.
+        /// </summary>
+        internal static string mail {
+            get {
+                return ResourceManager.GetString("mail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на zvvs snss vsnt uvji.
+        /// </summary>
+        internal static string mail_pass {
+            get {
+                return ResourceManager.GetString("mail_pass", resourceCulture);
+            }
+        }
     }
 }

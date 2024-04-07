@@ -11,7 +11,7 @@ using Image = System.Drawing.Image;
 
 namespace diplom
 {
-    internal class ImageFolder
+    internal class ImageManager
     {
 
         public static void CreateFolder()    // метод, создающий папку для хранения изображений

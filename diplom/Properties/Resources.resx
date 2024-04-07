@@ -121,4 +121,10 @@
   <data name="default_photo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\default_photo.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mail" xml:space="preserve">
+    <value>artcoworking12@gmail.com</value>
+  </data>
+  <data name="mail_pass" xml:space="preserve">
+    <value>zvvs snss vsnt uvji</value>
+  </data>
 </root>

@@ -73,7 +73,17 @@ namespace diplom
 
         private void exit_btn_Click(object sender, EventArgs e)
         {
+            if (sts != "Администратор")
+            {
+                ReportManager report = new ReportManager();
+
+                var mail = MailManager.CreateMail("litvinastya7@mail.ru", "test sub", $"{report.GetReport()}");
+                mail.IsBodyHtml = true;
+
+                MailManager.SendMail(mail);
+            }
             this.Close();
+
         }
 
         private void Add_btn_Click(object sender, EventArgs e)

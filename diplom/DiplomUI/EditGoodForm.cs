@@ -55,7 +55,7 @@ namespace diplom
             GoodModel edit_good = new GoodModel();
 
             edit_good.Name = name_tB.Text;
-            edit_good.Img = ImageFolder.Saveimage(image_pB.Image);
+            edit_good.Img = ImageManager.Saveimage(image_pB.Image);
             edit_good.Cost = Convert.ToDouble(cost_tB.Text);
 
 

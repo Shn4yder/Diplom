@@ -81,6 +81,7 @@
             this.orders_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.orders_GV.Size = new System.Drawing.Size(558, 376);
             this.orders_GV.TabIndex = 3;
+            
             this.orders_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orders_GV_CellDoubleClick);
             // 
             // id

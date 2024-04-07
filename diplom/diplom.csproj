@@ -122,7 +122,8 @@
     <Compile Include="DiplomUI\EditOrdForm.Designer.cs">
       <DependentUpon>EditOrdForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ImageFolder.cs" />
+    <Compile Include="ImageManager.cs" />
+    <Compile Include="MailManager.cs" />
     <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\GoodModel.cs" />
     <Compile Include="Models\NoteModel.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="DiplomUI\Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportManager.cs" />
     <None Include="Resources\menu.png" />
     <None Include="Resources\menu.bmp" />
     <None Include="Resources\default_photo.jpeg" />

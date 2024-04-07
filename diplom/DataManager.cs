@@ -268,11 +268,20 @@ namespace diplom
         }
 
 
+        //Добавление, получение данных о оплате
         public static void AddPay(OrderPay pay)
         {
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
                 con.Execute("insert into OrderPay(amount, payment, date_pay, id_order) values(@Amount, @Payment, @Date_pay, @Id_order)", pay);
+            }
+        }
+        public static List<OrderPay> GetDatedPay(DateTime date)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                var res = con.Query<OrderPay>("select * from OrderPay where date_pay like '" + date.ToString("yyyy-MM-dd") + "%'", new DynamicParameters());
+                return res.ToList();
             }
         }
 

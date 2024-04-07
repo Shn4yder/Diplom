@@ -55,7 +55,7 @@ namespace diplom
 
             new_good.Name = name_tB.Text;
             new_good.Cost = Convert.ToDouble(price_tB.Text);
-            new_good.Img = ImageFolder.Saveimage(image_pB.Image);
+            new_good.Img = ImageManager.Saveimage(image_pB.Image);
 
             AddNewGood(new_good);
 
