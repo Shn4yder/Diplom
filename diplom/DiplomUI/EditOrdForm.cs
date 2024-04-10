@@ -48,7 +48,6 @@ namespace diplom
 
         private void UpdateData()
         {
-          
             OrderModel edit_order = new OrderModel();
 
             edit_order.Name = name_tB.Text;
@@ -56,15 +55,6 @@ namespace diplom
             edit_order.Comment = comment_tB.Text;
 
             DataManager.UpdateOrder(edit_order, id_order);  
-        }
-
-        private void edit_btn_Click(object sender, EventArgs e)
-        {
-            UpdateData();
-
-            Orders form = new Orders(id_user, status, name_usr);
-            form.Show();
-            this.Close();
         }
 
         private void order_timer_Tick(object sender, EventArgs e)
@@ -98,17 +88,16 @@ namespace diplom
             cart_amount_lbl.Text = AmountCart().ToString();
         }
 
-        private double AmountCart() 
+        private void save_btn_Click(object sender, EventArgs e)
         {
-            double total = 0;
-            foreach (DataGridViewRow row in cart_GV.Rows)
-            {
-                total += Convert.ToDouble(row.Cells[5].Value) * Convert.ToDouble(row.Cells[3].Value);
-            }
-            return total;
+            UpdateData();
+
+            Orders form = new Orders(id_user, status, name_usr);
+            form.Show();
+            this.Close();
         }
 
-        private void pay_btn_Click(object sender, EventArgs e)
+        private void add_pay_btn_Click(object sender, EventArgs e)
         {
             OrderPay pay = new OrderPay();
 
@@ -136,7 +125,17 @@ namespace diplom
 
             this.Close();
             Orders form = new Orders(id_user, status, name_usr);
-            form.Show(); 
+            form.Show();
+        }
+
+        private double AmountCart() 
+        {
+            double total = 0;
+            foreach (DataGridViewRow row in cart_GV.Rows)
+            {
+                total += Convert.ToDouble(row.Cells[5].Value) * Convert.ToDouble(row.Cells[3].Value);
+            }
+            return total;
         }
 
         private void pay_cB_SelectedIndexChanged(object sender, EventArgs e)

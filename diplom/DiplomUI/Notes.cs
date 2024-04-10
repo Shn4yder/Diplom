@@ -25,6 +25,7 @@ namespace diplom
             this.id_usr = id_usr;
             this.status = status;
             this.name_usr = name_usr;
+            note_btn.BackColor = Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(69)))), ((int)(((byte)(45)))));
             CheckRole(status);
         }
 
@@ -89,15 +90,22 @@ namespace diplom
         {
             if (status != "Администратор")
             {
-                ReportManager report = new ReportManager();
+                ReportManager report = new ReportManager(name_usr);
 
-                var mail = MailManager.CreateMail("litvinastya7@mail.ru", "test sub", $"{report.GetReport()}");
+                var mail = MailManager.CreateMail("litvinastya7@mail.ru", $"Отчет по смене за {DateTime.Now.ToString("dd.MM.yyyy")}", $"{report.GetReport()}");
                 mail.IsBodyHtml = true;
 
                 MailManager.SendMail(mail);
             }
             this.Close();
             this.Close();   
+        }
+
+        private void create_btn_Click(object sender, EventArgs e)
+        {
+            AddNote add_frm = new AddNote(id_usr, status, name_usr);
+            add_frm.Show();
+            this.Hide();
         }
 
         private void note_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

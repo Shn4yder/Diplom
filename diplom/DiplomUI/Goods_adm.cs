@@ -10,20 +10,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using diplom.Controls;
+
 
 namespace diplom
 {
     public partial class Goods_adm : Form
     {
-        List<GoodModel> goods = new List<GoodModel>();
         string id_user, status, name_usr;
         bool sidebarExpand;
 
         public Goods_adm(string id_user, string status, string name_usr)
         {
             InitializeComponent();
-            goods = DataManager.LoadGoods();
-            goods_GV.DataSource = goods;
+            goods_GV.DataSource = DataManager.LoadGoods();
             this.id_user = id_user;
             this.status = status;
             this.name_usr = name_usr;
@@ -74,13 +74,6 @@ namespace diplom
             form.Show();
         }
 
-        private void Add_btn_Click(object sender, EventArgs e)
-        {
-            AddGood add_frm = new AddGood(id_user, status, name_usr);
-            this.Hide();
-            add_frm.Show();
-        }
-
         private void usr_btn_Click(object sender, EventArgs e)
         {
             Users usr_frm = new Users(id_user, status, name_usr);
@@ -92,7 +85,7 @@ namespace diplom
         {
             if (status != "Администратор")
             {
-                ReportManager report = new ReportManager();
+                ReportManager report = new ReportManager(name_usr);
 
                 var mail = MailManager.CreateMail("litvinastya7@mail.ru", "test sub", $"{report.GetReport()}");
                 mail.IsBodyHtml = true;
@@ -100,6 +93,13 @@ namespace diplom
                 MailManager.SendMail(mail);
             }
             this.Close();
+        }
+
+        private void create_btn_Click(object sender, EventArgs e)
+        {
+            AddGood add_frm = new AddGood(id_user, status, name_usr);
+            this.Hide();
+            add_frm.Show();
         }
 
         private void goods_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -120,8 +120,8 @@ namespace diplom
         {
             if (role != "Администратор")
             {
-                Add_btn.Visible = false;
-                Add_btn.Enabled = false;
+                create_btn.Visible = false;
+                create_btn.Enabled = false;
                 usr_btn.Visible = false;
                 usr_btn.Enabled = false;
             }

@@ -38,7 +38,7 @@
             this.pwd_tB = new System.Windows.Forms.TextBox();
             this.login_tB = new System.Windows.Forms.TextBox();
             this.status_cB = new System.Windows.Forms.ComboBox();
-            this.add_btn = new System.Windows.Forms.Button();
+            this.create_btn = new diplom.Controls.RoundBtn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -133,22 +133,26 @@
             this.status_cB.Size = new System.Drawing.Size(177, 21);
             this.status_cB.TabIndex = 0;
             // 
-            // add_btn
+            // create_btn
             // 
-            this.add_btn.Location = new System.Drawing.Point(178, 341);
-            this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(75, 23);
-            this.add_btn.TabIndex = 6;
-            this.add_btn.Text = "Создать";
-            this.add_btn.UseVisualStyleBackColor = true;
-            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
+            this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.create_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.create_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.create_btn.Location = new System.Drawing.Point(182, 340);
+            this.create_btn.Name = "create_btn";
+            this.create_btn.Radius = 10;
+            this.create_btn.Size = new System.Drawing.Size(76, 24);
+            this.create_btn.TabIndex = 14;
+            this.create_btn.Text = "Создать";
+            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(445, 376);
-            this.Controls.Add(this.add_btn);
+            this.Controls.Add(this.create_btn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -175,6 +179,6 @@
         private System.Windows.Forms.TextBox login_tB;
         private System.Windows.Forms.ComboBox status_cB;
         private System.Windows.Forms.TextBox confirm_tB;
-        private System.Windows.Forms.Button add_btn;
+        private Controls.RoundBtn create_btn;
     }
 }

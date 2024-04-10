@@ -40,8 +40,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.edit_btn = new System.Windows.Forms.Button();
-            this.delete_btn = new System.Windows.Forms.Button();
+            this.save_btn = new diplom.Controls.RoundBtn();
+            this.del_btn = new diplom.Controls.RoundBtn();
             this.SuspendLayout();
             // 
             // name_tB
@@ -146,33 +146,40 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Пароль";
             // 
-            // edit_btn
+            // save_btn
             // 
-            this.edit_btn.Location = new System.Drawing.Point(144, 286);
-            this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Size = new System.Drawing.Size(133, 23);
-            this.edit_btn.TabIndex = 13;
-            this.edit_btn.Text = "Сохранить изменения";
-            this.edit_btn.UseVisualStyleBackColor = true;
-            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
+            this.save_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.save_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.save_btn.Location = new System.Drawing.Point(138, 285);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Radius = 10;
+            this.save_btn.Size = new System.Drawing.Size(149, 24);
+            this.save_btn.TabIndex = 22;
+            this.save_btn.Text = "Сохранить изменения";
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
             // 
-            // delete_btn
+            // del_btn
             // 
-            this.delete_btn.Location = new System.Drawing.Point(15, 286);
-            this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(75, 23);
-            this.delete_btn.TabIndex = 14;
-            this.delete_btn.Text = "Удалить";
-            this.delete_btn.UseVisualStyleBackColor = true;
-            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
+            this.del_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.del_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.del_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.del_btn.Location = new System.Drawing.Point(12, 285);
+            this.del_btn.Name = "del_btn";
+            this.del_btn.Radius = 10;
+            this.del_btn.Size = new System.Drawing.Size(79, 24);
+            this.del_btn.TabIndex = 23;
+            this.del_btn.Text = "Удалить";
+            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
             // 
             // EditUsrForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(299, 324);
-            this.Controls.Add(this.delete_btn);
-            this.Controls.Add(this.edit_btn);
+            this.Controls.Add(this.del_btn);
+            this.Controls.Add(this.save_btn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -206,7 +213,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button edit_btn;
-        private System.Windows.Forms.Button delete_btn;
+        private Controls.RoundBtn save_btn;
+        private Controls.RoundBtn del_btn;
     }
 }

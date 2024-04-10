@@ -26,7 +26,7 @@ namespace diplom
             this.name_usr = name_usr;
         }
 
-        private void add_image_btn_Click(object sender, EventArgs e)
+        private void add_photo_Click(object sender, EventArgs e)
         {
             OpenFileDialog openDialog = new OpenFileDialog();
             openDialog.Filter = "Файлы изображений|*.bmp;*.png;*.jpg";
@@ -38,7 +38,7 @@ namespace diplom
             {
                 // вывод картинки
 
-                image = System.Drawing.Image.FromFile(openDialog.FileName);   
+                image = System.Drawing.Image.FromFile(openDialog.FileName);
                 Bitmap img = new Bitmap(image, new Size(150, 100));
                 image_pB.Image = img;
             }
@@ -49,7 +49,7 @@ namespace diplom
             }
         }
 
-        private void add_btn_Click(object sender, EventArgs e)
+        private void create_btn_Click(object sender, EventArgs e)
         {
             GoodModel new_good = new GoodModel();
 

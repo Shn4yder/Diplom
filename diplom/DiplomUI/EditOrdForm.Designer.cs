@@ -32,7 +32,6 @@
             this.name_tB = new System.Windows.Forms.TextBox();
             this.ppl_UpDown = new System.Windows.Forms.NumericUpDown();
             this.comment_tB = new System.Windows.Forms.RichTextBox();
-            this.edit_btn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numb_lbl = new System.Windows.Forms.Label();
@@ -58,9 +57,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.time_amount = new System.Windows.Forms.Label();
             this.time_checkB = new System.Windows.Forms.CheckBox();
-            this.pay_btn = new System.Windows.Forms.Button();
             this.nal_tB = new System.Windows.Forms.TextBox();
             this.nenal_tB = new System.Windows.Forms.TextBox();
+            this.save_btn = new diplom.Controls.RoundBtn();
+            this.add_pay_btn = new diplom.Controls.RoundBtn();
             ((System.ComponentModel.ISupportInitialize)(this.ppl_UpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cart_GV)).BeginInit();
@@ -97,16 +97,6 @@
             this.comment_tB.Size = new System.Drawing.Size(203, 96);
             this.comment_tB.TabIndex = 2;
             this.comment_tB.Text = "";
-            // 
-            // edit_btn
-            // 
-            this.edit_btn.Location = new System.Drawing.Point(363, 385);
-            this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Size = new System.Drawing.Size(133, 23);
-            this.edit_btn.TabIndex = 4;
-            this.edit_btn.Text = "Сохранить изменения";
-            this.edit_btn.UseVisualStyleBackColor = true;
-            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // label1
             // 
@@ -344,16 +334,6 @@
             this.time_checkB.Text = "Не учитывать время";
             this.time_checkB.UseVisualStyleBackColor = true;
             // 
-            // pay_btn
-            // 
-            this.pay_btn.Location = new System.Drawing.Point(12, 385);
-            this.pay_btn.Name = "pay_btn";
-            this.pay_btn.Size = new System.Drawing.Size(75, 23);
-            this.pay_btn.TabIndex = 18;
-            this.pay_btn.Text = "Завершить";
-            this.pay_btn.UseVisualStyleBackColor = true;
-            this.pay_btn.Click += new System.EventHandler(this.pay_btn_Click);
-            // 
             // nal_tB
             // 
             this.nal_tB.Location = new System.Drawing.Point(12, 356);
@@ -370,14 +350,42 @@
             this.nenal_tB.TabIndex = 20;
             this.nenal_tB.Visible = false;
             // 
+            // save_btn
+            // 
+            this.save_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.save_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.save_btn.Location = new System.Drawing.Point(347, 385);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Radius = 10;
+            this.save_btn.Size = new System.Drawing.Size(149, 24);
+            this.save_btn.TabIndex = 21;
+            this.save_btn.Text = "Сохранить изменения";
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
+            // 
+            // add_pay_btn
+            // 
+            this.add_pay_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.add_pay_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.add_pay_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.add_pay_btn.Location = new System.Drawing.Point(12, 385);
+            this.add_pay_btn.Name = "add_pay_btn";
+            this.add_pay_btn.Radius = 10;
+            this.add_pay_btn.Size = new System.Drawing.Size(93, 24);
+            this.add_pay_btn.TabIndex = 22;
+            this.add_pay_btn.Text = "Завершить";
+            this.add_pay_btn.Click += new System.EventHandler(this.add_pay_btn_Click);
+            // 
             // EditOrdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(508, 420);
+            this.Controls.Add(this.add_pay_btn);
+            this.Controls.Add(this.save_btn);
             this.Controls.Add(this.nenal_tB);
             this.Controls.Add(this.nal_tB);
-            this.Controls.Add(this.pay_btn);
             this.Controls.Add(this.time_checkB);
             this.Controls.Add(this.time_amount);
             this.Controls.Add(this.label5);
@@ -391,7 +399,6 @@
             this.Controls.Add(this.numb_lbl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.comment_tB);
             this.Controls.Add(this.ppl_UpDown);
             this.Controls.Add(this.name_tB);
@@ -410,7 +417,6 @@
         private System.Windows.Forms.TextBox name_tB;
         private System.Windows.Forms.NumericUpDown ppl_UpDown;
         private System.Windows.Forms.RichTextBox comment_tB;
-        private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label numb_lbl;
@@ -436,8 +442,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label time_amount;
         private System.Windows.Forms.CheckBox time_checkB;
-        private System.Windows.Forms.Button pay_btn;
         private System.Windows.Forms.TextBox nal_tB;
         private System.Windows.Forms.TextBox nenal_tB;
+        private Controls.RoundBtn save_btn;
+        private Controls.RoundBtn add_pay_btn;
     }
 }

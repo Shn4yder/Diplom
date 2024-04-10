@@ -38,7 +38,6 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Add_btn = new System.Windows.Forms.Button();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.exit_btn = new System.Windows.Forms.Button();
@@ -48,6 +47,7 @@
             this.items_btn = new System.Windows.Forms.Button();
             this.sidebar_btn = new System.Windows.Forms.Button();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
+            this.create_btn = new diplom.Controls.RoundBtn();
             ((System.ComponentModel.ISupportInitialize)(this.note_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -55,7 +55,7 @@
             // 
             // note_GV
             // 
-            this.note_GV.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.note_GV.BackgroundColor = System.Drawing.SystemColors.Window;
             this.note_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.note_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_note,
@@ -66,12 +66,12 @@
             this.date,
             this.fio,
             this.id_user});
-            this.note_GV.Location = new System.Drawing.Point(117, 38);
+            this.note_GV.Location = new System.Drawing.Point(93, 38);
             this.note_GV.MultiSelect = false;
             this.note_GV.Name = "note_GV";
             this.note_GV.RowHeadersVisible = false;
             this.note_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.note_GV.Size = new System.Drawing.Size(651, 371);
+            this.note_GV.Size = new System.Drawing.Size(665, 371);
             this.note_GV.TabIndex = 2;
             this.note_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.note_GV_CellDoubleClick);
             // 
@@ -131,16 +131,6 @@
             this.id_user.Name = "id_user";
             this.id_user.ReadOnly = true;
             // 
-            // Add_btn
-            // 
-            this.Add_btn.Location = new System.Drawing.Point(361, 415);
-            this.Add_btn.Name = "Add_btn";
-            this.Add_btn.Size = new System.Drawing.Size(75, 23);
-            this.Add_btn.TabIndex = 3;
-            this.Add_btn.Text = "+  Cоздать";
-            this.Add_btn.UseVisualStyleBackColor = true;
-            this.Add_btn.Click += new System.EventHandler(this.Add_btn_Click);
-            // 
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -155,6 +145,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.panel1.Controls.Add(this.exit_btn);
             this.panel1.Controls.Add(this.usr_btn);
             this.panel1.Controls.Add(this.order_btn);
@@ -168,7 +159,7 @@
             // 
             // exit_btn
             // 
-            this.exit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.exit_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.exit_btn.FlatAppearance.BorderSize = 0;
             this.exit_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -185,13 +176,13 @@
             // 
             // usr_btn
             // 
-            this.usr_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.usr_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.usr_btn.FlatAppearance.BorderSize = 0;
             this.usr_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.usr_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.usr_btn.ForeColor = System.Drawing.SystemColors.Window;
             this.usr_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.usr_btn.Location = new System.Drawing.Point(1, 126);
+            this.usr_btn.Location = new System.Drawing.Point(-3, 126);
             this.usr_btn.Name = "usr_btn";
             this.usr_btn.Size = new System.Drawing.Size(177, 44);
             this.usr_btn.TabIndex = 5;
@@ -202,7 +193,7 @@
             // 
             // order_btn
             // 
-            this.order_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.order_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.order_btn.FlatAppearance.BorderSize = 0;
             this.order_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.order_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -219,18 +210,19 @@
             // 
             // note_btn
             // 
+            this.note_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(69)))), ((int)(((byte)(45)))));
             this.note_btn.FlatAppearance.BorderSize = 0;
             this.note_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.note_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.note_btn.ForeColor = System.Drawing.SystemColors.Window;
             this.note_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.note_btn.Location = new System.Drawing.Point(3, 85);
+            this.note_btn.Location = new System.Drawing.Point(-3, 85);
             this.note_btn.Name = "note_btn";
             this.note_btn.Size = new System.Drawing.Size(177, 35);
             this.note_btn.TabIndex = 3;
             this.note_btn.Text = "Заметки";
             this.note_btn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.note_btn.UseVisualStyleBackColor = true;
+            this.note_btn.UseVisualStyleBackColor = false;
             // 
             // items_btn
             // 
@@ -239,7 +231,7 @@
             this.items_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.items_btn.ForeColor = System.Drawing.SystemColors.Window;
             this.items_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.items_btn.Location = new System.Drawing.Point(1, 44);
+            this.items_btn.Location = new System.Drawing.Point(-3, 44);
             this.items_btn.Name = "items_btn";
             this.items_btn.Size = new System.Drawing.Size(177, 35);
             this.items_btn.TabIndex = 1;
@@ -250,14 +242,14 @@
             // 
             // sidebar_btn
             // 
-            this.sidebar_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
+            this.sidebar_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.sidebar_btn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.sidebar_btn.FlatAppearance.BorderSize = 0;
             this.sidebar_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sidebar_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.sidebar_btn.ForeColor = System.Drawing.SystemColors.Window;
             this.sidebar_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.sidebar_btn.Location = new System.Drawing.Point(4, 3);
+            this.sidebar_btn.Location = new System.Drawing.Point(-3, 3);
             this.sidebar_btn.Name = "sidebar_btn";
             this.sidebar_btn.Size = new System.Drawing.Size(177, 35);
             this.sidebar_btn.TabIndex = 2;
@@ -271,13 +263,27 @@
             this.menu_timer.Interval = 10;
             this.menu_timer.Tick += new System.EventHandler(this.menu_timer_Tick);
             // 
+            // create_btn
+            // 
+            this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.create_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.create_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.create_btn.Location = new System.Drawing.Point(375, 414);
+            this.create_btn.Name = "create_btn";
+            this.create_btn.Radius = 10;
+            this.create_btn.Size = new System.Drawing.Size(79, 24);
+            this.create_btn.TabIndex = 24;
+            this.create_btn.Text = "Создать";
+            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
+            // 
             // Notes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.create_btn);
             this.Controls.Add(this.sidebar);
-            this.Controls.Add(this.Add_btn);
             this.Controls.Add(this.note_GV);
             this.Name = "Notes";
             this.Text = "Заметки";
@@ -290,7 +296,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView note_GV;
-        private System.Windows.Forms.Button Add_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_note;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
@@ -308,5 +313,6 @@
         private System.Windows.Forms.Button items_btn;
         private System.Windows.Forms.Button sidebar_btn;
         private System.Windows.Forms.Timer menu_timer;
+        private Controls.RoundBtn create_btn;
     }
 }

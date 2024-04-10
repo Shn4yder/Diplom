@@ -29,9 +29,18 @@ namespace diplom
             GetNote();
         }
 
-        private void delete_btn_Click(object sender, EventArgs e)
+        private void del_btn_Click(object sender, EventArgs e)
         {
             DataManager.DeleteNote(id_note);
+
+            Notes form = new Notes(id_user, status, name_usr);
+            form.Show();
+            this.Close();
+        }
+
+        private void save_btn_Click(object sender, EventArgs e)
+        {
+            UpdateData();
 
             Notes form = new Notes(id_user, status, name_usr);
             form.Show();
@@ -46,21 +55,10 @@ namespace diplom
             phone_tB.Text = note[0].Phone.ToString();
             place_tB.Text = note[0].Place.ToString();   
             comment_tB.Text = note[0].Comment.ToString();
-
-        }
-
-        private void edit_btn_Click(object sender, EventArgs e)
-        {
-            UpdateData();
-
-            Notes form = new Notes(id_user, status, name_usr);
-            form.Show();
-            this.Close();
         }
 
         private void UpdateData()
         {
-
             NoteModel edit_note = new NoteModel();
 
             edit_note.Name = name_tB.Text;

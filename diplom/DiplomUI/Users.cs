@@ -14,16 +14,13 @@ namespace diplom
 {
     public partial class Users : Form
     {
-        List<UsersModel> users = new List<UsersModel>();
         string id_user, sts, name_usr;
         bool sidebarExpand;
-
 
         public Users(string id_user, string status, string name_usr)
         {
             InitializeComponent();
-            users = DataManager.LoadUsers();
-            usr_GV.DataSource = users;
+            usr_GV.DataSource = DataManager.LoadUsers();
             this.id_user = id_user;
             this.sts = status;
             this.name_usr = name_usr;
@@ -73,17 +70,14 @@ namespace diplom
 
         private void exit_btn_Click(object sender, EventArgs e)
         {
-            if (sts != "Администратор")
-            {
-                ReportManager report = new ReportManager();
-
-                var mail = MailManager.CreateMail("litvinastya7@mail.ru", "test sub", $"{report.GetReport()}");
-                mail.IsBodyHtml = true;
-
-                MailManager.SendMail(mail);
-            }
             this.Close();
+        }
 
+        private void create_btn_Click(object sender, EventArgs e)
+        {
+            AddUser add_frm = new AddUser(id_user, sts, name_usr);
+            add_frm.Show();
+            this.Hide();
         }
 
         private void Add_btn_Click(object sender, EventArgs e)

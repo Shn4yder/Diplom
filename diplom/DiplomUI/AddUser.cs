@@ -23,12 +23,12 @@ namespace diplom
             this.name_usr = name_usr;
         }
 
-        private void add_btn_Click(object sender, EventArgs e)
+        private void create_btn_Click(object sender, EventArgs e)
         {
             UsersModel new_user = new UsersModel();
 
             new_user.Fio = name_tB.Text;
-            new_user.Status = status_cB.Text;   
+            new_user.Status = status_cB.Text;
             new_user.Phone = phone_tB.Text;
             new_user.Email = email_tB.Text;
             new_user.Login = login_tB.Text;

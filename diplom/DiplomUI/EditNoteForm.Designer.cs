@@ -35,8 +35,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comment_tB = new System.Windows.Forms.RichTextBox();
-            this.edit_btn = new System.Windows.Forms.Button();
-            this.delete_btn = new System.Windows.Forms.Button();
+            this.del_btn = new diplom.Controls.RoundBtn();
+            this.save_btn = new diplom.Controls.RoundBtn();
             this.SuspendLayout();
             // 
             // name_tB
@@ -95,33 +95,40 @@
             this.comment_tB.TabIndex = 6;
             this.comment_tB.Text = "";
             // 
-            // edit_btn
+            // del_btn
             // 
-            this.edit_btn.Location = new System.Drawing.Point(184, 252);
-            this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Size = new System.Drawing.Size(149, 23);
-            this.edit_btn.TabIndex = 7;
-            this.edit_btn.Text = "Сохранить изменения";
-            this.edit_btn.UseVisualStyleBackColor = true;
-            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
+            this.del_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.del_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.del_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.del_btn.Location = new System.Drawing.Point(21, 251);
+            this.del_btn.Name = "del_btn";
+            this.del_btn.Radius = 10;
+            this.del_btn.Size = new System.Drawing.Size(72, 24);
+            this.del_btn.TabIndex = 17;
+            this.del_btn.Text = "Удалить";
+            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
             // 
-            // delete_btn
+            // save_btn
             // 
-            this.delete_btn.Location = new System.Drawing.Point(21, 252);
-            this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Size = new System.Drawing.Size(75, 23);
-            this.delete_btn.TabIndex = 8;
-            this.delete_btn.Text = "Удалить";
-            this.delete_btn.UseVisualStyleBackColor = true;
-            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
+            this.save_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.save_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.save_btn.Location = new System.Drawing.Point(189, 251);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Radius = 10;
+            this.save_btn.Size = new System.Drawing.Size(144, 24);
+            this.save_btn.TabIndex = 18;
+            this.save_btn.Text = " Сохранить изменения";
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
             // 
             // EditNoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(355, 282);
-            this.Controls.Add(this.delete_btn);
-            this.Controls.Add(this.edit_btn);
+            this.Controls.Add(this.save_btn);
+            this.Controls.Add(this.del_btn);
             this.Controls.Add(this.comment_tB);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -145,7 +152,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox comment_tB;
-        private System.Windows.Forms.Button edit_btn;
-        private System.Windows.Forms.Button delete_btn;
+        private Controls.RoundBtn del_btn;
+        private Controls.RoundBtn save_btn;
     }
 }

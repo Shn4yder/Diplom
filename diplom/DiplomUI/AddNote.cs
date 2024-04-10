@@ -24,9 +24,8 @@ namespace diplom
             this.name_usr = name_usr;
         }
 
-        private void Add_btn_Click(object sender, EventArgs e)
+        private void create_btn_Click(object sender, EventArgs e)
         {
-
             NoteModel new_note = new NoteModel();
 
             new_note.Name = name_tB.Text;

@@ -35,8 +35,6 @@
             this.pass_tB = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Enter_btn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,27 +100,12 @@
             this.Enter_btn.UseVisualStyleBackColor = true;
             this.Enter_btn.Click += new System.EventHandler(this.Enter_btn_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(223, 307);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 7;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(223, 333);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 8;
-            // 
             // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(335, 386);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.Enter_btn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pass_tB);
@@ -147,7 +130,5 @@
         private System.Windows.Forms.TextBox pass_tB;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Enter_btn;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
     }
 }

@@ -13,14 +13,12 @@ namespace diplom
 {
     public partial class Orders : Form
     {
-        List<OrderModel> orders = new List<OrderModel>();
         string id_user, status, name_usr;
         bool sidebarExpand;
         public Orders(string id_user, string status, string name_usr)
         {
             InitializeComponent();
-            orders = DataManager.LoadOrders();
-            orders_GV.DataSource = orders;
+            orders_GV.DataSource = DataManager.LoadOrders();
             this.id_user = id_user;
             this.status = status;
             this.name_usr = name_usr;
@@ -30,7 +28,9 @@ namespace diplom
 
         private void button2_Click(object sender, EventArgs e)
         {
-           menu_timer.Start();
+            menu_timer.Start();
+
+
         }
 
         private void menu_timer_Tick(object sender, EventArgs e)
@@ -73,7 +73,7 @@ namespace diplom
         {
             if (status != "Администратор")
             {
-                ReportManager report = new ReportManager();
+                ReportManager report = new ReportManager(name_usr);
 
                 var mail = MailManager.CreateMail("litvinastya7@mail.ru", "test sub", $"{report.GetReport()}");
                 mail.IsBodyHtml = true;
@@ -81,10 +81,9 @@ namespace diplom
                 MailManager.SendMail(mail);
             }
             this.Close();
-            this.Close();
         }
 
-        private void Add_btn_Click(object sender, EventArgs e)
+        private void create_btn_Click(object sender, EventArgs e)
         {
             AddOrder add_form = new AddOrder(id_user, status, name_usr);
             add_form.Show();

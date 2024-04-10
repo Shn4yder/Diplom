@@ -22,9 +22,9 @@ namespace diplom
             this.name_usr = name_usr;
         }
 
-        private void Add_btn_Click(object sender, EventArgs e)
+        private void create_btn_Click(object sender, EventArgs e)
         {
-            OrderModel new_order = new OrderModel();    
+            OrderModel new_order = new OrderModel();
 
             new_order.Number = numb_tB.Text;
             new_order.Name = name_tB.Text;
@@ -38,7 +38,6 @@ namespace diplom
             this.Close();
             Orders ord_frm = new Orders(id_user, status, name_usr);
             ord_frm.Show();
-
         }
 
         private void AddNewOrder(OrderModel order)
