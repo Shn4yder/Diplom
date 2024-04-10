@@ -123,6 +123,7 @@
             // 
             // comment_tB
             // 
+            this.comment_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.comment_tB.Location = new System.Drawing.Point(12, 177);
             this.comment_tB.Name = "comment_tB";
             this.comment_tB.Size = new System.Drawing.Size(299, 78);

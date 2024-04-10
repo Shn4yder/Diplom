@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.orders_GV = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.counter = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comm = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_usr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.exit_btn = new System.Windows.Forms.Button();
@@ -46,6 +39,13 @@
             this.sidebar_btn = new System.Windows.Forms.Button();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.create_btn = new diplom.Controls.RoundBtn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.number = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.counter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_usr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.orders_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -54,6 +54,7 @@
             // orders_GV
             // 
             this.orders_GV.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.orders_GV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.orders_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.orders_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -71,56 +72,6 @@
             this.orders_GV.Size = new System.Drawing.Size(558, 376);
             this.orders_GV.TabIndex = 3;
             this.orders_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orders_GV_CellDoubleClick);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id_order";
-            this.id.HeaderText = "id_order";
-            this.id.Name = "id";
-            this.id.Visible = false;
-            // 
-            // number
-            // 
-            this.number.DataPropertyName = "Number";
-            this.number.HeaderText = "Номер";
-            this.number.Name = "number";
-            this.number.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "Name";
-            this.name.HeaderText = "Имя";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // counter
-            // 
-            this.counter.DataPropertyName = "Counter";
-            this.counter.HeaderText = "Кол-во";
-            this.counter.Name = "counter";
-            this.counter.ReadOnly = true;
-            // 
-            // start
-            // 
-            this.start.DataPropertyName = "Time_start";
-            this.start.HeaderText = "Начат в ";
-            this.start.Name = "start";
-            this.start.ReadOnly = true;
-            // 
-            // comm
-            // 
-            this.comm.DataPropertyName = "Comment";
-            this.comm.HeaderText = "Коментарий";
-            this.comm.Name = "comm";
-            this.comm.ReadOnly = true;
-            // 
-            // id_usr
-            // 
-            this.id_usr.DataPropertyName = "Id_user";
-            this.id_usr.HeaderText = "id_user";
-            this.id_usr.Name = "id_usr";
-            this.id_usr.ReadOnly = true;
-            this.id_usr.Visible = false;
             // 
             // sidebar
             // 
@@ -244,6 +195,60 @@
             this.create_btn.Text = "Создать";
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id_order";
+            this.id.HeaderText = "id_order";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // number
+            // 
+            this.number.DataPropertyName = "Number";
+            this.number.HeaderText = "Номер";
+            this.number.Name = "number";
+            this.number.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Имя";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 130;
+            // 
+            // counter
+            // 
+            this.counter.DataPropertyName = "Counter";
+            this.counter.HeaderText = "Кол-во";
+            this.counter.Name = "counter";
+            this.counter.ReadOnly = true;
+            this.counter.Width = 50;
+            // 
+            // start
+            // 
+            this.start.DataPropertyName = "Time_start";
+            this.start.HeaderText = "Начат в ";
+            this.start.Name = "start";
+            this.start.ReadOnly = true;
+            this.start.Width = 110;
+            // 
+            // comm
+            // 
+            this.comm.DataPropertyName = "Comment";
+            this.comm.HeaderText = "Коментарий";
+            this.comm.Name = "comm";
+            this.comm.ReadOnly = true;
+            this.comm.Width = 167;
+            // 
+            // id_usr
+            // 
+            this.id_usr.DataPropertyName = "Id_user";
+            this.id_usr.HeaderText = "id_user";
+            this.id_usr.Name = "id_usr";
+            this.id_usr.ReadOnly = true;
+            this.id_usr.Visible = false;
+            // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,13 +270,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView orders_GV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn number;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn counter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn start;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comm;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_usr;
         private System.Windows.Forms.FlowLayoutPanel sidebar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button items_btn;
@@ -281,5 +279,12 @@
         private System.Windows.Forms.Button order_btn;
         private System.Windows.Forms.Button exit_btn;
         private Controls.RoundBtn create_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn number;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn counter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn start;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_usr;
     }
 }

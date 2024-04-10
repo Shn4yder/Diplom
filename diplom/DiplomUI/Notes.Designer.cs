@@ -30,14 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.note_GV = new System.Windows.Forms.DataGridView();
-            this.id_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.place = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.exit_btn = new System.Windows.Forms.Button();
@@ -48,6 +40,14 @@
             this.sidebar_btn = new System.Windows.Forms.Button();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.create_btn = new diplom.Controls.RoundBtn();
+            this.id_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.place = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.note_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -56,6 +56,7 @@
             // note_GV
             // 
             this.note_GV.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.note_GV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.note_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.note_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_note,
@@ -66,70 +67,14 @@
             this.date,
             this.fio,
             this.id_user});
-            this.note_GV.Location = new System.Drawing.Point(93, 38);
+            this.note_GV.Location = new System.Drawing.Point(67, 37);
             this.note_GV.MultiSelect = false;
             this.note_GV.Name = "note_GV";
             this.note_GV.RowHeadersVisible = false;
             this.note_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.note_GV.Size = new System.Drawing.Size(665, 371);
+            this.note_GV.Size = new System.Drawing.Size(711, 371);
             this.note_GV.TabIndex = 2;
             this.note_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.note_GV_CellDoubleClick);
-            // 
-            // id_note
-            // 
-            this.id_note.DataPropertyName = "Id_note";
-            this.id_note.HeaderText = "id";
-            this.id_note.Name = "id_note";
-            this.id_note.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "Name";
-            this.name.HeaderText = "Имя";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // phone
-            // 
-            this.phone.DataPropertyName = "Phone";
-            this.phone.HeaderText = "Телефон";
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
-            // 
-            // place
-            // 
-            this.place.DataPropertyName = "Place";
-            this.place.HeaderText = "Место/стол";
-            this.place.Name = "place";
-            this.place.ReadOnly = true;
-            // 
-            // comment
-            // 
-            this.comment.DataPropertyName = "Comment";
-            this.comment.HeaderText = "Комментарий";
-            this.comment.Name = "comment";
-            this.comment.ReadOnly = true;
-            // 
-            // date
-            // 
-            this.date.DataPropertyName = "Date_add";
-            this.date.HeaderText = "Добавлено в ";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            // 
-            // fio
-            // 
-            this.fio.DataPropertyName = "Fio";
-            this.fio.HeaderText = "Пользователь";
-            this.fio.Name = "fio";
-            this.fio.ReadOnly = true;
-            // 
-            // id_user
-            // 
-            this.id_user.DataPropertyName = "Id_user";
-            this.id_user.HeaderText = "id_user";
-            this.id_user.Name = "id_user";
-            this.id_user.ReadOnly = true;
             // 
             // sidebar
             // 
@@ -276,6 +221,68 @@
             this.create_btn.Text = "Создать";
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
+            // id_note
+            // 
+            this.id_note.DataPropertyName = "Id_note";
+            this.id_note.HeaderText = "id";
+            this.id_note.Name = "id_note";
+            this.id_note.ReadOnly = true;
+            this.id_note.Visible = false;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Имя";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.DataPropertyName = "Phone";
+            this.phone.HeaderText = "Телефон";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            // 
+            // place
+            // 
+            this.place.DataPropertyName = "Place";
+            this.place.HeaderText = "Место/стол";
+            this.place.Name = "place";
+            this.place.ReadOnly = true;
+            this.place.Width = 70;
+            // 
+            // comment
+            // 
+            this.comment.DataPropertyName = "Comment";
+            this.comment.HeaderText = "Комментарий";
+            this.comment.Name = "comment";
+            this.comment.ReadOnly = true;
+            this.comment.Width = 160;
+            // 
+            // date
+            // 
+            this.date.DataPropertyName = "Date_add";
+            this.date.HeaderText = "Добавлено в ";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.Width = 110;
+            // 
+            // fio
+            // 
+            this.fio.DataPropertyName = "Fio";
+            this.fio.HeaderText = "Пользователь";
+            this.fio.Name = "fio";
+            this.fio.ReadOnly = true;
+            this.fio.Width = 170;
+            // 
+            // id_user
+            // 
+            this.id_user.DataPropertyName = "Id_user";
+            this.id_user.HeaderText = "id_user";
+            this.id_user.Name = "id_user";
+            this.id_user.ReadOnly = true;
+            this.id_user.Visible = false;
+            // 
             // Notes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,14 +303,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView note_GV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_note;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn place;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_user;
         private System.Windows.Forms.FlowLayoutPanel sidebar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button exit_btn;
@@ -314,5 +313,13 @@
         private System.Windows.Forms.Button sidebar_btn;
         private System.Windows.Forms.Timer menu_timer;
         private Controls.RoundBtn create_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_note;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn place;
+        private System.Windows.Forms.DataGridViewTextBoxColumn comment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_user;
     }
 }

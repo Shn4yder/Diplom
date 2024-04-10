@@ -52,6 +52,9 @@
     <Compile Include="Controls\RoundBtn.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\RoundTextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DiplomBL\DataManager.cs" />
     <Compile Include="DiplomUI\AddGood.cs">
       <SubType>Form</SubType>

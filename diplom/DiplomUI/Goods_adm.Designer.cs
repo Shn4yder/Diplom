@@ -32,11 +32,6 @@ namespace diplom
         {
             this.components = new System.ComponentModel.Container();
             this.goods_GV = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.image = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.img = new System.Windows.Forms.DataGridViewImageColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.exit_btn = new System.Windows.Forms.Button();
@@ -48,6 +43,11 @@ namespace diplom
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.create_btn = new diplom.Controls.RoundBtn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.image = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.img = new System.Windows.Forms.DataGridViewImageColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -73,47 +73,6 @@ namespace diplom
             this.goods_GV.Size = new System.Drawing.Size(446, 352);
             this.goods_GV.TabIndex = 3;
             this.goods_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.goods_GV_CellDoubleClick);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id_good";
-            this.id.HeaderText = "id_good";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // image
-            // 
-            this.image.DataPropertyName = "Img";
-            this.image.HeaderText = "Фото";
-            this.image.Name = "image";
-            this.image.ReadOnly = true;
-            this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.image.Visible = false;
-            // 
-            // img
-            // 
-            this.img.DataPropertyName = "image";
-            this.img.HeaderText = "image";
-            this.img.Image = global::diplom.Properties.Resources.default_photo;
-            this.img.Name = "img";
-            this.img.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.img.Width = 140;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "Name";
-            this.name.HeaderText = "Наименование";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // cost
-            // 
-            this.cost.DataPropertyName = "Cost";
-            this.cost.HeaderText = "Цена";
-            this.cost.Name = "cost";
-            this.cost.ReadOnly = true;
             // 
             // sidebar
             // 
@@ -270,6 +229,49 @@ namespace diplom
             this.create_btn.Text = "Создать";
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id_good";
+            this.id.HeaderText = "id_good";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // image
+            // 
+            this.image.DataPropertyName = "Img";
+            this.image.HeaderText = "Фото";
+            this.image.Name = "image";
+            this.image.ReadOnly = true;
+            this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.image.Visible = false;
+            // 
+            // img
+            // 
+            this.img.DataPropertyName = "image";
+            this.img.HeaderText = "Изображение";
+            this.img.Image = global::diplom.Properties.Resources.default_photo;
+            this.img.Name = "img";
+            this.img.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.img.Width = 140;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Наименование";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 190;
+            // 
+            // cost
+            // 
+            this.cost.DataPropertyName = "Cost";
+            this.cost.HeaderText = "Цена";
+            this.cost.Name = "cost";
+            this.cost.ReadOnly = true;
+            this.cost.Width = 98;
+            // 
             // Goods_adm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,11 +292,6 @@ namespace diplom
 
         #endregion
         private DataGridView goods_GV;
-        private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn image;
-        private DataGridViewImageColumn img;
-        private DataGridViewTextBoxColumn name;
-        private DataGridViewTextBoxColumn cost;
         private DataGridViewImageColumn dataGridViewImageColumn1;
         private FlowLayoutPanel sidebar;
         private Panel panel1;
@@ -306,5 +303,10 @@ namespace diplom
         private Button usr_btn;
         private Button exit_btn;
         private Controls.RoundBtn create_btn;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn image;
+        private DataGridViewImageColumn img;
+        private DataGridViewTextBoxColumn name;
+        private DataGridViewTextBoxColumn cost;
     }
 }
