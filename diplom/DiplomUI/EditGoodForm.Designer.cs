@@ -108,14 +108,15 @@
             this.name_tB.Name = "name_tB";
             this.name_tB.Size = new System.Drawing.Size(276, 18);
             this.name_tB.TabIndex = 4;
+            this.name_tB.Text = "Наименование";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.cost_tB);
-            this.panel2.Location = new System.Drawing.Point(12, 59);
+            this.panel2.Location = new System.Drawing.Point(6, 61);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(70, 23);
+            this.panel2.Size = new System.Drawing.Size(90, 23);
             this.panel2.TabIndex = 19;
             // 
             // cost_tB
@@ -124,15 +125,16 @@
             this.cost_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cost_tB.Location = new System.Drawing.Point(3, 2);
             this.cost_tB.Name = "cost_tB";
-            this.cost_tB.Size = new System.Drawing.Size(64, 18);
+            this.cost_tB.Size = new System.Drawing.Size(84, 18);
             this.cost_tB.TabIndex = 4;
+            this.cost_tB.Text = "Стоимость";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.label1.Location = new System.Drawing.Point(88, 67);
+            this.label1.Location = new System.Drawing.Point(102, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(30, 15);
             this.label1.TabIndex = 20;
@@ -153,7 +155,7 @@
             this.Controls.Add(this.image_pB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditGoodForm";
-            this.Text = "Редактирование";
+            this.Text = "Изменение товара";
             ((System.ComponentModel.ISupportInitialize)(this.image_pB)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

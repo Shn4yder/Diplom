@@ -14,18 +14,18 @@ namespace diplom
 {
     public partial class Notes : Form
     {
-        List<NoteModel> notes = new List<NoteModel>();
+
         string id_usr, status, name_usr;
         bool sidebarExpand;
         public Notes(string id_usr, string status, string name_usr)
         {
             InitializeComponent();
-            notes = DataManager.LoadNotes();
-            note_GV.DataSource = notes;
+            note_GV.DataSource = DataManager.LoadNotes();
             this.id_usr = id_usr;
             this.status = status;
             this.name_usr = name_usr;
-            note_btn.BackColor = Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(69)))), ((int)(((byte)(45)))));
+
+            name_lbl.Text = $"Хорошего дня, {name_usr}!";
             CheckRole(status);
         }
 
@@ -34,7 +34,7 @@ namespace diplom
         {
             if (sidebarExpand)
             {
-                sidebar.Width -= 10;
+                sidebar.Width -= 100;
                 if (sidebar.Width == sidebar.MinimumSize.Width)
                 {
                     sidebarExpand = false;

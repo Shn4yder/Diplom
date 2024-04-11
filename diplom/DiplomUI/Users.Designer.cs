@@ -47,7 +47,7 @@
             this.items_btn = new System.Windows.Forms.Button();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.create_btn = new diplom.Controls.RoundBtn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.name_lbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.usr_GV)).BeginInit();
             this.sidebar.SuspendLayout();
@@ -257,16 +257,16 @@
             this.create_btn.Text = "Создать";
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
-            // label1
+            // name_lbl
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
-            this.label1.Font = new System.Drawing.Font("Segoe Script", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(65, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(262, 27);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Хорошего дня, Иванов Иван!";
+            this.name_lbl.AutoSize = true;
+            this.name_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
+            this.name_lbl.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.name_lbl.ForeColor = System.Drawing.SystemColors.Window;
+            this.name_lbl.Location = new System.Drawing.Point(65, 14);
+            this.name_lbl.Name = "name_lbl";
+            this.name_lbl.Size = new System.Drawing.Size(0, 27);
+            this.name_lbl.TabIndex = 29;
             // 
             // pictureBox1
             // 
@@ -287,7 +287,7 @@
             this.Controls.Add(this.create_btn);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.usr_GV);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.name_lbl);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Users";
@@ -320,7 +320,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn login;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label name_lbl;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

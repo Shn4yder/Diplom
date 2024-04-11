@@ -49,7 +49,7 @@
             this.comment_tB.Name = "comment_tB";
             this.comment_tB.Size = new System.Drawing.Size(328, 96);
             this.comment_tB.TabIndex = 6;
-            this.comment_tB.Text = "";
+            this.comment_tB.Text = "Комментарий";
             // 
             // del_btn
             // 
@@ -148,7 +148,7 @@
             this.Controls.Add(this.comment_tB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditNoteForm";
-            this.Text = "EditNoteForm";
+            this.Text = "Изменение заметки";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

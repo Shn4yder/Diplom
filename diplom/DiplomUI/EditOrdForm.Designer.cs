@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditOrdForm));
             this.comment_tB = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.numb_lbl = new System.Windows.Forms.Label();
@@ -36,7 +37,18 @@
             this.order_timer = new System.Windows.Forms.Timer(this.components);
             this.time_lbl = new System.Windows.Forms.Label();
             this.goods_GV = new System.Windows.Forms.DataGridView();
+            this.id_good = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.image_path = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.photo = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cart_GV = new System.Windows.Forms.DataGridView();
+            this.id_cart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_good = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idgood = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.cart_amount_lbl = new System.Windows.Forms.Label();
             this.pay_cB = new System.Windows.Forms.ComboBox();
@@ -45,12 +57,6 @@
             this.time_checkB = new System.Windows.Forms.CheckBox();
             this.save_btn = new diplom.Controls.RoundBtn();
             this.add_pay_btn = new diplom.Controls.RoundBtn();
-            this.id_cart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_good = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idgood = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ppl_UpDown = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -59,11 +65,6 @@
             this.nal_tB = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.nenal_tB = new System.Windows.Forms.TextBox();
-            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.photo = new System.Windows.Forms.DataGridViewImageColumn();
-            this.image_path = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_good = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cart_GV)).BeginInit();
             this.panel3.SuspendLayout();
@@ -80,7 +81,7 @@
             this.comment_tB.Name = "comment_tB";
             this.comment_tB.Size = new System.Drawing.Size(203, 96);
             this.comment_tB.TabIndex = 2;
-            this.comment_tB.Text = "";
+            this.comment_tB.Text = "Комментарий";
             // 
             // label2
             // 
@@ -96,11 +97,11 @@
             // numb_lbl
             // 
             this.numb_lbl.AutoSize = true;
-            this.numb_lbl.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numb_lbl.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numb_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.numb_lbl.Location = new System.Drawing.Point(9, 9);
             this.numb_lbl.Name = "numb_lbl";
-            this.numb_lbl.Size = new System.Drawing.Size(93, 25);
+            this.numb_lbl.Size = new System.Drawing.Size(96, 25);
             this.numb_lbl.TabIndex = 7;
             this.numb_lbl.Text = "Заказ № ";
             // 
@@ -150,6 +151,47 @@
             this.goods_GV.TabIndex = 10;
             this.goods_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.goods_GV_CellDoubleClick);
             // 
+            // id_good
+            // 
+            this.id_good.DataPropertyName = "Id_good";
+            this.id_good.HeaderText = "id";
+            this.id_good.Name = "id_good";
+            this.id_good.ReadOnly = true;
+            this.id_good.Visible = false;
+            this.id_good.Width = 50;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Наименование";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 155;
+            // 
+            // image_path
+            // 
+            this.image_path.DataPropertyName = "Img";
+            this.image_path.HeaderText = "path";
+            this.image_path.Name = "image_path";
+            this.image_path.ReadOnly = true;
+            this.image_path.Visible = false;
+            // 
+            // photo
+            // 
+            this.photo.DataPropertyName = "image";
+            this.photo.HeaderText = "photo";
+            this.photo.Name = "photo";
+            this.photo.ReadOnly = true;
+            this.photo.Visible = false;
+            // 
+            // Cost
+            // 
+            this.Cost.DataPropertyName = "Cost";
+            this.Cost.HeaderText = "Цена";
+            this.Cost.Name = "Cost";
+            this.Cost.ReadOnly = true;
+            this.Cost.Width = 52;
+            // 
             // cart_GV
             // 
             this.cart_GV.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
@@ -171,6 +213,55 @@
             this.cart_GV.TabIndex = 11;
             this.cart_GV.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.cart_GV_CellMouseDoubleClick);
             // 
+            // id_cart
+            // 
+            this.id_cart.DataPropertyName = "Id_cart";
+            this.id_cart.HeaderText = "cart";
+            this.id_cart.Name = "id_cart";
+            this.id_cart.ReadOnly = true;
+            this.id_cart.Visible = false;
+            this.id_cart.Width = 150;
+            // 
+            // name_good
+            // 
+            this.name_good.DataPropertyName = "Name";
+            this.name_good.HeaderText = "Наименование";
+            this.name_good.Name = "name_good";
+            this.name_good.ReadOnly = true;
+            this.name_good.Width = 150;
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "Cost";
+            this.price.HeaderText = "Цена";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            this.price.Width = 44;
+            // 
+            // quantity
+            // 
+            this.quantity.DataPropertyName = "Quantity";
+            this.quantity.HeaderText = "Кол-во";
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            this.quantity.Width = 45;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id_order";
+            this.id.HeaderText = "order";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // idgood
+            // 
+            this.idgood.DataPropertyName = "Id_good";
+            this.idgood.HeaderText = "good";
+            this.idgood.Name = "idgood";
+            this.idgood.ReadOnly = true;
+            this.idgood.Visible = false;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -185,12 +276,13 @@
             // cart_amount_lbl
             // 
             this.cart_amount_lbl.AutoSize = true;
-            this.cart_amount_lbl.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.cart_amount_lbl.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cart_amount_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.cart_amount_lbl.Location = new System.Drawing.Point(415, 313);
             this.cart_amount_lbl.Name = "cart_amount_lbl";
-            this.cart_amount_lbl.Size = new System.Drawing.Size(0, 20);
+            this.cart_amount_lbl.Size = new System.Drawing.Size(17, 20);
             this.cart_amount_lbl.TabIndex = 13;
+            this.cart_amount_lbl.Text = "0";
             // 
             // pay_cB
             // 
@@ -204,6 +296,7 @@
             this.pay_cB.Name = "pay_cB";
             this.pay_cB.Size = new System.Drawing.Size(163, 21);
             this.pay_cB.TabIndex = 14;
+            this.pay_cB.Text = "безналичные";
             this.pay_cB.SelectedIndexChanged += new System.EventHandler(this.pay_cB_SelectedIndexChanged);
             // 
             // label5
@@ -265,55 +358,6 @@
             this.add_pay_btn.TabIndex = 22;
             this.add_pay_btn.Text = "Завершить";
             this.add_pay_btn.Click += new System.EventHandler(this.add_pay_btn_Click);
-            // 
-            // id_cart
-            // 
-            this.id_cart.DataPropertyName = "Id_cart";
-            this.id_cart.HeaderText = "cart";
-            this.id_cart.Name = "id_cart";
-            this.id_cart.ReadOnly = true;
-            this.id_cart.Visible = false;
-            this.id_cart.Width = 150;
-            // 
-            // name_good
-            // 
-            this.name_good.DataPropertyName = "Name";
-            this.name_good.HeaderText = "Наименование";
-            this.name_good.Name = "name_good";
-            this.name_good.ReadOnly = true;
-            this.name_good.Width = 150;
-            // 
-            // price
-            // 
-            this.price.DataPropertyName = "Cost";
-            this.price.HeaderText = "Цена";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            this.price.Width = 44;
-            // 
-            // quantity
-            // 
-            this.quantity.DataPropertyName = "Quantity";
-            this.quantity.HeaderText = "Кол-во";
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            this.quantity.Width = 45;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id_order";
-            this.id.HeaderText = "order";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // idgood
-            // 
-            this.idgood.DataPropertyName = "Id_good";
-            this.idgood.HeaderText = "good";
-            this.idgood.Name = "idgood";
-            this.idgood.ReadOnly = true;
-            this.idgood.Visible = false;
             // 
             // panel3
             // 
@@ -404,47 +448,6 @@
             this.nenal_tB.Text = "Безналичные";
             this.nenal_tB.Visible = false;
             // 
-            // Cost
-            // 
-            this.Cost.DataPropertyName = "Cost";
-            this.Cost.HeaderText = "Цена";
-            this.Cost.Name = "Cost";
-            this.Cost.ReadOnly = true;
-            this.Cost.Width = 52;
-            // 
-            // photo
-            // 
-            this.photo.DataPropertyName = "image";
-            this.photo.HeaderText = "photo";
-            this.photo.Name = "photo";
-            this.photo.ReadOnly = true;
-            this.photo.Visible = false;
-            // 
-            // image_path
-            // 
-            this.image_path.DataPropertyName = "Img";
-            this.image_path.HeaderText = "path";
-            this.image_path.Name = "image_path";
-            this.image_path.ReadOnly = true;
-            this.image_path.Visible = false;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "Name";
-            this.name.HeaderText = "Наименование";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 155;
-            // 
-            // id_good
-            // 
-            this.id_good.DataPropertyName = "Id_good";
-            this.id_good.HeaderText = "id";
-            this.id_good.Name = "id_good";
-            this.id_good.ReadOnly = true;
-            this.id_good.Visible = false;
-            this.id_good.Width = 50;
-            // 
             // EditOrdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -470,8 +473,9 @@
             this.Controls.Add(this.numb_lbl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comment_tB);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditOrdForm";
-            this.Text = "EditOrdForm";
+            this.Text = "Изменение заказа";
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cart_GV)).EndInit();
             this.panel3.ResumeLayout(false);

@@ -61,10 +61,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.label1.Location = new System.Drawing.Point(103, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(231, 30);
+            this.label1.Size = new System.Drawing.Size(233, 30);
             this.label1.TabIndex = 3;
             this.label1.Text = "Новый пользователь";
             // 
@@ -88,16 +89,18 @@
             // domain_cB
             // 
             this.domain_cB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.domain_cB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.domain_cB.FormattingEnabled = true;
             this.domain_cB.Items.AddRange(new object[] {
             "mail.ru",
             "gmail.com",
             "yandex.ru",
             "rambler.ru"});
-            this.domain_cB.Location = new System.Drawing.Point(315, 67);
+            this.domain_cB.Location = new System.Drawing.Point(315, 65);
             this.domain_cB.Name = "domain_cB";
-            this.domain_cB.Size = new System.Drawing.Size(88, 28);
+            this.domain_cB.Size = new System.Drawing.Size(88, 25);
             this.domain_cB.TabIndex = 19;
+            this.domain_cB.Text = "mail.ru";
             // 
             // label2
             // 
@@ -126,6 +129,7 @@
             this.email_tB.Name = "email_tB";
             this.email_tB.Size = new System.Drawing.Size(115, 18);
             this.email_tB.TabIndex = 4;
+            this.email_tB.Text = "example";
             // 
             // panel2
             // 
@@ -241,16 +245,18 @@
             // status_cB
             // 
             this.status_cB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.status_cB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.status_cB.FormattingEnabled = true;
             this.status_cB.Items.AddRange(new object[] {
             "Сотрудник",
             "Менеджер",
             "Стажер",
             "Администратор"});
-            this.status_cB.Location = new System.Drawing.Point(16, 42);
+            this.status_cB.Location = new System.Drawing.Point(16, 40);
             this.status_cB.Name = "status_cB";
-            this.status_cB.Size = new System.Drawing.Size(177, 28);
+            this.status_cB.Size = new System.Drawing.Size(177, 25);
             this.status_cB.TabIndex = 0;
+            this.status_cB.Text = "Сотрудник";
             // 
             // create_btn
             // 
@@ -277,7 +283,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddUser";
-            this.Text = "Создать пользователя";
+            this.Text = "Создание пользователя";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel3.ResumeLayout(false);

@@ -52,6 +52,7 @@
             // status_cB
             // 
             this.status_cB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.status_cB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.status_cB.FormattingEnabled = true;
             this.status_cB.Items.AddRange(new object[] {
             "Сотрудник",
@@ -60,8 +61,9 @@
             "Администратор"});
             this.status_cB.Location = new System.Drawing.Point(12, 54);
             this.status_cB.Name = "status_cB";
-            this.status_cB.Size = new System.Drawing.Size(205, 21);
+            this.status_cB.Size = new System.Drawing.Size(205, 25);
             this.status_cB.TabIndex = 7;
+            this.status_cB.Text = "Сотрудник";
             // 
             // save_btn
             // 
@@ -144,6 +146,7 @@
             this.email_tB.Name = "email_tB";
             this.email_tB.Size = new System.Drawing.Size(195, 18);
             this.email_tB.TabIndex = 4;
+            this.email_tB.Text = "example@mail.ru";
             // 
             // panel4
             // 
@@ -199,7 +202,7 @@
             this.Controls.Add(this.status_cB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditUsrForm";
-            this.Text = "EditUsrForm";
+            this.Text = "Изменение пользователя";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

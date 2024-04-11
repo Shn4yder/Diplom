@@ -27,7 +27,8 @@ namespace diplom
             this.id_user = id_user;
             this.status = status;
             this.name_usr = name_usr;
-            items_btn.Enabled = true;
+
+            name_lbl.Text = $"Хорошего дня, {name_usr}!";
 
             CheckRole(status);
         }

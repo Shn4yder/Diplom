@@ -24,13 +24,15 @@ namespace diplom
             this.id_user = id_user;
             this.sts = status;
             this.name_usr = name_usr;
+
+            name_lbl.Text = $"Хорошего дня, {name_usr}!";
         }
 
         private void menu_timer_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
             {
-                sidebar.Width -= 10;
+                sidebar.Width -= 100;
                 if (sidebar.Width == sidebar.MinimumSize.Width)
                 {
                     sidebarExpand = false;
