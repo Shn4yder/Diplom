@@ -9,7 +9,7 @@ using System.Drawing.Drawing2D;
 
 namespace diplom.Controls
 {
-    internal class RoundBtn : Control
+    internal class RoundBtn : Button
     {
         private StringFormat SF = new StringFormat();
         private bool MouseEntered = false;

@@ -97,6 +97,13 @@ namespace diplom
             this.Close();
         }
 
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            Orders form = new Orders(id_user, status, name_usr);
+            form.Show();
+            this.Close();
+        }
+
         private void add_pay_btn_Click(object sender, EventArgs e)
         {
             OrderPay pay = new OrderPay();

@@ -48,6 +48,7 @@
             this.login_tB = new System.Windows.Forms.TextBox();
             this.status_cB = new System.Windows.Forms.ComboBox();
             this.create_btn = new diplom.Controls.RoundBtn();
+            this.back_btn = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -56,6 +57,7 @@
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.back_btn)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -269,7 +271,20 @@
             this.create_btn.Size = new System.Drawing.Size(76, 24);
             this.create_btn.TabIndex = 14;
             this.create_btn.Text = "Создать";
+            this.create_btn.UseVisualStyleBackColor = false;
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
+            // 
+            // back_btn
+            // 
+            this.back_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(160)))), ((int)(((byte)(128)))));
+            this.back_btn.Image = ((System.Drawing.Image)(resources.GetObject("back_btn.Image")));
+            this.back_btn.Location = new System.Drawing.Point(12, 19);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(20, 22);
+            this.back_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.back_btn.TabIndex = 25;
+            this.back_btn.TabStop = false;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
             // AddUser
             // 
@@ -277,6 +292,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(445, 376);
+            this.Controls.Add(this.back_btn);
             this.Controls.Add(this.create_btn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -299,6 +315,7 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.back_btn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,5 +342,6 @@
         private System.Windows.Forms.TextBox pwd_tB;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox login_tB;
+        private System.Windows.Forms.PictureBox back_btn;
     }
 }

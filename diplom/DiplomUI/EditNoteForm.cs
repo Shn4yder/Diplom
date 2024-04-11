@@ -38,6 +38,13 @@ namespace diplom
             this.Close();
         }
 
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            Notes form = new Notes(id_user, status, name_usr);
+            form.Show();
+            this.Close();
+        }
+
         private void save_btn_Click(object sender, EventArgs e)
         {
             UpdateData();

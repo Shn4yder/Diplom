@@ -65,6 +65,7 @@
             this.nal_tB = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.nenal_tB = new System.Windows.Forms.TextBox();
+            this.back_btn = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cart_GV)).BeginInit();
             this.panel3.SuspendLayout();
@@ -72,6 +73,7 @@
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.back_btn)).BeginInit();
             this.SuspendLayout();
             // 
             // comment_tB
@@ -99,7 +101,7 @@
             this.numb_lbl.AutoSize = true;
             this.numb_lbl.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numb_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.numb_lbl.Location = new System.Drawing.Point(9, 9);
+            this.numb_lbl.Location = new System.Drawing.Point(50, 9);
             this.numb_lbl.Name = "numb_lbl";
             this.numb_lbl.Size = new System.Drawing.Size(96, 25);
             this.numb_lbl.TabIndex = 7;
@@ -344,6 +346,7 @@
             this.save_btn.Size = new System.Drawing.Size(149, 24);
             this.save_btn.TabIndex = 21;
             this.save_btn.Text = "Сохранить изменения";
+            this.save_btn.UseVisualStyleBackColor = false;
             this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
             // 
             // add_pay_btn
@@ -357,6 +360,7 @@
             this.add_pay_btn.Size = new System.Drawing.Size(93, 24);
             this.add_pay_btn.TabIndex = 22;
             this.add_pay_btn.Text = "Завершить";
+            this.add_pay_btn.UseVisualStyleBackColor = false;
             this.add_pay_btn.Click += new System.EventHandler(this.add_pay_btn_Click);
             // 
             // panel3
@@ -448,12 +452,25 @@
             this.nenal_tB.Text = "Безналичные";
             this.nenal_tB.Visible = false;
             // 
+            // back_btn
+            // 
+            this.back_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(160)))), ((int)(((byte)(128)))));
+            this.back_btn.Image = ((System.Drawing.Image)(resources.GetObject("back_btn.Image")));
+            this.back_btn.Location = new System.Drawing.Point(9, 12);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(20, 22);
+            this.back_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.back_btn.TabIndex = 27;
+            this.back_btn.TabStop = false;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
             // EditOrdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(508, 420);
+            this.Controls.Add(this.back_btn);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -486,6 +503,7 @@
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.back_btn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,5 +545,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn image_path;
         private System.Windows.Forms.DataGridViewImageColumn photo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
+        private System.Windows.Forms.PictureBox back_btn;
     }
 }

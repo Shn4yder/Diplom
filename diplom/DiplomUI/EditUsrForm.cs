@@ -34,6 +34,13 @@ namespace diplom
             this.Close();
         }
 
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            Users users = new Users(id_user, sts, name_usr);
+            users.Show();
+            this.Close();
+        }
+
         private void del_btn_Click(object sender, EventArgs e)
         {
             DataManager.DeleteUser(id_edit_user);

@@ -62,6 +62,13 @@ namespace diplom
             }
         }
 
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            Goods_adm form = new Goods_adm(id_user, status, name_usr);
+            form.Show();
+            this.Close();
+        }
+
         private void del_btn_Click(object sender, EventArgs e)
         {
             DataManager.DeleteGood(id_good);

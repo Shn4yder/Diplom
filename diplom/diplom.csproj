@@ -143,7 +143,6 @@
     </Compile>
     <Compile Include="DiplomBL\ReportManager.cs" />
     <None Include="Resources\banner.png" />
-    <None Include="Resources\Image1.bmp" />
     <None Include="Resources\logo.jpg" />
     <None Include="Resources\default_photo.jpeg" />
     <None Include="Resources\default_photo.bmp" />

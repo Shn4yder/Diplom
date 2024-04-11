@@ -40,10 +40,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.numb_tB = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.back_btn = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ppl_UpDown)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.back_btn)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -116,6 +118,7 @@
             this.create_btn.Size = new System.Drawing.Size(76, 24);
             this.create_btn.TabIndex = 13;
             this.create_btn.Text = "Создать";
+            this.create_btn.UseVisualStyleBackColor = false;
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
             // panel1
@@ -165,12 +168,25 @@
             this.panel3.Size = new System.Drawing.Size(51, 23);
             this.panel3.TabIndex = 16;
             // 
+            // back_btn
+            // 
+            this.back_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(160)))), ((int)(((byte)(128)))));
+            this.back_btn.Image = ((System.Drawing.Image)(resources.GetObject("back_btn.Image")));
+            this.back_btn.Location = new System.Drawing.Point(12, 12);
+            this.back_btn.Name = "back_btn";
+            this.back_btn.Size = new System.Drawing.Size(20, 22);
+            this.back_btn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.back_btn.TabIndex = 24;
+            this.back_btn.TabStop = false;
+            this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
             // AddOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(268, 297);
+            this.Controls.Add(this.back_btn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -188,6 +204,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.back_btn)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,5 +222,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox numb_tB;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.PictureBox back_btn;
     }
 }

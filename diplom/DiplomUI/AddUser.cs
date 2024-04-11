@@ -23,6 +23,13 @@ namespace diplom
             this.name_usr = name_usr;
         }
 
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            Users usr_frm = new Users(id_user, status, name_usr);
+            usr_frm.Show();
+            this.Close();
+        }
+
         private void create_btn_Click(object sender, EventArgs e)
         {
             UsersModel new_user = new UsersModel();

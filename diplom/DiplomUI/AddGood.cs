@@ -49,6 +49,13 @@ namespace diplom
             }
         }
 
+        private void back_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Goods_adm gds_frm = new Goods_adm(id_user, status, name_usr);
+            gds_frm.Show();
+        }
+
         private void create_btn_Click(object sender, EventArgs e)
         {
             GoodModel new_good = new GoodModel();
