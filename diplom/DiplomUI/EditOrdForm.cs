@@ -112,6 +112,7 @@ namespace diplom
             }
             else
             {
+
                 pay.Payment = "безналичные";
                 pay.Amount = Convert.ToDouble(nenal_tB.Text);
                 DataManager.AddPay(pay);
@@ -142,8 +143,9 @@ namespace diplom
         {
             if (pay_cB.SelectedIndex == 2)
             {
-                nal_tB.Visible = true;
+                panel2.Visible = true; panel4.Visible = true;
                 nenal_tB.Visible = true;
+                nal_tB.Visible = true;
             }
             else
             {

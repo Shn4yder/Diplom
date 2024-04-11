@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.name_tB = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddOrder));
             this.label1 = new System.Windows.Forms.Label();
             this.name_lbl = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numb_lbl = new System.Windows.Forms.Label();
-            this.numb_tB = new System.Windows.Forms.TextBox();
             this.ppl_UpDown = new System.Windows.Forms.NumericUpDown();
             this.count_lbl = new System.Windows.Forms.Label();
             this.comment_tB = new System.Windows.Forms.RichTextBox();
             this.create_btn = new diplom.Controls.RoundBtn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.name_tB = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.numb_tB = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.ppl_UpDown)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // name_tB
-            // 
-            this.name_tB.Location = new System.Drawing.Point(88, 56);
-            this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(193, 20);
-            this.name_tB.TabIndex = 0;
             // 
             // label1
             // 
@@ -87,23 +87,18 @@
             this.numb_lbl.TabIndex = 4;
             this.numb_lbl.Text = "Номер:";
             // 
-            // numb_tB
-            // 
-            this.numb_tB.Location = new System.Drawing.Point(88, 96);
-            this.numb_tB.Name = "numb_tB";
-            this.numb_tB.Size = new System.Drawing.Size(193, 20);
-            this.numb_tB.TabIndex = 5;
-            // 
             // ppl_UpDown
             // 
-            this.ppl_UpDown.Location = new System.Drawing.Point(231, 136);
+            this.ppl_UpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ppl_UpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ppl_UpDown.Location = new System.Drawing.Point(4, 4);
             this.ppl_UpDown.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
             this.ppl_UpDown.Name = "ppl_UpDown";
-            this.ppl_UpDown.Size = new System.Drawing.Size(50, 20);
+            this.ppl_UpDown.Size = new System.Drawing.Size(44, 17);
             this.ppl_UpDown.TabIndex = 6;
             this.ppl_UpDown.Value = new decimal(new int[] {
             1,
@@ -143,41 +138,94 @@
             this.create_btn.Text = "Создать";
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.name_tB);
+            this.panel1.Location = new System.Drawing.Point(88, 55);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(193, 23);
+            this.panel1.TabIndex = 14;
+            // 
+            // name_tB
+            // 
+            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.name_tB.Location = new System.Drawing.Point(3, 2);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(187, 18);
+            this.name_tB.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.numb_tB);
+            this.panel2.Location = new System.Drawing.Point(91, 95);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(193, 23);
+            this.panel2.TabIndex = 15;
+            // 
+            // numb_tB
+            // 
+            this.numb_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numb_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numb_tB.Location = new System.Drawing.Point(3, 1);
+            this.numb_tB.Name = "numb_tB";
+            this.numb_tB.Size = new System.Drawing.Size(187, 18);
+            this.numb_tB.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.ppl_UpDown);
+            this.panel3.Location = new System.Drawing.Point(227, 137);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(51, 23);
+            this.panel3.TabIndex = 16;
+            // 
             // AddOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(323, 297);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.create_btn);
             this.Controls.Add(this.comment_tB);
             this.Controls.Add(this.count_lbl);
-            this.Controls.Add(this.ppl_UpDown);
-            this.Controls.Add(this.numb_tB);
             this.Controls.Add(this.numb_lbl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.name_lbl);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.name_tB);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddOrder";
             this.Text = "Создать";
             ((System.ComponentModel.ISupportInitialize)(this.ppl_UpDown)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox name_tB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label name_lbl;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label numb_lbl;
-        private System.Windows.Forms.TextBox numb_tB;
         private System.Windows.Forms.NumericUpDown ppl_UpDown;
         private System.Windows.Forms.Label count_lbl;
         private System.Windows.Forms.RichTextBox comment_tB;
         private Controls.RoundBtn create_btn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox name_tB;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox numb_tB;
+        private System.Windows.Forms.Panel panel3;
     }
 }

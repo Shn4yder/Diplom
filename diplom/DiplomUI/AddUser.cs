@@ -30,7 +30,7 @@ namespace diplom
             new_user.Fio = name_tB.Text;
             new_user.Status = status_cB.Text;
             new_user.Phone = phone_tB.Text;
-            new_user.Email = email_tB.Text;
+            new_user.Email = email_tB.Text + '@' + domain_cB.Text;
             new_user.Login = login_tB.Text;
             new_user.Password = pwd_tB.Text;
 

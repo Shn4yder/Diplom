@@ -19,7 +19,7 @@ namespace diplom
             InitializeComponent();
         }
 
-        private void Enter_btn_Click(object sender, EventArgs e)
+        private void enter_btn_Click(object sender, EventArgs e)
         {
             List<UsersModel> user_list = new List<UsersModel>();
             UsersModel user = new UsersModel();
@@ -46,8 +46,6 @@ namespace diplom
             {
                 MessageBox.Show("Пользователь не найден", "Внимание");
             }
-
-
         }
     }
 }

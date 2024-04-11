@@ -25,15 +25,6 @@ namespace diplom
             GetUser();
         }
 
-        private void delete_btn_Click(object sender, EventArgs e)
-        {
-            DataManager.DeleteUser(id_edit_user);
-
-            Users users = new Users(id_user, sts, name_usr);
-            users.Show();
-            this.Close();
-        }
-
         private void save_btn_Click(object sender, EventArgs e)
         {
             UpdateData();
@@ -62,15 +53,6 @@ namespace diplom
             email_tB.Text = users[0].Email.ToString();
             login_tB.Text = users[0].Login.ToString();
             pass_tB.Text = users[0].Password.ToString();
-        }
-
-        private void edit_btn_Click(object sender, EventArgs e)
-        {
-            UpdateData();
-
-            Users users = new Users(id_user, sts, name_usr);
-            users.Show();
-            this.Close();
         }
 
         private void UpdateData()

@@ -28,19 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUser));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.domain_cB = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.email_tB = new System.Windows.Forms.TextBox();
-            this.phone_tB = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.phone_tB = new System.Windows.Forms.MaskedTextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.name_tB = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.confirm_tB = new System.Windows.Forms.TextBox();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.pwd_tB = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.login_tB = new System.Windows.Forms.TextBox();
             this.status_cB = new System.Windows.Forms.ComboBox();
             this.create_btn = new diplom.Controls.RoundBtn();
             this.groupBox1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -55,9 +70,14 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.email_tB);
-            this.groupBox1.Controls.Add(this.phone_tB);
-            this.groupBox1.Controls.Add(this.name_tB);
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(222)))), ((int)(((byte)(210)))));
+            this.groupBox1.Controls.Add(this.domain_cB);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.panel3);
+            this.groupBox1.Controls.Add(this.panel2);
+            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.groupBox1.Location = new System.Drawing.Point(12, 67);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(421, 115);
@@ -65,33 +85,95 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Личные данные";
             // 
+            // domain_cB
+            // 
+            this.domain_cB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.domain_cB.FormattingEnabled = true;
+            this.domain_cB.Items.AddRange(new object[] {
+            "mail.ru",
+            "gmail.com",
+            "yandex.ru",
+            "rambler.ru"});
+            this.domain_cB.Location = new System.Drawing.Point(315, 67);
+            this.domain_cB.Name = "domain_cB";
+            this.domain_cB.Size = new System.Drawing.Size(88, 28);
+            this.domain_cB.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(286, 67);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(23, 18);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "@";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.email_tB);
+            this.panel3.Location = new System.Drawing.Point(159, 65);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(121, 23);
+            this.panel3.TabIndex = 17;
+            // 
             // email_tB
             // 
-            this.email_tB.Location = new System.Drawing.Point(209, 68);
+            this.email_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.email_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.email_tB.Location = new System.Drawing.Point(3, 2);
             this.email_tB.Name = "email_tB";
-            this.email_tB.Size = new System.Drawing.Size(194, 20);
-            this.email_tB.TabIndex = 2;
+            this.email_tB.Size = new System.Drawing.Size(115, 18);
+            this.email_tB.TabIndex = 4;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.phone_tB);
+            this.panel2.Location = new System.Drawing.Point(16, 65);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(127, 23);
+            this.panel2.TabIndex = 16;
             // 
             // phone_tB
             // 
-            this.phone_tB.Location = new System.Drawing.Point(16, 68);
+            this.phone_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.phone_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.phone_tB.Location = new System.Drawing.Point(3, 3);
+            this.phone_tB.Mask = "+7(000)-(000)-00-00";
             this.phone_tB.Name = "phone_tB";
-            this.phone_tB.Size = new System.Drawing.Size(160, 20);
-            this.phone_tB.TabIndex = 1;
+            this.phone_tB.Size = new System.Drawing.Size(121, 18);
+            this.phone_tB.TabIndex = 15;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.name_tB);
+            this.panel1.Location = new System.Drawing.Point(16, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(387, 23);
+            this.panel1.TabIndex = 15;
             // 
             // name_tB
             // 
-            this.name_tB.Location = new System.Drawing.Point(16, 19);
+            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.name_tB.Location = new System.Drawing.Point(3, 2);
             this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(387, 20);
-            this.name_tB.TabIndex = 0;
+            this.name_tB.Size = new System.Drawing.Size(381, 18);
+            this.name_tB.TabIndex = 4;
+            this.name_tB.Text = "Фамилия Имя Отчество";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.confirm_tB);
-            this.groupBox2.Controls.Add(this.pwd_tB);
-            this.groupBox2.Controls.Add(this.login_tB);
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(222)))), ((int)(((byte)(210)))));
+            this.groupBox2.Controls.Add(this.panel6);
+            this.groupBox2.Controls.Add(this.panel5);
+            this.groupBox2.Controls.Add(this.panel4);
             this.groupBox2.Controls.Add(this.status_cB);
+            this.groupBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.groupBox2.Location = new System.Drawing.Point(12, 188);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(421, 143);
@@ -99,29 +181,66 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Приложение";
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.confirm_tB);
+            this.panel6.Location = new System.Drawing.Point(209, 88);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(194, 23);
+            this.panel6.TabIndex = 20;
+            // 
             // confirm_tB
             // 
-            this.confirm_tB.Location = new System.Drawing.Point(209, 91);
+            this.confirm_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.confirm_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.confirm_tB.Location = new System.Drawing.Point(3, 2);
             this.confirm_tB.Name = "confirm_tB";
-            this.confirm_tB.Size = new System.Drawing.Size(194, 20);
-            this.confirm_tB.TabIndex = 3;
+            this.confirm_tB.Size = new System.Drawing.Size(188, 18);
+            this.confirm_tB.TabIndex = 4;
+            this.confirm_tB.Text = "Потдвердите пароль";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.pwd_tB);
+            this.panel5.Location = new System.Drawing.Point(209, 42);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(194, 23);
+            this.panel5.TabIndex = 19;
             // 
             // pwd_tB
             // 
-            this.pwd_tB.Location = new System.Drawing.Point(209, 43);
+            this.pwd_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pwd_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.pwd_tB.Location = new System.Drawing.Point(3, 2);
             this.pwd_tB.Name = "pwd_tB";
-            this.pwd_tB.Size = new System.Drawing.Size(194, 20);
-            this.pwd_tB.TabIndex = 2;
+            this.pwd_tB.Size = new System.Drawing.Size(188, 18);
+            this.pwd_tB.TabIndex = 4;
+            this.pwd_tB.Text = "Пароль";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.Controls.Add(this.login_tB);
+            this.panel4.Location = new System.Drawing.Point(16, 88);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(177, 23);
+            this.panel4.TabIndex = 18;
             // 
             // login_tB
             // 
-            this.login_tB.Location = new System.Drawing.Point(16, 91);
+            this.login_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.login_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.login_tB.Location = new System.Drawing.Point(3, 2);
             this.login_tB.Name = "login_tB";
-            this.login_tB.Size = new System.Drawing.Size(177, 20);
-            this.login_tB.TabIndex = 1;
+            this.login_tB.Size = new System.Drawing.Size(171, 18);
+            this.login_tB.TabIndex = 4;
+            this.login_tB.Text = "Логин";
             // 
             // status_cB
             // 
+            this.status_cB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.status_cB.FormattingEnabled = true;
             this.status_cB.Items.AddRange(new object[] {
             "Сотрудник",
@@ -130,7 +249,7 @@
             "Администратор"});
             this.status_cB.Location = new System.Drawing.Point(16, 42);
             this.status_cB.Name = "status_cB";
-            this.status_cB.Size = new System.Drawing.Size(177, 21);
+            this.status_cB.Size = new System.Drawing.Size(177, 28);
             this.status_cB.TabIndex = 0;
             // 
             // create_btn
@@ -156,12 +275,24 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddUser";
             this.Text = "Создать пользователя";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,14 +302,22 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox name_tB;
-        private System.Windows.Forms.TextBox phone_tB;
-        private System.Windows.Forms.TextBox email_tB;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox pwd_tB;
-        private System.Windows.Forms.TextBox login_tB;
         private System.Windows.Forms.ComboBox status_cB;
-        private System.Windows.Forms.TextBox confirm_tB;
         private Controls.RoundBtn create_btn;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox name_tB;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.MaskedTextBox phone_tB;
+        private System.Windows.Forms.ComboBox domain_cB;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox email_tB;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox confirm_tB;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox pwd_tB;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox login_tB;
     }
 }

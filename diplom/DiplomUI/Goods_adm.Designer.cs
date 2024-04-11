@@ -31,7 +31,13 @@ namespace diplom
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Goods_adm));
             this.goods_GV = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.image = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.img = new System.Windows.Forms.DataGridViewImageColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.exit_btn = new System.Windows.Forms.Button();
@@ -43,14 +49,12 @@ namespace diplom
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.create_btn = new diplom.Controls.RoundBtn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.image = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.img = new System.Windows.Forms.DataGridViewImageColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // goods_GV
@@ -64,15 +68,58 @@ namespace diplom
             this.img,
             this.name,
             this.cost});
-            this.goods_GV.Location = new System.Drawing.Point(68, 47);
+            this.goods_GV.Location = new System.Drawing.Point(68, 74);
             this.goods_GV.MultiSelect = false;
             this.goods_GV.Name = "goods_GV";
             this.goods_GV.RowHeadersVisible = false;
             this.goods_GV.RowTemplate.Height = 110;
             this.goods_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.goods_GV.Size = new System.Drawing.Size(446, 352);
+            this.goods_GV.Size = new System.Drawing.Size(446, 326);
             this.goods_GV.TabIndex = 3;
             this.goods_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.goods_GV_CellDoubleClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id_good";
+            this.id.HeaderText = "id_good";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // image
+            // 
+            this.image.DataPropertyName = "Img";
+            this.image.HeaderText = "Фото";
+            this.image.Name = "image";
+            this.image.ReadOnly = true;
+            this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.image.Visible = false;
+            // 
+            // img
+            // 
+            this.img.DataPropertyName = "image";
+            this.img.HeaderText = "Изображение";
+            this.img.Image = global::diplom.Properties.Resources.default_photo;
+            this.img.Name = "img";
+            this.img.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.img.Width = 140;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "Наименование";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            this.name.Width = 190;
+            // 
+            // cost
+            // 
+            this.cost.DataPropertyName = "Cost";
+            this.cost.HeaderText = "Цена";
+            this.cost.Name = "cost";
+            this.cost.ReadOnly = true;
+            this.cost.Width = 98;
             // 
             // sidebar
             // 
@@ -229,48 +276,27 @@ namespace diplom
             this.create_btn.Text = "Создать";
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
-            // id
+            // label1
             // 
-            this.id.DataPropertyName = "Id_good";
-            this.id.HeaderText = "id_good";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
+            this.label1.Font = new System.Drawing.Font("Segoe Script", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(65, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(262, 27);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Хорошего дня, Иванов Иван!";
             // 
-            // image
+            // pictureBox1
             // 
-            this.image.DataPropertyName = "Img";
-            this.image.HeaderText = "Фото";
-            this.image.Name = "image";
-            this.image.ReadOnly = true;
-            this.image.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.image.Visible = false;
-            // 
-            // img
-            // 
-            this.img.DataPropertyName = "image";
-            this.img.HeaderText = "Изображение";
-            this.img.Image = global::diplom.Properties.Resources.default_photo;
-            this.img.Name = "img";
-            this.img.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.img.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.img.Width = 140;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "Name";
-            this.name.HeaderText = "Наименование";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 190;
-            // 
-            // cost
-            // 
-            this.cost.DataPropertyName = "Cost";
-            this.cost.HeaderText = "Цена";
-            this.cost.Name = "cost";
-            this.cost.ReadOnly = true;
-            this.cost.Width = 98;
+            this.pictureBox1.Image = global::diplom.Properties.Resources.banner;
+            this.pictureBox1.Location = new System.Drawing.Point(46, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(576, 58);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
             // 
             // Goods_adm
             // 
@@ -281,12 +307,17 @@ namespace diplom
             this.Controls.Add(this.create_btn);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.goods_GV);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Goods_adm";
             this.Text = "Товары";
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).EndInit();
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -308,5 +339,7 @@ namespace diplom
         private DataGridViewImageColumn img;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn cost;
+        private Label label1;
+        private PictureBox pictureBox1;
     }
 }
