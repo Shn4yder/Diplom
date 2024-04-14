@@ -34,11 +34,11 @@
             this.del_btn = new diplom.Controls.RoundBtn();
             this.add_photo_btn = new diplom.Controls.RoundBtn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.name_tB = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.cost_tB = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.back_btn = new System.Windows.Forms.PictureBox();
+            this.name_tB = new diplom.CueTextbox();
+            this.cost_tB = new diplom.CueTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.image_pB)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -105,16 +105,6 @@
             this.panel1.Size = new System.Drawing.Size(291, 23);
             this.panel1.TabIndex = 18;
             // 
-            // name_tB
-            // 
-            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.name_tB.Location = new System.Drawing.Point(3, 2);
-            this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(276, 18);
-            this.name_tB.TabIndex = 4;
-            this.name_tB.Text = "Наименование";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -123,16 +113,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(90, 23);
             this.panel2.TabIndex = 19;
-            // 
-            // cost_tB
-            // 
-            this.cost_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.cost_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.cost_tB.Location = new System.Drawing.Point(3, 2);
-            this.cost_tB.Name = "cost_tB";
-            this.cost_tB.Size = new System.Drawing.Size(84, 18);
-            this.cost_tB.TabIndex = 4;
-            this.cost_tB.Text = "Стоимость";
             // 
             // label1
             // 
@@ -156,6 +136,26 @@
             this.back_btn.TabIndex = 25;
             this.back_btn.TabStop = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
+            // name_tB
+            // 
+            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_tB.Cue = "Наименование";
+            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_tB.Location = new System.Drawing.Point(3, 2);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(285, 18);
+            this.name_tB.TabIndex = 30;
+            // 
+            // cost_tB
+            // 
+            this.cost_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.cost_tB.Cue = "Стоимость";
+            this.cost_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cost_tB.Location = new System.Drawing.Point(3, 2);
+            this.cost_tB.Name = "cost_tB";
+            this.cost_tB.Size = new System.Drawing.Size(84, 18);
+            this.cost_tB.TabIndex = 30;
             // 
             // EditGoodForm
             // 
@@ -191,10 +191,10 @@
         private Controls.RoundBtn del_btn;
         private Controls.RoundBtn save_btn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox name_tB;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox cost_tB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox back_btn;
+        private CueTextbox name_tB;
+        private CueTextbox cost_tB;
     }
 }

@@ -33,12 +33,12 @@
             this.del_btn = new diplom.Controls.RoundBtn();
             this.save_btn = new diplom.Controls.RoundBtn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.name_tB = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.phone_tB = new System.Windows.Forms.MaskedTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.place_tB = new System.Windows.Forms.TextBox();
             this.back_btn = new System.Windows.Forms.PictureBox();
+            this.name_tB = new diplom.CueTextbox();
+            this.place_tB = new diplom.CueTextbox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -90,16 +90,6 @@
             this.panel1.Size = new System.Drawing.Size(331, 23);
             this.panel1.TabIndex = 19;
             // 
-            // name_tB
-            // 
-            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.name_tB.Location = new System.Drawing.Point(3, 2);
-            this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(325, 18);
-            this.name_tB.TabIndex = 4;
-            this.name_tB.Text = "Имя";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -128,16 +118,6 @@
             this.panel3.Size = new System.Drawing.Size(185, 23);
             this.panel3.TabIndex = 21;
             // 
-            // place_tB
-            // 
-            this.place_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.place_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.place_tB.Location = new System.Drawing.Point(3, 2);
-            this.place_tB.Name = "place_tB";
-            this.place_tB.Size = new System.Drawing.Size(179, 18);
-            this.place_tB.TabIndex = 4;
-            this.place_tB.Text = "Место/стол";
-            // 
             // back_btn
             // 
             this.back_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(160)))), ((int)(((byte)(128)))));
@@ -149,6 +129,26 @@
             this.back_btn.TabIndex = 25;
             this.back_btn.TabStop = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
+            // name_tB
+            // 
+            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_tB.Cue = "Имя";
+            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_tB.Location = new System.Drawing.Point(3, 2);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(325, 18);
+            this.name_tB.TabIndex = 30;
+            // 
+            // place_tB
+            // 
+            this.place_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.place_tB.Cue = "№ Стола/места";
+            this.place_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.place_tB.Location = new System.Drawing.Point(3, 2);
+            this.place_tB.Name = "place_tB";
+            this.place_tB.Size = new System.Drawing.Size(179, 18);
+            this.place_tB.TabIndex = 30;
             // 
             // EditNoteForm
             // 
@@ -182,11 +182,11 @@
         private Controls.RoundBtn del_btn;
         private Controls.RoundBtn save_btn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox name_tB;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MaskedTextBox phone_tB;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox place_tB;
         private System.Windows.Forms.PictureBox back_btn;
+        private CueTextbox name_tB;
+        private CueTextbox place_tB;
     }
 }

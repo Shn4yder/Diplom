@@ -24,6 +24,9 @@ namespace diplom
             this.id_user = id_user;
             this.status = status;
             this.name_usr = name_usr;
+
+            status_cB.Text = "Сотрудник";
+
             pwd_tB.UseSystemPasswordChar = true;
             confirm_tB.UseSystemPasswordChar = true;
 

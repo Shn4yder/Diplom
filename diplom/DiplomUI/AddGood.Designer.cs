@@ -33,14 +33,14 @@ namespace diplom
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddGood));
             this.image_pB = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.name_tB = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.price_tB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.create_btn = new diplom.Controls.RoundBtn();
             this.add_photo = new diplom.Controls.RoundBtn();
             this.back_btn = new System.Windows.Forms.PictureBox();
+            this.name_tB = new diplom.CueTextbox();
+            this.price_tB = new diplom.CueTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.image_pB)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.back_btn)).BeginInit();
@@ -65,16 +65,6 @@ namespace diplom
             this.label1.TabIndex = 3;
             this.label1.Text = "Новый товар";
             // 
-            // name_tB
-            // 
-            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.name_tB.Location = new System.Drawing.Point(3, 2);
-            this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(300, 18);
-            this.name_tB.TabIndex = 4;
-            this.name_tB.Text = "Наименование";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
@@ -91,16 +81,6 @@ namespace diplom
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(87, 23);
             this.panel2.TabIndex = 11;
-            // 
-            // price_tB
-            // 
-            this.price_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.price_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.price_tB.Location = new System.Drawing.Point(15, 75);
-            this.price_tB.Name = "price_tB";
-            this.price_tB.Size = new System.Drawing.Size(81, 18);
-            this.price_tB.TabIndex = 12;
-            this.price_tB.Text = "Стоимость";
             // 
             // label2
             // 
@@ -153,15 +133,35 @@ namespace diplom
             this.back_btn.TabStop = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
+            // name_tB
+            // 
+            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_tB.Cue = "Наименование";
+            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_tB.Location = new System.Drawing.Point(4, 2);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(299, 18);
+            this.name_tB.TabIndex = 29;
+            // 
+            // price_tB
+            // 
+            this.price_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.price_tB.Cue = "Стоимость";
+            this.price_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.price_tB.Location = new System.Drawing.Point(16, 75);
+            this.price_tB.Name = "price_tB";
+            this.price_tB.Size = new System.Drawing.Size(80, 18);
+            this.price_tB.TabIndex = 29;
+            // 
             // AddGood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(347, 212);
+            this.Controls.Add(this.price_tB);
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.price_tB);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.create_btn);
@@ -184,14 +184,14 @@ namespace diplom
 
         private System.Windows.Forms.PictureBox image_pB;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox name_tB;
         private Controls.RoundBtn add_photo;
         private Controls.RoundBtn create_btn;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox price_tB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox back_btn;
+        private CueTextbox name_tB;
+        private CueTextbox price_tB;
     }
 }
 

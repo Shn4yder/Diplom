@@ -30,6 +30,7 @@ namespace diplom
             goods_GV.DataSource = DataManager.LoadGoods();
             cart_GV.DataSource = DataManager.LoadCart(id_order);
             cart_amount_lbl.Text = AmountCart().ToString();
+            pay_cB.Text = "безналичные";
         }
 
         private void GetOrder()

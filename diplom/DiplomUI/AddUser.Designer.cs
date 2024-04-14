@@ -34,34 +34,34 @@
             this.domain_cB = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.email_tB = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.phone_tB = new System.Windows.Forms.MaskedTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.name_tB = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.confirm_tB = new System.Windows.Forms.TextBox();
+            this.confirm_cB = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pwd_tB = new System.Windows.Forms.TextBox();
+            this.pass_cB = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.login_tB = new System.Windows.Forms.TextBox();
             this.status_cB = new System.Windows.Forms.ComboBox();
             this.create_btn = new diplom.Controls.RoundBtn();
             this.back_btn = new System.Windows.Forms.PictureBox();
-            this.pass_cB = new System.Windows.Forms.PictureBox();
-            this.confirm_cB = new System.Windows.Forms.PictureBox();
+            this.name_tB = new diplom.CueTextbox();
+            this.email_tB = new diplom.CueTextbox();
+            this.login_tB = new diplom.CueTextbox();
+            this.pwd_tB = new diplom.CueTextbox();
+            this.confirm_tB = new diplom.CueTextbox();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.confirm_cB)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pass_cB)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.back_btn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pass_cB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.confirm_cB)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -127,16 +127,6 @@
             this.panel3.Size = new System.Drawing.Size(121, 23);
             this.panel3.TabIndex = 17;
             // 
-            // email_tB
-            // 
-            this.email_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.email_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.email_tB.Location = new System.Drawing.Point(3, 2);
-            this.email_tB.Name = "email_tB";
-            this.email_tB.Size = new System.Drawing.Size(115, 18);
-            this.email_tB.TabIndex = 4;
-            this.email_tB.Text = "example";
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -165,16 +155,6 @@
             this.panel1.Size = new System.Drawing.Size(387, 23);
             this.panel1.TabIndex = 15;
             // 
-            // name_tB
-            // 
-            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.name_tB.Location = new System.Drawing.Point(3, 2);
-            this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(381, 18);
-            this.name_tB.TabIndex = 4;
-            this.name_tB.Text = "Фамилия Имя Отчество";
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(222)))), ((int)(((byte)(210)))));
@@ -201,15 +181,17 @@
             this.panel6.Size = new System.Drawing.Size(194, 23);
             this.panel6.TabIndex = 20;
             // 
-            // confirm_tB
+            // confirm_cB
             // 
-            this.confirm_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.confirm_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.confirm_tB.Location = new System.Drawing.Point(3, 2);
-            this.confirm_tB.Name = "confirm_tB";
-            this.confirm_tB.Size = new System.Drawing.Size(188, 18);
-            this.confirm_tB.TabIndex = 4;
-            this.confirm_tB.Text = "Потдвердите пароль";
+            this.confirm_cB.BackColor = System.Drawing.SystemColors.Window;
+            this.confirm_cB.Image = ((System.Drawing.Image)(resources.GetObject("confirm_cB.Image")));
+            this.confirm_cB.Location = new System.Drawing.Point(165, 2);
+            this.confirm_cB.Name = "confirm_cB";
+            this.confirm_cB.Size = new System.Drawing.Size(26, 18);
+            this.confirm_cB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.confirm_cB.TabIndex = 29;
+            this.confirm_cB.TabStop = false;
+            this.confirm_cB.Click += new System.EventHandler(this.confirm_cB_Click);
             // 
             // panel5
             // 
@@ -221,15 +203,17 @@
             this.panel5.Size = new System.Drawing.Size(194, 23);
             this.panel5.TabIndex = 19;
             // 
-            // pwd_tB
+            // pass_cB
             // 
-            this.pwd_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pwd_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pwd_tB.Location = new System.Drawing.Point(3, 2);
-            this.pwd_tB.Name = "pwd_tB";
-            this.pwd_tB.Size = new System.Drawing.Size(188, 18);
-            this.pwd_tB.TabIndex = 4;
-            this.pwd_tB.Text = "Пароль";
+            this.pass_cB.BackColor = System.Drawing.SystemColors.Window;
+            this.pass_cB.Image = ((System.Drawing.Image)(resources.GetObject("pass_cB.Image")));
+            this.pass_cB.Location = new System.Drawing.Point(165, 2);
+            this.pass_cB.Name = "pass_cB";
+            this.pass_cB.Size = new System.Drawing.Size(26, 18);
+            this.pass_cB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pass_cB.TabIndex = 29;
+            this.pass_cB.TabStop = false;
+            this.pass_cB.Click += new System.EventHandler(this.pass_cB_Click);
             // 
             // panel4
             // 
@@ -240,18 +224,9 @@
             this.panel4.Size = new System.Drawing.Size(177, 23);
             this.panel4.TabIndex = 18;
             // 
-            // login_tB
-            // 
-            this.login_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.login_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.login_tB.Location = new System.Drawing.Point(3, 2);
-            this.login_tB.Name = "login_tB";
-            this.login_tB.Size = new System.Drawing.Size(171, 18);
-            this.login_tB.TabIndex = 4;
-            this.login_tB.Text = "Логин";
-            // 
             // status_cB
             // 
+            this.status_cB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.status_cB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.status_cB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.status_cB.FormattingEnabled = true;
@@ -264,7 +239,6 @@
             this.status_cB.Name = "status_cB";
             this.status_cB.Size = new System.Drawing.Size(177, 25);
             this.status_cB.TabIndex = 0;
-            this.status_cB.Text = "Сотрудник";
             // 
             // create_btn
             // 
@@ -292,29 +266,55 @@
             this.back_btn.TabStop = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
-            // pass_cB
+            // name_tB
             // 
-            this.pass_cB.BackColor = System.Drawing.SystemColors.Window;
-            this.pass_cB.Image = ((System.Drawing.Image)(resources.GetObject("pass_cB.Image")));
-            this.pass_cB.Location = new System.Drawing.Point(165, 2);
-            this.pass_cB.Name = "pass_cB";
-            this.pass_cB.Size = new System.Drawing.Size(26, 18);
-            this.pass_cB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pass_cB.TabIndex = 29;
-            this.pass_cB.TabStop = false;
-            this.pass_cB.Click += new System.EventHandler(this.pass_cB_Click);
+            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_tB.Cue = "Фамилия Имя Отчество";
+            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_tB.Location = new System.Drawing.Point(3, 2);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(381, 18);
+            this.name_tB.TabIndex = 30;
             // 
-            // confirm_cB
+            // email_tB
             // 
-            this.confirm_cB.BackColor = System.Drawing.SystemColors.Window;
-            this.confirm_cB.Image = ((System.Drawing.Image)(resources.GetObject("confirm_cB.Image")));
-            this.confirm_cB.Location = new System.Drawing.Point(165, 2);
-            this.confirm_cB.Name = "confirm_cB";
-            this.confirm_cB.Size = new System.Drawing.Size(26, 18);
-            this.confirm_cB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.confirm_cB.TabIndex = 29;
-            this.confirm_cB.TabStop = false;
-            this.confirm_cB.Click += new System.EventHandler(this.confirm_cB_Click);
+            this.email_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.email_tB.Cue = "example";
+            this.email_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_tB.Location = new System.Drawing.Point(3, 3);
+            this.email_tB.Name = "email_tB";
+            this.email_tB.Size = new System.Drawing.Size(115, 18);
+            this.email_tB.TabIndex = 30;
+            // 
+            // login_tB
+            // 
+            this.login_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.login_tB.Cue = "Логин";
+            this.login_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_tB.Location = new System.Drawing.Point(3, 2);
+            this.login_tB.Name = "login_tB";
+            this.login_tB.Size = new System.Drawing.Size(171, 18);
+            this.login_tB.TabIndex = 30;
+            // 
+            // pwd_tB
+            // 
+            this.pwd_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pwd_tB.Cue = "Пароль";
+            this.pwd_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pwd_tB.Location = new System.Drawing.Point(3, 3);
+            this.pwd_tB.Name = "pwd_tB";
+            this.pwd_tB.Size = new System.Drawing.Size(188, 18);
+            this.pwd_tB.TabIndex = 30;
+            // 
+            // confirm_tB
+            // 
+            this.confirm_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.confirm_tB.Cue = "Подтвердите пароль";
+            this.confirm_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.confirm_tB.Location = new System.Drawing.Point(3, 3);
+            this.confirm_tB.Name = "confirm_tB";
+            this.confirm_tB.Size = new System.Drawing.Size(188, 18);
+            this.confirm_tB.TabIndex = 30;
             // 
             // AddUser
             // 
@@ -341,13 +341,13 @@
             this.groupBox2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.confirm_cB)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pass_cB)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.back_btn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pass_cB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.confirm_cB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,21 +361,21 @@
         private System.Windows.Forms.ComboBox status_cB;
         private Controls.RoundBtn create_btn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox name_tB;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MaskedTextBox phone_tB;
         private System.Windows.Forms.ComboBox domain_cB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox email_tB;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox confirm_tB;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox pwd_tB;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox login_tB;
         private System.Windows.Forms.PictureBox back_btn;
         private System.Windows.Forms.PictureBox confirm_cB;
         private System.Windows.Forms.PictureBox pass_cB;
+        private CueTextbox email_tB;
+        private CueTextbox name_tB;
+        private CueTextbox confirm_tB;
+        private CueTextbox pwd_tB;
+        private CueTextbox login_tB;
     }
 }

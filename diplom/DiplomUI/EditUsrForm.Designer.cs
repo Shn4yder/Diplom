@@ -30,20 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditUsrForm));
             this.status_cB = new System.Windows.Forms.ComboBox();
-            this.save_btn = new diplom.Controls.RoundBtn();
-            this.del_btn = new diplom.Controls.RoundBtn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.name_tB = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.phone_tB = new System.Windows.Forms.MaskedTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.email_tB = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.login_tB = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.pass_cB = new System.Windows.Forms.PictureBox();
-            this.pass_tB = new System.Windows.Forms.TextBox();
             this.back_btn = new System.Windows.Forms.PictureBox();
+            this.email_tB = new diplom.CueTextbox();
+            this.name_tB = new diplom.CueTextbox();
+            this.del_btn = new diplom.Controls.RoundBtn();
+            this.save_btn = new diplom.Controls.RoundBtn();
+            this.login_tB = new diplom.CueTextbox();
+            this.pass_tB = new diplom.CueTextbox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -55,6 +55,7 @@
             // 
             // status_cB
             // 
+            this.status_cB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.status_cB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.status_cB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.status_cB.FormattingEnabled = true;
@@ -67,35 +68,6 @@
             this.status_cB.Name = "status_cB";
             this.status_cB.Size = new System.Drawing.Size(205, 25);
             this.status_cB.TabIndex = 7;
-            this.status_cB.Text = "Сотрудник";
-            // 
-            // save_btn
-            // 
-            this.save_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.save_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.save_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.save_btn.Location = new System.Drawing.Point(138, 286);
-            this.save_btn.Name = "save_btn";
-            this.save_btn.Radius = 10;
-            this.save_btn.Size = new System.Drawing.Size(149, 24);
-            this.save_btn.TabIndex = 22;
-            this.save_btn.Text = "Сохранить изменения";
-            this.save_btn.UseVisualStyleBackColor = false;
-            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
-            // 
-            // del_btn
-            // 
-            this.del_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.del_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.del_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.del_btn.Location = new System.Drawing.Point(12, 286);
-            this.del_btn.Name = "del_btn";
-            this.del_btn.Radius = 10;
-            this.del_btn.Size = new System.Drawing.Size(79, 24);
-            this.del_btn.TabIndex = 23;
-            this.del_btn.Text = "Удалить";
-            this.del_btn.UseVisualStyleBackColor = false;
-            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
             // 
             // panel1
             // 
@@ -105,16 +77,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(275, 23);
             this.panel1.TabIndex = 24;
-            // 
-            // name_tB
-            // 
-            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.name_tB.Location = new System.Drawing.Point(3, 2);
-            this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(269, 18);
-            this.name_tB.TabIndex = 4;
-            this.name_tB.Text = "Фамилия Имя Отчество";
             // 
             // panel2
             // 
@@ -144,16 +106,6 @@
             this.panel3.Size = new System.Drawing.Size(205, 23);
             this.panel3.TabIndex = 26;
             // 
-            // email_tB
-            // 
-            this.email_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.email_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.email_tB.Location = new System.Drawing.Point(3, 2);
-            this.email_tB.Name = "email_tB";
-            this.email_tB.Size = new System.Drawing.Size(195, 18);
-            this.email_tB.TabIndex = 4;
-            this.email_tB.Text = "example@mail.ru";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
@@ -162,16 +114,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(205, 23);
             this.panel4.TabIndex = 27;
-            // 
-            // login_tB
-            // 
-            this.login_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.login_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.login_tB.Location = new System.Drawing.Point(3, 2);
-            this.login_tB.Name = "login_tB";
-            this.login_tB.Size = new System.Drawing.Size(199, 18);
-            this.login_tB.TabIndex = 4;
-            this.login_tB.Text = "Логин";
             // 
             // panel5
             // 
@@ -195,16 +137,6 @@
             this.pass_cB.TabStop = false;
             this.pass_cB.Click += new System.EventHandler(this.pass_cB_Click);
             // 
-            // pass_tB
-            // 
-            this.pass_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pass_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pass_tB.Location = new System.Drawing.Point(3, 2);
-            this.pass_tB.Name = "pass_tB";
-            this.pass_tB.Size = new System.Drawing.Size(199, 18);
-            this.pass_tB.TabIndex = 4;
-            this.pass_tB.Text = "Пароль";
-            // 
             // back_btn
             // 
             this.back_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(160)))), ((int)(((byte)(128)))));
@@ -216,6 +148,74 @@
             this.back_btn.TabIndex = 29;
             this.back_btn.TabStop = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
+            // 
+            // email_tB
+            // 
+            this.email_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.email_tB.Cue = "example@mail.ru";
+            this.email_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.email_tB.Location = new System.Drawing.Point(3, 2);
+            this.email_tB.Name = "email_tB";
+            this.email_tB.Size = new System.Drawing.Size(199, 18);
+            this.email_tB.TabIndex = 31;
+            // 
+            // name_tB
+            // 
+            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_tB.Cue = "Фамилия Имя Отчество";
+            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_tB.Location = new System.Drawing.Point(3, 2);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(269, 18);
+            this.name_tB.TabIndex = 31;
+            // 
+            // del_btn
+            // 
+            this.del_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.del_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.del_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.del_btn.Location = new System.Drawing.Point(12, 286);
+            this.del_btn.Name = "del_btn";
+            this.del_btn.Radius = 10;
+            this.del_btn.Size = new System.Drawing.Size(79, 24);
+            this.del_btn.TabIndex = 23;
+            this.del_btn.Text = "Удалить";
+            this.del_btn.UseVisualStyleBackColor = false;
+            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
+            // 
+            // save_btn
+            // 
+            this.save_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.save_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.save_btn.Location = new System.Drawing.Point(138, 286);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Radius = 10;
+            this.save_btn.Size = new System.Drawing.Size(149, 24);
+            this.save_btn.TabIndex = 22;
+            this.save_btn.Text = "Сохранить изменения";
+            this.save_btn.UseVisualStyleBackColor = false;
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
+            // 
+            // login_tB
+            // 
+            this.login_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.login_tB.Cue = "Логин";
+            this.login_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_tB.Location = new System.Drawing.Point(3, 3);
+            this.login_tB.Name = "login_tB";
+            this.login_tB.Size = new System.Drawing.Size(199, 18);
+            this.login_tB.TabIndex = 31;
+            // 
+            // pass_tB
+            // 
+            this.pass_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pass_tB.Cue = "Пароль";
+            this.pass_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass_tB.Location = new System.Drawing.Point(3, 2);
+            this.pass_tB.Name = "pass_tB";
+            this.pass_tB.Size = new System.Drawing.Size(199, 18);
+            this.pass_tB.TabIndex = 31;
             // 
             // EditUsrForm
             // 
@@ -256,16 +256,16 @@
         private Controls.RoundBtn save_btn;
         private Controls.RoundBtn del_btn;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox name_tB;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MaskedTextBox phone_tB;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox email_tB;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox login_tB;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox pass_tB;
         private System.Windows.Forms.PictureBox back_btn;
         private System.Windows.Forms.PictureBox pass_cB;
+        private CueTextbox name_tB;
+        private CueTextbox email_tB;
+        private CueTextbox login_tB;
+        private CueTextbox pass_tB;
     }
 }

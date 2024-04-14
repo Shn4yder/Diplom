@@ -32,11 +32,11 @@
             this.main_lbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.login_tB = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pass_cB = new System.Windows.Forms.PictureBox();
-            this.pass_tB = new System.Windows.Forms.TextBox();
             this.enter_btn = new diplom.Controls.RoundBtn();
+            this.login_tB = new diplom.CueTextbox();
+            this.pass_tB = new diplom.CueTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -75,16 +75,6 @@
             this.panel4.Size = new System.Drawing.Size(226, 23);
             this.panel4.TabIndex = 19;
             // 
-            // login_tB
-            // 
-            this.login_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.login_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.login_tB.Location = new System.Drawing.Point(3, 2);
-            this.login_tB.Name = "login_tB";
-            this.login_tB.Size = new System.Drawing.Size(216, 18);
-            this.login_tB.TabIndex = 4;
-            this.login_tB.Text = "Логин";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
@@ -98,7 +88,7 @@
             // pass_cB
             // 
             this.pass_cB.BackColor = System.Drawing.SystemColors.Window;
-            this.pass_cB.Image = global::diplom.Properties.Resources.closed_eye;
+            this.pass_cB.Image = ((System.Drawing.Image)(resources.GetObject("pass_cB.Image")));
             this.pass_cB.Location = new System.Drawing.Point(197, 3);
             this.pass_cB.Name = "pass_cB";
             this.pass_cB.Size = new System.Drawing.Size(26, 18);
@@ -106,16 +96,6 @@
             this.pass_cB.TabIndex = 28;
             this.pass_cB.TabStop = false;
             this.pass_cB.Click += new System.EventHandler(this.pass_cB_Click);
-            // 
-            // pass_tB
-            // 
-            this.pass_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pass_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pass_tB.Location = new System.Drawing.Point(3, 2);
-            this.pass_tB.Name = "pass_tB";
-            this.pass_tB.Size = new System.Drawing.Size(216, 18);
-            this.pass_tB.TabIndex = 4;
-            this.pass_tB.Text = "Пароль";
             // 
             // enter_btn
             // 
@@ -130,6 +110,26 @@
             this.enter_btn.Text = "Вход";
             this.enter_btn.UseVisualStyleBackColor = false;
             this.enter_btn.Click += new System.EventHandler(this.enter_btn_Click);
+            // 
+            // login_tB
+            // 
+            this.login_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.login_tB.Cue = "Логин";
+            this.login_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_tB.Location = new System.Drawing.Point(3, 3);
+            this.login_tB.Name = "login_tB";
+            this.login_tB.Size = new System.Drawing.Size(220, 18);
+            this.login_tB.TabIndex = 28;
+            // 
+            // pass_tB
+            // 
+            this.pass_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pass_tB.Cue = "Пароль";
+            this.pass_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass_tB.Location = new System.Drawing.Point(3, 2);
+            this.pass_tB.Name = "pass_tB";
+            this.pass_tB.Size = new System.Drawing.Size(220, 18);
+            this.pass_tB.TabIndex = 29;
             // 
             // Authorization
             // 
@@ -160,10 +160,10 @@
         private System.Windows.Forms.Label main_lbl;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox login_tB;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox pass_tB;
         private Controls.RoundBtn enter_btn;
         private System.Windows.Forms.PictureBox pass_cB;
+        private CueTextbox login_tB;
+        private CueTextbox pass_tB;
     }
 }
