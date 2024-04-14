@@ -1,4 +1,5 @@
 ﻿using diplom.Models;
+using diplom.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +14,8 @@ namespace diplom
 {
     public partial class EditUsrForm : Form
     {
-        List<UsersModel> users = new List<UsersModel>();
         string id_edit_user, id_user, sts, name_usr;
+        bool show_pass;
         public EditUsrForm(string id_edit_user, string id_user, string sts, string name_usr)
         {
             InitializeComponent();
@@ -22,6 +23,8 @@ namespace diplom
             this.id_user = id_user;
             this.sts = sts;
             this.name_usr = name_usr;
+
+            pass_tB.UseSystemPasswordChar = true;
             GetUser();
         }
 
@@ -41,6 +44,23 @@ namespace diplom
             this.Close();
         }
 
+        private void pass_cB_Click(object sender, EventArgs e)
+        {
+            if (!show_pass)
+            {
+
+                pass_cB.Image = Resources.opened_eye;
+                pass_tB.UseSystemPasswordChar = false;
+                show_pass = true;
+            }
+            else
+            {
+                pass_cB.Image = Resources.closed_eye;
+                pass_tB.UseSystemPasswordChar = true;
+                show_pass = false;
+            }
+        }
+
         private void del_btn_Click(object sender, EventArgs e)
         {
             DataManager.DeleteUser(id_edit_user);
@@ -52,7 +72,7 @@ namespace diplom
 
         private void GetUser()
         {
-            users = DataManager.LoadUser(id_edit_user);
+            List<UsersModel> users = DataManager.LoadUser(id_edit_user);
 
             name_tB.Text = users[0].Fio.ToString();
             status_cB.Text = users[0].Status.ToString();

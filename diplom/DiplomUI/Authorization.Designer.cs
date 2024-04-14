@@ -34,11 +34,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.login_tB = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pass_cB = new System.Windows.Forms.PictureBox();
             this.pass_tB = new System.Windows.Forms.TextBox();
             this.enter_btn = new diplom.Controls.RoundBtn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pass_cB)).BeginInit();
             this.SuspendLayout();
             // 
             // main_lbl
@@ -86,11 +88,24 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.pass_cB);
             this.panel1.Controls.Add(this.pass_tB);
             this.panel1.Location = new System.Drawing.Point(21, 257);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(226, 23);
             this.panel1.TabIndex = 20;
+            // 
+            // pass_cB
+            // 
+            this.pass_cB.BackColor = System.Drawing.SystemColors.Window;
+            this.pass_cB.Image = global::diplom.Properties.Resources.closed_eye;
+            this.pass_cB.Location = new System.Drawing.Point(197, 3);
+            this.pass_cB.Name = "pass_cB";
+            this.pass_cB.Size = new System.Drawing.Size(26, 18);
+            this.pass_cB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pass_cB.TabIndex = 28;
+            this.pass_cB.TabStop = false;
+            this.pass_cB.Click += new System.EventHandler(this.pass_cB_Click);
             // 
             // pass_tB
             // 
@@ -113,6 +128,7 @@
             this.enter_btn.Size = new System.Drawing.Size(117, 33);
             this.enter_btn.TabIndex = 27;
             this.enter_btn.Text = "Вход";
+            this.enter_btn.UseVisualStyleBackColor = false;
             this.enter_btn.Click += new System.EventHandler(this.enter_btn_Click);
             // 
             // Authorization
@@ -134,6 +150,7 @@
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pass_cB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,5 +164,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox pass_tB;
         private Controls.RoundBtn enter_btn;
+        private System.Windows.Forms.PictureBox pass_cB;
     }
 }

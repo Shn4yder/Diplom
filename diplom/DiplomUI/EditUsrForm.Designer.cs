@@ -41,6 +41,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.login_tB = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.pass_cB = new System.Windows.Forms.PictureBox();
             this.pass_tB = new System.Windows.Forms.TextBox();
             this.back_btn = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
@@ -48,6 +49,7 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pass_cB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.back_btn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,11 +176,24 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.pass_cB);
             this.panel5.Controls.Add(this.pass_tB);
             this.panel5.Location = new System.Drawing.Point(12, 247);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(205, 23);
             this.panel5.TabIndex = 28;
+            // 
+            // pass_cB
+            // 
+            this.pass_cB.BackColor = System.Drawing.SystemColors.Window;
+            this.pass_cB.Image = ((System.Drawing.Image)(resources.GetObject("pass_cB.Image")));
+            this.pass_cB.Location = new System.Drawing.Point(176, 3);
+            this.pass_cB.Name = "pass_cB";
+            this.pass_cB.Size = new System.Drawing.Size(26, 18);
+            this.pass_cB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pass_cB.TabIndex = 30;
+            this.pass_cB.TabStop = false;
+            this.pass_cB.Click += new System.EventHandler(this.pass_cB_Click);
             // 
             // pass_tB
             // 
@@ -230,6 +245,7 @@
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pass_cB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.back_btn)).EndInit();
             this.ResumeLayout(false);
 
@@ -250,5 +266,6 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox pass_tB;
         private System.Windows.Forms.PictureBox back_btn;
+        private System.Windows.Forms.PictureBox pass_cB;
     }
 }

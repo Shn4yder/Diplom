@@ -1,4 +1,5 @@
 ﻿using diplom.Models;
+using diplom.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,20 +15,21 @@ namespace diplom
 {
     public partial class Authorization : Form
     {
+        bool show_pass;
+
         public Authorization()
         {
             InitializeComponent();
+            pass_tB.UseSystemPasswordChar = true;
         }
 
         private void enter_btn_Click(object sender, EventArgs e)
         {
-            List<UsersModel> user_list = new List<UsersModel>();
-            UsersModel user = new UsersModel();
-            user_list = DataManager.LoadAuthUser(pass_tB.Text, login_tB.Text);
+            List<UsersModel> user_list = DataManager.LoadAuthUser(pass_tB.Text, login_tB.Text);
 
             if (user_list.Count > 0)
             {
-                user = user_list[0];
+                UsersModel user = user_list[0];
 
                 if (user.Status == "Администратор")
                 {
@@ -46,6 +48,25 @@ namespace diplom
             {
                 MessageBox.Show("Пользователь не найден", "Внимание");
             }
+        }
+
+        private void pass_cB_Click(object sender, EventArgs e)
+        {
+            if (!show_pass) 
+            { 
+
+                pass_cB.Image = Resources.opened_eye;
+                pass_tB.UseSystemPasswordChar = false;
+                show_pass = true;
+            }
+            else 
+            { 
+                pass_cB.Image = Resources.closed_eye;
+                pass_tB.UseSystemPasswordChar = true;
+                show_pass = false;  
+            }
+
+
         }
     }
 }

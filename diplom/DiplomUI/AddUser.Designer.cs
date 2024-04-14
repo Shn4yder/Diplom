@@ -49,6 +49,8 @@
             this.status_cB = new System.Windows.Forms.ComboBox();
             this.create_btn = new diplom.Controls.RoundBtn();
             this.back_btn = new System.Windows.Forms.PictureBox();
+            this.pass_cB = new System.Windows.Forms.PictureBox();
+            this.confirm_cB = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -58,6 +60,8 @@
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.back_btn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pass_cB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirm_cB)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -190,6 +194,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.Controls.Add(this.confirm_cB);
             this.panel6.Controls.Add(this.confirm_tB);
             this.panel6.Location = new System.Drawing.Point(209, 88);
             this.panel6.Name = "panel6";
@@ -209,6 +214,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.Controls.Add(this.pass_cB);
             this.panel5.Controls.Add(this.pwd_tB);
             this.panel5.Location = new System.Drawing.Point(209, 42);
             this.panel5.Name = "panel5";
@@ -286,6 +292,30 @@
             this.back_btn.TabStop = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
+            // pass_cB
+            // 
+            this.pass_cB.BackColor = System.Drawing.SystemColors.Window;
+            this.pass_cB.Image = ((System.Drawing.Image)(resources.GetObject("pass_cB.Image")));
+            this.pass_cB.Location = new System.Drawing.Point(165, 2);
+            this.pass_cB.Name = "pass_cB";
+            this.pass_cB.Size = new System.Drawing.Size(26, 18);
+            this.pass_cB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pass_cB.TabIndex = 29;
+            this.pass_cB.TabStop = false;
+            this.pass_cB.Click += new System.EventHandler(this.pass_cB_Click);
+            // 
+            // confirm_cB
+            // 
+            this.confirm_cB.BackColor = System.Drawing.SystemColors.Window;
+            this.confirm_cB.Image = ((System.Drawing.Image)(resources.GetObject("confirm_cB.Image")));
+            this.confirm_cB.Location = new System.Drawing.Point(165, 2);
+            this.confirm_cB.Name = "confirm_cB";
+            this.confirm_cB.Size = new System.Drawing.Size(26, 18);
+            this.confirm_cB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.confirm_cB.TabIndex = 29;
+            this.confirm_cB.TabStop = false;
+            this.confirm_cB.Click += new System.EventHandler(this.confirm_cB_Click);
+            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,6 +346,8 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.back_btn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pass_cB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.confirm_cB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,5 +375,7 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox login_tB;
         private System.Windows.Forms.PictureBox back_btn;
+        private System.Windows.Forms.PictureBox confirm_cB;
+        private System.Windows.Forms.PictureBox pass_cB;
     }
 }

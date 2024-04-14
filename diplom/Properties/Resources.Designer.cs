@@ -73,6 +73,16 @@ namespace diplom.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap closed_eye {
+            get {
+                object obj = ResourceManager.GetObject("closed_eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap default_photo {
             get {
                 object obj = ResourceManager.GetObject("default_photo", resourceCulture);
@@ -105,6 +115,16 @@ namespace diplom.Properties {
         internal static string mail_pass {
             get {
                 return ResourceManager.GetString("mail_pass", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap opened_eye {
+            get {
+                object obj = ResourceManager.GetObject("opened_eye", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
