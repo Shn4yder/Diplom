@@ -29,7 +29,6 @@ namespace diplom
             CheckRole(status);
         }
 
-
         private void menu_timer_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
@@ -56,13 +55,6 @@ namespace diplom
         private void sidebar_btn_Click(object sender, EventArgs e)
         {
             menu_timer.Start();
-        }
-
-        private void Add_btn_Click(object sender, EventArgs e)
-        {
-            AddNote add_frm = new AddNote(id_usr, status, name_usr);
-            add_frm.Show();
-            this.Hide();
         }
 
         private void items_btn_Click(object sender, EventArgs e)
@@ -97,8 +89,7 @@ namespace diplom
 
                 MailManager.SendMail(mail);
             }
-            this.Close();
-            this.Close();   
+            this.Close(); 
         }
 
         private void create_btn_Click(object sender, EventArgs e)

@@ -15,5 +15,13 @@ namespace diplom.Models
         public int Id_order { get; set; }
 
         public OrderPay() { }
+
+        public OrderPay(double amount, string payment, DateTime date_pay, int id_order)
+        {
+            Amount = amount;
+            Payment = payment;
+            Date_pay = date_pay;
+            Id_order = id_order;
+        }
     }
 }

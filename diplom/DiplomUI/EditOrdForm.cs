@@ -15,7 +15,6 @@ namespace diplom
     public partial class EditOrdForm : Form
     {
         List<OrderModel> order = new List<OrderModel>();
-        List<GoodModel> goods = new List<GoodModel>();
         string id_order, id_user, status, name_usr;
 
 
@@ -28,8 +27,7 @@ namespace diplom
             this.name_usr = name_usr;
             GetOrder();
             order_timer.Start();
-            goods = DataManager.LoadGoods();
-            goods_GV.DataSource = goods;
+            goods_GV.DataSource = DataManager.LoadGoods();
             cart_GV.DataSource = DataManager.LoadCart(id_order);
             cart_amount_lbl.Text = AmountCart().ToString();
         }
@@ -48,12 +46,7 @@ namespace diplom
 
         private void UpdateData()
         {
-            OrderModel edit_order = new OrderModel();
-
-            edit_order.Name = name_tB.Text;
-            edit_order.Counter = Convert.ToInt16(ppl_UpDown.Value);
-            edit_order.Comment = comment_tB.Text;
-
+            OrderModel edit_order = new OrderModel(numb_lbl.Text, name_tB.Text, Convert.ToInt16(ppl_UpDown.Value), order[0].Time_start, comment_tB.Text, Convert.ToInt16(id_user));
             DataManager.UpdateOrder(edit_order, id_order);  
         }
 
@@ -70,11 +63,7 @@ namespace diplom
 
         private void goods_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            CartModel cart = new CartModel();
-            cart.Id_order = Convert.ToInt16(id_order);
-            cart.Id_good = Convert.ToInt16(goods_GV.CurrentRow.Cells[0].Value.ToString());
-            cart.Quantity = 1;
-
+            CartModel cart = new CartModel(Convert.ToInt16(id_order), Convert.ToInt16(goods_GV.CurrentRow.Cells[0].Value.ToString()), 1);
             DataManager.AddGoodInOrder(cart);
             cart_GV.DataSource = DataManager.LoadCart(id_order);
             cart_amount_lbl.Text = AmountCart().ToString();
@@ -91,49 +80,32 @@ namespace diplom
         private void save_btn_Click(object sender, EventArgs e)
         {
             UpdateData();
-
-            Orders form = new Orders(id_user, status, name_usr);
-            form.Show();
-            this.Close();
+            GoBack();
         }
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            Orders form = new Orders(id_user, status, name_usr);
-            form.Show();
-            this.Close();
+            GoBack();
         }
 
         private void add_pay_btn_Click(object sender, EventArgs e)
         {
-            OrderPay pay = new OrderPay();
-
-            pay.Date_pay = DateTime.Now;
-            pay.Id_order = Convert.ToInt32(id_order);
-            pay.Payment = pay_cB.Text;
-
             if (pay_cB.SelectedIndex != 2)
             {
-                pay.Amount = Convert.ToDouble(time_amount.Text);
+                OrderPay pay = new OrderPay(Convert.ToDouble(time_amount.Text), pay_cB.Text, DateTime.Now, Convert.ToInt16(id_order));
                 DataManager.AddPay(pay);
             }
             else
             {
+                OrderPay pay_cashless = new OrderPay(Convert.ToDouble(nenal_tB.Text), "безналичные", DateTime.Now, Convert.ToInt16(id_order));
+                DataManager.AddPay(pay_cashless);
 
-                pay.Payment = "безналичные";
-                pay.Amount = Convert.ToDouble(nenal_tB.Text);
-                DataManager.AddPay(pay);
-
-                pay.Payment = "наличные";
-                pay.Amount = Convert.ToDouble(nal_tB.Text);
-                DataManager.AddPay(pay);
+                OrderPay pay_cash = new OrderPay(Convert.ToDouble(nal_tB.Text), "наличные", DateTime.Now, Convert.ToInt16(id_order));
+                DataManager.AddPay(pay_cash);
             }
-
             DataManager.DeleteOrder(id_order);
 
-            this.Close();
-            Orders form = new Orders(id_user, status, name_usr);
-            form.Show();
+            GoBack();
         }
 
         private double AmountCart() 
@@ -159,7 +131,13 @@ namespace diplom
                 nal_tB.Visible = false;
                 nenal_tB.Visible = false;
             }
-            
+        }
+
+        private void GoBack()
+        {
+            this.Close();
+            Orders form = new Orders(id_user, status, name_usr);
+            form.Show();
         }
     }
 }

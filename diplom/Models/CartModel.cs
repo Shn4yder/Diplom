@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +16,12 @@ namespace diplom.Models
         public double Cost { get; set; }    
 
         public CartModel() { }
+
+        public CartModel(int id_order, int id_good, int quantity)
+        {
+            Id_order = id_order;
+            Id_good = id_good;
+            Quantity = quantity;
+        }
     }
 }

@@ -19,5 +19,14 @@ namespace diplom.Models
 
         public UsersModel() { }
 
+        public UsersModel(string fio, string status, string phone, string email, string login, string password)
+        {
+            Fio = fio;
+            Status = status;
+            Phone = phone;
+            Email = email;
+            Login = login;
+            Password = password;
+        }
     }
 }

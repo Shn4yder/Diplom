@@ -16,6 +16,12 @@ namespace diplom.Models
         public Image image { get; set; }
 
         public GoodModel() { }
- 
+
+        public GoodModel(string img, string name, double cost)
+        {
+            Name = name;
+            Img = img;
+            Cost = cost;
+        }
     }
 }

@@ -50,7 +50,6 @@ namespace diplom
                 }
             }
         }
-
         private void sidebar_btn_Click(object sender, EventArgs e)
         {
             menu_timer.Start();

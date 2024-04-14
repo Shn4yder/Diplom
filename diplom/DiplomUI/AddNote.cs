@@ -26,32 +26,27 @@ namespace diplom
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            Notes note_frm = new Notes(id_user, status, name_usr);
-            note_frm.Show();
-            this.Close();
+            GoBack();
         }
 
         private void create_btn_Click(object sender, EventArgs e)
         {
-            NoteModel new_note = new NoteModel();
-
-            new_note.Name = name_tB.Text;
-            new_note.Phone = phone_tB.Text;
-            new_note.Place = place_tB.Text;
-            new_note.Comment = comment_tB.Text;
-            new_note.Date_add = DateTime.Now.ToString();
-            new_note.Id_user = Convert.ToInt16(id_user);
-
+            NoteModel new_note = new NoteModel(name_tB.Text, phone_tB.Text, place_tB.Text, comment_tB.Text, DateTime.Now.ToString(), Convert.ToInt16(id_user));
             AddNewNote(new_note);
 
-            Notes note_frm = new Notes(id_user, status, name_usr);
-            note_frm.Show();
-            this.Close();
+            GoBack();
         }
 
         private void AddNewNote(NoteModel note)
         {
             DataManager.AddNote(note);
+        }
+
+        private void GoBack()
+        {
+            Notes note_frm = new Notes(id_user, status, name_usr);
+            note_frm.Show();
+            this.Close();
         }
     }
 }

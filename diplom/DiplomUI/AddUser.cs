@@ -31,9 +31,7 @@ namespace diplom
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            Users usr_frm = new Users(id_user, status, name_usr);
-            usr_frm.Show();
-            this.Close();
+            GoBack();
         }
 
         private void confirm_cB_Click(object sender, EventArgs e)
@@ -72,25 +70,22 @@ namespace diplom
 
         private void create_btn_Click(object sender, EventArgs e)
         {
-            UsersModel new_user = new UsersModel();
-
-            new_user.Fio = name_tB.Text;
-            new_user.Status = status_cB.Text;
-            new_user.Phone = phone_tB.Text;
-            new_user.Email = email_tB.Text + '@' + domain_cB.Text;
-            new_user.Login = login_tB.Text;
-            new_user.Password = pwd_tB.Text;
-
+            UsersModel new_user = new UsersModel(name_tB.Text, status_cB.Text, phone_tB.Text, email_tB.Text + '@' + domain_cB.Text, login_tB.Text, pwd_tB.Text);
             AddNewUser(new_user);
 
-            Users usr_frm = new Users(id_user, status, name_usr);
-            usr_frm.Show();
-            this.Close();
+            GoBack();
         }
 
        private void AddNewUser(UsersModel user)
        {
             DataManager.AddUser(user);
        }
+
+        private void GoBack()
+        {
+            Users usr_frm = new Users(id_user, status, name_usr);
+            usr_frm.Show();
+            this.Close();
+        }
     }
 }

@@ -17,7 +17,6 @@ namespace diplom
     public partial class EditGoodForm : Form
     {
         string id_good, id_user, status, name_usr;
-        List<GoodModel> good = new List<GoodModel>();
         public EditGoodForm(string id_good, string id_user, string status, string name_usr)
         {
             InitializeComponent();
@@ -31,12 +30,11 @@ namespace diplom
 
         private void GetGood()
         {
-            good = DataManager.LoadGood(id_good);
+            List<GoodModel> good = DataManager.LoadGood(id_good);
 
             name_tB.Text = good[0].Name.ToString();
             cost_tB.Text = good[0].Cost.ToString();
             image_pB.Image = good[0].image;
-
         }
 
         private void add_photo_btn_Click(object sender, EventArgs e)
@@ -64,40 +62,34 @@ namespace diplom
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            Goods_adm form = new Goods_adm(id_user, status, name_usr);
-            form.Show();
-            this.Close();
+            GoBack();
         }
 
         private void del_btn_Click(object sender, EventArgs e)
         {
             DataManager.DeleteGood(id_good);
 
-            Goods_adm form = new Goods_adm(id_user, status, name_usr);
-            form.Show();
-            this.Close();
+            GoBack();
         }
 
         private void save_btn_Click(object sender, EventArgs e)
         {
             UpdateData();
 
-            Goods_adm form = new Goods_adm(id_user, status, name_usr);
-            form.Show();
-            this.Close();
+            GoBack();
         }
 
         private void UpdateData()
         {
-
-            GoodModel edit_good = new GoodModel();
-
-            edit_good.Name = name_tB.Text;
-            edit_good.Img = ImageManager.Saveimage(image_pB.Image);
-            edit_good.Cost = Convert.ToDouble(cost_tB.Text);
-
-
+            GoodModel edit_good = new GoodModel(ImageManager.Saveimage(image_pB.Image), name_tB.Text, Convert.ToDouble(cost_tB.Text));
             DataManager.UpdateGood(edit_good, id_good);
+        }
+
+        private void GoBack()
+        {
+            Goods_adm form = new Goods_adm(id_user, status, name_usr);
+            form.Show();
+            this.Close();
         }
 
     }

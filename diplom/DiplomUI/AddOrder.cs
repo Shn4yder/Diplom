@@ -24,32 +24,27 @@ namespace diplom
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Orders ord_frm = new Orders(id_user, status, name_usr);
-            ord_frm.Show();
+            GoBack();
         }
 
         private void create_btn_Click(object sender, EventArgs e)
         {
-            OrderModel new_order = new OrderModel();
-
-            new_order.Number = numb_tB.Text;
-            new_order.Name = name_tB.Text;
-            new_order.Counter = Convert.ToInt16(ppl_UpDown.Value);
-            new_order.Time_start = DateTime.Now.ToString();
-            new_order.Comment = comment_tB.Text;
-            new_order.Id_user = Convert.ToInt16(id_user);
-
+            OrderModel new_order = new OrderModel(numb_tB.Text, name_tB.Text, Convert.ToInt16(ppl_UpDown.Value), DateTime.Now.ToString(), comment_tB.Text, Convert.ToInt16(id_user));
             AddNewOrder(new_order);
-
-            this.Close();
-            Orders ord_frm = new Orders(id_user, status, name_usr);
-            ord_frm.Show();
+            
+            GoBack();
         }
 
         private void AddNewOrder(OrderModel order)
         {
             DataManager.AddOrder(order);
+        }
+
+        private void GoBack()
+        {
+            this.Close();
+            Orders ord_frm = new Orders(id_user, status, name_usr);
+            ord_frm.Show();
         }
     }
 }

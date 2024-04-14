@@ -15,7 +15,6 @@ namespace diplom
 {
     public partial class AddGood : Form
     {
-        System.Drawing.Image image;
         string id_user, status, name_usr;
 
         public AddGood(string id_user, string status, string name_usr)
@@ -33,12 +32,10 @@ namespace diplom
 
             if (openDialog.ShowDialog() != DialogResult.OK)
                 return;
-
             try
             {
                 // вывод картинки
-
-                image = System.Drawing.Image.FromFile(openDialog.FileName);
+                System.Drawing.Image image = System.Drawing.Image.FromFile(openDialog.FileName);
                 Bitmap img = new Bitmap(image, new Size(150, 100));
                 image_pB.Image = img;
             }
@@ -51,30 +48,27 @@ namespace diplom
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Goods_adm gds_frm = new Goods_adm(id_user, status, name_usr);
-            gds_frm.Show();
+            GoBack();
         }
 
         private void create_btn_Click(object sender, EventArgs e)
         {
-            GoodModel new_good = new GoodModel();
-
-            new_good.Name = name_tB.Text;
-            new_good.Cost = Convert.ToDouble(price_tB.Text);
-            new_good.Img = ImageManager.Saveimage(image_pB.Image);
-
+            GoodModel new_good = new GoodModel(ImageManager.Saveimage(image_pB.Image), name_tB.Text, Convert.ToDouble(price_tB.Text));
             AddNewGood(new_good);
 
-            this.Close();
-            Goods_adm gds_frm = new Goods_adm(id_user, status, name_usr);
-            gds_frm.Show();
+            GoBack();
         }
 
         private void AddNewGood(GoodModel good)
         {
             DataManager.AddGood(good);
         }
-        // pictureBox1.Image == null нет картинки 
+
+        private void GoBack()
+        {
+            this.Close();
+            Goods_adm gds_frm = new Goods_adm(id_user, status, name_usr);
+            gds_frm.Show();
+        }
     }
 }

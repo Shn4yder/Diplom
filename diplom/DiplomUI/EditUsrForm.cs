@@ -31,17 +31,12 @@ namespace diplom
         private void save_btn_Click(object sender, EventArgs e)
         {
             UpdateData();
-
-            Users users = new Users(id_user, sts, name_usr);
-            users.Show();
-            this.Close();
+            GoBack();   
         }
 
         private void back_btn_Click(object sender, EventArgs e)
         {
-            Users users = new Users(id_user, sts, name_usr);
-            users.Show();
-            this.Close();
+            GoBack();   
         }
 
         private void pass_cB_Click(object sender, EventArgs e)
@@ -64,10 +59,7 @@ namespace diplom
         private void del_btn_Click(object sender, EventArgs e)
         {
             DataManager.DeleteUser(id_edit_user);
-
-            Users users = new Users(id_user, sts, name_usr);
-            users.Show();
-            this.Close();
+            GoBack();
         }
 
         private void GetUser()
@@ -84,16 +76,15 @@ namespace diplom
 
         private void UpdateData()
         {
-            UsersModel edit_user = new UsersModel();
-
-            edit_user.Fio = name_tB.Text;
-            edit_user.Status = status_cB.Text;
-            edit_user.Phone = phone_tB.Text;
-            edit_user.Email = email_tB.Text;
-            edit_user.Login = login_tB.Text;
-            edit_user.Password = pass_tB.Text;
-
+            UsersModel edit_user = new UsersModel(name_tB.Text, status_cB.Text, phone_tB.Text, email_tB.Text, login_tB.Text, pass_tB.Text);
             DataManager.UpdateUser(edit_user, id_edit_user);
+        }
+
+        private void GoBack()
+        {
+            Users users = new Users(id_user, sts, name_usr);
+            users.Show();
+            this.Close();
         }
     }
 }

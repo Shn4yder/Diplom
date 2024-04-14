@@ -18,5 +18,15 @@ namespace diplom.Models
         public int Id_user { get; set; }    
 
         public NoteModel() { }
+
+        public NoteModel(string name, string phone, string place, string comment, string date_add, int id_user)
+        {
+            Name = name;
+            Phone = phone;
+            Place = place;
+            Comment = comment;
+            Date_add = date_add;
+            Id_user = id_user;
+        }
     }
 }
