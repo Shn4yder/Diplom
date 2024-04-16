@@ -31,6 +31,8 @@ namespace diplom
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Goods_adm));
             this.goods_GV = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,7 +51,6 @@ namespace diplom
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.create_btn = new diplom.Controls.RoundBtn();
-            this.name_lbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             this.sidebar.SuspendLayout();
@@ -61,6 +62,14 @@ namespace diplom
             // 
             this.goods_GV.BackgroundColor = System.Drawing.SystemColors.Window;
             this.goods_GV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.goods_GV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.goods_GV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.goods_GV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -68,13 +77,21 @@ namespace diplom
             this.img,
             this.name,
             this.cost});
-            this.goods_GV.Location = new System.Drawing.Point(68, 74);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.goods_GV.DefaultCellStyle = dataGridViewCellStyle2;
+            this.goods_GV.Location = new System.Drawing.Point(81, 47);
             this.goods_GV.MultiSelect = false;
             this.goods_GV.Name = "goods_GV";
             this.goods_GV.RowHeadersVisible = false;
             this.goods_GV.RowTemplate.Height = 110;
             this.goods_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.goods_GV.Size = new System.Drawing.Size(446, 326);
+            this.goods_GV.Size = new System.Drawing.Size(446, 353);
             this.goods_GV.TabIndex = 3;
             this.goods_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.goods_GV_CellDoubleClick);
             // 
@@ -268,33 +285,23 @@ namespace diplom
             this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.create_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.create_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.create_btn.Location = new System.Drawing.Point(254, 416);
+            this.create_btn.Location = new System.Drawing.Point(268, 406);
             this.create_btn.Name = "create_btn";
             this.create_btn.Radius = 10;
-            this.create_btn.Size = new System.Drawing.Size(57, 22);
+            this.create_btn.Size = new System.Drawing.Size(70, 22);
             this.create_btn.TabIndex = 6;
             this.create_btn.Text = "Создать";
+            this.create_btn.UseVisualStyleBackColor = false;
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
-            // 
-            // name_lbl
-            // 
-            this.name_lbl.AutoSize = true;
-            this.name_lbl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(98)))), ((int)(((byte)(98)))), ((int)(((byte)(98)))));
-            this.name_lbl.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.name_lbl.ForeColor = System.Drawing.SystemColors.Window;
-            this.name_lbl.Location = new System.Drawing.Point(65, 14);
-            this.name_lbl.Name = "name_lbl";
-            this.name_lbl.Size = new System.Drawing.Size(0, 27);
-            this.name_lbl.TabIndex = 29;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::diplom.Properties.Resources.banner;
-            this.pictureBox1.Location = new System.Drawing.Point(46, 0);
+            this.pictureBox1.Image = global::diplom.Properties.Resources.background_img;
+            this.pictureBox1.Location = new System.Drawing.Point(68, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(576, 58);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.Size = new System.Drawing.Size(472, 429);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // Goods_adm
@@ -302,11 +309,10 @@ namespace diplom
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(526, 450);
+            this.ClientSize = new System.Drawing.Size(558, 450);
             this.Controls.Add(this.create_btn);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.goods_GV);
-            this.Controls.Add(this.name_lbl);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Goods_adm";
@@ -316,7 +322,6 @@ namespace diplom
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -338,7 +343,6 @@ namespace diplom
         private DataGridViewImageColumn img;
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn cost;
-        private Label name_lbl;
         private PictureBox pictureBox1;
     }
 }

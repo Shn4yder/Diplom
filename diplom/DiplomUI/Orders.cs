@@ -22,9 +22,6 @@ namespace diplom
             this.id_user = id_user;
             this.status = status;
             this.name_usr = name_usr;
-
-            name_lbl.Text = $"Хорошего дня, {name_usr}!";
-
         }
 
         private void button2_Click(object sender, EventArgs e)

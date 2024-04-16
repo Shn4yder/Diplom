@@ -145,9 +145,9 @@
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
     <Compile Include="DiplomBL\ReportManager.cs" />
-    <None Include="Resources\banner.png" />
-    <None Include="Resources\free-icon-eye-3495850 %282%29.png" />
-    <None Include="Resources\free-icon-hide-11238328.png" />
+    <None Include="Resources\background_img.png" />
+    <None Include="Resources\opened_eye.png" />
+    <None Include="Resources\closed_eye.png" />
     <None Include="Resources\logo.jpg" />
     <None Include="Resources\default_photo.jpeg" />
     <None Include="Resources\default_photo.bmp" />

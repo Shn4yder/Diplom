@@ -63,9 +63,9 @@ namespace diplom.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap banner {
+        internal static System.Drawing.Bitmap background_img {
             get {
-                object obj = ResourceManager.GetObject("banner", resourceCulture);
+                object obj = ResourceManager.GetObject("background_img", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

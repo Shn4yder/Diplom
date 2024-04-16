@@ -24,8 +24,6 @@ namespace diplom
             this.id_user = id_user;
             this.sts = status;
             this.name_usr = name_usr;
-
-            name_lbl.Text = $"Хорошего дня, {name_usr}!";
         }
 
         private void menu_timer_Tick(object sender, EventArgs e)
@@ -75,13 +73,6 @@ namespace diplom
         }
 
         private void create_btn_Click(object sender, EventArgs e)
-        {
-            AddUser add_frm = new AddUser(id_user, sts, name_usr);
-            add_frm.Show();
-            this.Hide();
-        }
-
-        private void Add_btn_Click(object sender, EventArgs e)
         {
             AddUser add_frm = new AddUser(id_user, sts, name_usr);
             add_frm.Show();
