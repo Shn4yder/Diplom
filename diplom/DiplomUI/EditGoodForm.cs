@@ -68,15 +68,42 @@ namespace diplom
         private void del_btn_Click(object sender, EventArgs e)
         {
             DataManager.DeleteGood(id_good);
-
             GoBack();
+        }
+
+        private void name_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (name_tB.Text == "") { name_lbl.Visible = true; }
+            else { name_lbl.Visible = false; }
+        }
+
+        private void cost_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (cost_tB.Text == "") { price_lbl.Visible = true; }
+            else
+            {
+                try
+                {
+                    Convert.ToDouble(cost_tB.Text);
+                    price_lbl.Visible = false;
+                }
+                catch
+                {
+                    cost_tB.Text = "";
+                    MessageBox.Show("Стоимость должна быть положительным числом");
+                    price_lbl.Visible = true;
+                }
+            }
         }
 
         private void save_btn_Click(object sender, EventArgs e)
         {
-            UpdateData();
-
-            GoBack();
+            if (name_tB.Text != "" & cost_tB.Text != "")
+            {
+                UpdateData();
+                GoBack();
+            }
+            else { MessageBox.Show("Пожалуйста, заполните все поля, отмеченные * ", "Внимание"); }
         }
 
         private void UpdateData()

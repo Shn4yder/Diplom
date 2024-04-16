@@ -31,10 +31,17 @@ namespace diplom
 
         private void create_btn_Click(object sender, EventArgs e)
         {
-            NoteModel new_note = new NoteModel(name_tB.Text, phone_tB.Text, place_tB.Text, comment_tB.Text, DateTime.Now.ToString(), Convert.ToInt16(id_user));
-            AddNewNote(new_note);
+            if (name_tB.Text != "" & phone_tB.Text != "" & place_tB.Text != "" & comment_tB.Text != "")
+            {
+                NoteModel new_note = new NoteModel(name_tB.Text, phone_tB.Text, place_tB.Text, comment_tB.Text, DateTime.Now.ToString(), Convert.ToInt16(id_user));
+                AddNewNote(new_note);
 
-            GoBack();
+                GoBack();
+            }
+            else
+            {
+                MessageBox.Show("Невозможно создать пустую заметку", "Внимание");
+            }
         }
 
         private void AddNewNote(NoteModel note)

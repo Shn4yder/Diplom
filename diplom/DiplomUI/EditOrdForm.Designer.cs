@@ -66,6 +66,7 @@
             this.back_btn = new System.Windows.Forms.PictureBox();
             this.nenal_tB = new diplom.CueTextbox();
             this.name_tB = new diplom.CueTextbox();
+            this.name_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cart_GV)).BeginInit();
             this.panel3.SuspendLayout();
@@ -77,7 +78,7 @@
             // comment_tB
             // 
             this.comment_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comment_tB.Location = new System.Drawing.Point(256, 32);
+            this.comment_tB.Location = new System.Drawing.Point(256, 45);
             this.comment_tB.Name = "comment_tB";
             this.comment_tB.Size = new System.Drawing.Size(240, 96);
             this.comment_tB.TabIndex = 2;
@@ -457,6 +458,19 @@
             this.name_tB.Name = "name_tB";
             this.name_tB.Size = new System.Drawing.Size(221, 18);
             this.name_tB.TabIndex = 31;
+            this.name_tB.TextChanged += new System.EventHandler(this.name_tB_TextChanged);
+            // 
+            // name_lbl
+            // 
+            this.name_lbl.AutoSize = true;
+            this.name_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.name_lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.name_lbl.Location = new System.Drawing.Point(239, 47);
+            this.name_lbl.Name = "name_lbl";
+            this.name_lbl.Size = new System.Drawing.Size(17, 24);
+            this.name_lbl.TabIndex = 32;
+            this.name_lbl.Text = "*";
+            this.name_lbl.Visible = false;
             // 
             // EditOrdForm
             // 
@@ -464,6 +478,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(508, 405);
+            this.Controls.Add(this.name_lbl);
             this.Controls.Add(this.name_tB);
             this.Controls.Add(this.nenal_tB);
             this.Controls.Add(this.back_btn);
@@ -538,5 +553,6 @@
         private CueTextbox nal_tB;
         private CueTextbox nenal_tB;
         private CueTextbox name_tB;
+        private System.Windows.Forms.Label name_lbl;
     }
 }

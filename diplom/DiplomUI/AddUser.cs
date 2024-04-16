@@ -58,7 +58,6 @@ namespace diplom
         {
             if (!show_pass)
             {
-
                 pass_cB.Image = Resources.opened_eye;
                 pwd_tB.UseSystemPasswordChar = false;
                 show_pass = true;
@@ -71,12 +70,57 @@ namespace diplom
             }
         }
 
+        private void name_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (name_tB.Text == "") { name_lbl.Visible = true; }
+            else { name_lbl.Visible = false; }
+        }
+
+        private void phone_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (phone_tB.Text != "") { phone_lbl.Visible = false; }
+            else {  phone_lbl.Visible = true; }
+        }
+
+        private void email_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (email_tB.Text == "") {  email_lbl.Visible = true; }
+            else {  email_lbl.Visible = false; }
+        }
+
+        private void login_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (login_tB.Text == "") {  login_lbl.Visible = true; }
+            else { login_lbl.Visible = false; }
+        }
+
+        private void pwd_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (pwd_tB.Text == "") {  pwd_lbl.Visible = true; }
+            else {  pwd_lbl.Visible = false; }
+        }
+
+        private void confirm_tB_Leave(object sender, EventArgs e)
+        {
+            if (confirm_tB.Text != pwd_tB.Text)
+            {
+                confirm_tB.Text = "";
+                confirm_lbl.Visible = true;
+                MessageBox.Show("Пароли не совпадают", "Подтвердите пароль");
+            }
+            else { confirm_lbl.Visible = false; }
+        }
+
         private void create_btn_Click(object sender, EventArgs e)
         {
-            UsersModel new_user = new UsersModel(name_tB.Text, status_cB.Text, phone_tB.Text, email_tB.Text + '@' + domain_cB.Text, login_tB.Text, pwd_tB.Text);
-            AddNewUser(new_user);
+            if (name_tB.Text != "" & phone_tB.Text != "" & email_tB.Text != "" & login_tB.Text != "" & pwd_tB.Text != "" & confirm_tB.Text != "")
+            {
+                UsersModel new_user = new UsersModel(name_tB.Text, status_cB.Text, phone_tB.Text, email_tB.Text + '@' + domain_cB.Text, login_tB.Text, pwd_tB.Text);
+                AddNewUser(new_user);
 
-            GoBack();
+                GoBack();
+            }
+            else { MessageBox.Show("Пожалуйста, заполните все поля, отмеченные * ", "Внимание"); }
         }
 
        private void AddNewUser(UsersModel user)

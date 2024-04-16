@@ -29,10 +29,26 @@ namespace diplom
 
         private void create_btn_Click(object sender, EventArgs e)
         {
-            OrderModel new_order = new OrderModel(numb_tB.Text, name_tB.Text, Convert.ToInt16(ppl_UpDown.Value), DateTime.Now.ToString(), comment_tB.Text, Convert.ToInt16(id_user));
-            AddNewOrder(new_order);
-            
-            GoBack();
+            if (name_tB.Text != "" & numb_tB.Text != "")
+            {
+                OrderModel new_order = new OrderModel(numb_tB.Text, name_tB.Text, Convert.ToInt16(ppl_UpDown.Value), DateTime.Now.ToString(), comment_tB.Text, Convert.ToInt16(id_user));
+                AddNewOrder(new_order);
+
+                GoBack();
+            }
+            else { MessageBox.Show("Пожалуйста, заполните все поля, отмеченные * ", "Внимание"); }
+        }
+
+        private void name_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (name_tB.Text == "") { name_lbl.Visible = true; }
+            else { name_lbl.Visible = false; }
+        }
+
+        private void numb_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (numb_tB.Text == "") {  numb_lbl.Visible = true; }
+            else { numb_lbl.Visible = false;}
         }
 
         private void AddNewOrder(OrderModel order)

@@ -30,8 +30,12 @@ namespace diplom
 
         private void save_btn_Click(object sender, EventArgs e)
         {
-            UpdateData();
-            GoBack();   
+            if (name_tB.Text != "" & phone_tB.Text != "" & email_tB.Text != "" & login_tB.Text != "" & pass_tB.Text != "")
+            {
+                UpdateData();
+                GoBack();
+            }
+            else { MessageBox.Show("Пожалуйста, заполните все поля, отмеченные * ", "Внимание"); }
         }
 
         private void back_btn_Click(object sender, EventArgs e)
@@ -60,6 +64,36 @@ namespace diplom
         {
             DataManager.DeleteUser(id_edit_user);
             GoBack();
+        }
+
+        private void name_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (name_tB.Text == "") { name_lbl.Visible = true; }
+            else { name_lbl.Visible = false; }
+        }
+
+        private void phone_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (phone_tB.Text != "") { phone_lbl.Visible = false; }
+            else { phone_lbl.Visible = true; }
+        }
+
+        private void email_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (email_tB.Text == "") { email_lbl.Visible = true; }
+            else { email_lbl.Visible = false; }
+        }
+
+        private void login_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (login_tB.Text == "") { login_lbl.Visible = true; }
+            else { login_lbl.Visible = false; }
+        }
+
+        private void pass_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (pass_tB.Text == "") { pwd_lbl.Visible = true; }
+            else { pwd_lbl.Visible = false; }
         }
 
         private void GetUser()

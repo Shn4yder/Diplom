@@ -53,10 +53,39 @@ namespace diplom
 
         private void create_btn_Click(object sender, EventArgs e)
         {
-            GoodModel new_good = new GoodModel(ImageManager.Saveimage(image_pB.Image), name_tB.Text, Convert.ToDouble(price_tB.Text));
-            AddNewGood(new_good);
+            if (name_tB.Text != "" & price_tB.Text != "")
+            {
+                GoodModel new_good = new GoodModel(ImageManager.Saveimage(image_pB.Image), name_tB.Text, Convert.ToDouble(price_tB.Text));
+                AddNewGood(new_good);
 
-            GoBack();
+                GoBack();
+            }
+            else { MessageBox.Show("Пожалуйста, заполните все поля, отмеченные * ", "Внимание"); }
+        }
+
+        private void name_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (name_tB.Text == "") { name_lbl.Visible = true; }
+            else { name_lbl.Visible = false; }
+        }
+
+        private void price_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (price_tB.Text == "") { price_lbl.Visible = true; }
+            else
+            {
+                try
+                {
+                    Convert.ToDouble(price_tB.Text);
+                    price_lbl.Visible = false;
+                }
+                catch
+                {
+                    price_tB.Text = "";
+                    MessageBox.Show("Стоимость должна быть положительным числом");
+                    price_lbl.Visible = true;
+                }
+            }
         }
 
         private void AddNewGood(GoodModel good)

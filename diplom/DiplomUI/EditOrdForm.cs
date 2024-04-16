@@ -80,8 +80,12 @@ namespace diplom
 
         private void save_btn_Click(object sender, EventArgs e)
         {
-            UpdateData();
-            GoBack();
+            if (name_tB.Text != "")
+            {
+                UpdateData();
+                GoBack();
+            }
+            else { MessageBox.Show("Пожалуйста, заполните все поля, отмеченные * ", "Внимание"); }
         }
 
         private void back_btn_Click(object sender, EventArgs e)
@@ -107,6 +111,12 @@ namespace diplom
             DataManager.DeleteOrder(id_order);
 
             GoBack();
+        }
+
+        private void name_tB_TextChanged(object sender, EventArgs e)
+        {
+            if (name_tB.Text == "") { name_lbl.Visible = true; }
+            else { name_lbl.Visible = false; }
         }
 
         private double AmountCart() 

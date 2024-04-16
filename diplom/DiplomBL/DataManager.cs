@@ -285,9 +285,6 @@ namespace diplom
             }
         }
 
-
-
-
         private static string LoadConnectionString(string id = "database")    // строка подключения
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;

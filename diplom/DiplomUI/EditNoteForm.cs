@@ -41,8 +41,15 @@ namespace diplom
 
         private void save_btn_Click(object sender, EventArgs e)
         {
-            UpdateData();
-            GoBack();   
+            if (name_tB.Text != "" & place_tB.Text != "" & comment_tB.Text != "")
+            {
+                UpdateData();
+                GoBack();
+            }
+            else
+            {
+                MessageBox.Show("Невозможно сохранить пустую заметку", "Внимание");
+            }
         }
 
         private void GetNote()

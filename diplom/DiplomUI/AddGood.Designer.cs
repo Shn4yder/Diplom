@@ -34,13 +34,15 @@ namespace diplom
             this.image_pB = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.name_tB = new diplom.CueTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.create_btn = new diplom.Controls.RoundBtn();
             this.add_photo = new diplom.Controls.RoundBtn();
             this.back_btn = new System.Windows.Forms.PictureBox();
-            this.name_tB = new diplom.CueTextbox();
             this.price_tB = new diplom.CueTextbox();
+            this.name_lbl = new System.Windows.Forms.Label();
+            this.price_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.image_pB)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.back_btn)).BeginInit();
@@ -73,6 +75,17 @@ namespace diplom
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(306, 23);
             this.panel1.TabIndex = 10;
+            // 
+            // name_tB
+            // 
+            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_tB.Cue = "Наименование";
+            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_tB.Location = new System.Drawing.Point(4, 2);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(299, 18);
+            this.name_tB.TabIndex = 29;
+            this.name_tB.TextChanged += new System.EventHandler(this.name_tB_TextChanged);
             // 
             // panel2
             // 
@@ -133,16 +146,6 @@ namespace diplom
             this.back_btn.TabStop = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
-            // name_tB
-            // 
-            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name_tB.Cue = "Наименование";
-            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_tB.Location = new System.Drawing.Point(4, 2);
-            this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(299, 18);
-            this.name_tB.TabIndex = 29;
-            // 
             // price_tB
             // 
             this.price_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -152,6 +155,29 @@ namespace diplom
             this.price_tB.Name = "price_tB";
             this.price_tB.Size = new System.Drawing.Size(80, 18);
             this.price_tB.TabIndex = 29;
+            this.price_tB.TextChanged += new System.EventHandler(this.price_tB_TextChanged);
+            // 
+            // name_lbl
+            // 
+            this.name_lbl.AutoSize = true;
+            this.name_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.name_lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.name_lbl.Location = new System.Drawing.Point(321, 45);
+            this.name_lbl.Name = "name_lbl";
+            this.name_lbl.Size = new System.Drawing.Size(17, 24);
+            this.name_lbl.TabIndex = 30;
+            this.name_lbl.Text = "*";
+            // 
+            // price_lbl
+            // 
+            this.price_lbl.AutoSize = true;
+            this.price_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.price_lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.price_lbl.Location = new System.Drawing.Point(144, 75);
+            this.price_lbl.Name = "price_lbl";
+            this.price_lbl.Size = new System.Drawing.Size(17, 24);
+            this.price_lbl.TabIndex = 31;
+            this.price_lbl.Text = "*";
             // 
             // AddGood
             // 
@@ -159,6 +185,8 @@ namespace diplom
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(347, 212);
+            this.Controls.Add(this.price_lbl);
+            this.Controls.Add(this.name_lbl);
             this.Controls.Add(this.price_tB);
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.label2);
@@ -192,6 +220,8 @@ namespace diplom
         private System.Windows.Forms.PictureBox back_btn;
         private CueTextbox name_tB;
         private CueTextbox price_tB;
+        private System.Windows.Forms.Label name_lbl;
+        private System.Windows.Forms.Label price_lbl;
     }
 }
 

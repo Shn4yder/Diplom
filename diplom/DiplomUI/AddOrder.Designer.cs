@@ -36,11 +36,13 @@
             this.comment_tB = new System.Windows.Forms.RichTextBox();
             this.create_btn = new diplom.Controls.RoundBtn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.name_tB = new diplom.CueTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.numb_tB = new diplom.CueTextbox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.back_btn = new System.Windows.Forms.PictureBox();
-            this.name_tB = new diplom.CueTextbox();
-            this.numb_tB = new diplom.CueTextbox();
+            this.name_lbl = new System.Windows.Forms.Label();
+            this.numb_lbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ppl_UpDown)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -130,6 +132,17 @@
             this.panel1.Size = new System.Drawing.Size(230, 23);
             this.panel1.TabIndex = 14;
             // 
+            // name_tB
+            // 
+            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_tB.Cue = "Имя";
+            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_tB.Location = new System.Drawing.Point(6, 2);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(220, 18);
+            this.name_tB.TabIndex = 30;
+            this.name_tB.TextChanged += new System.EventHandler(this.name_tB_TextChanged);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -138,6 +151,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(230, 23);
             this.panel2.TabIndex = 15;
+            // 
+            // numb_tB
+            // 
+            this.numb_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.numb_tB.Cue = "Номер заказа";
+            this.numb_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numb_tB.Location = new System.Drawing.Point(3, 2);
+            this.numb_tB.Name = "numb_tB";
+            this.numb_tB.Size = new System.Drawing.Size(223, 18);
+            this.numb_tB.TabIndex = 30;
+            this.numb_tB.TextChanged += new System.EventHandler(this.numb_tB_TextChanged);
             // 
             // panel3
             // 
@@ -160,25 +184,27 @@
             this.back_btn.TabStop = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
-            // name_tB
+            // name_lbl
             // 
-            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name_tB.Cue = "Имя";
-            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_tB.Location = new System.Drawing.Point(6, 2);
-            this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(220, 18);
-            this.name_tB.TabIndex = 30;
+            this.name_lbl.AutoSize = true;
+            this.name_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.name_lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.name_lbl.Location = new System.Drawing.Point(244, 55);
+            this.name_lbl.Name = "name_lbl";
+            this.name_lbl.Size = new System.Drawing.Size(17, 24);
+            this.name_lbl.TabIndex = 31;
+            this.name_lbl.Text = "*";
             // 
-            // numb_tB
+            // numb_lbl
             // 
-            this.numb_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.numb_tB.Cue = "Номер заказа";
-            this.numb_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numb_tB.Location = new System.Drawing.Point(3, 2);
-            this.numb_tB.Name = "numb_tB";
-            this.numb_tB.Size = new System.Drawing.Size(223, 18);
-            this.numb_tB.TabIndex = 30;
+            this.numb_lbl.AutoSize = true;
+            this.numb_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numb_lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.numb_lbl.Location = new System.Drawing.Point(244, 95);
+            this.numb_lbl.Name = "numb_lbl";
+            this.numb_lbl.Size = new System.Drawing.Size(17, 24);
+            this.numb_lbl.TabIndex = 32;
+            this.numb_lbl.Text = "*";
             // 
             // AddOrder
             // 
@@ -186,6 +212,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(268, 297);
+            this.Controls.Add(this.numb_lbl);
+            this.Controls.Add(this.name_lbl);
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -223,5 +251,7 @@
         private System.Windows.Forms.PictureBox back_btn;
         private CueTextbox name_tB;
         private CueTextbox numb_tB;
+        private System.Windows.Forms.Label name_lbl;
+        private System.Windows.Forms.Label numb_lbl;
     }
 }

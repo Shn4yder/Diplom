@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNote));
             this.label1 = new System.Windows.Forms.Label();
             this.comment_tB = new System.Windows.Forms.RichTextBox();
-            this.create_btn = new diplom.Controls.RoundBtn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.phone_tB = new System.Windows.Forms.MaskedTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.back_btn = new System.Windows.Forms.PictureBox();
-            this.name_tB = new diplom.CueTextbox();
             this.place_tB = new diplom.CueTextbox();
+            this.name_tB = new diplom.CueTextbox();
+            this.create_btn = new diplom.Controls.RoundBtn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.back_btn)).BeginInit();
@@ -62,21 +62,7 @@
             this.comment_tB.Name = "comment_tB";
             this.comment_tB.Size = new System.Drawing.Size(244, 78);
             this.comment_tB.TabIndex = 9;
-            this.comment_tB.Text = "Комментарий";
-            // 
-            // create_btn
-            // 
-            this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.create_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.create_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.create_btn.Location = new System.Drawing.Point(97, 272);
-            this.create_btn.Name = "create_btn";
-            this.create_btn.Radius = 10;
-            this.create_btn.Size = new System.Drawing.Size(76, 24);
-            this.create_btn.TabIndex = 12;
-            this.create_btn.Text = "Создать";
-            this.create_btn.UseVisualStyleBackColor = false;
-            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
+            this.comment_tB.Text = "";
             // 
             // panel1
             // 
@@ -126,16 +112,6 @@
             this.back_btn.TabStop = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
-            // name_tB
-            // 
-            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name_tB.Cue = "Имя";
-            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_tB.Location = new System.Drawing.Point(3, 2);
-            this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(239, 18);
-            this.name_tB.TabIndex = 29;
-            // 
             // place_tB
             // 
             this.place_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -146,12 +122,36 @@
             this.place_tB.Size = new System.Drawing.Size(155, 18);
             this.place_tB.TabIndex = 29;
             // 
+            // name_tB
+            // 
+            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_tB.Cue = "Имя";
+            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_tB.Location = new System.Drawing.Point(3, 2);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(239, 18);
+            this.name_tB.TabIndex = 29;
+            // 
+            // create_btn
+            // 
+            this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.create_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.create_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.create_btn.Location = new System.Drawing.Point(97, 272);
+            this.create_btn.Name = "create_btn";
+            this.create_btn.Radius = 10;
+            this.create_btn.Size = new System.Drawing.Size(76, 24);
+            this.create_btn.TabIndex = 12;
+            this.create_btn.Text = "Создать";
+            this.create_btn.UseVisualStyleBackColor = false;
+            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
+            // 
             // AddNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(281, 308);
+            this.ClientSize = new System.Drawing.Size(274, 308);
             this.Controls.Add(this.place_tB);
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.panel3);
