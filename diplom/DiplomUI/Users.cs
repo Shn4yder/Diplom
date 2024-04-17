@@ -15,17 +15,20 @@ namespace diplom
     public partial class Users : Form
     {
         string id_user, sts, name_usr;
-        bool sidebarExpand;
+        bool sidebarExpand;  // состояние меню (открыто/закрыто)
 
         public Users(string id_user, string status, string name_usr)
         {
             InitializeComponent();
-            usr_GV.DataSource = DataManager.LoadUsers();
+
+            usr_GV.DataSource = DataManager.LoadUsers();    // загрузка данных в таблицу
+
             this.id_user = id_user;
             this.sts = status;
             this.name_usr = name_usr;
         }
 
+        // обработчик таймера - закрывает/открывает меню
         private void menu_timer_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
@@ -48,11 +51,14 @@ namespace diplom
                 }
             }
         }
+
+        // Открытие/закрытие меню
         private void sidebar_btn_Click(object sender, EventArgs e)
         {
             menu_timer.Start();
         }
 
+        // Обработчики нажатия на кнопки меню
         private void items_btn_Click(object sender, EventArgs e)
         {
             Goods_adm gds_frm = new Goods_adm(id_user, sts, name_usr);
@@ -71,7 +77,9 @@ namespace diplom
         {
             this.Close();
         }
+        //
 
+        // Обработчик нажатия на кнопку "Создать"
         private void create_btn_Click(object sender, EventArgs e)
         {
             AddUser add_frm = new AddUser(id_user, sts, name_usr);
@@ -79,6 +87,7 @@ namespace diplom
             this.Hide();
         }
 
+        // Обработчик двойного нажатия на ячейку с пользователем
         private void usr_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             string id = usr_GV.CurrentRow.Cells[0].Value.ToString();

@@ -12,6 +12,8 @@ namespace diplom
 {
     internal class MailManager
     {
+
+        // Создание письма
         public static MailMessage CreateMail(string emailTo, string body)
         {
             var from = new MailAddress(Resources.mail, "Art Coworking");
@@ -23,7 +25,7 @@ namespace diplom
             return mail;
         }
 
-
+        // Отправка письма
         public static void SendMail(MailMessage mail)
         {
             SmtpClient smpt = new SmtpClient("smtp.gmail.com", 587);
@@ -33,6 +35,7 @@ namespace diplom
             smpt.Send(mail);
         }
 
+        // Отправка отчета
         public static void SendReport(string name_usr)
         {
             List<UsersModel> users = DataManager.LoadUsers();    
@@ -42,8 +45,7 @@ namespace diplom
             {
                 if (user.Status == "Администратор")
                 {
-                    var mail = MailManager.CreateMail(user.Email, $"{report.GetReport()}");
-                    mail.IsBodyHtml = true;
+                    var mail = MailManager.CreateMail(user.Email, $"{report.GetReport()}");    // отправка каждому администратору
 
                     MailManager.SendMail(mail);
                 }

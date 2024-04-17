@@ -19,15 +19,17 @@ namespace diplom
         public EditUsrForm(string id_edit_user, string id_user, string sts, string name_usr)
         {
             InitializeComponent();
+
             this.id_edit_user = id_edit_user;
             this.id_user = id_user;
             this.sts = sts;
             this.name_usr = name_usr;
 
-            pass_tB.UseSystemPasswordChar = true;
+            pass_tB.UseSystemPasswordChar = true;   // скрыть пароль
             GetUser();
         }
 
+        // Обработчик события нажатия на кнопку "Сохранить"
         private void save_btn_Click(object sender, EventArgs e)
         {
             if (name_tB.Text != "" & phone_tB.Text != "" & email_tB.Text != "" & login_tB.Text != "" & pass_tB.Text != "")
@@ -38,11 +40,13 @@ namespace diplom
             else { MessageBox.Show("Пожалуйста, заполните все поля, отмеченные * ", "Внимание"); }
         }
 
+        // Обработчик события нажатия на кнопку "Назад"
         private void back_btn_Click(object sender, EventArgs e)
         {
             GoBack();   
         }
 
+        // Скрыть/показать пароль
         private void pass_cB_Click(object sender, EventArgs e)
         {
             if (!show_pass)
@@ -60,12 +64,14 @@ namespace diplom
             }
         }
 
+        // Обработчик события нажатия на кнопку "Удалить"
         private void del_btn_Click(object sender, EventArgs e)
         {
             DataManager.DeleteUser(id_edit_user);
             GoBack();
         }
 
+        // Проверка полей на отсутствие значений
         private void name_tB_TextChanged(object sender, EventArgs e)
         {
             if (name_tB.Text == "") { name_lbl.Visible = true; }
@@ -95,7 +101,9 @@ namespace diplom
             if (pass_tB.Text == "") { pwd_lbl.Visible = true; }
             else { pwd_lbl.Visible = false; }
         }
+        //
 
+        // Получение данных о пользователе
         private void GetUser()
         {
             List<UsersModel> users = DataManager.LoadUser(id_edit_user);
@@ -113,7 +121,8 @@ namespace diplom
             UsersModel edit_user = new UsersModel(name_tB.Text, status_cB.Text, phone_tB.Text, email_tB.Text, login_tB.Text, pass_tB.Text);
             DataManager.UpdateUser(edit_user, id_edit_user);
         }
-
+        
+        // Возврат на родительскую форму
         private void GoBack()
         {
             Users users = new Users(id_user, sts, name_usr);

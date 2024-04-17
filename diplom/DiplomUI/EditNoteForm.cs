@@ -20,6 +20,7 @@ namespace diplom
         public EditNoteForm(string id_note, string id_user, string status, string name_usr)
         {
             InitializeComponent();
+
             this.id_note = id_note;
             this.id_user = id_user;
             this.status = status;
@@ -28,17 +29,20 @@ namespace diplom
             GetNote();
         }
 
+        // Обработчик нажатия на кнопку "Удалить"
         private void del_btn_Click(object sender, EventArgs e)
         {
             DataManager.DeleteNote(id_note);
             GoBack();
         }
 
+        // Обработчик нажатия на кнопку "Назад"
         private void back_btn_Click(object sender, EventArgs e)
         {
             GoBack();
         }
 
+        // Обработчик нажатия на кнопку "Сохранить"
         private void save_btn_Click(object sender, EventArgs e)
         {
             if (name_tB.Text != "" & place_tB.Text != "" & comment_tB.Text != "")
@@ -52,6 +56,7 @@ namespace diplom
             }
         }
 
+        // Получение данных о заметке
         private void GetNote()
         {
             List<NoteModel> note = DataManager.LoadNote(id_note);
@@ -68,6 +73,7 @@ namespace diplom
             DataManager.UpdateNote(edit_note, id_note);
         }
 
+        // Возврат на родительскую форму
         private void GoBack()
         {
             Notes form = new Notes(id_user, status, name_usr);

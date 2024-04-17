@@ -20,6 +20,7 @@ namespace diplom
         public EditGoodForm(string id_good, string id_user, string status, string name_usr)
         {
             InitializeComponent();
+
             this.id_good = id_good;
             this.id_user = id_user;
             this.status = status;
@@ -28,6 +29,7 @@ namespace diplom
             GetGood();
         }
 
+        // Получение данных о выбранном товаре
         private void GetGood()
         {
             List<GoodModel> good = DataManager.LoadGood(id_good);
@@ -37,9 +39,10 @@ namespace diplom
             image_pB.Image = good[0].image;
         }
 
+        // Обработчик нажатия на кнопку "Добавить фото"
         private void add_photo_btn_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openDialog = new OpenFileDialog();
+            OpenFileDialog openDialog = new OpenFileDialog();   // открытие диалогового окна файловой системы
             openDialog.Filter = "Файлы изображений|*.bmp;*.png;*.jpg";
 
             if (openDialog.ShowDialog() != DialogResult.OK)
@@ -48,7 +51,6 @@ namespace diplom
             try
             {
                 // вывод картинки
-
                 Image image = Image.FromFile(openDialog.FileName);
                 Bitmap img = new Bitmap(image, new Size(150, 100));
                 image_pB.Image = img;
@@ -60,17 +62,20 @@ namespace diplom
             }
         }
 
+        // Обработчик нажатия на кнопку "Назад"
         private void back_btn_Click(object sender, EventArgs e)
         {
             GoBack();
         }
 
+        // Обработчик нажатия на кнопку "Удалить"
         private void del_btn_Click(object sender, EventArgs e)
         {
             DataManager.DeleteGood(id_good);
             GoBack();
         }
 
+        // Проверка полей на отсутствие значений
         private void name_tB_TextChanged(object sender, EventArgs e)
         {
             if (name_tB.Text == "") { name_lbl.Visible = true; }
@@ -95,7 +100,9 @@ namespace diplom
                 }
             }
         }
+        //
 
+        // Обработчик нажатия на кнопку "Сохранить"
         private void save_btn_Click(object sender, EventArgs e)
         {
             if (name_tB.Text != "" & cost_tB.Text != "")
@@ -112,6 +119,7 @@ namespace diplom
             DataManager.UpdateGood(edit_good, id_good);
         }
 
+        // Возврат на родительскую форму
         private void GoBack()
         {
             Goods_adm form = new Goods_adm(id_user, status, name_usr);

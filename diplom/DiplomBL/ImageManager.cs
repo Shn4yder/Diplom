@@ -52,18 +52,5 @@ namespace diplom
             string path = folderName + img_name + ".jpg";
             return path;   
         }
-
-        public static void DeleteImage(string path)
-        {
-            //try { File.Delete(path); }
-            //catch (Exception ex) { MessageBox.Show(ex.Message); }
-            File.Delete(path);
-        }
-
-        public static Image GetImage(string path)
-        {
-            Image img = Image.FromFile(path);
-            return img;
-        }
     }
 }

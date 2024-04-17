@@ -20,14 +20,15 @@ namespace diplom
         public Authorization()
         {
             InitializeComponent();
-            pass_tB.UseSystemPasswordChar = true;
+            pass_tB.UseSystemPasswordChar = true;   // скрыть пароль
         }
 
+        // // Обработчик нажатия на кнопку "Вход"
         private void enter_btn_Click(object sender, EventArgs e)
         {
             if (login_tB.Text != "" & pass_tB.Text != "")
             {
-                List<UsersModel> user_list = DataManager.LoadAuthUser(pass_tB.Text, login_tB.Text);
+                List<UsersModel> user_list = DataManager.LoadAuthUser(pass_tB.Text, login_tB.Text);   // поиск пользователя по логину и паролю
 
                 if (user_list.Count > 0)
                 {
@@ -54,6 +55,7 @@ namespace diplom
             else { MessageBox.Show("Пожалуйста, заполните все поля, отмеченные * ", "Внимание"); }
         }
 
+        // Скрыть/показать пароль
         private void pass_cB_Click(object sender, EventArgs e)
         {
             if (!show_pass) 
@@ -71,6 +73,7 @@ namespace diplom
             }
         }
 
+        // Проверка полей на отсутствие значений
         private void login_tB_TextChanged(object sender, EventArgs e)
         {
             if (login_tB.Text == "") { login_lbl.Visible = true; }
@@ -82,5 +85,6 @@ namespace diplom
             if (pass_tB.Text == "") { pass_lbl.Visible = true; }
             else { pass_lbl.Visible = false; }
         }
+        //
     }
 }

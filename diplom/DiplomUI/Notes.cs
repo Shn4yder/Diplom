@@ -16,11 +16,13 @@ namespace diplom
     {
 
         string id_usr, status, name_usr;
-        bool sidebarExpand;
+        bool sidebarExpand;    // состояние меню (открыто/закрыто)
         public Notes(string id_usr, string status, string name_usr)
         {
             InitializeComponent();
-            note_GV.DataSource = DataManager.LoadNotes();
+
+            note_GV.DataSource = DataManager.LoadNotes();   // загрузка данных в таблицу
+
             this.id_usr = id_usr;
             this.status = status;
             this.name_usr = name_usr;
@@ -28,6 +30,7 @@ namespace diplom
             CheckRole(status);
         }
 
+        // обработчик таймера - закрывает/открывает меню
         private void menu_timer_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
@@ -46,16 +49,17 @@ namespace diplom
                 {
                     sidebarExpand = true;
                     menu_timer.Stop();
-
                 }
             }
         }
 
+        // Открытие/закрытие меню
         private void sidebar_btn_Click(object sender, EventArgs e)
         {
             menu_timer.Start();
         }
 
+        // Обработчики нажатия на кнопки меню
         private void items_btn_Click(object sender, EventArgs e)
         {
             Goods_adm gds_frm = new Goods_adm(id_usr, status, name_usr);
@@ -81,18 +85,22 @@ namespace diplom
         {
             if (status != "Администратор")
             {
-                MailManager.SendReport(name_usr);
+                MailManager.SendReport(name_usr);   // отправка отчета администраторам
             }
             this.Close(); 
         }
+        //
 
+        // Обработчик нажатия на кнопку "Создать"
         private void create_btn_Click(object sender, EventArgs e)
         {
             AddNote add_frm = new AddNote(id_usr, status, name_usr);
             add_frm.Show();
             this.Hide();
         }
+        
 
+        // Обработчик двойного нажатия на ячейку с заметкой
         private void note_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (status == "Администратор")
@@ -117,10 +125,12 @@ namespace diplom
             
         }
 
+        // Проверка роли пользователя - заходить на вкладку "Пользователи" может только администратор
         private void CheckRole(string role)
         {
             if (role != "Администратор")
             {
+                // скрыть и отключить кнопки
                 usr_btn.Visible = false;
                 usr_btn.Enabled = false;
             }

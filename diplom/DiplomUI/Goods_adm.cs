@@ -18,12 +18,14 @@ namespace diplom
     public partial class Goods_adm : Form
     {
         string id_user, status, name_usr;
-        bool sidebarExpand;
+        bool sidebarExpand;   // состояние меню (открыто/закрыто)
 
         public Goods_adm(string id_user, string status, string name_usr)
         {
             InitializeComponent();
-            goods_GV.DataSource = DataManager.LoadGoods();
+
+            goods_GV.DataSource = DataManager.LoadGoods();   // загрузка данных в таблицу
+
             this.id_user = id_user;
             this.status = status;
             this.name_usr = name_usr;
@@ -31,7 +33,7 @@ namespace diplom
             CheckRole(status);
         }
 
-
+        // обработчик таймера - закрывает/открывает меню
         private void menu_timer_Tick(object sender, EventArgs e)
         {
             if (sidebarExpand)
@@ -50,15 +52,17 @@ namespace diplom
                 {
                     sidebarExpand = true;
                     menu_timer.Stop();
-
                 }
             }
         }
+
+        // Открытие/закрытие меню
         private void sidebar_btn_Click(object sender, EventArgs e)
         {
             menu_timer.Start();
         }
 
+        // Обработчики нажатия на кнопки меню
         private void note_btn_Click(object sender, EventArgs e)
         {
             Notes note_frm = new Notes(id_user, status, name_usr);
@@ -84,11 +88,13 @@ namespace diplom
         {
             if (status != "Администратор")
             {
-                MailManager.SendReport(name_usr);
+                MailManager.SendReport(name_usr);   // по завершению смены отправляется отчет администраторам
             }
             this.Close();
         }
+        //
 
+        // Обработчик нажатия на кнопку "Создать"
         private void create_btn_Click(object sender, EventArgs e)
         {
             AddGood add_frm = new AddGood(id_user, status, name_usr);
@@ -96,9 +102,9 @@ namespace diplom
             add_frm.Show();
         }
 
+        // Обработчик двойного нажатия на ячейку с товаром
         private void goods_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
             if (status == "Администратор")
             {
                 string id = goods_GV.CurrentRow.Cells[0].Value.ToString();
@@ -110,10 +116,12 @@ namespace diplom
             
         }
 
+        // Проверка роли пользователя - создавать товар и заходить на вкладку "Пользователи" может только администратор
         private void CheckRole(string role)
         {
             if (role != "Администратор")
-            {
+            {   
+                // скрыть и отключить кнопки
                 create_btn.Visible = false;
                 create_btn.Enabled = false;
                 usr_btn.Visible = false;

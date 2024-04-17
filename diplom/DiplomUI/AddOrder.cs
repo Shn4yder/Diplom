@@ -17,16 +17,19 @@ namespace diplom
         public AddOrder(string id_user, string status, string name_usr)
         {
             InitializeComponent();
+
             this.id_user = id_user;
             this.status = status;
             this.name_usr = name_usr;
         }
 
+        // Обработчик нажатия на кнопку "Назад"
         private void back_btn_Click(object sender, EventArgs e)
         {
             GoBack();
         }
 
+        //Обработчик нажатия на кнопку "Создать"
         private void create_btn_Click(object sender, EventArgs e)
         {
             if (name_tB.Text != "" & numb_tB.Text != "")
@@ -39,6 +42,12 @@ namespace diplom
             else { MessageBox.Show("Пожалуйста, заполните все поля, отмеченные * ", "Внимание"); }
         }
 
+        private void AddNewOrder(OrderModel order)
+        {
+            DataManager.AddOrder(order);
+        }
+
+        // Проверка полей на отсутствие значений
         private void name_tB_TextChanged(object sender, EventArgs e)
         {
             if (name_tB.Text == "") { name_lbl.Visible = true; }
@@ -50,12 +59,9 @@ namespace diplom
             if (numb_tB.Text == "") {  numb_lbl.Visible = true; }
             else { numb_lbl.Visible = false;}
         }
+        //
 
-        private void AddNewOrder(OrderModel order)
-        {
-            DataManager.AddOrder(order);
-        }
-
+        // Возврат на родительскую форму
         private void GoBack()
         {
             this.Close();

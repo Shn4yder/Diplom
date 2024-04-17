@@ -21,22 +21,26 @@ namespace diplom
         public AddUser(string id_user, string status, string name_usr)
         {
             InitializeComponent();
+
             this.id_user = id_user;
             this.status = status;
             this.name_usr = name_usr;
 
             status_cB.Text = "Сотрудник";
 
+            // скрыть пароль
             pwd_tB.UseSystemPasswordChar = true;
             confirm_tB.UseSystemPasswordChar = true;
-
+            //
         }
 
+        // Обработчик нажатия на кнопку "Назад"
         private void back_btn_Click(object sender, EventArgs e)
         {
             GoBack();
         }
 
+        // Скрыть/показать пароли
         private void confirm_cB_Click(object sender, EventArgs e)
         {
             if (!show_confirm)
@@ -69,7 +73,9 @@ namespace diplom
                 show_pass = false;
             }
         }
+        //
 
+        // Проверка полей на отсутствие значений
         private void name_tB_TextChanged(object sender, EventArgs e)
         {
             if (name_tB.Text == "") { name_lbl.Visible = true; }
@@ -110,7 +116,9 @@ namespace diplom
             }
             else { confirm_lbl.Visible = false; }
         }
+        //
 
+        // Обработчик нажатия на кнопку "Создать"
         private void create_btn_Click(object sender, EventArgs e)
         {
             if (name_tB.Text != "" & phone_tB.Text != "" & email_tB.Text != "" & login_tB.Text != "" & pwd_tB.Text != "" & confirm_tB.Text != "")

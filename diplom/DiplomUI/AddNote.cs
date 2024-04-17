@@ -19,16 +19,19 @@ namespace diplom
         public AddNote(string id_user, string status, string name_usr)
         {
             InitializeComponent();
+
             this.id_user = id_user;
             this.status = status;
             this.name_usr = name_usr;
         }
 
+        // Обработчик нажатия на кнопку "Назад"
         private void back_btn_Click(object sender, EventArgs e)
         {
             GoBack();
         }
 
+        // Обработчик нажатия на кнопку "Создать"
         private void create_btn_Click(object sender, EventArgs e)
         {
             if (name_tB.Text != "" & phone_tB.Text != "" & place_tB.Text != "" & comment_tB.Text != "")
@@ -49,6 +52,7 @@ namespace diplom
             DataManager.AddNote(note);
         }
 
+        // Возврат на родительскую форму
         private void GoBack()
         {
             Notes note_frm = new Notes(id_user, status, name_usr);

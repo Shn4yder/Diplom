@@ -21,6 +21,7 @@ namespace diplom
             name = usr_name;
         }
 
+        // Получение данных за сегодняшний день
         public List<double> GetTodayData()
         {
             double cashless_payment = 0;
@@ -46,6 +47,7 @@ namespace diplom
             return today_data;  
         }
 
+        // Получение данных за вчерашний день
         public List<double> GetYesterdayData()
         {
             double cashless_payment = 0;
@@ -71,35 +73,30 @@ namespace diplom
             return yesterday_data;
         }
 
+        // Сравнение сегодняшних и вчерашних данных
         public List<string> GetAnalizedData()
         {
             List<double> yesterday_data = GetYesterdayData();
             List<double> today_data = GetTodayData();
-            double percent_cashless_diff = 0;
-            double percent_cash_diff = 0;
             string cash_analize = string.Empty;
             string cashless_analize = string.Empty;
 
             if (today_data[0] >= yesterday_data[0] & yesterday_data[0] != 0 & today_data[0] != 0)
             {
-                percent_cashless_diff = Math.Round(((today_data[0] / yesterday_data[0]) * 100 - 100), 2);
-                cashless_analize = $"Это больше на {percent_cashless_diff}% чем вчера";
+                cashless_analize = $"Это больше на {Math.Round(((today_data[0] / yesterday_data[0]) * 100 - 100), 2)}% чем вчера";
             }
             else if (today_data[0] < yesterday_data[0] & yesterday_data[0] != 0 & today_data[0] != 0)
             {
-                percent_cashless_diff = Math.Round((100 - (today_data[0] / yesterday_data[0]) * 100), 2);
-                cashless_analize = $"Это меньше на {percent_cashless_diff}% чем вчера";
+                cashless_analize = $"Это меньше на {Math.Round((100 - (today_data[0] / yesterday_data[0]) * 100), 2)}% чем вчера";
             }
 
             if (today_data[1] >= yesterday_data[1] & yesterday_data[1] != 0 & today_data[1] != 0)
             {
-                percent_cash_diff = Math.Round(((today_data[1] / yesterday_data[1]) * 100 - 100), 2);
-                cash_analize = $"Это больше на {percent_cash_diff}% чем вчера";
+                cash_analize = $"Это больше на {Math.Round(((today_data[1] / yesterday_data[1]) * 100 - 100), 2)}% чем вчера";
             }
             else if (today_data[1] < yesterday_data[1] & yesterday_data[1] != 0 & today_data[1] != 0)
             {
-                percent_cash_diff = Math.Round((100 - (today_data[1] / yesterday_data[1]) * 100), 2);
-                cash_analize = $"Это меньше на {percent_cash_diff}% чем вчера";
+                cash_analize = $"Это меньше на {Math.Round((100 - (today_data[1] / yesterday_data[1]) * 100), 2)}% чем вчера";
             }
 
             List<string> result = new List<string>
@@ -113,6 +110,7 @@ namespace diplom
             return result;
         }
 
+        // Формирование отчета
         public string GetReport()
         {
             List<string> result = new List<string>();

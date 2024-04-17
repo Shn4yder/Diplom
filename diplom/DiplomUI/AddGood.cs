@@ -20,14 +20,16 @@ namespace diplom
         public AddGood(string id_user, string status, string name_usr)
         {
             InitializeComponent();
+
             this.id_user = id_user;
             this.status = status;
             this.name_usr = name_usr;
         }
 
+        // Обработчик нажатия на кнопку "Добавить фото"
         private void add_photo_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openDialog = new OpenFileDialog();
+            OpenFileDialog openDialog = new OpenFileDialog();   // открытие диалогового окна файловой системе
             openDialog.Filter = "Файлы изображений|*.bmp;*.png;*.jpg";
 
             if (openDialog.ShowDialog() != DialogResult.OK)
@@ -51,6 +53,7 @@ namespace diplom
             GoBack();
         }
 
+        // Обработчик нажатия на кнопку "Создать"
         private void create_btn_Click(object sender, EventArgs e)
         {
             if (name_tB.Text != "" & price_tB.Text != "")
@@ -63,6 +66,12 @@ namespace diplom
             else { MessageBox.Show("Пожалуйста, заполните все поля, отмеченные * ", "Внимание"); }
         }
 
+        private void AddNewGood(GoodModel good)
+        {
+            DataManager.AddGood(good);
+        }
+
+        // Проверка полей на отсутствие значенмй
         private void name_tB_TextChanged(object sender, EventArgs e)
         {
             if (name_tB.Text == "") { name_lbl.Visible = true; }
@@ -87,12 +96,9 @@ namespace diplom
                 }
             }
         }
+        //
 
-        private void AddNewGood(GoodModel good)
-        {
-            DataManager.AddGood(good);
-        }
-
+        // Возврат на родительскую форму
         private void GoBack()
         {
             this.Close();

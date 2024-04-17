@@ -259,7 +259,7 @@ namespace diplom
         {
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                var res = con.Query<GoodModel>("select * from Goods where name = 'тариф руб/мин'", new DynamicParameters());
+                var res = con.Query<GoodModel>("select * from Goods where id_good = 1", new DynamicParameters());
                 List<GoodModel> good = res.ToList();
 
                 double tarif = good[0].Cost;
