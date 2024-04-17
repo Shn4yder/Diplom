@@ -25,7 +25,6 @@ namespace diplom
             this.status = status;
             this.name_usr = name_usr;
 
-            //name_lbl.Text = $"Хорошего дня, {name_usr}!";
             CheckRole(status);
         }
 
@@ -82,12 +81,7 @@ namespace diplom
         {
             if (status != "Администратор")
             {
-                ReportManager report = new ReportManager(name_usr);
-
-                var mail = MailManager.CreateMail("litvinastya7@mail.ru", $"Отчет по смене за {DateTime.Now.ToString("dd.MM.yyyy")}", $"{report.GetReport()}");
-                mail.IsBodyHtml = true;
-
-                MailManager.SendMail(mail);
+                MailManager.SendReport(name_usr);
             }
             this.Close(); 
         }

@@ -84,12 +84,7 @@ namespace diplom
         {
             if (status != "Администратор")
             {
-                ReportManager report = new ReportManager(name_usr);
-
-                var mail = MailManager.CreateMail("litvinastya7@mail.ru", "test sub", $"{report.GetReport()}");
-                mail.IsBodyHtml = true;
-
-                MailManager.SendMail(mail);
+                MailManager.SendReport(name_usr);
             }
             this.Close();
         }
