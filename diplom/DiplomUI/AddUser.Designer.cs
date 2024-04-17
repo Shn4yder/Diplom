@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUser));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.email_lbl = new System.Windows.Forms.Label();
+            this.phone_lbl = new System.Windows.Forms.Label();
+            this.name_lbl = new System.Windows.Forms.Label();
             this.domain_cB = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -40,6 +43,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.name_tB = new diplom.CueTextbox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.confirm_lbl = new System.Windows.Forms.Label();
+            this.pwd_lbl = new System.Windows.Forms.Label();
+            this.login_lbl = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.confirm_cB = new System.Windows.Forms.PictureBox();
             this.confirm_tB = new diplom.CueTextbox();
@@ -51,12 +57,6 @@
             this.status_cB = new System.Windows.Forms.ComboBox();
             this.create_btn = new diplom.Controls.RoundBtn();
             this.back_btn = new System.Windows.Forms.PictureBox();
-            this.name_lbl = new System.Windows.Forms.Label();
-            this.phone_lbl = new System.Windows.Forms.Label();
-            this.email_lbl = new System.Windows.Forms.Label();
-            this.login_lbl = new System.Windows.Forms.Label();
-            this.pwd_lbl = new System.Windows.Forms.Label();
-            this.confirm_lbl = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -100,6 +100,39 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Личные данные";
+            // 
+            // email_lbl
+            // 
+            this.email_lbl.AutoSize = true;
+            this.email_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.email_lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.email_lbl.Location = new System.Drawing.Point(396, 64);
+            this.email_lbl.Name = "email_lbl";
+            this.email_lbl.Size = new System.Drawing.Size(17, 24);
+            this.email_lbl.TabIndex = 34;
+            this.email_lbl.Text = "*";
+            // 
+            // phone_lbl
+            // 
+            this.phone_lbl.AutoSize = true;
+            this.phone_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.phone_lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.phone_lbl.Location = new System.Drawing.Point(136, 64);
+            this.phone_lbl.Name = "phone_lbl";
+            this.phone_lbl.Size = new System.Drawing.Size(17, 24);
+            this.phone_lbl.TabIndex = 33;
+            this.phone_lbl.Text = "*";
+            // 
+            // name_lbl
+            // 
+            this.name_lbl.AutoSize = true;
+            this.name_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.name_lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.name_lbl.Location = new System.Drawing.Point(396, 28);
+            this.name_lbl.Name = "name_lbl";
+            this.name_lbl.Size = new System.Drawing.Size(17, 24);
+            this.name_lbl.TabIndex = 32;
+            this.name_lbl.Text = "*";
             // 
             // domain_cB
             // 
@@ -206,6 +239,39 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Приложение";
+            // 
+            // confirm_lbl
+            // 
+            this.confirm_lbl.AutoSize = true;
+            this.confirm_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.confirm_lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.confirm_lbl.Location = new System.Drawing.Point(396, 88);
+            this.confirm_lbl.Name = "confirm_lbl";
+            this.confirm_lbl.Size = new System.Drawing.Size(17, 24);
+            this.confirm_lbl.TabIndex = 37;
+            this.confirm_lbl.Text = "*";
+            // 
+            // pwd_lbl
+            // 
+            this.pwd_lbl.AutoSize = true;
+            this.pwd_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.pwd_lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.pwd_lbl.Location = new System.Drawing.Point(396, 42);
+            this.pwd_lbl.Name = "pwd_lbl";
+            this.pwd_lbl.Size = new System.Drawing.Size(17, 24);
+            this.pwd_lbl.TabIndex = 36;
+            this.pwd_lbl.Text = "*";
+            // 
+            // login_lbl
+            // 
+            this.login_lbl.AutoSize = true;
+            this.login_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.login_lbl.ForeColor = System.Drawing.Color.DarkRed;
+            this.login_lbl.Location = new System.Drawing.Point(159, 88);
+            this.login_lbl.Name = "login_lbl";
+            this.login_lbl.Size = new System.Drawing.Size(17, 24);
+            this.login_lbl.TabIndex = 35;
+            this.login_lbl.Text = "*";
             // 
             // panel6
             // 
@@ -335,72 +401,6 @@
             this.back_btn.TabStop = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
-            // name_lbl
-            // 
-            this.name_lbl.AutoSize = true;
-            this.name_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.name_lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.name_lbl.Location = new System.Drawing.Point(396, 28);
-            this.name_lbl.Name = "name_lbl";
-            this.name_lbl.Size = new System.Drawing.Size(17, 24);
-            this.name_lbl.TabIndex = 32;
-            this.name_lbl.Text = "*";
-            // 
-            // phone_lbl
-            // 
-            this.phone_lbl.AutoSize = true;
-            this.phone_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.phone_lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.phone_lbl.Location = new System.Drawing.Point(136, 64);
-            this.phone_lbl.Name = "phone_lbl";
-            this.phone_lbl.Size = new System.Drawing.Size(17, 24);
-            this.phone_lbl.TabIndex = 33;
-            this.phone_lbl.Text = "*";
-            // 
-            // email_lbl
-            // 
-            this.email_lbl.AutoSize = true;
-            this.email_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.email_lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.email_lbl.Location = new System.Drawing.Point(396, 64);
-            this.email_lbl.Name = "email_lbl";
-            this.email_lbl.Size = new System.Drawing.Size(17, 24);
-            this.email_lbl.TabIndex = 34;
-            this.email_lbl.Text = "*";
-            // 
-            // login_lbl
-            // 
-            this.login_lbl.AutoSize = true;
-            this.login_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.login_lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.login_lbl.Location = new System.Drawing.Point(159, 88);
-            this.login_lbl.Name = "login_lbl";
-            this.login_lbl.Size = new System.Drawing.Size(17, 24);
-            this.login_lbl.TabIndex = 35;
-            this.login_lbl.Text = "*";
-            // 
-            // pwd_lbl
-            // 
-            this.pwd_lbl.AutoSize = true;
-            this.pwd_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.pwd_lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.pwd_lbl.Location = new System.Drawing.Point(396, 42);
-            this.pwd_lbl.Name = "pwd_lbl";
-            this.pwd_lbl.Size = new System.Drawing.Size(17, 24);
-            this.pwd_lbl.TabIndex = 36;
-            this.pwd_lbl.Text = "*";
-            // 
-            // confirm_lbl
-            // 
-            this.confirm_lbl.AutoSize = true;
-            this.confirm_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.confirm_lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.confirm_lbl.Location = new System.Drawing.Point(396, 88);
-            this.confirm_lbl.Name = "confirm_lbl";
-            this.confirm_lbl.Size = new System.Drawing.Size(17, 24);
-            this.confirm_lbl.TabIndex = 37;
-            this.confirm_lbl.Text = "*";
-            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,6 +414,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Создание пользователя";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

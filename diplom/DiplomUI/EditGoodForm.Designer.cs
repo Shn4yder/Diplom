@@ -203,6 +203,7 @@
             this.Controls.Add(this.image_pB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditGoodForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изменение товара";
             ((System.ComponentModel.ISupportInitialize)(this.image_pB)).EndInit();
             this.panel1.ResumeLayout(false);

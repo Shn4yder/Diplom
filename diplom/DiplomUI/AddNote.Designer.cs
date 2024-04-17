@@ -32,12 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comment_tB = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.name_tB = new diplom.CueTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.phone_tB = new System.Windows.Forms.MaskedTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.back_btn = new System.Windows.Forms.PictureBox();
             this.place_tB = new diplom.CueTextbox();
-            this.name_tB = new diplom.CueTextbox();
             this.create_btn = new diplom.Controls.RoundBtn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -72,6 +72,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(245, 23);
             this.panel1.TabIndex = 13;
+            // 
+            // name_tB
+            // 
+            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_tB.Cue = "Имя";
+            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_tB.Location = new System.Drawing.Point(3, 2);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(239, 18);
+            this.name_tB.TabIndex = 29;
             // 
             // panel2
             // 
@@ -122,16 +132,6 @@
             this.place_tB.Size = new System.Drawing.Size(155, 18);
             this.place_tB.TabIndex = 29;
             // 
-            // name_tB
-            // 
-            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name_tB.Cue = "Имя";
-            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_tB.Location = new System.Drawing.Point(3, 2);
-            this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(239, 18);
-            this.name_tB.TabIndex = 29;
-            // 
             // create_btn
             // 
             this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
@@ -162,6 +162,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddNote";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Создание заметки";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -102,6 +102,38 @@ namespace diplom
             add_frm.Show();
         }
 
+        private void change_tarif_btn_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+            price_tB.Visible = true;
+            save_tarif_btn.Visible = true;  
+            label2.Visible = true;  
+            price_tB.Text = DataManager.LoadTarif().ToString();
+        }
+
+        private void save_tarif_btn_Click(object sender, EventArgs e)
+        {
+            DataManager.UpdateGood(new GoodModel("", "тариф руб/мин", Convert.ToDouble(price_tB.Text)), "1");
+            panel2.Visible = false;
+            price_tB.Visible = false;
+            save_tarif_btn.Visible = false;
+            label2.Visible = false;
+        }
+
+        private void price_tB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Convert.ToDouble(price_tB.Text);
+            }
+            catch 
+            {
+                MessageBox.Show("Стоимость тарифа должна быть положительным числом", "Внимание");
+                price_tB.Text = DataManager.LoadTarif().ToString();
+            }
+
+        }
+
         // Обработчик двойного нажатия на ячейку с товаром
         private void goods_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -126,6 +158,8 @@ namespace diplom
                 create_btn.Enabled = false;
                 usr_btn.Visible = false;
                 usr_btn.Enabled = false;
+                change_tarif_btn.Visible = false;
+                change_tarif_btn.Enabled = false;   
             }
             else 
             {

@@ -300,6 +300,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Users";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Пользователи";
             ((System.ComponentModel.ISupportInitialize)(this.usr_GV)).EndInit();
             this.sidebar.ResumeLayout(false);

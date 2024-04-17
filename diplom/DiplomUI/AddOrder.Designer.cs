@@ -225,6 +225,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Создание заказа";
             ((System.ComponentModel.ISupportInitialize)(this.ppl_UpDown)).EndInit();
             this.panel1.ResumeLayout(false);

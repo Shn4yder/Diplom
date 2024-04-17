@@ -337,6 +337,7 @@ namespace diplom
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Notes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заметки";
             ((System.ComponentModel.ISupportInitialize)(this.note_GV)).EndInit();
             this.sidebar.ResumeLayout(false);

@@ -50,12 +50,18 @@ namespace diplom
             this.sidebar_btn = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
-            this.create_btn = new diplom.Controls.RoundBtn();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.price_tB = new diplom.CueTextbox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.save_tarif_btn = new diplom.Controls.RoundBtn();
+            this.change_tarif_btn = new diplom.Controls.RoundBtn();
+            this.create_btn = new diplom.Controls.RoundBtn();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // goods_GV
@@ -280,20 +286,6 @@ namespace diplom
             this.menu_timer.Interval = 10;
             this.menu_timer.Tick += new System.EventHandler(this.menu_timer_Tick);
             // 
-            // create_btn
-            // 
-            this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.create_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.create_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.create_btn.Location = new System.Drawing.Point(268, 406);
-            this.create_btn.Name = "create_btn";
-            this.create_btn.Radius = 10;
-            this.create_btn.Size = new System.Drawing.Size(70, 22);
-            this.create_btn.TabIndex = 6;
-            this.create_btn.Text = "Создать";
-            this.create_btn.UseVisualStyleBackColor = false;
-            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::diplom.Properties.Resources.background_img;
@@ -304,24 +296,110 @@ namespace diplom
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.price_tB);
+            this.panel2.Location = new System.Drawing.Point(203, 405);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(44, 23);
+            this.panel2.TabIndex = 30;
+            this.panel2.Visible = false;
+            // 
+            // price_tB
+            // 
+            this.price_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.price_tB.Cue = "";
+            this.price_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.price_tB.Location = new System.Drawing.Point(4, 3);
+            this.price_tB.Name = "price_tB";
+            this.price_tB.Size = new System.Drawing.Size(37, 18);
+            this.price_tB.TabIndex = 32;
+            this.price_tB.Visible = false;
+            this.price_tB.TextChanged += new System.EventHandler(this.price_tB_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(192)))), ((int)(((byte)(186)))));
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.label2.Location = new System.Drawing.Point(253, 411);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 15);
+            this.label2.TabIndex = 31;
+            this.label2.Text = "руб/мин";
+            this.label2.Visible = false;
+            // 
+            // save_tarif_btn
+            // 
+            this.save_tarif_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.save_tarif_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save_tarif_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.save_tarif_btn.Location = new System.Drawing.Point(315, 406);
+            this.save_tarif_btn.Name = "save_tarif_btn";
+            this.save_tarif_btn.Radius = 10;
+            this.save_tarif_btn.Size = new System.Drawing.Size(73, 22);
+            this.save_tarif_btn.TabIndex = 33;
+            this.save_tarif_btn.Text = "Сохранить";
+            this.save_tarif_btn.UseVisualStyleBackColor = false;
+            this.save_tarif_btn.Visible = false;
+            this.save_tarif_btn.Click += new System.EventHandler(this.save_tarif_btn_Click);
+            // 
+            // change_tarif_btn
+            // 
+            this.change_tarif_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.change_tarif_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.change_tarif_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.change_tarif_btn.Location = new System.Drawing.Point(81, 406);
+            this.change_tarif_btn.Name = "change_tarif_btn";
+            this.change_tarif_btn.Radius = 10;
+            this.change_tarif_btn.Size = new System.Drawing.Size(110, 22);
+            this.change_tarif_btn.TabIndex = 8;
+            this.change_tarif_btn.Text = "Изменить тариф";
+            this.change_tarif_btn.UseVisualStyleBackColor = false;
+            this.change_tarif_btn.Click += new System.EventHandler(this.change_tarif_btn_Click);
+            // 
+            // create_btn
+            // 
+            this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.create_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.create_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.create_btn.Location = new System.Drawing.Point(457, 406);
+            this.create_btn.Name = "create_btn";
+            this.create_btn.Radius = 10;
+            this.create_btn.Size = new System.Drawing.Size(70, 22);
+            this.create_btn.TabIndex = 6;
+            this.create_btn.Text = "Создать";
+            this.create_btn.UseVisualStyleBackColor = false;
+            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
+            // 
             // Goods_adm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(558, 450);
+            this.Controls.Add(this.save_tarif_btn);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.create_btn);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.goods_GV);
+            this.Controls.Add(this.change_tarif_btn);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Goods_adm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Товары";
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).EndInit();
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -344,5 +422,10 @@ namespace diplom
         private DataGridViewTextBoxColumn name;
         private DataGridViewTextBoxColumn cost;
         private PictureBox pictureBox1;
+        private Controls.RoundBtn change_tarif_btn;
+        private Panel panel2;
+        private CueTextbox price_tB;
+        private Label label2;
+        private Controls.RoundBtn save_tarif_btn;
     }
 }

@@ -118,7 +118,7 @@ namespace diplom
             
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                var res = con.Query<GoodModel>("select * from Goods", new DynamicParameters());
+                var res = con.Query<GoodModel>("select * from Goods where id_good != 1", new DynamicParameters());
                 foreach (GoodModel good in res.ToList())
                 {
                     try

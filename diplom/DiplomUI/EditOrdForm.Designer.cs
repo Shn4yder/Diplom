@@ -503,6 +503,7 @@
             this.Controls.Add(this.comment_tB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditOrdForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изменение заказа";
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cart_GV)).EndInit();

@@ -309,6 +309,7 @@
             this.Controls.Add(this.status_cB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditUsrForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изменение пользователя";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

@@ -301,6 +301,7 @@ namespace diplom
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Orders";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заказы";
             ((System.ComponentModel.ISupportInitialize)(this.orders_GV)).EndInit();
             this.sidebar.ResumeLayout(false);

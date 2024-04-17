@@ -166,6 +166,7 @@
             this.Controls.Add(this.comment_tB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditNoteForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изменение заметки";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
