@@ -20,7 +20,6 @@ namespace diplom
 
             // создание папки для изображений товаров
 
-            
             ImageManager.CreateFolder();
             Application.Run(new Authorization());
         }

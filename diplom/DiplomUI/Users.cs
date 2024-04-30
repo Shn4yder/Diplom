@@ -26,6 +26,8 @@ namespace diplom
             this.id_user = id_user;
             this.sts = status;
             this.name_usr = name_usr;
+
+            textBox1.Text = id_user;
         }
 
         // обработчик таймера - закрывает/открывает меню

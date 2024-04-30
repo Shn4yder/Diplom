@@ -106,14 +106,14 @@ namespace diplom
         // Получение данных о пользователе
         private void GetUser()
         {
-            List<UsersModel> users = DataManager.LoadUser(id_edit_user);
+            UsersModel user = DataManager.LoadUser(id_edit_user);
 
-            name_tB.Text = users[0].Fio.ToString();
-            status_cB.Text = users[0].Status.ToString();
-            phone_tB.Text = users[0].Phone.ToString();
-            email_tB.Text = users[0].Email.ToString();
-            login_tB.Text = users[0].Login.ToString();
-            pass_tB.Text = users[0].Password.ToString();
+            name_tB.Text = user.Fio;
+            status_cB.Text = user.Status;
+            phone_tB.Text = user.Phone;
+            email_tB.Text = user.Email;
+            login_tB.Text = user.Login;
+            pass_tB.Text = user.Password;
         }
 
         private void UpdateData()

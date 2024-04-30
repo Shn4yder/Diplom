@@ -17,18 +17,24 @@ namespace diplom
         // Загрузка, вставка, удаление, изменение данных пользователей
         public static List<UsersModel> LoadUsers()
         {
+            List<UsersModel> users = new List<UsersModel>();
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                var res = con.Query<UsersModel>("select * from Users", new DynamicParameters());
-                return res.ToList();
+                var res = con.Query<EncryptedUser>("select * from Users", new DynamicParameters());
+                foreach (EncryptedUser enc_usr in res.ToList())
+                {
+                    users.Add(new UsersModel(enc_usr));
+                }
+                return users;
             }
         }
 
         public static void AddUser(UsersModel user)
         {
+            EncryptedUser encrypted = new EncryptedUser(user);
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                con.Execute("insert into Users(fio, status, phone, email, login, password) values(@Fio, @Status, @Phone, @Email, @Login, @Password)", user);
+                con.Execute("insert into Users(fio, status, phone, email, login, password, key, iv) values(@Fio, @Status, @Phone, @Email, @Login, @Password, @Key, @Iv)", encrypted);
             }
         } 
 
@@ -40,12 +46,17 @@ namespace diplom
             }
         }
 
-        public static List<UsersModel> LoadUser(string id)    // получение данных о конкретном пользователе
+        public static UsersModel LoadUser(string id)    // получение данных о конкретном пользователе
         {
+            List<UsersModel> users = new List<UsersModel>();
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                var res = con.Query<UsersModel>("select * from Users where id_user=" + id, new DynamicParameters());
-                return res.ToList();
+                var res = con.Query<EncryptedUser>("select * from Users where id_user=" + id, new DynamicParameters());
+                foreach (EncryptedUser enc_usr in res.ToList())
+                {
+                    users.Add(new UsersModel(enc_usr));
+                }
+                return users[0];
             }
         }
 
@@ -57,13 +68,17 @@ namespace diplom
             }
         }
 
-        public static List<UsersModel> LoadAuthUser(string password, string login)    // получение данных о конкретном пользователе по логину и паролю
+        public static UsersModel Search(string login, string pass)
         {
-            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            List<UsersModel> users = DataManager.LoadUsers();
+            foreach (UsersModel user in users)
             {
-                var res = con.Query<UsersModel>("select * from Users where login='" + login + "' AND password='" + password + "'"  , new DynamicParameters());
-                return res.ToList();
+                if (user.Login == login & user.Login == login)
+                {
+                    return user;
+                }
             }
+            return null;
         }
 
 

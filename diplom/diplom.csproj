@@ -130,7 +130,9 @@
     </Compile>
     <Compile Include="DiplomBL\ImageManager.cs" />
     <Compile Include="DiplomBL\MailManager.cs" />
+    <Compile Include="DiplomBL\Encryption.cs" />
     <Compile Include="Models\CartModel.cs" />
+    <Compile Include="Models\EncryptedUser.cs" />
     <Compile Include="Models\GoodModel.cs" />
     <Compile Include="Models\NoteModel.cs" />
     <Compile Include="Models\OrderModel.cs" />

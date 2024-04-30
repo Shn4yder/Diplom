@@ -28,12 +28,10 @@ namespace diplom
         {
             if (login_tB.Text != "" & pass_tB.Text != "")
             {
-                List<UsersModel> user_list = DataManager.LoadAuthUser(pass_tB.Text, login_tB.Text);   // поиск пользователя по логину и паролю
+                UsersModel user = DataManager.Search(login_tB.Text, pass_tB.Text); // поиск пользователя по логину и паролю
 
-                if (user_list.Count > 0)
+                if (user != null)
                 {
-                    UsersModel user = user_list[0];
-
                     if (user.Status == "Администратор")
                     {
                         Goods_adm form = new Goods_adm(user.Id_user.ToString(), user.Status, user.Fio);

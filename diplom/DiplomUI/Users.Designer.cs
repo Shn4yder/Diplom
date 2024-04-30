@@ -33,13 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Users));
             this.usr_GV = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.sidebar_btn = new System.Windows.Forms.Button();
@@ -50,6 +43,16 @@
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.create_btn = new diplom.Controls.RoundBtn();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.login = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Key = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Iv = new System.Windows.Forms.DataGridViewImageColumn();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.usr_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -76,7 +79,9 @@
             this.phone,
             this.email,
             this.login,
-            this.password});
+            this.password,
+            this.Key,
+            this.Iv});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -92,61 +97,6 @@
             this.usr_GV.Size = new System.Drawing.Size(630, 357);
             this.usr_GV.TabIndex = 0;
             this.usr_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usr_GV_CellDoubleClick);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id_user";
-            this.id.HeaderText = "id_usr";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // fio
-            // 
-            this.fio.DataPropertyName = "FIO";
-            this.fio.HeaderText = "ФИО ";
-            this.fio.Name = "fio";
-            this.fio.ReadOnly = true;
-            this.fio.Width = 250;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "Status";
-            this.status.HeaderText = "Должность";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Width = 130;
-            // 
-            // phone
-            // 
-            this.phone.DataPropertyName = "Phone";
-            this.phone.HeaderText = "Телефон";
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "Email";
-            this.email.HeaderText = "E-mail";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Width = 148;
-            // 
-            // login
-            // 
-            this.login.DataPropertyName = "Login";
-            this.login.HeaderText = "Логин";
-            this.login.Name = "login";
-            this.login.ReadOnly = true;
-            this.login.Visible = false;
-            // 
-            // password
-            // 
-            this.password.DataPropertyName = "Password";
-            this.password.HeaderText = "Пароль";
-            this.password.Name = "password";
-            this.password.ReadOnly = true;
-            this.password.Visible = false;
             // 
             // sidebar
             // 
@@ -288,12 +238,92 @@
             this.pictureBox2.TabIndex = 30;
             this.pictureBox2.TabStop = false;
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id_user";
+            this.id.HeaderText = "id_usr";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // fio
+            // 
+            this.fio.DataPropertyName = "FIO";
+            this.fio.HeaderText = "ФИО ";
+            this.fio.Name = "fio";
+            this.fio.ReadOnly = true;
+            this.fio.Width = 250;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "Status";
+            this.status.HeaderText = "Должность";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 130;
+            // 
+            // phone
+            // 
+            this.phone.DataPropertyName = "Phone";
+            this.phone.HeaderText = "Телефон";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "E-mail";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 148;
+            // 
+            // login
+            // 
+            this.login.DataPropertyName = "Login";
+            this.login.HeaderText = "Логин";
+            this.login.Name = "login";
+            this.login.ReadOnly = true;
+            this.login.Visible = false;
+            // 
+            // password
+            // 
+            this.password.DataPropertyName = "Password";
+            this.password.HeaderText = "Пароль";
+            this.password.Name = "password";
+            this.password.ReadOnly = true;
+            this.password.Visible = false;
+            // 
+            // Key
+            // 
+            this.Key.DataPropertyName = "Key";
+            this.Key.HeaderText = "Key";
+            this.Key.Name = "Key";
+            this.Key.ReadOnly = true;
+            this.Key.Visible = false;
+            // 
+            // Iv
+            // 
+            this.Iv.DataPropertyName = "Iv";
+            this.Iv.HeaderText = "Iv";
+            this.Iv.Name = "Iv";
+            this.Iv.ReadOnly = true;
+            this.Iv.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Iv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Iv.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(451, 11);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 31;
+            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(748, 450);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.create_btn);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.usr_GV);
@@ -307,6 +337,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -322,6 +353,7 @@
         private System.Windows.Forms.Button sidebar_btn;
         private System.Windows.Forms.Timer menu_timer;
         private Controls.RoundBtn create_btn;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn fio;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
@@ -329,6 +361,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn login;
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridViewImageColumn Key;
+        private System.Windows.Forms.DataGridViewImageColumn Iv;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
