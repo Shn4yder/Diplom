@@ -124,6 +124,8 @@ namespace diplom
             if (name_tB.Text != "" & phone_tB.Text != "" & email_tB.Text != "" & login_tB.Text != "" & pwd_tB.Text != "" & confirm_tB.Text != "")
             {
                 UsersModel new_user = new UsersModel(name_tB.Text, status_cB.Text, phone_tB.Text, email_tB.Text + '@' + domain_cB.Text, login_tB.Text, pwd_tB.Text);
+                new_user.Key = Encryption.GetKey();
+                new_user.Iv = Encryption.GetVector();
                 AddNewUser(new_user);
 
                 GoBack();

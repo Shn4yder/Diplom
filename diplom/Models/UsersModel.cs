@@ -35,7 +35,7 @@ namespace diplom.Models
         {
             this.Key = encrypted.Key;
             this.Iv = encrypted.Iv;
-
+            this.Id_user = encrypted.Id_user;   
             this.Fio = Encryption.Decrypt(encrypted.Fio, Key, Iv);
             this.Status = Encryption.Decrypt(encrypted.Status, Key, Iv);
             this.Phone = Encryption.Decrypt(encrypted.Phone, Key, Iv);
