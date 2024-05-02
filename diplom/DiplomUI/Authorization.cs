@@ -32,6 +32,7 @@ namespace diplom
 
                 if (user != null)
                 {
+                    Trigger.Addlog("enter", user.Fio);
                     if (user.Status == "Администратор")
                     {
                         Goods_adm form = new Goods_adm(user.Id_user.ToString(), user.Status, user.Fio);

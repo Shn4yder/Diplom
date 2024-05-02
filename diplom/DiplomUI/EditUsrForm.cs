@@ -67,6 +67,7 @@ namespace diplom
         // Обработчик события нажатия на кнопку "Удалить"
         private void del_btn_Click(object sender, EventArgs e)
         {
+            Trigger.Addlog("delete", name_usr, name_tB.Text);
             DataManager.DeleteUser(id_edit_user);
             GoBack();
         }
@@ -118,6 +119,7 @@ namespace diplom
 
         private void UpdateData()
         {
+            Trigger.Addlog("update", name_usr, name_tB.Text);
             UsersModel edit_user = new UsersModel(name_tB.Text, status_cB.Text, phone_tB.Text, email_tB.Text, login_tB.Text, pass_tB.Text);
             DataManager.UpdateUser(edit_user, id_edit_user);
         }

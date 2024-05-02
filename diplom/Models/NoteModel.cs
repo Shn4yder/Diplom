@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace diplom.Models
 {
@@ -14,8 +15,11 @@ namespace diplom.Models
         public string Place { get; set; }
         public string Comment { get; set; }
         public string Date_add { get; set; }
-        public string Fio { get; set; }
-        public int Id_user { get; set; }    
+        public byte[] Fio { get; set; }
+        public int Id_user { get; set; }   
+        public byte[] Key { get; set; }
+        public byte[] Iv { get; set; }
+        public string Decr_fio  { get; set; }    
 
         public NoteModel() { }
 

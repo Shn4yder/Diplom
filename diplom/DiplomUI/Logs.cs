@@ -7,26 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using diplom.Models;
-using diplom.DiplomUI;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
-namespace diplom
+namespace diplom.DiplomUI
 {
-    public partial class Users : Form
+    public partial class Logs : Form
     {
         string id_user, sts, name_usr;
         bool sidebarExpand;  // состояние меню (открыто/закрыто)
 
-        public Users(string id_user, string status, string name_usr)
+        public Logs(string id_user, string status, string name_usr)
         {
             InitializeComponent();
-
-            usr_GV.DataSource = DataManager.LoadUsers();    // загрузка данных в таблицу
 
             this.id_user = id_user;
             this.sts = status;
             this.name_usr = name_usr;
+
+            log_GV.DataSource = DataManager.LoadLogs();
         }
 
         // обработчик таймера - закрывает/открывает меню
@@ -66,6 +63,12 @@ namespace diplom
             gds_frm.Show();
         }
 
+        private void exit_btn_Click(object sender, EventArgs e)
+        {
+            Trigger.Addlog("exit", name_usr);
+            this.Close();   
+        }
+
         private void note_btn_Click(object sender, EventArgs e)
         {
             Notes notes = new Notes(id_user, sts, name_usr);
@@ -73,36 +76,18 @@ namespace diplom
             notes.Show();
         }
 
-        private void exit_btn_Click(object sender, EventArgs e)
+        private void usr_btn_Click(object sender, EventArgs e)
         {
-            Trigger.Addlog("exit", name_usr);
-            this.Close();
-        }
-
-        private void logs_btn_Click(object sender, EventArgs e)
-        {
-            Logs logs = new Logs(id_user, sts, name_usr);
+            Users users = new Users(id_user, sts, name_usr);
             this.Hide();
-            logs.Show();
+            users.Show();   
         }
         //
 
-        // Обработчик нажатия на кнопку "Создать"
-        private void create_btn_Click(object sender, EventArgs e)
+        private void delete_btn_Click(object sender, EventArgs e)
         {
-            AddUser add_frm = new AddUser(id_user, sts, name_usr);
-            add_frm.Show();
-            this.Hide();
-        }
-
-        // Обработчик двойного нажатия на ячейку с пользователем
-        private void usr_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string id = usr_GV.CurrentRow.Cells[0].Value.ToString();
-
-            EditUsrForm edit_frm = new EditUsrForm(id, id_user, sts, name_usr);
-            edit_frm.Show();
-            this.Hide();
+            DataManager.DeleteLogs();
+            log_GV.DataSource = DataManager.LoadLogs();
         }
     }
 }

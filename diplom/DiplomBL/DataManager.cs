@@ -10,6 +10,7 @@ using System.Configuration;
 using diplom.Models;
 using System.Drawing;
 using diplom.Properties;
+using System.Windows.Forms;
 namespace diplom
 {
     internal class DataManager
@@ -62,9 +63,14 @@ namespace diplom
 
         public static void UpdateUser(UsersModel user, string id)
         {
+            UsersModel enc_usr = LoadUser(id);
+            user.Key = enc_usr.Key; 
+            user.Iv = enc_usr.Iv;
+
+            EncryptedUser enc = new EncryptedUser(user);    
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                con.Execute("UPDATE Users SET fio= @Fio,status=@Status, phone=@Phone, email=@Email, login=@Login, password=@Password WHERE id_user = " + id, user);
+                con.Execute("UPDATE Users SET fio= @Fio,status=@Status, phone=@Phone, email=@Email, login=@Login, password=@Password WHERE id_user = " + id, enc);
             }
         }
 
@@ -87,8 +93,14 @@ namespace diplom
         {
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                var res = con.Query<NoteModel>("select id_note, name, Notes.phone, place, comment, date_add, fio, Notes.id_user from Notes, Users where Notes.id_user = Users.id_user", new DynamicParameters());
-                return res.ToList();
+                List<NoteModel> valid_notes = new List<NoteModel>();    
+                var res = con.Query<NoteModel>("select id_note, name, Notes.phone, place, comment, date_add, fio, Notes.id_user, key, iv from Notes, Users where Notes.id_user = Users.id_user", new DynamicParameters());
+                foreach (NoteModel note in res.ToList())
+                {
+                    note.Decr_fio = Encryption.Decrypt(note.Fio, note.Key, note.Iv);
+                    valid_notes.Add(note);
+                }
+                return valid_notes;
             }
         }
 
@@ -297,6 +309,29 @@ namespace diplom
             {
                 var res = con.Query<OrderPay>("select * from OrderPay where date_pay like '" + date.ToString("yyyy-MM-dd") + "%'", new DynamicParameters());
                 return res.ToList();
+            }
+        }
+
+        //Получение и удаление данных из электронного журнала безопасности
+        public static List<LogsModel> LoadLogs()
+        {
+            List<LogsModel> logs = new List<LogsModel>();
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                var res = con.Query<EncrLogsModel>("select * from SecurityLogs", new DynamicParameters());
+                foreach (EncrLogsModel enc_log in res.ToList())
+                {
+                    logs.Add(new LogsModel(enc_log));
+                }
+                return logs;
+            }
+        }
+
+        public static void DeleteLogs()
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Execute("delete from SecurityLogs");
             }
         }
 

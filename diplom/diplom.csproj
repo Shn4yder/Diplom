@@ -92,6 +92,12 @@
     <Compile Include="DiplomUI\Goods_adm.Designer.cs">
       <DependentUpon>Goods_adm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DiplomUI\Logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiplomUI\Logs.Designer.cs">
+      <DependentUpon>Logs.cs</DependentUpon>
+    </Compile>
     <Compile Include="DiplomUI\Notes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,8 +138,10 @@
     <Compile Include="DiplomBL\MailManager.cs" />
     <Compile Include="DiplomBL\Encryption.cs" />
     <Compile Include="Models\CartModel.cs" />
+    <Compile Include="Models\EncrLogsModel.cs" />
     <Compile Include="Models\EncryptedUser.cs" />
     <Compile Include="Models\GoodModel.cs" />
+    <Compile Include="Models\LogsModel.cs" />
     <Compile Include="Models\NoteModel.cs" />
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\OrderPay.cs" />
@@ -147,6 +155,7 @@
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
     <Compile Include="DiplomBL\ReportManager.cs" />
+    <Compile Include="DiplomBL\Trigger.cs" />
     <None Include="Resources\orders_icon.png" />
     <None Include="Resources\notes_icon.png" />
     <None Include="Resources\users_icon.png" />
@@ -186,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DiplomUI\Goods_adm.resx">
       <DependentUpon>Goods_adm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiplomUI\Logs.resx">
+      <DependentUpon>Logs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DiplomUI\Notes.resx">
       <DependentUpon>Notes.cs</DependentUpon>

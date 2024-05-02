@@ -47,7 +47,7 @@ namespace diplom
                 {
                     var mail = MailManager.CreateMail(user.Email, $"{report.GetReport()}");    // отправка каждому администратору
 
-                    MailManager.SendMail(mail);
+                    SendMail(mail);
                 }
             }
         }

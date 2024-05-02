@@ -87,6 +87,7 @@ namespace diplom
             {
                 MailManager.SendReport(name_usr);   // отправка отчета администраторам
             }
+            Trigger.Addlog("exit", name_usr);
             this.Close(); 
         }
         //

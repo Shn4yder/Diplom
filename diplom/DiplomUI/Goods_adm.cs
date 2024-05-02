@@ -90,6 +90,7 @@ namespace diplom
             {
                 MailManager.SendReport(name_usr);   // по завершению смены отправляется отчет администраторам
             }
+            Trigger.Addlog("exit", name_usr);
             this.Close();
         }
         //

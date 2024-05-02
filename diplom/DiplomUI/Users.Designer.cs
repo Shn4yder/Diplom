@@ -33,16 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Users));
             this.usr_GV = new System.Windows.Forms.DataGridView();
-            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.sidebar_btn = new System.Windows.Forms.Button();
-            this.exit_btn = new System.Windows.Forms.Button();
-            this.usr_btn = new System.Windows.Forms.Button();
-            this.note_btn = new System.Windows.Forms.Button();
-            this.items_btn = new System.Windows.Forms.Button();
-            this.menu_timer = new System.Windows.Forms.Timer(this.components);
-            this.create_btn = new diplom.Controls.RoundBtn();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +42,17 @@
             this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Key = new System.Windows.Forms.DataGridViewImageColumn();
             this.Iv = new System.Windows.Forms.DataGridViewImageColumn();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.logs_btn = new System.Windows.Forms.Button();
+            this.sidebar_btn = new System.Windows.Forms.Button();
+            this.exit_btn = new System.Windows.Forms.Button();
+            this.usr_btn = new System.Windows.Forms.Button();
+            this.note_btn = new System.Windows.Forms.Button();
+            this.items_btn = new System.Windows.Forms.Button();
+            this.menu_timer = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.create_btn = new diplom.Controls.RoundBtn();
             ((System.ComponentModel.ISupportInitialize)(this.usr_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -98,6 +98,79 @@
             this.usr_GV.TabIndex = 0;
             this.usr_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usr_GV_CellDoubleClick);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id_user";
+            this.id.HeaderText = "id_usr";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // fio
+            // 
+            this.fio.DataPropertyName = "FIO";
+            this.fio.HeaderText = "ФИО ";
+            this.fio.Name = "fio";
+            this.fio.ReadOnly = true;
+            this.fio.Width = 250;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "Status";
+            this.status.HeaderText = "Должность";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 130;
+            // 
+            // phone
+            // 
+            this.phone.DataPropertyName = "Phone";
+            this.phone.HeaderText = "Телефон";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "Email";
+            this.email.HeaderText = "E-mail";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 148;
+            // 
+            // login
+            // 
+            this.login.DataPropertyName = "Login";
+            this.login.HeaderText = "Логин";
+            this.login.Name = "login";
+            this.login.ReadOnly = true;
+            this.login.Visible = false;
+            // 
+            // password
+            // 
+            this.password.DataPropertyName = "Password";
+            this.password.HeaderText = "Пароль";
+            this.password.Name = "password";
+            this.password.ReadOnly = true;
+            this.password.Visible = false;
+            // 
+            // Key
+            // 
+            this.Key.DataPropertyName = "Key";
+            this.Key.HeaderText = "Key";
+            this.Key.Name = "Key";
+            this.Key.ReadOnly = true;
+            this.Key.Visible = false;
+            // 
+            // Iv
+            // 
+            this.Iv.DataPropertyName = "Iv";
+            this.Iv.HeaderText = "Iv";
+            this.Iv.Name = "Iv";
+            this.Iv.ReadOnly = true;
+            this.Iv.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Iv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Iv.Visible = false;
+            // 
             // sidebar
             // 
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(75)))), ((int)(((byte)(75)))));
@@ -113,6 +186,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.panel1.Controls.Add(this.logs_btn);
             this.panel1.Controls.Add(this.sidebar_btn);
             this.panel1.Controls.Add(this.exit_btn);
             this.panel1.Controls.Add(this.usr_btn);
@@ -122,6 +196,22 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(181, 447);
             this.panel1.TabIndex = 1;
+            // 
+            // logs_btn
+            // 
+            this.logs_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.logs_btn.FlatAppearance.BorderSize = 0;
+            this.logs_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logs_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.logs_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.logs_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.logs_btn.Location = new System.Drawing.Point(1, 168);
+            this.logs_btn.Name = "logs_btn";
+            this.logs_btn.Size = new System.Drawing.Size(177, 47);
+            this.logs_btn.TabIndex = 7;
+            this.logs_btn.Text = "Журнал безопасности";
+            this.logs_btn.UseVisualStyleBackColor = false;
+            this.logs_btn.Click += new System.EventHandler(this.logs_btn_Click);
             // 
             // sidebar_btn
             // 
@@ -211,6 +301,16 @@
             this.menu_timer.Interval = 10;
             this.menu_timer.Tick += new System.EventHandler(this.menu_timer_Tick);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::diplom.Properties.Resources.background_img;
+            this.pictureBox2.Location = new System.Drawing.Point(66, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(665, 432);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 30;
+            this.pictureBox2.TabStop = false;
+            // 
             // create_btn
             // 
             this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
@@ -228,102 +328,12 @@
             this.create_btn.UseVisualStyleBackColor = false;
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::diplom.Properties.Resources.background_img;
-            this.pictureBox2.Location = new System.Drawing.Point(66, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(665, 432);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 30;
-            this.pictureBox2.TabStop = false;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id_user";
-            this.id.HeaderText = "id_usr";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // fio
-            // 
-            this.fio.DataPropertyName = "FIO";
-            this.fio.HeaderText = "ФИО ";
-            this.fio.Name = "fio";
-            this.fio.ReadOnly = true;
-            this.fio.Width = 250;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "Status";
-            this.status.HeaderText = "Должность";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Width = 130;
-            // 
-            // phone
-            // 
-            this.phone.DataPropertyName = "Phone";
-            this.phone.HeaderText = "Телефон";
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "Email";
-            this.email.HeaderText = "E-mail";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Width = 148;
-            // 
-            // login
-            // 
-            this.login.DataPropertyName = "Login";
-            this.login.HeaderText = "Логин";
-            this.login.Name = "login";
-            this.login.ReadOnly = true;
-            this.login.Visible = false;
-            // 
-            // password
-            // 
-            this.password.DataPropertyName = "Password";
-            this.password.HeaderText = "Пароль";
-            this.password.Name = "password";
-            this.password.ReadOnly = true;
-            this.password.Visible = false;
-            // 
-            // Key
-            // 
-            this.Key.DataPropertyName = "Key";
-            this.Key.HeaderText = "Key";
-            this.Key.Name = "Key";
-            this.Key.ReadOnly = true;
-            this.Key.Visible = false;
-            // 
-            // Iv
-            // 
-            this.Iv.DataPropertyName = "Iv";
-            this.Iv.HeaderText = "Iv";
-            this.Iv.Name = "Iv";
-            this.Iv.ReadOnly = true;
-            this.Iv.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Iv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Iv.Visible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(451, 11);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 31;
-            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(748, 450);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.create_btn);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.usr_GV);
@@ -337,7 +347,6 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -363,6 +372,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn password;
         private System.Windows.Forms.DataGridViewImageColumn Key;
         private System.Windows.Forms.DataGridViewImageColumn Iv;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button logs_btn;
     }
 }
