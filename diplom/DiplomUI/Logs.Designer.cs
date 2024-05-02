@@ -327,7 +327,9 @@
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.log_GV);
             this.Controls.Add(this.pictureBox2);
+            this.MaximizeBox = false;
             this.Name = "Logs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logs";
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

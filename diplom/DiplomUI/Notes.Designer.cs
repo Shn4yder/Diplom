@@ -35,17 +35,6 @@ namespace diplom
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Notes));
             this.note_GV = new System.Windows.Forms.DataGridView();
-            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.sidebar_btn = new System.Windows.Forms.Button();
-            this.exit_btn = new System.Windows.Forms.Button();
-            this.usr_btn = new System.Windows.Forms.Button();
-            this.order_btn = new System.Windows.Forms.Button();
-            this.note_btn = new System.Windows.Forms.Button();
-            this.items_btn = new System.Windows.Forms.Button();
-            this.menu_timer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.create_btn = new diplom.Controls.RoundBtn();
             this.id_note = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +46,17 @@ namespace diplom
             this.id_user = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.key = new System.Windows.Forms.DataGridViewImageColumn();
             this.iv = new System.Windows.Forms.DataGridViewImageColumn();
+            this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.sidebar_btn = new System.Windows.Forms.Button();
+            this.exit_btn = new System.Windows.Forms.Button();
+            this.usr_btn = new System.Windows.Forms.Button();
+            this.order_btn = new System.Windows.Forms.Button();
+            this.note_btn = new System.Windows.Forms.Button();
+            this.items_btn = new System.Windows.Forms.Button();
+            this.menu_timer = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.create_btn = new diplom.Controls.RoundBtn();
             ((System.ComponentModel.ISupportInitialize)(this.note_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -105,6 +105,99 @@ namespace diplom
             this.note_GV.Size = new System.Drawing.Size(749, 353);
             this.note_GV.TabIndex = 2;
             this.note_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.note_GV_CellDoubleClick);
+            // 
+            // id_note
+            // 
+            this.id_note.DataPropertyName = "Id_note";
+            this.id_note.HeaderText = "id";
+            this.id_note.Name = "id_note";
+            this.id_note.ReadOnly = true;
+            this.id_note.Visible = false;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.name.DataPropertyName = "Name";
+            this.name.HeaderText = "     Имя";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.phone.DataPropertyName = "Phone";
+            this.phone.HeaderText = "      Телефон";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            this.phone.Width = 110;
+            // 
+            // place
+            // 
+            this.place.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.place.DataPropertyName = "Place";
+            this.place.HeaderText = "Место/стол";
+            this.place.Name = "place";
+            this.place.ReadOnly = true;
+            this.place.Width = 80;
+            // 
+            // comment
+            // 
+            this.comment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.comment.DataPropertyName = "Comment";
+            this.comment.HeaderText = "      Комментарий";
+            this.comment.Name = "comment";
+            this.comment.ReadOnly = true;
+            this.comment.Width = 178;
+            // 
+            // date
+            // 
+            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.date.DataPropertyName = "Date_add";
+            this.date.HeaderText = " Добавлено в ";
+            this.date.Name = "date";
+            this.date.ReadOnly = true;
+            this.date.Width = 110;
+            // 
+            // decr_fio
+            // 
+            this.decr_fio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.decr_fio.DataPropertyName = "Decr_fio";
+            this.decr_fio.HeaderText = "    Пользователь";
+            this.decr_fio.Name = "decr_fio";
+            this.decr_fio.ReadOnly = true;
+            this.decr_fio.Width = 170;
+            // 
+            // fio
+            // 
+            this.fio.DataPropertyName = "Fio";
+            this.fio.HeaderText = "fio";
+            this.fio.Name = "fio";
+            this.fio.ReadOnly = true;
+            this.fio.Visible = false;
+            // 
+            // id_user
+            // 
+            this.id_user.DataPropertyName = "Id_user";
+            this.id_user.HeaderText = "id_user";
+            this.id_user.Name = "id_user";
+            this.id_user.ReadOnly = true;
+            this.id_user.Visible = false;
+            // 
+            // key
+            // 
+            this.key.DataPropertyName = "Key";
+            this.key.HeaderText = "key";
+            this.key.Name = "key";
+            this.key.ReadOnly = true;
+            this.key.Visible = false;
+            // 
+            // iv
+            // 
+            this.iv.DataPropertyName = "Iv";
+            this.iv.HeaderText = "iv";
+            this.iv.Name = "iv";
+            this.iv.ReadOnly = true;
+            this.iv.Visible = false;
             // 
             // sidebar
             // 
@@ -262,99 +355,6 @@ namespace diplom
             this.create_btn.UseVisualStyleBackColor = false;
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
-            // id_note
-            // 
-            this.id_note.DataPropertyName = "Id_note";
-            this.id_note.HeaderText = "id";
-            this.id_note.Name = "id_note";
-            this.id_note.ReadOnly = true;
-            this.id_note.Visible = false;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.name.DataPropertyName = "Name";
-            this.name.HeaderText = "     Имя";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // phone
-            // 
-            this.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.phone.DataPropertyName = "Phone";
-            this.phone.HeaderText = "      Телефон";
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
-            this.phone.Width = 110;
-            // 
-            // place
-            // 
-            this.place.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.place.DataPropertyName = "Place";
-            this.place.HeaderText = "Место/стол";
-            this.place.Name = "place";
-            this.place.ReadOnly = true;
-            this.place.Width = 80;
-            // 
-            // comment
-            // 
-            this.comment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.comment.DataPropertyName = "Comment";
-            this.comment.HeaderText = "      Комментарий";
-            this.comment.Name = "comment";
-            this.comment.ReadOnly = true;
-            this.comment.Width = 178;
-            // 
-            // date
-            // 
-            this.date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.date.DataPropertyName = "Date_add";
-            this.date.HeaderText = " Добавлено в ";
-            this.date.Name = "date";
-            this.date.ReadOnly = true;
-            this.date.Width = 110;
-            // 
-            // decr_fio
-            // 
-            this.decr_fio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.decr_fio.DataPropertyName = "Decr_fio";
-            this.decr_fio.HeaderText = "    Пользователь";
-            this.decr_fio.Name = "decr_fio";
-            this.decr_fio.ReadOnly = true;
-            this.decr_fio.Width = 170;
-            // 
-            // fio
-            // 
-            this.fio.DataPropertyName = "Fio";
-            this.fio.HeaderText = "fio";
-            this.fio.Name = "fio";
-            this.fio.ReadOnly = true;
-            this.fio.Visible = false;
-            // 
-            // id_user
-            // 
-            this.id_user.DataPropertyName = "Id_user";
-            this.id_user.HeaderText = "id_user";
-            this.id_user.Name = "id_user";
-            this.id_user.ReadOnly = true;
-            this.id_user.Visible = false;
-            // 
-            // key
-            // 
-            this.key.DataPropertyName = "Key";
-            this.key.HeaderText = "key";
-            this.key.Name = "key";
-            this.key.ReadOnly = true;
-            this.key.Visible = false;
-            // 
-            // iv
-            // 
-            this.iv.DataPropertyName = "Iv";
-            this.iv.HeaderText = "iv";
-            this.iv.Name = "iv";
-            this.iv.ReadOnly = true;
-            this.iv.Visible = false;
-            // 
             // Notes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -366,6 +366,7 @@ namespace diplom
             this.Controls.Add(this.note_GV);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Notes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Заметки";

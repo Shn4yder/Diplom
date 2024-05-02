@@ -165,6 +165,7 @@
             this.Controls.Add(this.del_btn);
             this.Controls.Add(this.comment_tB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "EditNoteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изменение заметки";

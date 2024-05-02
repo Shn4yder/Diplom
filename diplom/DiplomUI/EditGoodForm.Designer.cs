@@ -202,6 +202,7 @@
             this.Controls.Add(this.add_photo_btn);
             this.Controls.Add(this.image_pB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "EditGoodForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изменение товара";

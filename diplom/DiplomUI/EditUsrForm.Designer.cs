@@ -308,6 +308,7 @@
             this.Controls.Add(this.save_btn);
             this.Controls.Add(this.status_cB);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "EditUsrForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Изменение пользователя";

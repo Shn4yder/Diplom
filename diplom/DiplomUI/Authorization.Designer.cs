@@ -32,13 +32,13 @@
             this.main_lbl = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.login_tB = new diplom.CueTextbox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pass_cB = new System.Windows.Forms.PictureBox();
+            this.pass_tB = new diplom.CueTextbox();
             this.login_lbl = new System.Windows.Forms.Label();
             this.pass_lbl = new System.Windows.Forms.Label();
             this.enter_btn = new diplom.Controls.RoundBtn();
-            this.pass_tB = new diplom.CueTextbox();
-            this.login_tB = new diplom.CueTextbox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -77,6 +77,17 @@
             this.panel4.Size = new System.Drawing.Size(226, 23);
             this.panel4.TabIndex = 19;
             // 
+            // login_tB
+            // 
+            this.login_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.login_tB.Cue = "Логин";
+            this.login_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.login_tB.Location = new System.Drawing.Point(3, 3);
+            this.login_tB.Name = "login_tB";
+            this.login_tB.Size = new System.Drawing.Size(220, 18);
+            this.login_tB.TabIndex = 28;
+            this.login_tB.TextChanged += new System.EventHandler(this.login_tB_TextChanged);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
@@ -98,6 +109,17 @@
             this.pass_cB.TabIndex = 28;
             this.pass_cB.TabStop = false;
             this.pass_cB.Click += new System.EventHandler(this.pass_cB_Click);
+            // 
+            // pass_tB
+            // 
+            this.pass_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pass_tB.Cue = "Пароль";
+            this.pass_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass_tB.Location = new System.Drawing.Point(3, 2);
+            this.pass_tB.Name = "pass_tB";
+            this.pass_tB.Size = new System.Drawing.Size(220, 18);
+            this.pass_tB.TabIndex = 29;
+            this.pass_tB.TextChanged += new System.EventHandler(this.pass_tB_TextChanged);
             // 
             // login_lbl
             // 
@@ -135,28 +157,6 @@
             this.enter_btn.UseVisualStyleBackColor = false;
             this.enter_btn.Click += new System.EventHandler(this.enter_btn_Click);
             // 
-            // pass_tB
-            // 
-            this.pass_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.pass_tB.Cue = "Пароль";
-            this.pass_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pass_tB.Location = new System.Drawing.Point(3, 2);
-            this.pass_tB.Name = "pass_tB";
-            this.pass_tB.Size = new System.Drawing.Size(220, 18);
-            this.pass_tB.TabIndex = 29;
-            this.pass_tB.TextChanged += new System.EventHandler(this.pass_tB_TextChanged);
-            // 
-            // login_tB
-            // 
-            this.login_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.login_tB.Cue = "Логин";
-            this.login_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.login_tB.Location = new System.Drawing.Point(3, 3);
-            this.login_tB.Name = "login_tB";
-            this.login_tB.Size = new System.Drawing.Size(220, 18);
-            this.login_tB.TabIndex = 28;
-            this.login_tB.TextChanged += new System.EventHandler(this.login_tB_TextChanged);
-            // 
             // Authorization
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,6 +171,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.main_lbl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Authorization";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
