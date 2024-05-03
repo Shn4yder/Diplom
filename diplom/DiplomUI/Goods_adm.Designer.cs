@@ -57,6 +57,8 @@ namespace diplom
             this.save_tarif_btn = new diplom.Controls.RoundBtn();
             this.change_tarif_btn = new diplom.Controls.RoundBtn();
             this.create_btn = new diplom.Controls.RoundBtn();
+            this.order_cB = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -374,12 +376,42 @@ namespace diplom
             this.create_btn.UseVisualStyleBackColor = false;
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
+            // order_cB
+            // 
+            this.order_cB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.order_cB.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.order_cB.FormattingEnabled = true;
+            this.order_cB.Items.AddRange(new object[] {
+            "По умолчанию",
+            "По возрастанию цены",
+            "По убыванию цены"});
+            this.order_cB.Location = new System.Drawing.Point(379, 20);
+            this.order_cB.Name = "order_cB";
+            this.order_cB.Size = new System.Drawing.Size(148, 21);
+            this.order_cB.TabIndex = 34;
+            this.order_cB.Text = "По умолчанию";
+            this.order_cB.TextChanged += new System.EventHandler(this.order_cB_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(192)))), ((int)(((byte)(186)))));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.label1.Location = new System.Drawing.Point(300, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 15);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Сортировка";
+            // 
             // Goods_adm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(558, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.order_cB);
             this.Controls.Add(this.save_tarif_btn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
@@ -428,5 +460,7 @@ namespace diplom
         private CueTextbox price_tB;
         private Label label2;
         private Controls.RoundBtn save_tarif_btn;
+        private ComboBox order_cB;
+        private Label label1;
     }
 }

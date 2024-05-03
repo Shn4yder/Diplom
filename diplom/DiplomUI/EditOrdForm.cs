@@ -31,7 +31,7 @@ namespace diplom
             order_timer.Start();    // запуск таймера, отсчитывает пройденное с момента создания заказа время
 
             // заполнение таблиц
-            goods_GV.DataSource = DataManager.LoadGoods();  
+            goods_GV.DataSource = DataManager.LoadGoods("ORDER BY id_good ASC");  
             cart_GV.DataSource = DataManager.LoadCart(id_order);
             //
 

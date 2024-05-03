@@ -19,12 +19,13 @@ namespace diplom
     {
         string id_user, status, name_usr;
         bool sidebarExpand;   // состояние меню (открыто/закрыто)
+        string order_mode = "ORDER BY id_good ASC";
 
         public Goods_adm(string id_user, string status, string name_usr)
         {
             InitializeComponent();
 
-            goods_GV.DataSource = DataManager.LoadGoods();   // загрузка данных в таблицу
+            goods_GV.DataSource = DataManager.LoadGoods(order_mode);   // загрузка данных в таблицу
 
             this.id_user = id_user;
             this.status = status;
@@ -133,6 +134,23 @@ namespace diplom
                 price_tB.Text = DataManager.LoadTarif().ToString();
             }
 
+        }
+
+        private void order_cB_TextChanged(object sender, EventArgs e)
+        {
+            if (order_cB.Text == "По возрастанию цены")
+            {
+                order_mode = "ORDER BY cost DESC";
+            }
+            else if (order_cB.Text == "По убыванию цены")
+            {
+                order_mode = "ORDER BY cost ASC";
+            }
+            else
+            {
+                order_mode = "ORDER BY id_good ASC";
+            }
+            goods_GV.DataSource = DataManager.LoadGoods(order_mode);
         }
 
         // Обработчик двойного нажатия на ячейку с товаром

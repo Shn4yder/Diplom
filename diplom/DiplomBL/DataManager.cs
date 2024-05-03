@@ -140,12 +140,12 @@ namespace diplom
 
         // Загрузка, вставка, удаление, изменение данных товаров
 
-        public static List<GoodModel> LoadGoods()
+        public static List<GoodModel> LoadGoods(string order_mode)
         {
             
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                var res = con.Query<GoodModel>("select * from Goods where id_good != 1", new DynamicParameters());
+                var res = con.Query<GoodModel>("select * from Goods where id_good != 1 " + order_mode, new DynamicParameters());
                 foreach (GoodModel good in res.ToList())
                 {
                     try
