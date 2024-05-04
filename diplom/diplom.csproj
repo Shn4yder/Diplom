@@ -156,6 +156,7 @@
     </Compile>
     <Compile Include="DiplomBL\ReportManager.cs" />
     <Compile Include="DiplomBL\Trigger.cs" />
+    <None Include="Resources\logicon.png" />
     <None Include="Resources\orders_icon.png" />
     <None Include="Resources\notes_icon.png" />
     <None Include="Resources\users_icon.png" />

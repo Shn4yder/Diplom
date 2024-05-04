@@ -42,6 +42,7 @@ namespace diplom
             this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.log_btn = new System.Windows.Forms.Button();
             this.exit_btn = new System.Windows.Forms.Button();
             this.usr_btn = new System.Windows.Forms.Button();
             this.order_btn = new System.Windows.Forms.Button();
@@ -161,6 +162,7 @@ namespace diplom
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.panel1.Controls.Add(this.log_btn);
             this.panel1.Controls.Add(this.exit_btn);
             this.panel1.Controls.Add(this.usr_btn);
             this.panel1.Controls.Add(this.order_btn);
@@ -171,6 +173,23 @@ namespace diplom
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(181, 447);
             this.panel1.TabIndex = 1;
+            // 
+            // log_btn
+            // 
+            this.log_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.log_btn.FlatAppearance.BorderSize = 0;
+            this.log_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.log_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.log_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.log_btn.Image = global::diplom.Properties.Resources.logicon;
+            this.log_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.log_btn.Location = new System.Drawing.Point(1, 176);
+            this.log_btn.Name = "log_btn";
+            this.log_btn.Size = new System.Drawing.Size(177, 44);
+            this.log_btn.TabIndex = 7;
+            this.log_btn.Text = "Журнал";
+            this.log_btn.UseVisualStyleBackColor = false;
+            this.log_btn.Click += new System.EventHandler(this.log_btn_Click);
             // 
             // exit_btn
             // 
@@ -185,7 +204,7 @@ namespace diplom
             this.exit_btn.Name = "exit_btn";
             this.exit_btn.Size = new System.Drawing.Size(177, 44);
             this.exit_btn.TabIndex = 6;
-            this.exit_btn.Text = "  ";
+            this.exit_btn.Text = "  Завершить смену";
             this.exit_btn.UseVisualStyleBackColor = false;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
@@ -462,5 +481,6 @@ namespace diplom
         private Controls.RoundBtn save_tarif_btn;
         private ComboBox order_cB;
         private Label label1;
+        private Button log_btn;
     }
 }

@@ -57,6 +57,7 @@ namespace diplom
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.create_btn = new diplom.Controls.RoundBtn();
+            this.log_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.note_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -214,6 +215,7 @@ namespace diplom
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.panel1.Controls.Add(this.log_btn);
             this.panel1.Controls.Add(this.sidebar_btn);
             this.panel1.Controls.Add(this.exit_btn);
             this.panel1.Controls.Add(this.usr_btn);
@@ -355,6 +357,23 @@ namespace diplom
             this.create_btn.UseVisualStyleBackColor = false;
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
+            // log_btn
+            // 
+            this.log_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.log_btn.FlatAppearance.BorderSize = 0;
+            this.log_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.log_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.log_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.log_btn.Image = global::diplom.Properties.Resources.logicon;
+            this.log_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.log_btn.Location = new System.Drawing.Point(1, 176);
+            this.log_btn.Name = "log_btn";
+            this.log_btn.Size = new System.Drawing.Size(177, 44);
+            this.log_btn.TabIndex = 7;
+            this.log_btn.Text = "Журнал";
+            this.log_btn.UseVisualStyleBackColor = false;
+            this.log_btn.Click += new System.EventHandler(this.log_btn_Click);
+            // 
             // Notes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,5 +421,6 @@ namespace diplom
         private DataGridViewTextBoxColumn id_user;
         private DataGridViewImageColumn key;
         private DataGridViewImageColumn iv;
+        private Button log_btn;
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using diplom.DiplomUI;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using diplom.Controls;
 
@@ -85,6 +86,13 @@ namespace diplom
             usr_frm.Show();
         }
 
+        private void log_btn_Click(object sender, EventArgs e)
+        {
+            Logs form = new Logs(id_user, status, name_usr);
+            this.Hide();
+            form.Show();
+        }
+
         private void exit_btn_Click(object sender, EventArgs e)
         {
             if (status != "Администратор")
@@ -133,20 +141,19 @@ namespace diplom
                 MessageBox.Show("Стоимость тарифа должна быть положительным числом", "Внимание");
                 price_tB.Text = DataManager.LoadTarif().ToString();
             }
-
         }
 
         private void order_cB_TextChanged(object sender, EventArgs e)
         {
             if (order_cB.Text == "По возрастанию цены")
             {
-                order_mode = "ORDER BY cost DESC";
+                order_mode = "ORDER BY cost ASC";
             }
             else if (order_cB.Text == "По убыванию цены")
             {
-                order_mode = "ORDER BY cost ASC";
+                order_mode = "ORDER BY cost DESC";
             }
-            else
+            else  
             {
                 order_mode = "ORDER BY id_good ASC";
             }
@@ -179,6 +186,8 @@ namespace diplom
                 usr_btn.Enabled = false;
                 change_tarif_btn.Visible = false;
                 change_tarif_btn.Enabled = false;   
+                log_btn.Visible=false;
+                log_btn.Enabled = false;    
             }
             else 
             {

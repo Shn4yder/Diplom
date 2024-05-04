@@ -128,15 +128,15 @@ namespace diplom
         {
             if (pay_cB.SelectedIndex != 2)
             {
-                OrderPay pay = new OrderPay(Convert.ToDouble(time_amount.Text), pay_cB.Text, DateTime.Now, Convert.ToInt16(id_order));
+                OrderPay pay = new OrderPay(Convert.ToDouble(time_amount.Text), pay_cB.Text, DateTime.Now, Convert.ToInt16(ppl_UpDown.Value) ,Convert.ToInt16(id_order));
                 DataManager.AddPay(pay);
             }
             else    // если выбранный способ опалты - "смешанная", вводится сумма безналичными и наличными
             {
-                OrderPay pay_cashless = new OrderPay(Convert.ToDouble(nenal_tB.Text), "безналичные", DateTime.Now, Convert.ToInt16(id_order));
+                OrderPay pay_cashless = new OrderPay(Convert.ToDouble(nenal_tB.Text), "безналичные", DateTime.Now, Convert.ToInt16(ppl_UpDown.Value),Convert.ToInt16(id_order));
                 DataManager.AddPay(pay_cashless);
 
-                OrderPay pay_cash = new OrderPay(Convert.ToDouble(nal_tB.Text), "наличные", DateTime.Now, Convert.ToInt16(id_order));
+                OrderPay pay_cash = new OrderPay(Convert.ToDouble(nal_tB.Text), "наличные", DateTime.Now, 0, Convert.ToInt16(id_order));
                 DataManager.AddPay(pay_cash);
             }
             DataManager.DeleteOrder(id_order);

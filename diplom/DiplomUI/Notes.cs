@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using diplom.DiplomUI;
 using diplom.Models;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -90,6 +91,12 @@ namespace diplom
             Trigger.Addlog("exit", name_usr);
             this.Close(); 
         }
+        private void log_btn_Click(object sender, EventArgs e)
+        {
+            Logs form = new Logs(id_usr, status, name_usr);
+            this.Hide();
+            form.Show();
+        }
         //
 
         // Обработчик нажатия на кнопку "Создать"
@@ -99,7 +106,6 @@ namespace diplom
             add_frm.Show();
             this.Hide();
         }
-        
 
         // Обработчик двойного нажатия на ячейку с заметкой
         private void note_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -134,6 +140,8 @@ namespace diplom
                 // скрыть и отключить кнопки
                 usr_btn.Visible = false;
                 usr_btn.Enabled = false;
+                log_btn.Visible = false;
+                log_btn.Enabled = false;
             }
             else
             {

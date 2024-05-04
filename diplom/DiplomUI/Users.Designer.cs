@@ -204,12 +204,13 @@
             this.logs_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.logs_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.logs_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.logs_btn.Image = global::diplom.Properties.Resources.logicon;
             this.logs_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logs_btn.Location = new System.Drawing.Point(1, 168);
             this.logs_btn.Name = "logs_btn";
             this.logs_btn.Size = new System.Drawing.Size(177, 47);
             this.logs_btn.TabIndex = 7;
-            this.logs_btn.Text = "Журнал безопасности";
+            this.logs_btn.Text = "Журнал";
             this.logs_btn.UseVisualStyleBackColor = false;
             this.logs_btn.Click += new System.EventHandler(this.logs_btn_Click);
             // 

@@ -26,6 +26,7 @@ namespace diplom
         {
             double cashless_payment = 0;
             double cash_payment = 0;    
+            int people_counter = 0; 
 
 
             foreach (OrderPay pay in today_pays)
@@ -35,13 +36,14 @@ namespace diplom
                     cash_payment += pay.Amount;
                 }
                 else { cashless_payment += pay.Amount; }
-
+                people_counter += pay.Counter;
             }
             
             List<double> today_data = new List<double>
             {
                 cashless_payment,
-                cash_payment
+                cash_payment,
+                people_counter
             }; 
 
             return today_data;  
@@ -104,7 +106,8 @@ namespace diplom
                 today_data[0].ToString(),
                 cashless_analize,
                 today_data[1].ToString(),
-                cash_analize
+                cash_analize,
+                today_data[2].ToString()
             };
 
             return result;
@@ -119,7 +122,8 @@ namespace diplom
                 "<p>Еще один рабочий день позади и мы рады поделиться с Вами результатами!</p>" +
                 $"Работник {name}" +
                 $"<p><b>Сегодня наличными получено: </b> {result[2]} руб. {result[3]}</p>" +
-                $"<p><b>Сегодня безналичными получено: </b> {result[0]} руб. {result[1]}</p>";
+                $"<p><b>Сегодня безналичными получено: </b> {result[0]} руб. {result[1]}</p>" +
+                $"<p><b>Количество человек, посетивших заведение: </b> {result[4]}</p>";
             return message;
         }
     }

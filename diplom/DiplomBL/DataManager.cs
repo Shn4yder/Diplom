@@ -172,7 +172,7 @@ namespace diplom
             }
         }
 
-        public static void DeleteGood(string id)
+        public static void DeleteGood(string id) 
         {
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
@@ -300,7 +300,7 @@ namespace diplom
         {
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                con.Execute("insert into OrderPay(amount, payment, date_pay, id_order) values(@Amount, @Payment, @Date_pay, @Id_order)", pay);
+                con.Execute("insert into OrderPay(amount, payment, date_pay, counter, id_order) values(@Amount, @Payment, @Date_pay, @Counter, @Id_order)", pay);
             }
         }
         public static List<OrderPay> GetDatedPay(DateTime date)
@@ -318,7 +318,7 @@ namespace diplom
             List<LogsModel> logs = new List<LogsModel>();
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
-                var res = con.Query<EncrLogsModel>("select * from SecurityLogs", new DynamicParameters());
+                var res = con.Query<EncrLogsModel>("select * from SecurityLogs ", new DynamicParameters());
                 foreach (EncrLogsModel enc_log in res.ToList())
                 {
                     logs.Add(new LogsModel(enc_log));

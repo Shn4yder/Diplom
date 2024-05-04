@@ -33,15 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.log_btn = new System.Windows.Forms.Button();
             this.sidebar_btn = new System.Windows.Forms.Button();
             this.exit_btn = new System.Windows.Forms.Button();
             this.usr_btn = new System.Windows.Forms.Button();
             this.note_btn = new System.Windows.Forms.Button();
             this.items_btn = new System.Windows.Forms.Button();
             this.log_GV = new System.Windows.Forms.DataGridView();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.Id_log = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_log = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.event_log = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +48,8 @@
             this.system = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Key = new System.Windows.Forms.DataGridViewImageColumn();
             this.Iv = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.delete_btn = new diplom.Controls.RoundBtn();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -72,7 +72,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.log_btn);
             this.panel1.Controls.Add(this.sidebar_btn);
             this.panel1.Controls.Add(this.exit_btn);
             this.panel1.Controls.Add(this.usr_btn);
@@ -83,20 +83,21 @@
             this.panel1.Size = new System.Drawing.Size(181, 447);
             this.panel1.TabIndex = 1;
             // 
-            // button1
+            // log_btn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(69)))), ((int)(((byte)(45)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1, 170);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 45);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Журнал безопасности";
-            this.button1.UseVisualStyleBackColor = false;
+            this.log_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(69)))), ((int)(((byte)(45)))));
+            this.log_btn.FlatAppearance.BorderSize = 0;
+            this.log_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.log_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.log_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.log_btn.Image = global::diplom.Properties.Resources.logicon;
+            this.log_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.log_btn.Location = new System.Drawing.Point(1, 176);
+            this.log_btn.Name = "log_btn";
+            this.log_btn.Size = new System.Drawing.Size(177, 45);
+            this.log_btn.TabIndex = 7;
+            this.log_btn.Text = "Журнал";
+            this.log_btn.UseVisualStyleBackColor = false;
             // 
             // sidebar_btn
             // 
@@ -213,27 +214,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.log_GV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.log_GV.Location = new System.Drawing.Point(84, 37);
+            this.log_GV.Location = new System.Drawing.Point(84, 28);
             this.log_GV.Name = "log_GV";
             this.log_GV.RowHeadersVisible = false;
             this.log_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.log_GV.Size = new System.Drawing.Size(630, 357);
+            this.log_GV.Size = new System.Drawing.Size(630, 366);
             this.log_GV.TabIndex = 31;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::diplom.Properties.Resources.background_img;
-            this.pictureBox2.Location = new System.Drawing.Point(67, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(665, 432);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 34;
-            this.pictureBox2.TabStop = false;
-            // 
-            // menu_timer
-            // 
-            this.menu_timer.Interval = 10;
-            this.menu_timer.Tick += new System.EventHandler(this.menu_timer_Tick);
             // 
             // Id_log
             // 
@@ -300,6 +286,21 @@
             this.Iv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Iv.Visible = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::diplom.Properties.Resources.background_img;
+            this.pictureBox2.Location = new System.Drawing.Point(67, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(665, 432);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 34;
+            this.pictureBox2.TabStop = false;
+            // 
+            // menu_timer
+            // 
+            this.menu_timer.Interval = 10;
+            this.menu_timer.Tick += new System.EventHandler(this.menu_timer_Tick);
+            // 
             // delete_btn
             // 
             this.delete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
@@ -351,7 +352,7 @@
         private System.Windows.Forms.Button items_btn;
         private System.Windows.Forms.DataGridView log_GV;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button log_btn;
         private System.Windows.Forms.Timer menu_timer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_log;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_log;
