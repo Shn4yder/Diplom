@@ -51,6 +51,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.delete_btn = new diplom.Controls.RoundBtn();
+            this.button1 = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.log_GV)).BeginInit();
@@ -318,12 +319,23 @@
             this.delete_btn.UseVisualStyleBackColor = false;
             this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(115, 400);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Logs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(749, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.log_GV);
@@ -362,5 +374,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn system;
         private System.Windows.Forms.DataGridViewImageColumn Key;
         private System.Windows.Forms.DataGridViewImageColumn Iv;
+        private System.Windows.Forms.Button button1;
     }
 }

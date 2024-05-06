@@ -1,4 +1,5 @@
-﻿using System;
+﻿using diplom.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace diplom.DiplomUI
 {
@@ -76,6 +79,86 @@ namespace diplom.DiplomUI
             notes.Show();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Excel.Application xlApp;
+            Excel.Worksheet xlSheet = null;
+            Excel.Range xlSheetRange = null;
+
+            xlApp = new Excel.Application();
+
+            try
+            {
+                //добавляем книгу
+                xlApp.Workbooks.Add(Type.Missing);
+
+                //делаем временно неактивным документ
+                xlApp.Interactive = false;
+                xlApp.EnableEvents = false;
+
+                //выбираем лист на котором будем работать (Лист 1)
+                xlSheet = (Excel.Worksheet)xlApp.Sheets[1];
+                //Название листа
+                xlSheet.Name = "Данные";
+
+                //Выгрузка данных
+                DataTable dt = GetData();
+
+                int collInd = 0;
+                int rowInd = 0;
+                string data = "";
+
+                //называем колонки
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    data = dt.Columns[i].ColumnName.ToString();
+                    xlSheet.Cells[1, i + 1] = data;
+
+                    //выделяем первую строку
+                    xlSheetRange = xlSheet.get_Range("A1:Z1", Type.Missing);
+
+                    //делаем полужирный текст и перенос слов
+                    xlSheetRange.WrapText = true;
+                    xlSheetRange.Font.Bold = true;
+                }
+
+                //заполняем строки
+                for (rowInd = 0; rowInd < dt.Rows.Count; rowInd++)
+                {
+                    for (collInd = 0; collInd < dt.Columns.Count; collInd++)
+                    {
+                        data = dt.Rows[rowInd].ItemArray[collInd].ToString();
+                        xlSheet.Cells[rowInd + 2, collInd + 1] = data;
+                    }
+                }
+
+                //выбираем всю область данных
+                xlSheetRange = xlSheet.UsedRange;
+
+                //выравниваем строки и колонки по их содержимому
+                xlSheetRange.Columns.AutoFit();
+                xlSheetRange.Rows.AutoFit();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                //Показываем ексель
+                xlApp.Visible = true;
+
+                xlApp.Interactive = true;
+                xlApp.ScreenUpdating = true;
+                xlApp.UserControl = true;
+
+                //Отсоединяемся от Excel
+                releaseObject(xlSheetRange);
+                releaseObject(xlSheet);
+                releaseObject(xlApp);
+            }
+        }
+
         private void usr_btn_Click(object sender, EventArgs e)
         {
             Users users = new Users(id_user, sts, name_usr);
@@ -88,6 +171,46 @@ namespace diplom.DiplomUI
         {
             DataManager.DeleteLogs();
             log_GV.DataSource = DataManager.LoadLogs();
+        }
+
+        //Освобождаем ресуры (закрываем Excel)
+        void releaseObject(object obj)
+        {
+            try
+            {
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
+                obj = null;
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                MessageBox.Show(ex.ToString(), "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+                GC.Collect();
+            }
+        }
+
+        private DataTable GetData()
+        {
+            var dt = new DataTable("tableName");
+            List<LogsModel> logs = DataManager.LoadLogs();
+
+            // create fields
+            dt.Columns.Add("№", typeof(string));
+            dt.Columns.Add("Дата", typeof(string));
+            dt.Columns.Add("Событие", typeof(string));
+            dt.Columns.Add("Причина", typeof(string));
+            dt.Columns.Add("Пользователь", typeof(string));
+            dt.Columns.Add("Система", typeof(string));
+
+            foreach (var log in logs)
+            {
+                dt.Rows.Add(log.Id_log, log.Date_log, log.Event, log.Cause, log.User, log.System);
+            }
+
+            return dt;
         }
     }
 }
