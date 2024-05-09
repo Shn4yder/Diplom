@@ -85,7 +85,7 @@ namespace diplom
             // Расчет полной стоимости заказа (учитыая/не учитывая время)
             double total_time = DataManager.LoadTarif() * (time_duration.Minutes + time_duration.Hours * 60) * Convert.ToDouble(ppl_UpDown.Value);
             if (time_checkB.Checked) { total_time = 0; }
-            time_amount.Text = (total_time + AmountCart()).ToString();
+            itogo_amount.Text = (total_time + AmountCart()).ToString();
             //
         }
 
@@ -128,20 +128,61 @@ namespace diplom
         {
             if (pay_cB.SelectedIndex != 2)
             {
-                OrderPay pay = new OrderPay(Convert.ToDouble(time_amount.Text), pay_cB.Text, DateTime.Now, Convert.ToInt16(ppl_UpDown.Value) ,Convert.ToInt16(id_order));
+                OrderPay pay = new OrderPay(Convert.ToDouble(itogo_amount.Text), pay_cB.Text, DateTime.Now, Convert.ToInt16(ppl_UpDown.Value) ,Convert.ToInt16(id_order));
                 DataManager.AddPay(pay);
             }
-            else    // если выбранный способ опалты - "смешанная", вводится сумма безналичными и наличными
+            else    // если выбранный способ оплаты - "смешанная", вводится сумма безналичными и наличными
             {
-                OrderPay pay_cashless = new OrderPay(Convert.ToDouble(nenal_tB.Text), "безналичные", DateTime.Now, Convert.ToInt16(ppl_UpDown.Value),Convert.ToInt16(id_order));
-                DataManager.AddPay(pay_cashless);
+                if (nenal_tB.Text != "" & nal_tB.Text != "")
+                {
+                    if ((Convert.ToDouble(nenal_tB.Text) + Convert.ToDouble(nal_tB.Text)) != (Convert.ToDouble(itogo_amount.Text)))
+                    {
+                        MessageBox.Show("Сумма полей должна совпадать с суммой к оплате", "Внимание");
+                    }
+                    else
+                    {
+                        OrderPay pay_cashless = new OrderPay(Convert.ToDouble(nenal_tB.Text), "безналичные", DateTime.Now, Convert.ToInt16(ppl_UpDown.Value), Convert.ToInt16(id_order));
+                        DataManager.AddPay(pay_cashless);
 
-                OrderPay pay_cash = new OrderPay(Convert.ToDouble(nal_tB.Text), "наличные", DateTime.Now, 0, Convert.ToInt16(id_order));
-                DataManager.AddPay(pay_cash);
+                        OrderPay pay_cash = new OrderPay(Convert.ToDouble(nal_tB.Text), "наличные", DateTime.Now, 0, Convert.ToInt16(id_order));
+                        DataManager.AddPay(pay_cash);
+
+                        DataManager.DeleteOrder(id_order);
+
+                        GoBack();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Поля \"Наличными\" и \"Безналичными\" должны быть заполнены", "Внимание");
+                }
             }
-            DataManager.DeleteOrder(id_order);
+        }
 
-            GoBack();
+        private void nal_tB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Convert.ToDouble(nal_tB.Text);
+            }
+            catch
+            {
+                nal_tB.Text = "";
+                MessageBox.Show("Значение должна быть положительным числом");
+            }
+        }
+
+        private void nenal_tB_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Convert.ToDouble(nenal_tB.Text);
+            }
+            catch
+            {
+                nenal_tB.Text = "";
+                MessageBox.Show("Значение должна быть положительным числом");
+            }
         }
 
         // Поверка поля на отсутствие значений

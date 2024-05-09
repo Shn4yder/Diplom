@@ -53,7 +53,7 @@
             this.cart_amount_lbl = new System.Windows.Forms.Label();
             this.pay_cB = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.time_amount = new System.Windows.Forms.Label();
+            this.itogo_amount = new System.Windows.Forms.Label();
             this.time_checkB = new System.Windows.Forms.CheckBox();
             this.save_btn = new diplom.Controls.RoundBtn();
             this.add_pay_btn = new diplom.Controls.RoundBtn();
@@ -79,9 +79,9 @@
             // comment_tB
             // 
             this.comment_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comment_tB.Location = new System.Drawing.Point(256, 45);
+            this.comment_tB.Location = new System.Drawing.Point(256, 57);
             this.comment_tB.Name = "comment_tB";
-            this.comment_tB.Size = new System.Drawing.Size(240, 96);
+            this.comment_tB.Size = new System.Drawing.Size(240, 84);
             this.comment_tB.TabIndex = 2;
             this.comment_tB.Text = "";
             // 
@@ -312,16 +312,16 @@
             this.label5.TabIndex = 15;
             this.label5.Text = "К оплате:";
             // 
-            // time_amount
+            // itogo_amount
             // 
-            this.time_amount.AutoSize = true;
-            this.time_amount.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.time_amount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.time_amount.Location = new System.Drawing.Point(330, 347);
-            this.time_amount.Name = "time_amount";
-            this.time_amount.Size = new System.Drawing.Size(17, 20);
-            this.time_amount.TabIndex = 16;
-            this.time_amount.Text = "0";
+            this.itogo_amount.AutoSize = true;
+            this.itogo_amount.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.itogo_amount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.itogo_amount.Location = new System.Drawing.Point(330, 347);
+            this.itogo_amount.Name = "itogo_amount";
+            this.itogo_amount.Size = new System.Drawing.Size(17, 20);
+            this.itogo_amount.TabIndex = 16;
+            this.itogo_amount.Text = "0";
             // 
             // time_checkB
             // 
@@ -418,6 +418,7 @@
             this.nal_tB.Name = "nal_tB";
             this.nal_tB.Size = new System.Drawing.Size(84, 18);
             this.nal_tB.TabIndex = 31;
+            this.nal_tB.TextChanged += new System.EventHandler(this.nal_tB_TextChanged);
             // 
             // panel4
             // 
@@ -449,6 +450,7 @@
             this.nenal_tB.Name = "nenal_tB";
             this.nenal_tB.Size = new System.Drawing.Size(84, 18);
             this.nenal_tB.TabIndex = 31;
+            this.nenal_tB.TextChanged += new System.EventHandler(this.nenal_tB_TextChanged);
             // 
             // name_tB
             // 
@@ -478,7 +480,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.label1.Location = new System.Drawing.Point(253, 29);
+            this.label1.Location = new System.Drawing.Point(259, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 35;
@@ -502,7 +504,7 @@
             this.Controls.Add(this.add_pay_btn);
             this.Controls.Add(this.save_btn);
             this.Controls.Add(this.time_checkB);
-            this.Controls.Add(this.time_amount);
+            this.Controls.Add(this.itogo_amount);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.pay_cB);
             this.Controls.Add(this.cart_amount_lbl);
@@ -544,7 +546,7 @@
         private System.Windows.Forms.Label cart_amount_lbl;
         private System.Windows.Forms.ComboBox pay_cB;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label time_amount;
+        private System.Windows.Forms.Label itogo_amount;
         private System.Windows.Forms.CheckBox time_checkB;
         private Controls.RoundBtn save_btn;
         private Controls.RoundBtn add_pay_btn;
