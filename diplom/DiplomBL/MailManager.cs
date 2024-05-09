@@ -7,12 +7,12 @@ using System.Net;
 using System.Net.Mail;
 using diplom.Properties;
 using diplom.Models;
+using System.Windows.Forms;
 
 namespace diplom
 {
     internal class MailManager
     {
-
         // Создание письма
         public static MailMessage CreateMail(string emailTo, string body)
         {
@@ -41,15 +41,24 @@ namespace diplom
             List<UsersModel> users = DataManager.LoadUsers();    
             ReportManager report = new ReportManager(name_usr);
 
-            foreach (UsersModel user in users)
+            if (InternetCS.IsConnectedToInternet())  //проверка подлкючения к интернету
             {
-                if (user.Status == "Администратор")
+                foreach (UsersModel user in users)
                 {
-                    var mail = MailManager.CreateMail(user.Email, $"{report.GetReport()}");    // отправка каждому администратору
-
-                    SendMail(mail);
+                    if (user.Status == "Администратор")
+                    {
+                        //System.Net.Mail.SmtpException
+                        var mail = MailManager.CreateMail(user.Email, $"{report.GetReport()}");    // отправка каждому администратору
+                        try { SendMail(mail); }
+                        catch { } 
+                    }
                 }
             }
+            else
+            {
+                MessageBox.Show("Отсутствует подлкючение к интернету, отчет на почту не отправлен", "Внимание");
+            }
+            
         }
     }
 }
