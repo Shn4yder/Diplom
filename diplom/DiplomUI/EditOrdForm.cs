@@ -92,8 +92,22 @@ namespace diplom
         // Обработчик двойного нажатия на товар в таблице с товарами = добавление товара в корзину
         private void goods_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            string item_name = goods_GV.CurrentRow.Cells[2].Value.ToString();
+            foreach (DataGridViewRow row in cart_GV.Rows) 
+            {
+                string name = row.Cells[4].Value.ToString();
+                if (item_name == row.Cells[4].Value.ToString()) 
+                { 
+                    string id_cart = row.Cells[0].Value.ToString();
+                    int quantity = Convert.ToInt16(row.Cells[3].Value) + 1;
+                    DataManager.ChangeQuantityInOrder(quantity, id_cart);
+                    cart_GV.DataSource = DataManager.LoadCart(id_order);
+                    cart_amount_lbl.Text = AmountCart().ToString();
+                    return;
+                }
+            }
             CartModel cart = new CartModel(Convert.ToInt16(id_order), Convert.ToInt16(goods_GV.CurrentRow.Cells[0].Value.ToString()), 1);
-            DataManager.AddGoodInOrder(cart);
+            DataManager.AddNewGoodInOrder(cart);
             cart_GV.DataSource = DataManager.LoadCart(id_order);
             cart_amount_lbl.Text = AmountCart().ToString();
         }
@@ -101,7 +115,16 @@ namespace diplom
         // Обработчик двойного нажатия на товар в корзине = удалить товар из корзины
         private void cart_GV_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            DataManager.DeleteGoodCart(cart_GV.CurrentRow.Cells[0].Value.ToString());
+            int quantity = Convert.ToInt16(cart_GV.CurrentRow.Cells[3].Value);
+            string id_cart = cart_GV.CurrentRow.Cells[0].Value.ToString();
+            if (quantity > 1) 
+            {
+                DataManager.ChangeQuantityInOrder(quantity - 1, id_cart);
+            }
+            else
+            {
+                DataManager.DeleteGoodCart(id_cart);
+            }
             cart_GV.DataSource = DataManager.LoadCart(id_order);
             cart_amount_lbl.Text = AmountCart().ToString();
         }

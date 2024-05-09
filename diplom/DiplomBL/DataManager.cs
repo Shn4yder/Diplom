@@ -257,7 +257,7 @@ namespace diplom
 
 
         // Вставка, удаление данных корзины заказа
-        public static void AddGoodInOrder(CartModel cart)
+        public static void AddNewGoodInOrder(CartModel cart)
         {
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
@@ -281,6 +281,15 @@ namespace diplom
                 con.Execute("delete from Cart where id_cart=" + id);
             }
         }
+
+        public static void ChangeQuantityInOrder(int new_quantity, string id_cart)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Execute($"update Cart set quantity = {new_quantity} where id_cart = " + id_cart);
+            }
+        }
+
 
         public static double LoadTarif()    // получение стоимости тарифа
         {

@@ -43,31 +43,31 @@
             this.photo = new System.Windows.Forms.DataGridViewImageColumn();
             this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cart_GV = new System.Windows.Forms.DataGridView();
-            this.id_cart = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name_good = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idgood = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label4 = new System.Windows.Forms.Label();
             this.cart_amount_lbl = new System.Windows.Forms.Label();
             this.pay_cB = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.itogo_amount = new System.Windows.Forms.Label();
             this.time_checkB = new System.Windows.Forms.CheckBox();
-            this.save_btn = new diplom.Controls.RoundBtn();
-            this.add_pay_btn = new diplom.Controls.RoundBtn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.ppl_UpDown = new System.Windows.Forms.NumericUpDown();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.nal_tB = new diplom.CueTextbox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.back_btn = new System.Windows.Forms.PictureBox();
-            this.nenal_tB = new diplom.CueTextbox();
-            this.name_tB = new diplom.CueTextbox();
             this.name_lbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.name_tB = new diplom.CueTextbox();
+            this.nenal_tB = new diplom.CueTextbox();
+            this.nal_tB = new diplom.CueTextbox();
+            this.add_pay_btn = new diplom.Controls.RoundBtn();
+            this.save_btn = new diplom.Controls.RoundBtn();
+            this.id_cart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name_good = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idgood = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cart_GV)).BeginInit();
             this.panel3.SuspendLayout();
@@ -215,55 +215,6 @@
             this.cart_GV.TabIndex = 11;
             this.cart_GV.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.cart_GV_CellMouseDoubleClick);
             // 
-            // id_cart
-            // 
-            this.id_cart.DataPropertyName = "Id_cart";
-            this.id_cart.HeaderText = "cart";
-            this.id_cart.Name = "id_cart";
-            this.id_cart.ReadOnly = true;
-            this.id_cart.Visible = false;
-            this.id_cart.Width = 150;
-            // 
-            // name_good
-            // 
-            this.name_good.DataPropertyName = "Name";
-            this.name_good.HeaderText = "Наименование";
-            this.name_good.Name = "name_good";
-            this.name_good.ReadOnly = true;
-            this.name_good.Width = 150;
-            // 
-            // price
-            // 
-            this.price.DataPropertyName = "Cost";
-            this.price.HeaderText = "Цена";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            this.price.Width = 44;
-            // 
-            // quantity
-            // 
-            this.quantity.DataPropertyName = "Quantity";
-            this.quantity.HeaderText = "Кол-во";
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            this.quantity.Width = 45;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "Id_order";
-            this.id.HeaderText = "order";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // idgood
-            // 
-            this.idgood.DataPropertyName = "Id_good";
-            this.idgood.HeaderText = "good";
-            this.idgood.Name = "idgood";
-            this.idgood.ReadOnly = true;
-            this.idgood.Visible = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -335,34 +286,6 @@
             this.time_checkB.Text = "Не учитывать время";
             this.time_checkB.UseVisualStyleBackColor = true;
             // 
-            // save_btn
-            // 
-            this.save_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.save_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.save_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.save_btn.Location = new System.Drawing.Point(347, 373);
-            this.save_btn.Name = "save_btn";
-            this.save_btn.Radius = 10;
-            this.save_btn.Size = new System.Drawing.Size(149, 24);
-            this.save_btn.TabIndex = 21;
-            this.save_btn.Text = "Сохранить изменения";
-            this.save_btn.UseVisualStyleBackColor = false;
-            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
-            // 
-            // add_pay_btn
-            // 
-            this.add_pay_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.add_pay_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.add_pay_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.add_pay_btn.Location = new System.Drawing.Point(12, 373);
-            this.add_pay_btn.Name = "add_pay_btn";
-            this.add_pay_btn.Radius = 10;
-            this.add_pay_btn.Size = new System.Drawing.Size(93, 24);
-            this.add_pay_btn.TabIndex = 22;
-            this.add_pay_btn.Text = "Завершить";
-            this.add_pay_btn.UseVisualStyleBackColor = false;
-            this.add_pay_btn.Click += new System.EventHandler(this.add_pay_btn_Click);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -409,17 +332,6 @@
             this.panel2.TabIndex = 25;
             this.panel2.Visible = false;
             // 
-            // nal_tB
-            // 
-            this.nal_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nal_tB.Cue = "Наличные";
-            this.nal_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nal_tB.Location = new System.Drawing.Point(3, 3);
-            this.nal_tB.Name = "nal_tB";
-            this.nal_tB.Size = new System.Drawing.Size(84, 18);
-            this.nal_tB.TabIndex = 31;
-            this.nal_tB.TextChanged += new System.EventHandler(this.nal_tB_TextChanged);
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
@@ -440,28 +352,6 @@
             this.back_btn.TabIndex = 27;
             this.back_btn.TabStop = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
-            // 
-            // nenal_tB
-            // 
-            this.nenal_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nenal_tB.Cue = "Безналичные";
-            this.nenal_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nenal_tB.Location = new System.Drawing.Point(123, 338);
-            this.nenal_tB.Name = "nenal_tB";
-            this.nenal_tB.Size = new System.Drawing.Size(84, 18);
-            this.nenal_tB.TabIndex = 31;
-            this.nenal_tB.TextChanged += new System.EventHandler(this.nenal_tB_TextChanged);
-            // 
-            // name_tB
-            // 
-            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name_tB.Cue = "Имя";
-            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_tB.Location = new System.Drawing.Point(12, 47);
-            this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(221, 18);
-            this.name_tB.TabIndex = 31;
-            this.name_tB.TextChanged += new System.EventHandler(this.name_tB_TextChanged);
             // 
             // name_lbl
             // 
@@ -485,6 +375,116 @@
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 35;
             this.label1.Text = "Комментарий";
+            // 
+            // name_tB
+            // 
+            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_tB.Cue = "Имя";
+            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_tB.Location = new System.Drawing.Point(12, 47);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(221, 18);
+            this.name_tB.TabIndex = 31;
+            this.name_tB.TextChanged += new System.EventHandler(this.name_tB_TextChanged);
+            // 
+            // nenal_tB
+            // 
+            this.nenal_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nenal_tB.Cue = "Безналичные";
+            this.nenal_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nenal_tB.Location = new System.Drawing.Point(123, 338);
+            this.nenal_tB.Name = "nenal_tB";
+            this.nenal_tB.Size = new System.Drawing.Size(84, 18);
+            this.nenal_tB.TabIndex = 31;
+            this.nenal_tB.TextChanged += new System.EventHandler(this.nenal_tB_TextChanged);
+            // 
+            // nal_tB
+            // 
+            this.nal_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nal_tB.Cue = "Наличные";
+            this.nal_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nal_tB.Location = new System.Drawing.Point(3, 3);
+            this.nal_tB.Name = "nal_tB";
+            this.nal_tB.Size = new System.Drawing.Size(84, 18);
+            this.nal_tB.TabIndex = 31;
+            this.nal_tB.TextChanged += new System.EventHandler(this.nal_tB_TextChanged);
+            // 
+            // add_pay_btn
+            // 
+            this.add_pay_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.add_pay_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.add_pay_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.add_pay_btn.Location = new System.Drawing.Point(12, 373);
+            this.add_pay_btn.Name = "add_pay_btn";
+            this.add_pay_btn.Radius = 10;
+            this.add_pay_btn.Size = new System.Drawing.Size(93, 24);
+            this.add_pay_btn.TabIndex = 22;
+            this.add_pay_btn.Text = "Завершить";
+            this.add_pay_btn.UseVisualStyleBackColor = false;
+            this.add_pay_btn.Click += new System.EventHandler(this.add_pay_btn_Click);
+            // 
+            // save_btn
+            // 
+            this.save_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.save_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.save_btn.Location = new System.Drawing.Point(347, 373);
+            this.save_btn.Name = "save_btn";
+            this.save_btn.Radius = 10;
+            this.save_btn.Size = new System.Drawing.Size(149, 24);
+            this.save_btn.TabIndex = 21;
+            this.save_btn.Text = "Сохранить изменения";
+            this.save_btn.UseVisualStyleBackColor = false;
+            this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
+            // 
+            // id_cart
+            // 
+            this.id_cart.DataPropertyName = "Id_cart";
+            this.id_cart.HeaderText = "cart";
+            this.id_cart.Name = "id_cart";
+            this.id_cart.ReadOnly = true;
+            this.id_cart.Visible = false;
+            this.id_cart.Width = 150;
+            // 
+            // name_good
+            // 
+            this.name_good.DataPropertyName = "Name";
+            this.name_good.HeaderText = "Наименование";
+            this.name_good.Name = "name_good";
+            this.name_good.ReadOnly = true;
+            this.name_good.Width = 150;
+            // 
+            // price
+            // 
+            this.price.DataPropertyName = "Cost";
+            this.price.HeaderText = "Цена";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            this.price.Width = 44;
+            // 
+            // quantity
+            // 
+            this.quantity.DataPropertyName = "Quantity";
+            this.quantity.HeaderText = "Кол-во";
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            this.quantity.Width = 45;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "Id_order";
+            this.id.HeaderText = "order";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // idgood
+            // 
+            this.idgood.DataPropertyName = "Id_good";
+            this.idgood.HeaderText = "good";
+            this.idgood.Name = "idgood";
+            this.idgood.ReadOnly = true;
+            this.idgood.Visible = false;
             // 
             // EditOrdForm
             // 
@@ -550,12 +550,6 @@
         private System.Windows.Forms.CheckBox time_checkB;
         private Controls.RoundBtn save_btn;
         private Controls.RoundBtn add_pay_btn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_cart;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name_good;
-        private System.Windows.Forms.DataGridViewTextBoxColumn price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idgood;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.NumericUpDown ppl_UpDown;
         private System.Windows.Forms.Panel panel1;
@@ -572,5 +566,11 @@
         private CueTextbox name_tB;
         private System.Windows.Forms.Label name_lbl;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_cart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name_good;
+        private System.Windows.Forms.DataGridViewTextBoxColumn price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idgood;
     }
 }
