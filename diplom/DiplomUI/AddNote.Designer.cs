@@ -32,13 +32,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comment_tB = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.name_tB = new diplom.CueTextbox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.phone_tB = new System.Windows.Forms.MaskedTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.back_btn = new System.Windows.Forms.PictureBox();
             this.place_tB = new diplom.CueTextbox();
+            this.name_tB = new diplom.CueTextbox();
             this.create_btn = new diplom.Controls.RoundBtn();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.back_btn)).BeginInit();
@@ -49,7 +50,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.label1.Location = new System.Drawing.Point(60, 9);
+            this.label1.Location = new System.Drawing.Point(56, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(164, 30);
             this.label1.TabIndex = 2;
@@ -58,7 +59,7 @@
             // comment_tB
             // 
             this.comment_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comment_tB.Location = new System.Drawing.Point(13, 183);
+            this.comment_tB.Location = new System.Drawing.Point(13, 177);
             this.comment_tB.Name = "comment_tB";
             this.comment_tB.Size = new System.Drawing.Size(244, 78);
             this.comment_tB.TabIndex = 9;
@@ -73,21 +74,11 @@
             this.panel1.Size = new System.Drawing.Size(245, 23);
             this.panel1.TabIndex = 13;
             // 
-            // name_tB
-            // 
-            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.name_tB.Cue = "Имя";
-            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.name_tB.Location = new System.Drawing.Point(3, 2);
-            this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(239, 18);
-            this.name_tB.TabIndex = 29;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.phone_tB);
-            this.panel2.Location = new System.Drawing.Point(12, 97);
+            this.panel2.Location = new System.Drawing.Point(13, 90);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(127, 23);
             this.panel2.TabIndex = 14;
@@ -105,7 +96,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(12, 139);
+            this.panel3.Location = new System.Drawing.Point(13, 129);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(161, 23);
             this.panel3.TabIndex = 14;
@@ -127,17 +118,27 @@
             this.place_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.place_tB.Cue = "№ Стола/места";
             this.place_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.place_tB.Location = new System.Drawing.Point(15, 141);
+            this.place_tB.Location = new System.Drawing.Point(16, 131);
             this.place_tB.Name = "place_tB";
             this.place_tB.Size = new System.Drawing.Size(155, 18);
             this.place_tB.TabIndex = 29;
+            // 
+            // name_tB
+            // 
+            this.name_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.name_tB.Cue = "Имя";
+            this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.name_tB.Location = new System.Drawing.Point(3, 2);
+            this.name_tB.Name = "name_tB";
+            this.name_tB.Size = new System.Drawing.Size(239, 18);
+            this.name_tB.TabIndex = 29;
             // 
             // create_btn
             // 
             this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.create_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.create_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.create_btn.Location = new System.Drawing.Point(97, 272);
+            this.create_btn.Location = new System.Drawing.Point(95, 261);
             this.create_btn.Name = "create_btn";
             this.create_btn.Radius = 10;
             this.create_btn.Size = new System.Drawing.Size(76, 24);
@@ -146,12 +147,24 @@
             this.create_btn.UseVisualStyleBackColor = false;
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.label2.Location = new System.Drawing.Point(12, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 13);
+            this.label2.TabIndex = 30;
+            this.label2.Text = "Комментарий";
+            // 
             // AddNote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(274, 308);
+            this.ClientSize = new System.Drawing.Size(274, 296);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.place_tB);
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.panel3);
@@ -186,5 +199,6 @@
         private System.Windows.Forms.PictureBox back_btn;
         private CueTextbox name_tB;
         private CueTextbox place_tB;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -44,7 +44,7 @@ namespace diplom
             else if (@event == "update")
             {
                 event_log = $"Изменены данные пользователя {new_or_deleted_user}";
-                cause = "Пользователь исключен из штата сотрудников";
+                cause = " - ";
             }
 
             LogsModel log = new LogsModel(DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss"), event_log, cause, user_name, system, Encryption.GetKey(), Encryption.GetVector());

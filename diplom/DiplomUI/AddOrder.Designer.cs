@@ -94,7 +94,7 @@
             this.count_lbl.AutoSize = true;
             this.count_lbl.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.count_lbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.count_lbl.Location = new System.Drawing.Point(15, 139);
+            this.count_lbl.Location = new System.Drawing.Point(15, 129);
             this.count_lbl.Name = "count_lbl";
             this.count_lbl.Size = new System.Drawing.Size(170, 17);
             this.count_lbl.TabIndex = 7;
@@ -107,7 +107,7 @@
             this.comment_tB.Name = "comment_tB";
             this.comment_tB.Size = new System.Drawing.Size(230, 78);
             this.comment_tB.TabIndex = 8;
-            this.comment_tB.Text = "Комментарий";
+            this.comment_tB.Text = "";
             // 
             // create_btn
             // 
@@ -147,7 +147,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.numb_tB);
-            this.panel2.Location = new System.Drawing.Point(12, 93);
+            this.panel2.Location = new System.Drawing.Point(12, 91);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(230, 23);
             this.panel2.TabIndex = 15;
@@ -167,7 +167,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.ppl_UpDown);
-            this.panel3.Location = new System.Drawing.Point(191, 139);
+            this.panel3.Location = new System.Drawing.Point(191, 129);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(51, 23);
             this.panel3.TabIndex = 16;
@@ -200,7 +200,7 @@
             this.numb_lbl.AutoSize = true;
             this.numb_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.numb_lbl.ForeColor = System.Drawing.Color.DarkRed;
-            this.numb_lbl.Location = new System.Drawing.Point(244, 95);
+            this.numb_lbl.Location = new System.Drawing.Point(244, 93);
             this.numb_lbl.Name = "numb_lbl";
             this.numb_lbl.Size = new System.Drawing.Size(17, 24);
             this.numb_lbl.TabIndex = 32;

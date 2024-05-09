@@ -39,6 +39,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.place_tB = new diplom.CueTextbox();
             this.back_btn = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -48,21 +49,21 @@
             // comment_tB
             // 
             this.comment_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.comment_tB.Location = new System.Drawing.Point(12, 118);
+            this.comment_tB.Location = new System.Drawing.Point(9, 164);
             this.comment_tB.Name = "comment_tB";
-            this.comment_tB.Size = new System.Drawing.Size(328, 96);
+            this.comment_tB.Size = new System.Drawing.Size(252, 96);
             this.comment_tB.TabIndex = 6;
-            this.comment_tB.Text = "Комментарий";
+            this.comment_tB.Text = "";
             // 
             // del_btn
             // 
             this.del_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.del_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.del_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.del_btn.Location = new System.Drawing.Point(12, 219);
+            this.del_btn.Location = new System.Drawing.Point(9, 274);
             this.del_btn.Name = "del_btn";
             this.del_btn.Radius = 10;
-            this.del_btn.Size = new System.Drawing.Size(88, 24);
+            this.del_btn.Size = new System.Drawing.Size(72, 24);
             this.del_btn.TabIndex = 17;
             this.del_btn.Text = "Удалить";
             this.del_btn.UseVisualStyleBackColor = false;
@@ -73,10 +74,10 @@
             this.save_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.save_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.save_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.save_btn.Location = new System.Drawing.Point(180, 219);
+            this.save_btn.Location = new System.Drawing.Point(125, 274);
             this.save_btn.Name = "save_btn";
             this.save_btn.Radius = 10;
-            this.save_btn.Size = new System.Drawing.Size(160, 24);
+            this.save_btn.Size = new System.Drawing.Size(136, 24);
             this.save_btn.TabIndex = 18;
             this.save_btn.Text = " Сохранить изменения";
             this.save_btn.UseVisualStyleBackColor = false;
@@ -88,7 +89,7 @@
             this.panel1.Controls.Add(this.name_tB);
             this.panel1.Location = new System.Drawing.Point(9, 35);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(331, 23);
+            this.panel1.Size = new System.Drawing.Size(239, 23);
             this.panel1.TabIndex = 19;
             // 
             // name_tB
@@ -98,14 +99,14 @@
             this.name_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.name_tB.Location = new System.Drawing.Point(3, 2);
             this.name_tB.Name = "name_tB";
-            this.name_tB.Size = new System.Drawing.Size(325, 18);
+            this.name_tB.Size = new System.Drawing.Size(233, 18);
             this.name_tB.TabIndex = 30;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.phone_tB);
-            this.panel2.Location = new System.Drawing.Point(9, 77);
+            this.panel2.Location = new System.Drawing.Point(9, 74);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(127, 23);
             this.panel2.TabIndex = 20;
@@ -124,7 +125,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.place_tB);
-            this.panel3.Location = new System.Drawing.Point(155, 77);
+            this.panel3.Location = new System.Drawing.Point(9, 112);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(185, 23);
             this.panel3.TabIndex = 21;
@@ -151,12 +152,24 @@
             this.back_btn.TabStop = false;
             this.back_btn.Click += new System.EventHandler(this.back_btn_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.label3.Location = new System.Drawing.Point(9, 148);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Комментарий";
+            // 
             // EditNoteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(359, 248);
+            this.ClientSize = new System.Drawing.Size(274, 308);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.back_btn);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -177,6 +190,7 @@
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.back_btn)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -191,5 +205,6 @@
         private System.Windows.Forms.PictureBox back_btn;
         private CueTextbox name_tB;
         private CueTextbox place_tB;
+        private System.Windows.Forms.Label label3;
     }
 }

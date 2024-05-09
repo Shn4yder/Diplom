@@ -45,7 +45,7 @@ namespace diplom
         // Обработчик нажатия на кнопку "Сохранить"
         private void save_btn_Click(object sender, EventArgs e)
         {
-            if (name_tB.Text != "" & place_tB.Text != "" & comment_tB.Text != "")
+            if (name_tB.Text != "" || place_tB.Text != "" || comment_tB.Text != "")
             {
                 UpdateData();
                 GoBack();

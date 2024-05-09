@@ -67,6 +67,7 @@
             this.nenal_tB = new diplom.CueTextbox();
             this.name_tB = new diplom.CueTextbox();
             this.name_lbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cart_GV)).BeginInit();
             this.panel3.SuspendLayout();
@@ -82,7 +83,7 @@
             this.comment_tB.Name = "comment_tB";
             this.comment_tB.Size = new System.Drawing.Size(240, 96);
             this.comment_tB.TabIndex = 2;
-            this.comment_tB.Text = "Комментарий";
+            this.comment_tB.Text = "";
             // 
             // label2
             // 
@@ -472,12 +473,24 @@
             this.name_lbl.Text = "*";
             this.name_lbl.Visible = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.label1.Location = new System.Drawing.Point(253, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(88, 13);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Комментарий";
+            // 
             // EditOrdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(508, 405);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.name_lbl);
             this.Controls.Add(this.name_tB);
             this.Controls.Add(this.nenal_tB);
@@ -556,5 +569,6 @@
         private CueTextbox nenal_tB;
         private CueTextbox name_tB;
         private System.Windows.Forms.Label name_lbl;
+        private System.Windows.Forms.Label label1;
     }
 }
