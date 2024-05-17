@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -51,7 +52,6 @@ namespace diplom
         {
             if (!show_pass)
             {
-
                 pass_cB.Image = Resources.opened_eye;
                 pass_tB.UseSystemPasswordChar = false;
                 show_pass = true;
@@ -87,7 +87,7 @@ namespace diplom
 
         private void email_tB_TextChanged(object sender, EventArgs e)
         {
-            if (email_tB.Text == "") { email_lbl.Visible = true; }
+            if (email_tB.Text == "" || !isValid(email_tB.Text)) { email_lbl.Visible = true; email_tB.Text = "";}
             else { email_lbl.Visible = false; }
         }
 
@@ -130,6 +130,13 @@ namespace diplom
             Users users = new Users(id_user, sts, name_usr);
             users.Show();
             this.Close();
+        }
+
+        bool isValid(string email)
+        {
+            string pattern = "[.\\-_a-z0-9]+@([a-z0-9][\\-a-z0-9]+\\.)+[a-z]{2,6}";
+            Match isMatch = Regex.Match(email, pattern, RegexOptions.IgnoreCase);
+            return isMatch.Success;
         }
     }
 }

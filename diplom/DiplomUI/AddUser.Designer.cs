@@ -144,9 +144,9 @@
             "gmail.com",
             "yandex.ru",
             "rambler.ru"});
-            this.domain_cB.Location = new System.Drawing.Point(315, 61);
+            this.domain_cB.Location = new System.Drawing.Point(304, 61);
             this.domain_cB.Name = "domain_cB";
-            this.domain_cB.Size = new System.Drawing.Size(78, 25);
+            this.domain_cB.Size = new System.Drawing.Size(89, 25);
             this.domain_cB.TabIndex = 19;
             this.domain_cB.Text = "mail.ru";
             // 
@@ -154,7 +154,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(286, 63);
+            this.label2.Location = new System.Drawing.Point(283, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 18);
             this.label2.TabIndex = 18;

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using diplom.Models;
@@ -120,8 +121,8 @@ namespace diplom
 
         // Обработчик нажатия на кнопку "Создать"
         private void create_btn_Click(object sender, EventArgs e)
-        {
-            if (name_tB.Text != "" & phone_tB.Text != "" & email_tB.Text != "" & login_tB.Text != "" & pwd_tB.Text != "" & confirm_tB.Text != "")
+        { 
+            if (name_tB.Text != "" & phone_tB.Text != "" & email_tB.Text != "" & login_tB.Text != "" & pwd_tB.Text != "" & confirm_tB.Text != "" & isValid(email_tB.Text + '@' + domain_cB.Text))
             {
                 Trigger.Addlog("add", name_usr, name_tB.Text);
                 UsersModel new_user = new UsersModel(name_tB.Text, status_cB.Text, phone_tB.Text, email_tB.Text + '@' + domain_cB.Text, login_tB.Text, pwd_tB.Text);
@@ -131,7 +132,13 @@ namespace diplom
 
                 GoBack();
             }
-            else { MessageBox.Show("Пожалуйста, заполните все поля, отмеченные * ", "Внимание"); }
+            else 
+            {
+                email_lbl.Visible = true;
+                email_tB.Text = "";
+                domain_cB.Text = "";
+                MessageBox.Show("Пожалуйста, заполните все поля, отмеченные * ", "Внимание"); 
+            }
         }
 
        private void AddNewUser(UsersModel user)
@@ -144,6 +151,12 @@ namespace diplom
             Users usr_frm = new Users(id_user, status, name_usr);
             usr_frm.Show();
             this.Close();
+        }
+        bool isValid(string email)
+        {
+            string pattern = "[.\\-_a-z0-9]+@([a-z0-9][\\-a-z0-9]+\\.)+[a-z]{2,6}";
+            Match isMatch = Regex.Match(email, pattern, RegexOptions.IgnoreCase);
+            return isMatch.Success;
         }
     }
 }
