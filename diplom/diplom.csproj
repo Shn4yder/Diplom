@@ -137,7 +137,7 @@
     <Compile Include="DiplomBL\ImageManager.cs" />
     <Compile Include="DiplomBL\MailManager.cs" />
     <Compile Include="DiplomBL\Encryption.cs" />
-    <Compile Include="InternetCS.cs" />
+    <Compile Include="DiplomBL\InternetCS.cs" />
     <Compile Include="Models\CartModel.cs" />
     <Compile Include="Models\EncrLogsModel.cs" />
     <Compile Include="Models\EncryptedUser.cs" />

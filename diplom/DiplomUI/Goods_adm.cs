@@ -40,7 +40,7 @@ namespace diplom
         {
             if (sidebarExpand)
             {
-                sidebar.Width -= 100;
+                sidebar.Width -= 150;
                 if (sidebar.Width == sidebar.MinimumSize.Width)
                 {
                     sidebarExpand = false;
@@ -49,7 +49,7 @@ namespace diplom
             }
             else
             {
-                sidebar.Width += 5;
+                sidebar.Width += 5; 
                 if (sidebar.Width == sidebar.MaximumSize.Width)
                 {
                     sidebarExpand = true;
@@ -100,7 +100,7 @@ namespace diplom
                 MailManager.SendReport(name_usr);   // по завершению смены отправляется отчет администраторам
             }
             Trigger.Addlog("exit", name_usr);
-            this.Close();
+            Application.Exit();
         }
         //
 
@@ -193,7 +193,7 @@ namespace diplom
             {
                 order_btn.Visible = false;
                 order_btn.Enabled = false;
-                exit_btn.Text = "Выйти";
+                exit_btn.Text = "      Выход";
             }
         }
     }

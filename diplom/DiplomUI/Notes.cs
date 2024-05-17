@@ -89,7 +89,7 @@ namespace diplom
                 MailManager.SendReport(name_usr);   // отправка отчета администраторам
             }
             Trigger.Addlog("exit", name_usr);
-            this.Close(); 
+            Application.Exit(); 
         }
         private void log_btn_Click(object sender, EventArgs e)
         {
@@ -147,7 +147,7 @@ namespace diplom
             {
                 order_btn.Visible = false;
                 order_btn.Enabled = false;
-                exit_btn.Text = "Выйти";
+                exit_btn.Text = "      Выход";
             }
         }
     }

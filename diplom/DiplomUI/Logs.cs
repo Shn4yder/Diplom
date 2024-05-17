@@ -69,7 +69,7 @@ namespace diplom.DiplomUI
         private void exit_btn_Click(object sender, EventArgs e)
         {
             Trigger.Addlog("exit", name_usr);
-            this.Close();   
+            Application.Exit();
         }
 
         private void note_btn_Click(object sender, EventArgs e)
@@ -80,6 +80,25 @@ namespace diplom.DiplomUI
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void usr_btn_Click(object sender, EventArgs e)
+        {
+            Users users = new Users(id_user, sts, name_usr);
+            this.Hide();
+            users.Show();   
+        }
+        //
+
+        private void delete_btn_Click(object sender, EventArgs e)
+        {
+            DataManager.DeleteLogs();
+            log_GV.DataSource = DataManager.LoadLogs();
+        }
+
+        private void excel_btn_Click(object sender, EventArgs e)
         {
             Excel.Application xlApp;
             Excel.Worksheet xlSheet = null;
@@ -157,20 +176,6 @@ namespace diplom.DiplomUI
                 releaseObject(xlSheet);
                 releaseObject(xlApp);
             }
-        }
-
-        private void usr_btn_Click(object sender, EventArgs e)
-        {
-            Users users = new Users(id_user, sts, name_usr);
-            this.Hide();
-            users.Show();   
-        }
-        //
-
-        private void delete_btn_Click(object sender, EventArgs e)
-        {
-            DataManager.DeleteLogs();
-            log_GV.DataSource = DataManager.LoadLogs();
         }
 
         //Освобождаем ресуры (закрываем Excel)

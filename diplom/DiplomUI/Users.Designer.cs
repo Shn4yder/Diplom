@@ -210,7 +210,7 @@
             this.logs_btn.Name = "logs_btn";
             this.logs_btn.Size = new System.Drawing.Size(177, 47);
             this.logs_btn.TabIndex = 7;
-            this.logs_btn.Text = "Журнал";
+            this.logs_btn.Text = "        Журнал событий";
             this.logs_btn.UseVisualStyleBackColor = false;
             this.logs_btn.Click += new System.EventHandler(this.logs_btn_Click);
             // 
@@ -228,7 +228,7 @@
             this.sidebar_btn.Name = "sidebar_btn";
             this.sidebar_btn.Size = new System.Drawing.Size(177, 35);
             this.sidebar_btn.TabIndex = 2;
-            this.sidebar_btn.Text = "  Art Coworking";
+            this.sidebar_btn.Text = "        Art Coworking";
             this.sidebar_btn.UseVisualStyleBackColor = false;
             this.sidebar_btn.Click += new System.EventHandler(this.sidebar_btn_Click);
             // 
@@ -245,7 +245,7 @@
             this.exit_btn.Name = "exit_btn";
             this.exit_btn.Size = new System.Drawing.Size(177, 44);
             this.exit_btn.TabIndex = 6;
-            this.exit_btn.Text = "Выход";
+            this.exit_btn.Text = "      Выход";
             this.exit_btn.UseVisualStyleBackColor = false;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
@@ -262,7 +262,7 @@
             this.usr_btn.Name = "usr_btn";
             this.usr_btn.Size = new System.Drawing.Size(177, 44);
             this.usr_btn.TabIndex = 5;
-            this.usr_btn.Text = "   Пользователи";
+            this.usr_btn.Text = "       Пользователи";
             this.usr_btn.UseVisualStyleBackColor = false;
             // 
             // note_btn
@@ -277,7 +277,7 @@
             this.note_btn.Name = "note_btn";
             this.note_btn.Size = new System.Drawing.Size(177, 35);
             this.note_btn.TabIndex = 3;
-            this.note_btn.Text = "Заметки";
+            this.note_btn.Text = "      Заметки";
             this.note_btn.UseVisualStyleBackColor = true;
             this.note_btn.Click += new System.EventHandler(this.note_btn_Click);
             // 
@@ -293,7 +293,7 @@
             this.items_btn.Name = "items_btn";
             this.items_btn.Size = new System.Drawing.Size(177, 35);
             this.items_btn.TabIndex = 1;
-            this.items_btn.Text = "Товары";
+            this.items_btn.Text = "      Товары";
             this.items_btn.UseVisualStyleBackColor = true;
             this.items_btn.Click += new System.EventHandler(this.items_btn_Click);
             // 

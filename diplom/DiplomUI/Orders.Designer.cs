@@ -190,7 +190,7 @@ namespace diplom
             this.sidebar_btn.Name = "sidebar_btn";
             this.sidebar_btn.Size = new System.Drawing.Size(177, 35);
             this.sidebar_btn.TabIndex = 2;
-            this.sidebar_btn.Text = "   Art Coworking";
+            this.sidebar_btn.Text = "        Art Coworking";
             this.sidebar_btn.UseVisualStyleBackColor = false;
             this.sidebar_btn.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -206,7 +206,7 @@ namespace diplom
             this.items_btn.Name = "items_btn";
             this.items_btn.Size = new System.Drawing.Size(177, 35);
             this.items_btn.TabIndex = 1;
-            this.items_btn.Text = "Товары";
+            this.items_btn.Text = "      Товары";
             this.items_btn.UseVisualStyleBackColor = true;
             this.items_btn.Click += new System.EventHandler(this.items_btn_Click);
             // 
@@ -223,7 +223,7 @@ namespace diplom
             this.exit_btn.Name = "exit_btn";
             this.exit_btn.Size = new System.Drawing.Size(177, 44);
             this.exit_btn.TabIndex = 5;
-            this.exit_btn.Text = "       Завершить смену";
+            this.exit_btn.Text = "        Завершить смену";
             this.exit_btn.UseVisualStyleBackColor = false;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
@@ -240,7 +240,7 @@ namespace diplom
             this.order_btn.Name = "order_btn";
             this.order_btn.Size = new System.Drawing.Size(177, 44);
             this.order_btn.TabIndex = 4;
-            this.order_btn.Text = "Заказы";
+            this.order_btn.Text = "      Заказы";
             this.order_btn.UseVisualStyleBackColor = false;
             // 
             // note_btn
@@ -255,7 +255,7 @@ namespace diplom
             this.note_btn.Name = "note_btn";
             this.note_btn.Size = new System.Drawing.Size(177, 35);
             this.note_btn.TabIndex = 3;
-            this.note_btn.Text = "Заметки";
+            this.note_btn.Text = "      Заметки";
             this.note_btn.UseVisualStyleBackColor = true;
             this.note_btn.Click += new System.EventHandler(this.note_btn_Click);
             // 

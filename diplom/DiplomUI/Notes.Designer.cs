@@ -48,6 +48,7 @@ namespace diplom
             this.iv = new System.Windows.Forms.DataGridViewImageColumn();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.log_btn = new System.Windows.Forms.Button();
             this.sidebar_btn = new System.Windows.Forms.Button();
             this.exit_btn = new System.Windows.Forms.Button();
             this.usr_btn = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@ namespace diplom
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.create_btn = new diplom.Controls.RoundBtn();
-            this.log_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.note_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -227,6 +227,23 @@ namespace diplom
             this.panel1.Size = new System.Drawing.Size(181, 447);
             this.panel1.TabIndex = 1;
             // 
+            // log_btn
+            // 
+            this.log_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.log_btn.FlatAppearance.BorderSize = 0;
+            this.log_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.log_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.log_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.log_btn.Image = global::diplom.Properties.Resources.logicon;
+            this.log_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.log_btn.Location = new System.Drawing.Point(1, 176);
+            this.log_btn.Name = "log_btn";
+            this.log_btn.Size = new System.Drawing.Size(177, 44);
+            this.log_btn.TabIndex = 7;
+            this.log_btn.Text = "        Журнал событий";
+            this.log_btn.UseVisualStyleBackColor = false;
+            this.log_btn.Click += new System.EventHandler(this.log_btn_Click);
+            // 
             // sidebar_btn
             // 
             this.sidebar_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
@@ -241,7 +258,7 @@ namespace diplom
             this.sidebar_btn.Name = "sidebar_btn";
             this.sidebar_btn.Size = new System.Drawing.Size(177, 35);
             this.sidebar_btn.TabIndex = 2;
-            this.sidebar_btn.Text = "    Art Coworking";
+            this.sidebar_btn.Text = "        Art Coworking";
             this.sidebar_btn.UseVisualStyleBackColor = false;
             this.sidebar_btn.Click += new System.EventHandler(this.sidebar_btn_Click);
             // 
@@ -271,11 +288,11 @@ namespace diplom
             this.usr_btn.ForeColor = System.Drawing.SystemColors.Window;
             this.usr_btn.Image = global::diplom.Properties.Resources.users_icon;
             this.usr_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.usr_btn.Location = new System.Drawing.Point(0, 126);
+            this.usr_btn.Location = new System.Drawing.Point(1, 126);
             this.usr_btn.Name = "usr_btn";
             this.usr_btn.Size = new System.Drawing.Size(177, 44);
             this.usr_btn.TabIndex = 5;
-            this.usr_btn.Text = "  Пользователи";
+            this.usr_btn.Text = "       Пользователи";
             this.usr_btn.UseVisualStyleBackColor = false;
             this.usr_btn.Click += new System.EventHandler(this.usr_btn_Click);
             // 
@@ -292,7 +309,7 @@ namespace diplom
             this.order_btn.Name = "order_btn";
             this.order_btn.Size = new System.Drawing.Size(177, 44);
             this.order_btn.TabIndex = 4;
-            this.order_btn.Text = "Заказы";
+            this.order_btn.Text = "      Заказы";
             this.order_btn.UseVisualStyleBackColor = false;
             this.order_btn.Click += new System.EventHandler(this.order_btn_Click);
             // 
@@ -309,7 +326,7 @@ namespace diplom
             this.note_btn.Name = "note_btn";
             this.note_btn.Size = new System.Drawing.Size(177, 35);
             this.note_btn.TabIndex = 3;
-            this.note_btn.Text = "Заметки";
+            this.note_btn.Text = "      Заметки";
             this.note_btn.UseVisualStyleBackColor = false;
             // 
             // items_btn
@@ -324,7 +341,7 @@ namespace diplom
             this.items_btn.Name = "items_btn";
             this.items_btn.Size = new System.Drawing.Size(177, 35);
             this.items_btn.TabIndex = 1;
-            this.items_btn.Text = "Товары";
+            this.items_btn.Text = "      Товары";
             this.items_btn.UseVisualStyleBackColor = true;
             this.items_btn.Click += new System.EventHandler(this.items_btn_Click);
             // 
@@ -356,23 +373,6 @@ namespace diplom
             this.create_btn.Text = "Создать";
             this.create_btn.UseVisualStyleBackColor = false;
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
-            // 
-            // log_btn
-            // 
-            this.log_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.log_btn.FlatAppearance.BorderSize = 0;
-            this.log_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.log_btn.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.log_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.log_btn.Image = global::diplom.Properties.Resources.logicon;
-            this.log_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.log_btn.Location = new System.Drawing.Point(1, 176);
-            this.log_btn.Name = "log_btn";
-            this.log_btn.Size = new System.Drawing.Size(177, 44);
-            this.log_btn.TabIndex = 7;
-            this.log_btn.Text = "Журнал";
-            this.log_btn.UseVisualStyleBackColor = false;
-            this.log_btn.Click += new System.EventHandler(this.log_btn_Click);
             // 
             // Notes
             // 

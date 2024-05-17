@@ -76,7 +76,7 @@ namespace diplom
         private void exit_btn_Click(object sender, EventArgs e)
         {
             Trigger.Addlog("exit", name_usr);
-            this.Close();
+            Application.Exit();
         }
 
         private void logs_btn_Click(object sender, EventArgs e)

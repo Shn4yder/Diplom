@@ -53,13 +53,13 @@ namespace diplom
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.price_tB = new diplom.CueTextbox();
             this.label2 = new System.Windows.Forms.Label();
-            this.save_tarif_btn = new diplom.Controls.RoundBtn();
-            this.change_tarif_btn = new diplom.Controls.RoundBtn();
-            this.create_btn = new diplom.Controls.RoundBtn();
             this.order_cB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.save_tarif_btn = new diplom.Controls.RoundBtn();
+            this.price_tB = new diplom.CueTextbox();
+            this.create_btn = new diplom.Controls.RoundBtn();
+            this.change_tarif_btn = new diplom.Controls.RoundBtn();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -99,6 +99,7 @@ namespace diplom
             this.goods_GV.Name = "goods_GV";
             this.goods_GV.RowHeadersVisible = false;
             this.goods_GV.RowTemplate.Height = 110;
+            this.goods_GV.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.goods_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.goods_GV.Size = new System.Drawing.Size(446, 353);
             this.goods_GV.TabIndex = 3;
@@ -145,7 +146,7 @@ namespace diplom
             this.cost.HeaderText = "Цена";
             this.cost.Name = "cost";
             this.cost.ReadOnly = true;
-            this.cost.Width = 98;
+            this.cost.Width = 115;
             // 
             // sidebar
             // 
@@ -170,8 +171,10 @@ namespace diplom
             this.panel1.Controls.Add(this.items_btn);
             this.panel1.Controls.Add(this.sidebar_btn);
             this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.MaximumSize = new System.Drawing.Size(180, 450);
+            this.panel1.MinimumSize = new System.Drawing.Size(50, 450);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(181, 447);
+            this.panel1.Size = new System.Drawing.Size(172, 450);
             this.panel1.TabIndex = 1;
             // 
             // log_btn
@@ -187,7 +190,7 @@ namespace diplom
             this.log_btn.Name = "log_btn";
             this.log_btn.Size = new System.Drawing.Size(177, 44);
             this.log_btn.TabIndex = 7;
-            this.log_btn.Text = "Журнал";
+            this.log_btn.Text = "        Журнал событий";
             this.log_btn.UseVisualStyleBackColor = false;
             this.log_btn.Click += new System.EventHandler(this.log_btn_Click);
             // 
@@ -204,7 +207,7 @@ namespace diplom
             this.exit_btn.Name = "exit_btn";
             this.exit_btn.Size = new System.Drawing.Size(177, 44);
             this.exit_btn.TabIndex = 6;
-            this.exit_btn.Text = "  Завершить смену";
+            this.exit_btn.Text = "        Завершить смену";
             this.exit_btn.UseVisualStyleBackColor = false;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
@@ -217,11 +220,11 @@ namespace diplom
             this.usr_btn.ForeColor = System.Drawing.SystemColors.Window;
             this.usr_btn.Image = global::diplom.Properties.Resources.users_icon;
             this.usr_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.usr_btn.Location = new System.Drawing.Point(0, 126);
+            this.usr_btn.Location = new System.Drawing.Point(1, 126);
             this.usr_btn.Name = "usr_btn";
             this.usr_btn.Size = new System.Drawing.Size(177, 44);
             this.usr_btn.TabIndex = 5;
-            this.usr_btn.Text = "    Пользователи";
+            this.usr_btn.Text = "       Пользователи";
             this.usr_btn.UseVisualStyleBackColor = false;
             this.usr_btn.Click += new System.EventHandler(this.usr_btn_Click);
             // 
@@ -238,7 +241,7 @@ namespace diplom
             this.order_btn.Name = "order_btn";
             this.order_btn.Size = new System.Drawing.Size(177, 44);
             this.order_btn.TabIndex = 4;
-            this.order_btn.Text = "Заказы";
+            this.order_btn.Text = "      Заказы";
             this.order_btn.UseVisualStyleBackColor = false;
             this.order_btn.Click += new System.EventHandler(this.order_btn_Click);
             // 
@@ -254,7 +257,7 @@ namespace diplom
             this.note_btn.Name = "note_btn";
             this.note_btn.Size = new System.Drawing.Size(177, 35);
             this.note_btn.TabIndex = 3;
-            this.note_btn.Text = "Заметки";
+            this.note_btn.Text = "      Заметки";
             this.note_btn.UseVisualStyleBackColor = true;
             this.note_btn.Click += new System.EventHandler(this.note_btn_Click);
             // 
@@ -271,7 +274,7 @@ namespace diplom
             this.items_btn.Name = "items_btn";
             this.items_btn.Size = new System.Drawing.Size(177, 35);
             this.items_btn.TabIndex = 1;
-            this.items_btn.Text = "Товары";
+            this.items_btn.Text = "      Товары";
             this.items_btn.UseVisualStyleBackColor = false;
             // 
             // sidebar_btn
@@ -288,7 +291,7 @@ namespace diplom
             this.sidebar_btn.Name = "sidebar_btn";
             this.sidebar_btn.Size = new System.Drawing.Size(177, 35);
             this.sidebar_btn.TabIndex = 2;
-            this.sidebar_btn.Text = "     Art Coworking";
+            this.sidebar_btn.Text = "        Art Coworking";
             this.sidebar_btn.UseVisualStyleBackColor = false;
             this.sidebar_btn.Click += new System.EventHandler(this.sidebar_btn_Click);
             // 
@@ -327,18 +330,6 @@ namespace diplom
             this.panel2.TabIndex = 30;
             this.panel2.Visible = false;
             // 
-            // price_tB
-            // 
-            this.price_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.price_tB.Cue = "";
-            this.price_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.price_tB.Location = new System.Drawing.Point(4, 3);
-            this.price_tB.Name = "price_tB";
-            this.price_tB.Size = new System.Drawing.Size(37, 18);
-            this.price_tB.TabIndex = 32;
-            this.price_tB.Visible = false;
-            this.price_tB.TextChanged += new System.EventHandler(this.price_tB_TextChanged);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -351,49 +342,6 @@ namespace diplom
             this.label2.TabIndex = 31;
             this.label2.Text = "руб/мин";
             this.label2.Visible = false;
-            // 
-            // save_tarif_btn
-            // 
-            this.save_tarif_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.save_tarif_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.save_tarif_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.save_tarif_btn.Location = new System.Drawing.Point(315, 406);
-            this.save_tarif_btn.Name = "save_tarif_btn";
-            this.save_tarif_btn.Radius = 10;
-            this.save_tarif_btn.Size = new System.Drawing.Size(73, 22);
-            this.save_tarif_btn.TabIndex = 33;
-            this.save_tarif_btn.Text = "Сохранить";
-            this.save_tarif_btn.UseVisualStyleBackColor = false;
-            this.save_tarif_btn.Visible = false;
-            this.save_tarif_btn.Click += new System.EventHandler(this.save_tarif_btn_Click);
-            // 
-            // change_tarif_btn
-            // 
-            this.change_tarif_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.change_tarif_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.change_tarif_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.change_tarif_btn.Location = new System.Drawing.Point(81, 406);
-            this.change_tarif_btn.Name = "change_tarif_btn";
-            this.change_tarif_btn.Radius = 10;
-            this.change_tarif_btn.Size = new System.Drawing.Size(110, 22);
-            this.change_tarif_btn.TabIndex = 8;
-            this.change_tarif_btn.Text = "Изменить тариф";
-            this.change_tarif_btn.UseVisualStyleBackColor = false;
-            this.change_tarif_btn.Click += new System.EventHandler(this.change_tarif_btn_Click);
-            // 
-            // create_btn
-            // 
-            this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.create_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.create_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.create_btn.Location = new System.Drawing.Point(457, 406);
-            this.create_btn.Name = "create_btn";
-            this.create_btn.Radius = 10;
-            this.create_btn.Size = new System.Drawing.Size(70, 22);
-            this.create_btn.TabIndex = 6;
-            this.create_btn.Text = "Создать";
-            this.create_btn.UseVisualStyleBackColor = false;
-            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
             // 
             // order_cB
             // 
@@ -422,6 +370,61 @@ namespace diplom
             this.label1.Size = new System.Drawing.Size(73, 15);
             this.label1.TabIndex = 35;
             this.label1.Text = "Сортировка";
+            // 
+            // save_tarif_btn
+            // 
+            this.save_tarif_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.save_tarif_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.save_tarif_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.save_tarif_btn.Location = new System.Drawing.Point(315, 406);
+            this.save_tarif_btn.Name = "save_tarif_btn";
+            this.save_tarif_btn.Radius = 10;
+            this.save_tarif_btn.Size = new System.Drawing.Size(73, 22);
+            this.save_tarif_btn.TabIndex = 33;
+            this.save_tarif_btn.Text = "Сохранить";
+            this.save_tarif_btn.UseVisualStyleBackColor = false;
+            this.save_tarif_btn.Visible = false;
+            this.save_tarif_btn.Click += new System.EventHandler(this.save_tarif_btn_Click);
+            // 
+            // price_tB
+            // 
+            this.price_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.price_tB.Cue = "";
+            this.price_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.price_tB.Location = new System.Drawing.Point(4, 3);
+            this.price_tB.Name = "price_tB";
+            this.price_tB.Size = new System.Drawing.Size(37, 18);
+            this.price_tB.TabIndex = 32;
+            this.price_tB.Visible = false;
+            this.price_tB.TextChanged += new System.EventHandler(this.price_tB_TextChanged);
+            // 
+            // create_btn
+            // 
+            this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.create_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.create_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.create_btn.Location = new System.Drawing.Point(457, 406);
+            this.create_btn.Name = "create_btn";
+            this.create_btn.Radius = 10;
+            this.create_btn.Size = new System.Drawing.Size(70, 22);
+            this.create_btn.TabIndex = 6;
+            this.create_btn.Text = "Создать";
+            this.create_btn.UseVisualStyleBackColor = false;
+            this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
+            // 
+            // change_tarif_btn
+            // 
+            this.change_tarif_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.change_tarif_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.change_tarif_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.change_tarif_btn.Location = new System.Drawing.Point(81, 406);
+            this.change_tarif_btn.Name = "change_tarif_btn";
+            this.change_tarif_btn.Radius = 10;
+            this.change_tarif_btn.Size = new System.Drawing.Size(110, 22);
+            this.change_tarif_btn.TabIndex = 8;
+            this.change_tarif_btn.Text = "Изменить тариф";
+            this.change_tarif_btn.UseVisualStyleBackColor = false;
+            this.change_tarif_btn.Click += new System.EventHandler(this.change_tarif_btn_Click);
             // 
             // Goods_adm
             // 
@@ -468,11 +471,6 @@ namespace diplom
         private Button usr_btn;
         private Button exit_btn;
         private Controls.RoundBtn create_btn;
-        private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn image;
-        private DataGridViewImageColumn img;
-        private DataGridViewTextBoxColumn name;
-        private DataGridViewTextBoxColumn cost;
         private PictureBox pictureBox1;
         private Controls.RoundBtn change_tarif_btn;
         private Panel panel2;
@@ -482,5 +480,10 @@ namespace diplom
         private ComboBox order_cB;
         private Label label1;
         private Button log_btn;
+        private DataGridViewTextBoxColumn id;
+        private DataGridViewTextBoxColumn image;
+        private DataGridViewImageColumn img;
+        private DataGridViewTextBoxColumn name;
+        private DataGridViewTextBoxColumn cost;
     }
 }

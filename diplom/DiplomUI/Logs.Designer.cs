@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Logs));
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.log_btn = new System.Windows.Forms.Button();
@@ -51,7 +52,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.delete_btn = new diplom.Controls.RoundBtn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.excel_btn = new diplom.Controls.RoundBtn();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.log_GV)).BeginInit();
@@ -97,7 +98,7 @@
             this.log_btn.Name = "log_btn";
             this.log_btn.Size = new System.Drawing.Size(177, 45);
             this.log_btn.TabIndex = 7;
-            this.log_btn.Text = "Журнал";
+            this.log_btn.Text = "        Журнал событий";
             this.log_btn.UseVisualStyleBackColor = false;
             // 
             // sidebar_btn
@@ -114,7 +115,7 @@
             this.sidebar_btn.Name = "sidebar_btn";
             this.sidebar_btn.Size = new System.Drawing.Size(177, 35);
             this.sidebar_btn.TabIndex = 2;
-            this.sidebar_btn.Text = "  Art Coworking";
+            this.sidebar_btn.Text = "        Art Coworking";
             this.sidebar_btn.UseVisualStyleBackColor = false;
             this.sidebar_btn.Click += new System.EventHandler(this.sidebar_btn_Click);
             // 
@@ -131,7 +132,7 @@
             this.exit_btn.Name = "exit_btn";
             this.exit_btn.Size = new System.Drawing.Size(177, 44);
             this.exit_btn.TabIndex = 6;
-            this.exit_btn.Text = "Выход";
+            this.exit_btn.Text = "      Выход";
             this.exit_btn.UseVisualStyleBackColor = false;
             this.exit_btn.Click += new System.EventHandler(this.exit_btn_Click);
             // 
@@ -148,7 +149,7 @@
             this.usr_btn.Name = "usr_btn";
             this.usr_btn.Size = new System.Drawing.Size(177, 44);
             this.usr_btn.TabIndex = 5;
-            this.usr_btn.Text = "   Пользователи";
+            this.usr_btn.Text = "       Пользователи";
             this.usr_btn.UseVisualStyleBackColor = false;
             this.usr_btn.Click += new System.EventHandler(this.usr_btn_Click);
             // 
@@ -164,7 +165,7 @@
             this.note_btn.Name = "note_btn";
             this.note_btn.Size = new System.Drawing.Size(177, 35);
             this.note_btn.TabIndex = 3;
-            this.note_btn.Text = "Заметки";
+            this.note_btn.Text = "      Заметки";
             this.note_btn.UseVisualStyleBackColor = true;
             this.note_btn.Click += new System.EventHandler(this.note_btn_Click);
             // 
@@ -180,7 +181,7 @@
             this.items_btn.Name = "items_btn";
             this.items_btn.Size = new System.Drawing.Size(177, 35);
             this.items_btn.TabIndex = 1;
-            this.items_btn.Text = "Товары";
+            this.items_btn.Text = "      Товары";
             this.items_btn.UseVisualStyleBackColor = true;
             this.items_btn.Click += new System.EventHandler(this.items_btn_Click);
             // 
@@ -310,7 +311,7 @@
             this.delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.delete_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.delete_btn.Location = new System.Drawing.Point(349, 400);
+            this.delete_btn.Location = new System.Drawing.Point(464, 406);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Radius = 10;
             this.delete_btn.Size = new System.Drawing.Size(79, 24);
@@ -319,15 +320,22 @@
             this.delete_btn.UseVisualStyleBackColor = false;
             this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
-            // button1
+            // excel_btn
             // 
-            this.button1.Location = new System.Drawing.Point(115, 400);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.excel_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.excel_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(199)))), ((int)(((byte)(184)))));
+            this.excel_btn.FlatAppearance.BorderSize = 2;
+            this.excel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.excel_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.excel_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.excel_btn.Location = new System.Drawing.Point(203, 406);
+            this.excel_btn.Name = "excel_btn";
+            this.excel_btn.Radius = 10;
+            this.excel_btn.Size = new System.Drawing.Size(105, 24);
+            this.excel_btn.TabIndex = 36;
+            this.excel_btn.Text = "Открыть в Excel";
+            this.excel_btn.UseVisualStyleBackColor = false;
+            this.excel_btn.Click += new System.EventHandler(this.excel_btn_Click);
             // 
             // Logs
             // 
@@ -335,15 +343,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.ClientSize = new System.Drawing.Size(749, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.excel_btn);
             this.Controls.Add(this.delete_btn);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.log_GV);
             this.Controls.Add(this.pictureBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Logs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Logs";
+            this.Text = "Журнал событий";
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.log_GV)).EndInit();
@@ -374,6 +383,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn system;
         private System.Windows.Forms.DataGridViewImageColumn Key;
         private System.Windows.Forms.DataGridViewImageColumn Iv;
-        private System.Windows.Forms.Button button1;
+        private Controls.RoundBtn excel_btn;
     }
 }
