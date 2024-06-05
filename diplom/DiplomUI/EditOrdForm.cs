@@ -153,6 +153,8 @@ namespace diplom
             {
                 OrderPay pay = new OrderPay(Convert.ToDouble(itogo_amount.Text), pay_cB.Text, DateTime.Now, Convert.ToInt16(ppl_UpDown.Value) ,Convert.ToInt16(id_order));
                 DataManager.AddPay(pay);
+                DataManager.DeleteOrder(id_order);
+                GoBack();
             }
             else    // если выбранный способ оплаты - "смешанная", вводится сумма безналичными и наличными
             {

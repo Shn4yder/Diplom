@@ -41,6 +41,10 @@
             this.note_btn = new System.Windows.Forms.Button();
             this.items_btn = new System.Windows.Forms.Button();
             this.log_GV = new System.Windows.Forms.DataGridView();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.menu_timer = new System.Windows.Forms.Timer(this.components);
+            this.delete_btn = new diplom.Controls.RoundBtn();
+            this.excel_btn = new diplom.Controls.RoundBtn();
             this.Id_log = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_log = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.event_log = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,10 +53,6 @@
             this.system = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Key = new System.Windows.Forms.DataGridViewImageColumn();
             this.Iv = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.menu_timer = new System.Windows.Forms.Timer(this.components);
-            this.delete_btn = new diplom.Controls.RoundBtn();
-            this.excel_btn = new diplom.Controls.RoundBtn();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.log_GV)).BeginInit();
@@ -223,71 +223,6 @@
             this.log_GV.Size = new System.Drawing.Size(630, 366);
             this.log_GV.TabIndex = 31;
             // 
-            // Id_log
-            // 
-            this.Id_log.DataPropertyName = "Id_log";
-            this.Id_log.HeaderText = "№";
-            this.Id_log.Name = "Id_log";
-            this.Id_log.ReadOnly = true;
-            this.Id_log.Width = 40;
-            // 
-            // date_log
-            // 
-            this.date_log.DataPropertyName = "Date_log";
-            this.date_log.FillWeight = 70F;
-            this.date_log.HeaderText = "Дата";
-            this.date_log.Name = "date_log";
-            this.date_log.ReadOnly = true;
-            this.date_log.Width = 70;
-            // 
-            // event_log
-            // 
-            this.event_log.DataPropertyName = "Event";
-            this.event_log.HeaderText = "Событие";
-            this.event_log.Name = "event_log";
-            this.event_log.ReadOnly = true;
-            this.event_log.Width = 220;
-            // 
-            // cause
-            // 
-            this.cause.DataPropertyName = "Cause";
-            this.cause.HeaderText = "Причина";
-            this.cause.Name = "cause";
-            this.cause.ReadOnly = true;
-            this.cause.Width = 120;
-            // 
-            // User
-            // 
-            this.User.DataPropertyName = "User";
-            this.User.HeaderText = "Пользователь";
-            this.User.Name = "User";
-            // 
-            // system
-            // 
-            this.system.DataPropertyName = "System";
-            this.system.HeaderText = "Система";
-            this.system.Name = "system";
-            this.system.ReadOnly = true;
-            this.system.Width = 60;
-            // 
-            // Key
-            // 
-            this.Key.DataPropertyName = "Key";
-            this.Key.HeaderText = "Key";
-            this.Key.Name = "Key";
-            this.Key.ReadOnly = true;
-            this.Key.Visible = false;
-            // 
-            // Iv
-            // 
-            this.Iv.DataPropertyName = "Iv";
-            this.Iv.HeaderText = "Iv";
-            this.Iv.Name = "Iv";
-            this.Iv.ReadOnly = true;
-            this.Iv.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Iv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Iv.Visible = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::diplom.Properties.Resources.background_img;
@@ -337,6 +272,71 @@
             this.excel_btn.UseVisualStyleBackColor = false;
             this.excel_btn.Click += new System.EventHandler(this.excel_btn_Click);
             // 
+            // Id_log
+            // 
+            this.Id_log.DataPropertyName = "Id_log";
+            this.Id_log.HeaderText = "№";
+            this.Id_log.Name = "Id_log";
+            this.Id_log.ReadOnly = true;
+            this.Id_log.Width = 40;
+            // 
+            // date_log
+            // 
+            this.date_log.DataPropertyName = "Date_log";
+            this.date_log.FillWeight = 70F;
+            this.date_log.HeaderText = "Дата";
+            this.date_log.Name = "date_log";
+            this.date_log.ReadOnly = true;
+            this.date_log.Width = 70;
+            // 
+            // event_log
+            // 
+            this.event_log.DataPropertyName = "Event";
+            this.event_log.HeaderText = "Событие";
+            this.event_log.Name = "event_log";
+            this.event_log.ReadOnly = true;
+            this.event_log.Width = 210;
+            // 
+            // cause
+            // 
+            this.cause.DataPropertyName = "Cause";
+            this.cause.HeaderText = "Причина";
+            this.cause.Name = "cause";
+            this.cause.ReadOnly = true;
+            this.cause.Width = 120;
+            // 
+            // User
+            // 
+            this.User.DataPropertyName = "User";
+            this.User.HeaderText = "Пользователь";
+            this.User.Name = "User";
+            // 
+            // system
+            // 
+            this.system.DataPropertyName = "System";
+            this.system.HeaderText = "Система";
+            this.system.Name = "system";
+            this.system.ReadOnly = true;
+            this.system.Width = 88;
+            // 
+            // Key
+            // 
+            this.Key.DataPropertyName = "Key";
+            this.Key.HeaderText = "Key";
+            this.Key.Name = "Key";
+            this.Key.ReadOnly = true;
+            this.Key.Visible = false;
+            // 
+            // Iv
+            // 
+            this.Iv.DataPropertyName = "Iv";
+            this.Iv.HeaderText = "Iv";
+            this.Iv.Name = "Iv";
+            this.Iv.ReadOnly = true;
+            this.Iv.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Iv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Iv.Visible = false;
+            // 
             // Logs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -375,6 +375,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button log_btn;
         private System.Windows.Forms.Timer menu_timer;
+        private Controls.RoundBtn excel_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_log;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_log;
         private System.Windows.Forms.DataGridViewTextBoxColumn event_log;
@@ -383,6 +384,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn system;
         private System.Windows.Forms.DataGridViewImageColumn Key;
         private System.Windows.Forms.DataGridViewImageColumn Iv;
-        private Controls.RoundBtn excel_btn;
     }
 }
