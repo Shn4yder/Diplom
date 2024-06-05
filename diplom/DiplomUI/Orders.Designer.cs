@@ -51,11 +51,9 @@ namespace diplom
             this.note_btn = new System.Windows.Forms.Button();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.create_btn = new diplom.Controls.RoundBtn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.orders_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // orders_GV
@@ -88,12 +86,12 @@ namespace diplom
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.orders_GV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.orders_GV.Location = new System.Drawing.Point(80, 47);
+            this.orders_GV.Location = new System.Drawing.Point(80, 23);
             this.orders_GV.MultiSelect = false;
             this.orders_GV.Name = "orders_GV";
             this.orders_GV.RowHeadersVisible = false;
             this.orders_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.orders_GV.Size = new System.Drawing.Size(558, 350);
+            this.orders_GV.Size = new System.Drawing.Size(558, 385);
             this.orders_GV.TabIndex = 3;
             this.orders_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orders_GV_CellDoubleClick);
             // 
@@ -269,7 +267,7 @@ namespace diplom
             this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.create_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.create_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.create_btn.Location = new System.Drawing.Point(319, 403);
+            this.create_btn.Location = new System.Drawing.Point(321, 414);
             this.create_btn.Name = "create_btn";
             this.create_btn.Radius = 10;
             this.create_btn.Size = new System.Drawing.Size(79, 24);
@@ -277,16 +275,6 @@ namespace diplom
             this.create_btn.Text = "Создать";
             this.create_btn.UseVisualStyleBackColor = false;
             this.create_btn.Click += new System.EventHandler(this.create_btn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::diplom.Properties.Resources.background_img;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 17);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(584, 421);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
             // 
             // Orders
             // 
@@ -297,7 +285,6 @@ namespace diplom
             this.Controls.Add(this.create_btn);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.orders_GV);
-            this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -307,7 +294,6 @@ namespace diplom
             ((System.ComponentModel.ISupportInitialize)(this.orders_GV)).EndInit();
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,6 +316,5 @@ namespace diplom
         private DataGridViewTextBoxColumn start;
         private DataGridViewTextBoxColumn comm;
         private DataGridViewTextBoxColumn id_usr;
-        private PictureBox pictureBox1;
     }
 }

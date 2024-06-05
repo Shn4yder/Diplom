@@ -41,10 +41,6 @@
             this.note_btn = new System.Windows.Forms.Button();
             this.items_btn = new System.Windows.Forms.Button();
             this.log_GV = new System.Windows.Forms.DataGridView();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.menu_timer = new System.Windows.Forms.Timer(this.components);
-            this.delete_btn = new diplom.Controls.RoundBtn();
-            this.excel_btn = new diplom.Controls.RoundBtn();
             this.Id_log = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date_log = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.event_log = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,10 +49,12 @@
             this.system = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Key = new System.Windows.Forms.DataGridViewImageColumn();
             this.Iv = new System.Windows.Forms.DataGridViewImageColumn();
+            this.menu_timer = new System.Windows.Forms.Timer(this.components);
+            this.excel_btn = new diplom.Controls.RoundBtn();
+            this.delete_btn = new diplom.Controls.RoundBtn();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.log_GV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // sidebar
@@ -216,61 +214,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.log_GV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.log_GV.Location = new System.Drawing.Point(84, 28);
+            this.log_GV.Location = new System.Drawing.Point(73, 15);
             this.log_GV.Name = "log_GV";
             this.log_GV.RowHeadersVisible = false;
             this.log_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.log_GV.Size = new System.Drawing.Size(630, 366);
+            this.log_GV.Size = new System.Drawing.Size(630, 385);
             this.log_GV.TabIndex = 31;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::diplom.Properties.Resources.background_img;
-            this.pictureBox2.Location = new System.Drawing.Point(67, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(665, 432);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 34;
-            this.pictureBox2.TabStop = false;
-            // 
-            // menu_timer
-            // 
-            this.menu_timer.Interval = 10;
-            this.menu_timer.Tick += new System.EventHandler(this.menu_timer_Tick);
-            // 
-            // delete_btn
-            // 
-            this.delete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.delete_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(199)))), ((int)(((byte)(184)))));
-            this.delete_btn.FlatAppearance.BorderSize = 2;
-            this.delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.delete_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.delete_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.delete_btn.Location = new System.Drawing.Point(464, 406);
-            this.delete_btn.Name = "delete_btn";
-            this.delete_btn.Radius = 10;
-            this.delete_btn.Size = new System.Drawing.Size(79, 24);
-            this.delete_btn.TabIndex = 33;
-            this.delete_btn.Text = "Очистить";
-            this.delete_btn.UseVisualStyleBackColor = false;
-            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
-            // 
-            // excel_btn
-            // 
-            this.excel_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.excel_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(199)))), ((int)(((byte)(184)))));
-            this.excel_btn.FlatAppearance.BorderSize = 2;
-            this.excel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.excel_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.excel_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.excel_btn.Location = new System.Drawing.Point(203, 406);
-            this.excel_btn.Name = "excel_btn";
-            this.excel_btn.Radius = 10;
-            this.excel_btn.Size = new System.Drawing.Size(105, 24);
-            this.excel_btn.TabIndex = 36;
-            this.excel_btn.Text = "Открыть в Excel";
-            this.excel_btn.UseVisualStyleBackColor = false;
-            this.excel_btn.Click += new System.EventHandler(this.excel_btn_Click);
             // 
             // Id_log
             // 
@@ -337,17 +286,55 @@
             this.Iv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Iv.Visible = false;
             // 
+            // menu_timer
+            // 
+            this.menu_timer.Interval = 10;
+            this.menu_timer.Tick += new System.EventHandler(this.menu_timer_Tick);
+            // 
+            // excel_btn
+            // 
+            this.excel_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.excel_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(199)))), ((int)(((byte)(184)))));
+            this.excel_btn.FlatAppearance.BorderSize = 2;
+            this.excel_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.excel_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.excel_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.excel_btn.Location = new System.Drawing.Point(203, 414);
+            this.excel_btn.Name = "excel_btn";
+            this.excel_btn.Radius = 10;
+            this.excel_btn.Size = new System.Drawing.Size(105, 24);
+            this.excel_btn.TabIndex = 36;
+            this.excel_btn.Text = "Открыть в Excel";
+            this.excel_btn.UseVisualStyleBackColor = false;
+            this.excel_btn.Click += new System.EventHandler(this.excel_btn_Click);
+            // 
+            // delete_btn
+            // 
+            this.delete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
+            this.delete_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(199)))), ((int)(((byte)(184)))));
+            this.delete_btn.FlatAppearance.BorderSize = 2;
+            this.delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.delete_btn.ForeColor = System.Drawing.SystemColors.Window;
+            this.delete_btn.Location = new System.Drawing.Point(464, 414);
+            this.delete_btn.Name = "delete_btn";
+            this.delete_btn.Radius = 10;
+            this.delete_btn.Size = new System.Drawing.Size(79, 24);
+            this.delete_btn.TabIndex = 33;
+            this.delete_btn.Text = "Очистить";
+            this.delete_btn.UseVisualStyleBackColor = false;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
+            // 
             // Logs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
-            this.ClientSize = new System.Drawing.Size(749, 450);
-            this.Controls.Add(this.excel_btn);
-            this.Controls.Add(this.delete_btn);
+            this.ClientSize = new System.Drawing.Size(730, 450);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.log_GV);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.excel_btn);
+            this.Controls.Add(this.delete_btn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Logs";
@@ -356,7 +343,6 @@
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.log_GV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -372,7 +358,6 @@
         private System.Windows.Forms.Button note_btn;
         private System.Windows.Forms.Button items_btn;
         private System.Windows.Forms.DataGridView log_GV;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button log_btn;
         private System.Windows.Forms.Timer menu_timer;
         private Controls.RoundBtn excel_btn;

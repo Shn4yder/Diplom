@@ -51,12 +51,10 @@
             this.note_btn = new System.Windows.Forms.Button();
             this.items_btn = new System.Windows.Forms.Button();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.create_btn = new diplom.Controls.RoundBtn();
             ((System.ComponentModel.ISupportInitialize)(this.usr_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // usr_GV
@@ -90,11 +88,11 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.usr_GV.DefaultCellStyle = dataGridViewCellStyle2;
-            this.usr_GV.Location = new System.Drawing.Point(83, 37);
+            this.usr_GV.Location = new System.Drawing.Point(83, 22);
             this.usr_GV.Name = "usr_GV";
             this.usr_GV.RowHeadersVisible = false;
             this.usr_GV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.usr_GV.Size = new System.Drawing.Size(630, 357);
+            this.usr_GV.Size = new System.Drawing.Size(630, 386);
             this.usr_GV.TabIndex = 0;
             this.usr_GV.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usr_GV_CellDoubleClick);
             // 
@@ -302,16 +300,6 @@
             this.menu_timer.Interval = 10;
             this.menu_timer.Tick += new System.EventHandler(this.menu_timer_Tick);
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::diplom.Properties.Resources.background_img;
-            this.pictureBox2.Location = new System.Drawing.Point(66, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(665, 432);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 30;
-            this.pictureBox2.TabStop = false;
-            // 
             // create_btn
             // 
             this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
@@ -320,7 +308,7 @@
             this.create_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.create_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.create_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.create_btn.Location = new System.Drawing.Point(348, 400);
+            this.create_btn.Location = new System.Drawing.Point(351, 414);
             this.create_btn.Name = "create_btn";
             this.create_btn.Radius = 10;
             this.create_btn.Size = new System.Drawing.Size(79, 24);
@@ -338,7 +326,6 @@
             this.Controls.Add(this.create_btn);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.usr_GV);
-            this.Controls.Add(this.pictureBox2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Users";
@@ -347,7 +334,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.usr_GV)).EndInit();
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -364,7 +350,6 @@
         private System.Windows.Forms.Button sidebar_btn;
         private System.Windows.Forms.Timer menu_timer;
         private Controls.RoundBtn create_btn;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn fio;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;

@@ -51,7 +51,6 @@ namespace diplom
             this.sidebar_btn = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.order_cB = new System.Windows.Forms.ComboBox();
@@ -63,7 +62,6 @@ namespace diplom
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -288,6 +286,8 @@ namespace diplom
             this.sidebar_btn.Image = global::diplom.Properties.Resources.menu_icon;
             this.sidebar_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.sidebar_btn.Location = new System.Drawing.Point(1, 3);
+            this.sidebar_btn.MaximumSize = new System.Drawing.Size(177, 35);
+            this.sidebar_btn.MinimumSize = new System.Drawing.Size(50, 35);
             this.sidebar_btn.Name = "sidebar_btn";
             this.sidebar_btn.Size = new System.Drawing.Size(177, 35);
             this.sidebar_btn.TabIndex = 2;
@@ -310,21 +310,11 @@ namespace diplom
             this.menu_timer.Interval = 10;
             this.menu_timer.Tick += new System.EventHandler(this.menu_timer_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::diplom.Properties.Resources.background_img;
-            this.pictureBox1.Location = new System.Drawing.Point(68, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(472, 429);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.price_tB);
-            this.panel2.Location = new System.Drawing.Point(203, 405);
+            this.panel2.Location = new System.Drawing.Point(203, 415);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(44, 23);
             this.panel2.TabIndex = 30;
@@ -333,10 +323,10 @@ namespace diplom
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(192)))), ((int)(((byte)(186)))));
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.label2.Location = new System.Drawing.Point(253, 411);
+            this.label2.Location = new System.Drawing.Point(253, 421);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 15);
             this.label2.TabIndex = 31;
@@ -352,7 +342,7 @@ namespace diplom
             "По умолчанию",
             "По возрастанию цены",
             "По убыванию цены"});
-            this.order_cB.Location = new System.Drawing.Point(379, 20);
+            this.order_cB.Location = new System.Drawing.Point(379, 15);
             this.order_cB.Name = "order_cB";
             this.order_cB.Size = new System.Drawing.Size(148, 21);
             this.order_cB.TabIndex = 34;
@@ -362,10 +352,10 @@ namespace diplom
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(192)))), ((int)(((byte)(186)))));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(232)))), ((int)(((byte)(223)))));
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
-            this.label1.Location = new System.Drawing.Point(300, 22);
+            this.label1.Location = new System.Drawing.Point(300, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 15);
             this.label1.TabIndex = 35;
@@ -376,7 +366,7 @@ namespace diplom
             this.save_tarif_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.save_tarif_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.save_tarif_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.save_tarif_btn.Location = new System.Drawing.Point(315, 406);
+            this.save_tarif_btn.Location = new System.Drawing.Point(315, 416);
             this.save_tarif_btn.Name = "save_tarif_btn";
             this.save_tarif_btn.Radius = 10;
             this.save_tarif_btn.Size = new System.Drawing.Size(73, 22);
@@ -403,7 +393,7 @@ namespace diplom
             this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.create_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.create_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.create_btn.Location = new System.Drawing.Point(457, 406);
+            this.create_btn.Location = new System.Drawing.Point(457, 416);
             this.create_btn.Name = "create_btn";
             this.create_btn.Radius = 10;
             this.create_btn.Size = new System.Drawing.Size(70, 22);
@@ -417,7 +407,7 @@ namespace diplom
             this.change_tarif_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
             this.change_tarif_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.change_tarif_btn.ForeColor = System.Drawing.SystemColors.Window;
-            this.change_tarif_btn.Location = new System.Drawing.Point(81, 406);
+            this.change_tarif_btn.Location = new System.Drawing.Point(81, 416);
             this.change_tarif_btn.Name = "change_tarif_btn";
             this.change_tarif_btn.Radius = 10;
             this.change_tarif_btn.Size = new System.Drawing.Size(110, 22);
@@ -439,9 +429,8 @@ namespace diplom
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.create_btn);
             this.Controls.Add(this.sidebar);
-            this.Controls.Add(this.goods_GV);
             this.Controls.Add(this.change_tarif_btn);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.goods_GV);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Goods_adm";
@@ -450,7 +439,6 @@ namespace diplom
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).EndInit();
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -471,7 +459,6 @@ namespace diplom
         private Button usr_btn;
         private Button exit_btn;
         private Controls.RoundBtn create_btn;
-        private PictureBox pictureBox1;
         private Controls.RoundBtn change_tarif_btn;
         private Panel panel2;
         private CueTextbox price_tB;

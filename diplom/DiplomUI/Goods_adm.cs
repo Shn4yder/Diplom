@@ -40,7 +40,7 @@ namespace diplom
         {
             if (sidebarExpand)
             {
-                sidebar.Width -= 150;
+                sidebar.Width -= 5;
                 if (sidebar.Width == sidebar.MinimumSize.Width)
                 {
                     sidebarExpand = false;
@@ -49,7 +49,7 @@ namespace diplom
             }
             else
             {
-                sidebar.Width += 5; 
+                sidebar.Width += 5;
                 if (sidebar.Width == sidebar.MaximumSize.Width)
                 {
                     sidebarExpand = true;

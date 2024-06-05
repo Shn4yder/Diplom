@@ -34,7 +34,7 @@ namespace diplom.DiplomUI
         {
             if (sidebarExpand)
             {
-                sidebar.Width -= 100;
+                sidebar.Width -= 5;
                 if (sidebar.Width == sidebar.MinimumSize.Width)
                 {
                     sidebarExpand = false;
@@ -77,11 +77,6 @@ namespace diplom.DiplomUI
             Notes notes = new Notes(id_user, sts, name_usr);
             this.Hide();
             notes.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void usr_btn_Click(object sender, EventArgs e)

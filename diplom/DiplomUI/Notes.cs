@@ -36,7 +36,7 @@ namespace diplom
         {
             if (sidebarExpand)
             {
-                sidebar.Width -= 100;
+                sidebar.Width -= 5;
                 if (sidebar.Width == sidebar.MinimumSize.Width)
                 {
                     sidebarExpand = false;
