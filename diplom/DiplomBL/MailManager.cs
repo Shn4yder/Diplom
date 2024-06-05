@@ -47,16 +47,22 @@ namespace diplom
                 {
                     if (user.Status == "Администратор")
                     {
-                        //System.Net.Mail.SmtpException
                         var mail = MailManager.CreateMail(user.Email, $"{report.GetReport()}");    // отправка каждому администратору
                         try { SendMail(mail); }
                         catch { } 
                     }
                 }
+                Trigger.Addlog("exit", name_usr);
+                Application.Exit();
             }
             else
             {
-                MessageBox.Show("Отсутствует подлкючение к интернету, отчет на почту не отправлен", "Внимание");
+                DialogResult dialogResult = MessageBox.Show("Отсутствует подключение к интернету, отчет не будет отправлен. Все равно закрыть смену?", "Внимание", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    Trigger.Addlog("exit", name_usr);
+                    Application.Exit();
+                }
             }
             
         }

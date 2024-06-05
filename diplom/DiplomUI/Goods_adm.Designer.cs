@@ -436,7 +436,6 @@ namespace diplom
             this.Name = "Goods_adm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Товары";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Goods_adm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).EndInit();
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

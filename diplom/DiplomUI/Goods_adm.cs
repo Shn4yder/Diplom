@@ -99,8 +99,11 @@ namespace diplom
             {
                 MailManager.SendReport(name_usr);   // по завершению смены отправляется отчет администраторам
             }
-            Trigger.Addlog("exit", name_usr);
-            Application.Exit();
+            else 
+            {
+                Trigger.Addlog("exit", name_usr);
+                Application.Exit();
+            }
         }
         //
 
@@ -158,16 +161,6 @@ namespace diplom
                 order_mode = "ORDER BY id_good ASC";
             }
             goods_GV.DataSource = DataManager.LoadGoods(order_mode);
-        }
-
-        private void Goods_adm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (status != "Администратор")
-            {
-                MailManager.SendReport(name_usr);   // по завершению смены отправляется отчет администраторам
-            }
-            Trigger.Addlog("exit", name_usr);
-            Application.Exit();
         }
 
         // Обработчик двойного нажатия на ячейку с товаром

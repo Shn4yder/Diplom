@@ -86,10 +86,13 @@ namespace diplom
         {
             if (status != "Администратор")
             {
-                MailManager.SendReport(name_usr);   // отправка отчета администраторам
+                MailManager.SendReport(name_usr);   // по завершению смены отправляется отчет администраторам
             }
-            Trigger.Addlog("exit", name_usr);
-            Application.Exit(); 
+            else
+            {
+                Trigger.Addlog("exit", name_usr);
+                Application.Exit();
+            }
         }
         private void log_btn_Click(object sender, EventArgs e)
         {

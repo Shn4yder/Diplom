@@ -72,9 +72,7 @@ namespace diplom
 
         private void exit_btn_Click(object sender, EventArgs e)
         {
-            MailManager.SendReport(name_usr);   // отправка отчета администраторам
-            Trigger.Addlog("exit", name_usr);
-            Application.Exit();
+            MailManager.SendReport(name_usr);   // по завершению смены отправляется отчет администраторам
         }
         //
 
