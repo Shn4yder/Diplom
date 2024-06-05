@@ -32,8 +32,12 @@ namespace diplom
         // Обработчик нажатия на кнопку "Удалить"
         private void del_btn_Click(object sender, EventArgs e)
         {
-            DataManager.DeleteNote(id_note);
-            GoBack();
+            DialogResult dialogResult = MessageBox.Show("Действительно удалить выбранную заметку? Отменить выбор будет невозможно", "Подтвердите действие", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                DataManager.DeleteNote(id_note);
+                GoBack();
+            }
         }
 
         // Обработчик нажатия на кнопку "Назад"

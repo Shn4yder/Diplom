@@ -67,9 +67,13 @@ namespace diplom
         // Обработчик события нажатия на кнопку "Удалить"
         private void del_btn_Click(object sender, EventArgs e)
         {
-            Trigger.Addlog("delete", name_usr, name_tB.Text);
-            DataManager.DeleteUser(id_edit_user);
-            GoBack();
+            DialogResult dialogResult = MessageBox.Show("Действительно удалить выбранного пользователя? Будут удалены все связанные с ним события - заметки, заказы, журнал безопасности. Отменить действие будет невозможно", "Подтвердите действие", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Trigger.Addlog("delete", name_usr, name_tB.Text);
+                DataManager.DeleteUser(id_edit_user);
+                GoBack();
+            } 
         }
 
         // Проверка полей на отсутствие значений

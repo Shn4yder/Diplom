@@ -160,6 +160,16 @@ namespace diplom
             goods_GV.DataSource = DataManager.LoadGoods(order_mode);
         }
 
+        private void Goods_adm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (status != "Администратор")
+            {
+                MailManager.SendReport(name_usr);   // по завершению смены отправляется отчет администраторам
+            }
+            Trigger.Addlog("exit", name_usr);
+            Application.Exit();
+        }
+
         // Обработчик двойного нажатия на ячейку с товаром
         private void goods_GV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

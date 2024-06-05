@@ -71,8 +71,12 @@ namespace diplom
         // Обработчик нажатия на кнопку "Удалить"
         private void del_btn_Click(object sender, EventArgs e)
         {
-            DataManager.DeleteGood(id_good);
-            GoBack();
+            DialogResult dialogResult = MessageBox.Show("Действительно удалить выбранный товар? Отменить выбор будет невозможно", "Подтвердите действие", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                DataManager.DeleteGood(id_good);
+                GoBack();
+            }
         }
 
         // Проверка полей на отсутствие значений

@@ -52,11 +52,11 @@ namespace diplom
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.menu_timer = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.price_tB = new diplom.CueTextbox();
             this.label2 = new System.Windows.Forms.Label();
             this.order_cB = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.save_tarif_btn = new diplom.Controls.RoundBtn();
-            this.price_tB = new diplom.CueTextbox();
             this.create_btn = new diplom.Controls.RoundBtn();
             this.change_tarif_btn = new diplom.Controls.RoundBtn();
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).BeginInit();
@@ -320,6 +320,18 @@ namespace diplom
             this.panel2.TabIndex = 30;
             this.panel2.Visible = false;
             // 
+            // price_tB
+            // 
+            this.price_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.price_tB.Cue = "";
+            this.price_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.price_tB.Location = new System.Drawing.Point(4, 3);
+            this.price_tB.Name = "price_tB";
+            this.price_tB.Size = new System.Drawing.Size(37, 18);
+            this.price_tB.TabIndex = 32;
+            this.price_tB.Visible = false;
+            this.price_tB.TextChanged += new System.EventHandler(this.price_tB_TextChanged);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -376,18 +388,6 @@ namespace diplom
             this.save_tarif_btn.Visible = false;
             this.save_tarif_btn.Click += new System.EventHandler(this.save_tarif_btn_Click);
             // 
-            // price_tB
-            // 
-            this.price_tB.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.price_tB.Cue = "";
-            this.price_tB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.price_tB.Location = new System.Drawing.Point(4, 3);
-            this.price_tB.Name = "price_tB";
-            this.price_tB.Size = new System.Drawing.Size(37, 18);
-            this.price_tB.TabIndex = 32;
-            this.price_tB.Visible = false;
-            this.price_tB.TextChanged += new System.EventHandler(this.price_tB_TextChanged);
-            // 
             // create_btn
             // 
             this.create_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(78)))), ((int)(((byte)(52)))));
@@ -436,6 +436,7 @@ namespace diplom
             this.Name = "Goods_adm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Товары";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Goods_adm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.goods_GV)).EndInit();
             this.sidebar.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

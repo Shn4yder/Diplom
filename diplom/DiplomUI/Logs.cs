@@ -89,8 +89,12 @@ namespace diplom.DiplomUI
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
-            DataManager.DeleteLogs();
-            log_GV.DataSource = DataManager.LoadLogs();
+            DialogResult dialogResult = MessageBox.Show("Действительно очистить журнал безопасности? Отменить действие будет невозможно. Перед удалением рекомендуем выгрузить данные в Excel", "Подтвердите действие", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                DataManager.DeleteLogs();
+                log_GV.DataSource = DataManager.LoadLogs();
+            }
         }
 
         private void excel_btn_Click(object sender, EventArgs e)
